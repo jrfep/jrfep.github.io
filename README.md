@@ -19,10 +19,8 @@ http://jrferrerparis.info/
 * figshare: http://figshare.com/authors/Jos_R_Ferrer_Paris/592994
 * Zoobank: http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6
 
-Blogger: User Profile: José R. Ferrer Paris
-￼https://www.blogger.com/profile/10848423852723434095
+Blogger: User Profile: José R. Ferrer Paris ￼https://www.blogger.com/profile/10848423852723434095
 
 jrfep (José R. Ferrer Paris) · GitHub
-￼https://github.com/jrfep
-José R. Ferrer-Paris | Publons
-￼https://publons.com/researcher/989272/jose-r-ferrer-paris/
+ https://github.com/jrfep
+José R. Ferrer-Paris | Publons ￼https://publons.com/researcher/989272/jose-r-ferrer-paris/
