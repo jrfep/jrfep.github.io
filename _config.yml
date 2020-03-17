@@ -11,10 +11,6 @@ collections:
 defaults:
    - scope:
       path: ""
-      values:
-      layout: "default"
-   - scope:
-      path: ""
       type: "eventos"
       values:
       layout: "eventos"
@@ -23,3 +19,7 @@ defaults:
       type: "presentaciones"
       values:
       layout: "presentaciones"
+   - scope:
+      path: ""
+      values:
+      layout: "default"
