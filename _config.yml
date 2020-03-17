@@ -2,8 +2,24 @@ theme: jekyll-theme-hacker
 title: "jrfep"
 description: "José Rafael Ferrer Paris"
 
+collections:
+  eventos:
+    output: true
+  presentaciones:
+    output: true
+
 defaults:
-  - scope:
+   - scope:
       path: ""
-    values:
+      values:
       layout: "default"
+   - scope:
+      path: ""
+      type: "eventos"
+      values:
+      layout: "eventos"
+   - scope:
+      path: ""
+      type: "presentaciones"
+      values:
+      layout: "presentaciones"
