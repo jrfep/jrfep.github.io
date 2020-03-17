@@ -6,3 +6,5 @@ ffin: noviembre 2002
 lugar: Isla de Margarita
 participacion: Presentación oral
 ---
+
+Un Congreso Venezolano de Ecologia al que asistí hace años
