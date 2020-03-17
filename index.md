@@ -5,6 +5,11 @@ title: Homepage of José Rafael Ferrer Paris
 
 # Welcome home!
 
+## Sobre mi actividad científica:
+
+* Publicaciones arbitradas
+* [Eventos científicos](/eventos)
+
 ## 2020 - Proyectos en curso:
 [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
 
