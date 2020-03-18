@@ -4,6 +4,7 @@ code: CVE_VII
 fini: 5 noviembre 2007
 ffin: 9 noviembre 2007
 lugar: Ciudad Guayana
+pais: Venezuela
 participacion: Presentacion oral
 tipo: Congreso
 ambito: Nacional

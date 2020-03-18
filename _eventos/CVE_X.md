@@ -4,6 +4,7 @@ code: CVE_X
 fini: 18 noviembre 2013
 ffin: 22 noviembre 2013
 lugar: Mérida
+pais: Venezuela
 participacion:
 tipo: Congreso
 ambito: Nacional

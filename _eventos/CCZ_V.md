@@ -3,7 +3,8 @@ name: V Congreso Colombiano de Zoología
 code: CCZ_V
 fini: Diciembre 2018
 ffin:
-lugar: Bogotá, Colombia
+lugar: Bogotá
+pais: Colombia
 participacion:
 tipo: Congreso
 ambito: Nacional

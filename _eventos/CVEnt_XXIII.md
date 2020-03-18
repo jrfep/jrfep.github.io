@@ -4,6 +4,7 @@ code: CVEnt_XXIII
 fini: 9 julio 2013.
 ffin: 12 julio 2013.
 lugar: Maracaibo
+pais: Venezuela
 participacion:
 tipo: Congreso
 ambito: Nacional

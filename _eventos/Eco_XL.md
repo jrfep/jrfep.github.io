@@ -3,7 +3,8 @@ name: XL Aniversario del Centro de Ecología
 code: Eco_XL
 fini: 7-10 diciembre 2010
 ffin:
-lugar: Caracas, Venezuela
+lugar: San Antonio de los Altos
+pais: Venezuela
 participacion:
 tipo: Jornadas
 ambito: Nacional

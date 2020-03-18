@@ -4,6 +4,7 @@ code: CVE_XI
 fini: 9 noviembre 2015
 ffin: 13 noviembre 2015
 lugar: Margarita
+pais: Venezuela
 participacion:
 tipo: Congreso
 ambito: Nacional

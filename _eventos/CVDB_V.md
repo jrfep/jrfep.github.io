@@ -4,6 +4,7 @@ code: CVDB_V
 fini: 21 julio 2014
 ffin: 26 julio 2014
 lugar: Maracaibo
+pais: Venezuela
 participacion:
 tipo: Congreso
 ambito: Nacional

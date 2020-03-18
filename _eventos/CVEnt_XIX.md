@@ -4,6 +4,7 @@ code: CVEnt_XIX
 fini: 4 julio 2005
 ffin: 7 julio 2005
 lugar: San Felipe
+pais: Venezuela
 participacion:
 tipo: Congreso
 ambito: Nacional
