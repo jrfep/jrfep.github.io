@@ -1,6 +1,6 @@
 ---
 name: Congreso Venezolano de Ecologia
-code: CVE
+code: CVE2
 fini: noviembre 2005
 ffin: noviembre 2005
 lugar: Isla de Margarita
