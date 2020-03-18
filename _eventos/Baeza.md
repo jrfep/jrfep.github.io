@@ -1,0 +1,11 @@
+---
+name:
+code:
+fini:
+ffin:
+lugar:
+participacion:
+tipo:
+ambito:
+---
+Workshop: Predictive modelling of Species distribution. New Tools for the XXI Century. Universidad Internacional de Andalucía. Baeza, España, 2-4 Noviembre 2005. [Publication from the workshop]

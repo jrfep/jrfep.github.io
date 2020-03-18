@@ -5,6 +5,8 @@ fini: mayo 2002
 ffin: mayo 2002
 lugar: Paipa, Colombia
 participacion: Presentación cartel
+tipo: Congreso
+ambito: Internacional
 ---
 
 Primer Congreso Mundial de Páramos. Paipa, Colombia, Mayo 2002.

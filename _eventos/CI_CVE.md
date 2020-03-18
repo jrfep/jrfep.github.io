@@ -1,0 +1,10 @@
+---
+name:
+code:
+fini:
+ffin:
+lugar:
+participacion:
+tipo:
+ambito:
+---
