@@ -9,6 +9,7 @@ title: Homepage of José Rafael Ferrer Paris
 
 * Publicaciones arbitradas
 * [Eventos científicos](/eventos)
+** [Presentaciones en eventos](/presentaciones)
 
 ## 2020 - Proyectos en curso:
 [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
