@@ -1,6 +1,6 @@
 ---
 name: XL Aniversario del Centro de Ecología
-code:
+code: Eco_XL
 fini: 7-10 diciembre 2010
 ffin:
 lugar: Caracas, Venezuela

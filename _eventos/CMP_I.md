@@ -1,6 +1,6 @@
 ---
 name: Primer Congreso Mundial de Páramos
-code: CMP
+code: CMP_I
 fini: mayo 2002
 ffin: mayo 2002
 lugar: Paipa, Colombia

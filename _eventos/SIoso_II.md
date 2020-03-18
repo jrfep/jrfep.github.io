@@ -1,12 +1,12 @@
 ---
 name: Segundo simposio internacional sobre el oso andino
-code:
-fini: 10-12 Noviembre 2008
-ffin:
+code: SIoso_II
+fini: 10 Noviembre 2008
+ffin: 12 Noviembre 2008
 lugar: Lima, Perú
 participacion:
-tipo:
-ambito:
+tipo: Simposio
+ambito: Internacional
 ---
 
 Segundo simposio internacional sobre el oso andino. Lima, Perú, 10-12 Noviembre 2008. [Anuncio del simposio]

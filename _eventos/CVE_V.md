@@ -1,6 +1,6 @@
 ---
 name: V Congreso Venezolano de Ecología
-code: CVE
+code: CVE_V
 fini: noviembre 2003
 ffin: noviembre 2003
 lugar: Isla de Margarita

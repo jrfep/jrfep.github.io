@@ -5,7 +5,7 @@ fini: 2009
 ffin:
 lugar: Trieste, Italy
 participacion:
-tipo:
-ambito:
+tipo: Taller
+ambito: Internacional
 ---
 Workshop on Theoretical Ecology and Global Change. Trieste, Italy 2009. [Program and materials of the workshop]
