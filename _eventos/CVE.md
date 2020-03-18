@@ -1,10 +1,10 @@
 ---
-name: Congreso Venezolano de Ecologia en Margarita
+name: Congreso Venezolano de Ecología en Margarita
 code: CVE
 fini: noviembre 2002
 ffin: noviembre 2002
 lugar: Isla de Margarita
-participacion: Presentacion oral
+participacion: Presentación oral
 ---
 
-Un Congreso Venezolano de Ecologia al que asistí hace años
+Un Congreso Venezolano de Ecología al que asistí hace años

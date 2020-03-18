@@ -1,0 +1,12 @@
+---
+name: Primer Congreso Mundial de Páramos
+code: CMP
+fini: mayo 2002
+ffin: mayo 2002
+lugar: Paipa, Colombia
+participacion: Presentación cartel
+---
+
+Primer Congreso Mundial de Páramos. Paipa, Colombia, Mayo 2002.
+
+Memorias: [Tomo I](http://fundacionecoan.org/Documentos/Primer%20Congreso%20Mundial%20de%20Paramos/TOMO%201.pdf) [Tomo II](http://fundacionecoan.org/Documentos/Primer%20Congreso%20Mundial%20de%20Paramos/TOMO%202.pdf)
