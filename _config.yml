@@ -13,12 +13,12 @@ defaults:
       path: ""
       type: "eventos"
       values:
-      layout: "eventos"
+      layout: "evento"
    - scope:
       path: ""
       type: "presentaciones"
       values:
-      layout: "presentaciones"
+      layout: "presentacion"
    - scope:
       path: ""
       values:
