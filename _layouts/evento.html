@@ -2,8 +2,14 @@
 layout: default
 ---
 
-This is the page for:
-
 <h1>{{ page.name }}</h1>
 
 {{ content }}
+
+<h2>Presentaciones en este evento</h2>
+<ul>
+  {% assign filtered_posts = site.presentaciones | where: 'eventcode', page.code %}
+  {% for post in filtered_posts %}
+    <li><a href="../presentacion/{{ post.code }}.html">{{ post.name }}</a></li>
+  {% endfor %}
+</ul>
