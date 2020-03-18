@@ -8,4 +8,4 @@ participacion:
 tipo: Taller
 ambito: Internacional
 ---
-Workshop on Theoretical Ecology and Global Change. Trieste, Italy 2009. [Program and materials of the workshop]
+Workshop on Theoretical Ecology and Global Change. Trieste, Italy 2009. [Program and materials of the workshop](http://indico.ictp.it/event/a08145/)

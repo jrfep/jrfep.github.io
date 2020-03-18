@@ -9,4 +9,5 @@ tipo: Congreso
 ambito: Nacional
 ---
 
-V Congreso Venezolano de Ecologia. Margarita, Noviembre 2003 http://www.sve.ula.ve/pdfs/boletin1.pdf
+V Congreso Venezolano de Ecologia. Margarita, Noviembre 2003
+[Resumenes](http://www.sve.ula.ve/pdfs/boletin1.pdf)
