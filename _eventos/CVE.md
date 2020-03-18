@@ -1,5 +1,5 @@
 ---
-name: Congreso Venezolano de Ecologia
+name: Congreso Venezolano de Ecologia en Margarita
 code: CVE
 fini: noviembre 2002
 ffin: noviembre 2002

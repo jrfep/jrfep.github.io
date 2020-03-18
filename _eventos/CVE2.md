@@ -1,5 +1,5 @@
 ---
-name: Congreso Venezolano de Ecologia
+name: Congreso Venezolano de Ecologia en Merida?
 code: CVE2
 fini: noviembre 2005
 ffin: noviembre 2005
