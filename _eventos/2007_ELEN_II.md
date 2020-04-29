@@ -1,6 +1,6 @@
 ---
 name: II Encuentro Sobre Lepidoptera Neogropical
-code: ELEN_II
+code: 2007_ELEN_II
 fini: 2007
 ffin: 2007
 lugar: Panamá

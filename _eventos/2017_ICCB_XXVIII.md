@@ -1,6 +1,6 @@
 ---
 name: 28th International Congress for Conservation Biology
-code: ICCB_XXVIII
+code: 2017_ICCB_XXVIII
 fini: 23 Julio 2017
 ffin: 27 Julio 2017
 lugar: Cartagena, Colombia

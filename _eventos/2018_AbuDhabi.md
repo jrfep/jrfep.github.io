@@ -1,6 +1,6 @@
 ---
 name: IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate
-code: AbuDhabi
+code: 2018_AbuDhabi
 fini: February 2018
 ffin:
 lugar: Abu Dhabi

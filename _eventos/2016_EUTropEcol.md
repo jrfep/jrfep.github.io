@@ -1,6 +1,6 @@
 ---
 name: European Conference of Tropical Ecology
-code: EUTropEcol
+code: 2016_EUTropEcol
 fini: 23 february 2016
 ffin: 26 february 2016
 lugar: Göttingen, Germany

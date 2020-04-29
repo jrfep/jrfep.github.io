@@ -1,6 +1,6 @@
 ---
 name: XL Aniversario del Centro de Ecología
-code: Eco_XL
+code: 2010_Eco_XL
 fini: 7-10 diciembre 2010
 ffin:
 lugar: San Antonio de los Altos

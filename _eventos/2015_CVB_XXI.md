@@ -1,6 +1,6 @@
 ---
 name: XXI Congreso Venezolano de Botánica
-code: CVB_XXI
+code: 2015_CVB_XXI
 fini: 12 mayo 2015
 ffin: 16 mayo 2015
 lugar: Caracas

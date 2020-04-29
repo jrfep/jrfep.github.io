@@ -1,6 +1,6 @@
 ---
 name: Workshop on Theoretical Ecology and Global Change
-code:
+code: 2009_TheoEco
 fini: 2009
 ffin:
 lugar: Trieste, Italy

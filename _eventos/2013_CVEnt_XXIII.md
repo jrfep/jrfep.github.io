@@ -1,6 +1,6 @@
 ---
 name: XXIII Congreso Venezolano de Entomología
-code: CVEnt_XXIII
+code: 2013_CVEnt_XXIII
 fini: 9 julio 2013.
 ffin: 12 julio 2013.
 lugar: Maracaibo

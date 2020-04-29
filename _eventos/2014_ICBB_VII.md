@@ -1,6 +1,6 @@
 ---
 name: 7th International Conference on the Biology of Butterflies
-code: ICBB_VII
+code: 2014_ICBB_VII
 fini: 11 August 2014
 ffin: 14 August 2014
 lugar: Turku, Finland

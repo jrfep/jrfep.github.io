@@ -1,6 +1,6 @@
 ---
 name: XIX Congreso Venezolano de Entomología
-code: CVEnt_XIX
+code: 2005_CVEnt_XIX
 fini: 4 julio 2005
 ffin: 7 julio 2005
 lugar: San Felipe

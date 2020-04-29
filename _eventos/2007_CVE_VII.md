@@ -1,6 +1,6 @@
 ---
 name: VII Congreso Venezolano de Ecología
-code: CVE_VII
+code: 2007_CVE_VII
 fini: 5 noviembre 2007
 ffin: 9 noviembre 2007
 lugar: Ciudad Guayana

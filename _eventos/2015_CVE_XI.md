@@ -1,6 +1,6 @@
 ---
 name: XI Congreso Venezolano de Ecología
-code: CVE_XI
+code: 2015_CVE_XI
 fini: 9 noviembre 2015
 ffin: 13 noviembre 2015
 lugar: Margarita
