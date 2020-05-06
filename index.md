@@ -12,7 +12,8 @@ title: Homepage of José Rafael Ferrer Paris
 ** [Presentaciones en eventos](/presentaciones)
 
 ## 2020 - Proyectos en curso:
-[Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+* [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+* [Publicaciones Lista Roja de Ecosistemas](https://red-list-ecosystem.github.io/RLE-publication-list/)
 
 
 ## Profesional and academic profiles
