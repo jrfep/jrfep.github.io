@@ -1,11 +1,11 @@
 ---
-name: Workshop: Predictive modelling of Species distribution
+name: "Workshop: Predictive modelling of Species distribution"
 code: 2005_Baeza
 fini: 2 Noviembre 2005
 ffin: 4 Noviembre 2005
 lugar: Baeza
 pais: España
-participacion:
+participacion: Presentación cartel
 tipo: Taller
 ambito: Internacional
 ---
