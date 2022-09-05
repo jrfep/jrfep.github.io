@@ -1,0 +1,68 @@
+---
+title: "List of research outputs"
+author: "JR Ferrer-Paris"
+date: "04/09/2022"
+output: html_document
+---
+
+```{r setup, include = FALSE, cache = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RefManageR)
+BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
+           bib.style = "authoryear",hyperlink = FALSE)
+```
+
+
+```{r,echo=FALSE}
+bib1 <- ReadBib("bibTeX/peer-review.bibtex", check = FALSE)
+bib2 <- ReadBib("bibTeX/preprints.bibtex", check = FALSE)
+bib3 <- ReadBib("bibTeX/presentations.bibtex", check = FALSE)
+bib4 <- ReadBib("bibTeX/reports.bibtex", check = FALSE)
+bib5 <- ReadBib("bibTeX/datasets.bibtex", check = FALSE)
+bib6 <- ReadBib("bibTeX/code-and-software.bibtex", check = FALSE)
+NoCite(bib = bib1, 1:length(bib1), .opts = list(hyperlink = FALSE))
+NoCite(bib = bib2, 1:length(bib2), .opts = list(hyperlink = FALSE))
+NoCite(bib = bib3, 1:length(bib3), .opts = list(hyperlink = FALSE))
+NoCite(bib = bib4, 1:length(bib4), .opts = list(hyperlink = FALSE))
+NoCite(bib = bib5, 1:length(bib5), .opts = list(hyperlink = FALSE))
+NoCite(bib = bib6, 1:length(bib6), .opts = list(hyperlink = FALSE))
+```
+
+This is an R Markdown document. This is an example of a citation in the text `r AutoCite(bib2, "Bland_Impact_RLE_preprint", .opts = list(hyperlink = "to.doc"))`. And this is another `r AutoCite(bib5, publisher = "figshare", .opts = list(hyperlink = FALSE))`
+
+**Peer reviewed**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib1, .opts = list(check.entries = FALSE, max.names=100, sorting = "ydnt"))
+```
+
+**Preprints**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib2, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+**Presentations**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+**Reports**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib4, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+
+**Datasets**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib5, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+**Code and software**
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib6, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
