@@ -1,0 +1,12 @@
+name: "jrfep"
+output_dir: "docs"
+navbar:
+  title: "J.R. Ferrer-Paris"
+  left:
+    - text: "HomePage"
+      href: ulysses.html
+    - text: "Research outputs"
+      href: research-outputs.html
+output:
+  html_document:
+    theme: cosmo

@@ -28,41 +28,66 @@ NoCite(bib = bib5, 1:length(bib5), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib6, 1:length(bib6), .opts = list(hyperlink = FALSE))
 ```
 
-This is an R Markdown document. This is an example of a citation in the text `r AutoCite(bib2, "Bland_Impact_RLE_preprint", .opts = list(hyperlink = "to.doc"))`. And this is another `r AutoCite(bib5, publisher = "figshare", .opts = list(hyperlink = FALSE))`
+This is where I keep my list of research outputs, from published research to datasets and reports. All this information comes from bibtex files in folder `bibTeX`. I use the package `RefManageR` to manage this information in a Rmarkdown document. This is an example of a single citation in the text with hyperlinks to the original document`r AutoCite(bib2, "Bland_Impact_RLE_preprint", .opts = list(hyperlink = "to.doc"))`. And this is another with multiple references and no hyperlinks `r AutoCite(bib5, publisher = "figshare", .opts = list(hyperlink = FALSE))`.
 
-**Peer reviewed**
+
+## Peer reviewed
+
+This is the list of publication with peer-review, includes articles in journals and reports subjected to peer-review.
+
+--- 
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib1, .opts = list(check.entries = FALSE, max.names=100, sorting = "ydnt"))
 ```
 
-**Preprints**
+## Preprints
+
+I added here references to some pre-prints, but most of them have been already published.
+
+--- 
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib2, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
 
-**Presentations**
+## Presentations
+
+These is a incomplete list of (mostly older) presentations in national or international events. Some of these presentations/posters are deposited in digital form in open source repositories with a DOI or another permanent identifier. 
+
+--- 
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
 
-**Reports**
+## Reports
+
+These are reports that I produced and deposited in open source repositories, most of them have a DOI or another permanent identifier.
+
+--- 
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib4, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
 
 
-**Datasets**
+## Datasets
+
+> These are datasets that I have deposited in open source repositories, most of them have a DOI or another permanent identifier.
+
+--- 
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib5, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
 
-**Code and software**
 
+## Code and software
+
+> This is the list of code and software that I deposited in open source repositories, most of them have a DOI or another identifier.
+
+--- 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib6, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
