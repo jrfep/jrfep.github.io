@@ -3,7 +3,7 @@ output_dir: "docs"
 navbar:
   title: "J.R. Ferrer-Paris"
   left:
-    - text: "HomePage"
+    - text: "Just for fun"
       href: ulysses.html
     - text: "Research outputs"
       href: research-outputs.html
