@@ -32,3 +32,8 @@ Blogger: [José R. Ferrer Paris](￼https://www.blogger.com/profile/108484238527
 jrfep (José R. Ferrer Paris) · GitHub
  https://github.com/jrfep
 José R. Ferrer-Paris | Publons https://publons.com/researcher/989272/jose-r-ferrer-paris/
+
+Run this to render site:
+```{r}
+rmarkdown::render_site()
+```
