@@ -5,15 +5,15 @@ date: "04/09/2022"
 output: html_document
 ---
 
-```{r setup, include = FALSE, cache = FALSE}
+```{r setup, include = FALSE, cache = FALSE,message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(RefManageR)
 BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
-           bib.style = "authoryear",hyperlink = FALSE)
+           bib.style = "authoryear", hyperlink = FALSE)
 ```
 
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 bib1 <- ReadBib("bibTeX/peer-review.bibtex", check = FALSE)
 bib2 <- ReadBib("bibTeX/preprints.bibtex", check = FALSE)
 bib3 <- ReadBib("bibTeX/presentations.bibtex", check = FALSE)
@@ -35,7 +35,7 @@ This is where I keep my list of research outputs, from published research to dat
 
 This is the list of publication with peer-review, includes articles in journals and reports subjected to peer-review.
 
---- 
+---
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib1, .opts = list(check.entries = FALSE, max.names=100, sorting = "ydnt"))
@@ -45,7 +45,7 @@ PrintBibliography(bib1, .opts = list(check.entries = FALSE, max.names=100, sorti
 
 I added here references to some pre-prints, but most of them have been already published.
 
---- 
+---
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib2, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
@@ -53,9 +53,9 @@ PrintBibliography(bib2, .opts = list(check.entries = FALSE,  max.names=100, sort
 
 ## Presentations
 
-These is a incomplete list of (mostly older) presentations in national or international events. Some of these presentations/posters are deposited in digital form in open source repositories with a DOI or another permanent identifier. 
+These is a incomplete list of (mostly older) presentations in national or international events. Some of these presentations/posters are deposited in digital form in open source repositories with a DOI or another permanent identifier.
 
---- 
+---
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
@@ -65,7 +65,7 @@ PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sort
 
 These are reports that I produced and deposited in open source repositories, most of them have a DOI or another permanent identifier.
 
---- 
+---
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib4, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
@@ -76,7 +76,7 @@ PrintBibliography(bib4, .opts = list(check.entries = FALSE,  max.names=100, sort
 
 > These are datasets that I have deposited in open source repositories, most of them have a DOI or another permanent identifier.
 
---- 
+---
 
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib5, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
@@ -87,7 +87,7 @@ PrintBibliography(bib5, .opts = list(check.entries = FALSE,  max.names=100, sort
 
 > This is the list of code and software that I deposited in open source repositories, most of them have a DOI or another identifier.
 
---- 
+---
 ```{r results = "asis", echo = FALSE}
 PrintBibliography(bib6, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
