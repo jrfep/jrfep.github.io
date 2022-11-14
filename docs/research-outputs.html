@@ -15,7 +15,7 @@
 
 <title>List of research outputs</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -180,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -189,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -283,9 +276,9 @@ files in folder <code>bibTeX</code>. I use the package
 document. This is an example of a single citation in the text with
 hyperlinks to the original document(<a
 href="https://doi.org/10.20944/preprints201812.0097.v1">Bland,
-Nicholson, Miller, et al., 2018</a>). And this is another with multiple
+Nicholson, Miller et al., 2018</a>). And this is another with multiple
 references and no hyperlinks (Ferrer-Paris, 2018; Ferrer-Paris,
-Sánchez-Mercado, Lozano, et al., 2014; Ferrer-Paris and Sánchez-Mercado,
+Sánchez-Mercado, Lozano et al., 2014; Ferrer-Paris and Sánchez-Mercado,
 2020).</p>
 <div id="peer-reviewed" class="section level2">
 <h2>Peer reviewed</h2>
@@ -548,6 +541,12 @@ href="https://www.biorxiv.org/content/early/2022/03/28/2022.03.27.485937.full.pd
 class="uri">https://www.biorxiv.org/content/early/2022/03/28/2022.03.27.485937.full.pdf</a>.
 URL: <a
 href="https://www.biorxiv.org/content/early/2022/03/28/2022.03.27.485937">https://www.biorxiv.org/content/early/2022/03/28/2022.03.27.485937</a>.</p>
+<p>Keith, D., S. Ghoraba, E. Kaly, K. R. Jones, A. Oosthuizen, D. Obura,
+F. Daniels, E. Duarte, H. Grantham, M. Gudka, J. Norman, L. J. Shannon,
+A. Skowno, and J. R. Ferrer-Paris (2022). <em>Contributions of Red Lists
+of Ecosystems to risk-based design and management of protected and
+conserved areas in Africa</em>. URL: <a
+href="osf.io/preprints/africarxiv/62s5e">osf.io/preprints/africarxiv/62s5e</a>.</p>
 <p>Murray, N. J., D. A. Keith, A. Duncan, R. Tizard, J. R. Ferrer-Paris,
 T. A. Worthington, K. Armstrong, N. Hlaing, W. T. Htut, A. H. Oo, K. Z.
 Ya, and H. Grantham (2020). “Myanmar’s terrestrial ecosystems: status,
