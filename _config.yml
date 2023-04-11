@@ -1,6 +1,6 @@
-theme: jekyll-theme-hacker
 title: "jrfep"
 description: "José Rafael Ferrer Paris"
+# theme: jekyll-theme-hacker
 
 collections:
   eventos:
