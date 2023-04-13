@@ -16,13 +16,11 @@ BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 bib1 <- ReadBib("bibTeX/peer-review.bibtex", check = FALSE)
 bib2 <- ReadBib("bibTeX/preprints.bibtex", check = FALSE)
-bib3 <- ReadBib("bibTeX/presentations.bibtex", check = FALSE)
 bib4 <- ReadBib("bibTeX/reports.bibtex", check = FALSE)
 bib5 <- ReadBib("bibTeX/datasets.bibtex", check = FALSE)
 bib6 <- ReadBib("bibTeX/code-and-software.bibtex", check = FALSE)
 NoCite(bib = bib1, 1:length(bib1), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib2, 1:length(bib2), .opts = list(hyperlink = FALSE))
-NoCite(bib = bib3, 1:length(bib3), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib4, 1:length(bib4), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib5, 1:length(bib5), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib6, 1:length(bib6), .opts = list(hyperlink = FALSE))
@@ -51,15 +49,6 @@ I added here references to some pre-prints, but most of them have been already p
 PrintBibliography(bib2, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
 ```
 
-## Presentations
-
-These is a incomplete list of (mostly older) presentations in national or international events. Some of these presentations/posters are deposited in digital form in open source repositories with a DOI or another permanent identifier.
-
----
-
-```{r results = "asis", echo = FALSE}
-PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
-```
 
 ## Reports
 
