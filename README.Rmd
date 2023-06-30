@@ -1,6 +1,8 @@
 ---
 author: "José R. Ferrer Paris"
 title: "This is how we built this!"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## No place like home
@@ -52,3 +54,42 @@ My [other branch](https://github.com/jrfep/jrfep.github.io/tree/jekyll) uses Jek
 
 
 [^1]: Yes, I use this [weird spelling...](https://english.stackexchange.com/questions/230494/should-i-always-use-the-ised-ending-for-uk-english-and-the-ized-for-us)
+
+## Flexdashboard and iNaturalist
+
+Inspired by this example:
+https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG
+
+### Get the data
+
+I first install the `rinat` package:
+```{r eval=FALSE}
+here::i_am("README.Rmd")
+if (!require(rinat)) {
+  install.packages("rinat")
+  library(rinat)
+}
+```
+
+Then I can download the observations from iNaturalist and save them in a data folder:
+
+```{r eval=FALSE}
+# Download observations and save to RDS file
+user_obs <- get_inat_obs_user("NeoMapas",maxresults = 5000)
+if (!dir.exists(here::here("data"))
+    dir.create(here::here("data"))
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+saveRDS(file=file_name, user_obs)
+
+```
+
+### Get a logo
+
+With `wget` and ImageMagick, it is easy to download and resize in the terminal (`bash`) with two lines of code:
+
+```sh
+##mkdir 
+wget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif
+magick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif
+```
+

@@ -14,6 +14,11 @@ navbar:
           href: research-outputs.html
         - text: "Links to presentations"
           href: presentations.html
+    - text: "Biodiversity records"
+      icon: fa-envira
+      menu:
+        - text: "iNaturalist observations"
+          href: inat_flexdashboard.html
     - text: "Just for fun"
       icon: fa-smile
       menu:
