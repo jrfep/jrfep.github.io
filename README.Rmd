@@ -76,7 +76,7 @@ Then I can download the observations from iNaturalist and save them in a data fo
 ```{r eval=FALSE}
 # Download observations and save to RDS file
 user_obs <- get_inat_obs_user("NeoMapas",maxresults = 5000)
-if (!dir.exists(here::here("data"))
+if (!dir.exists(here::here("data")))
     dir.create(here::here("data"))
 file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
 saveRDS(file=file_name, user_obs)
