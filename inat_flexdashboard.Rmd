@@ -155,7 +155,7 @@ Column3{data-width=150}
 #spp 
 nspp = length(unique(NeoMapas_obs$name))
 milestone <- ceiling(nspp/100)*100
-gauge(nspp, min=0, max=milestone,label="Species")
+gauge(nspp, min=0, max=milestone,label="Taxa")
 
 qual = sum(NeoMapas_obs$quality_grade %in% "research")
 gauge(qual, min=0, max=nrow(NeoMapas_obs),label="Research grade\nobservations")
