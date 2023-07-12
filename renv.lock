@@ -894,19 +894,6 @@
       ],
       "Hash": "e25f18436e3efd42c7c590a1c4c15390"
     },
-    "lwgeom": {
-      "Package": "lwgeom",
-      "Version": "0.2-13",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "sf",
-        "units"
-      ],
-      "Hash": "9804362cc0267990ac61a85edeca73ed"
-    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
@@ -1201,13 +1188,8 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.17.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "utils"
-      ],
-      "Hash": "4543b8cd233ae25c6aba8548be9e747e"
+      "Version": "1.0.0",
+      "Source": "Repository"
     },
     "rgbif": {
       "Package": "rgbif",
