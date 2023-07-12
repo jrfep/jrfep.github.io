@@ -24,6 +24,7 @@ library(sf)
 library(tmap)
 library(lubridate)
 library(dplyr)
+library(calendR)
 
 library(RColorBrewer)
 palette(brewer.pal(8, "Set2"))
@@ -57,19 +58,33 @@ colnames(obs_byyear)=c("Año","Observaciones")
 ```
 
 
-Column1{data-width=250}
+Column1{.tabset .tabset-fade data-width=250}
 -------
 
-### Tabla Observaciones {data-width=245}
+Tablas de observaciones por:
+
+### Especies {data-width=245}
 ```{r taxalist}
 
 NeoMapas_obs %>% 
   group_by("Especies"=name) %>% 
-  summarise(Observaciones=n()) %>%
+  summarise(Observaciones=n_distinct(date), Registros=n()) %>%
   arrange(desc(Observaciones)) %>%
+  slice_head(n = 20) %>% 
   knitr::kable()
 ```
 
+### Lugares {data-width=245}
+
+```{r sitelist}
+
+NeoMapas_obs %>% 
+  group_by("Lugar"=place_guess) %>% 
+  summarise(Observaciones=n_distinct(date), Registros=n()) %>%
+  arrange(desc(Observaciones)) %>%
+  slice_head(n = 20) %>% 
+  knitr::kable()
+```
 
 Column2 {.tabset .tabset-fade}
 -------
@@ -108,6 +123,29 @@ ggplot(obs_byyear, aes(x=Año,y=Observaciones,group=1)) + geom_line() + geom_poi
 
 ```
 
+
+### Calendario de observaciones 2022
+```{r calobs2022}
+inat_obs_day <- NeoMapas_obs %>% 
+  filter(year(date)==2022) %>% 
+  transmute(obs_day=yday(date)) %>% 
+  table %>%
+  data.frame %>%
+  mutate(obs_day=as.numeric(as.character(obs_day)))
+
+
+cal_data <- tibble(obs_day=1:365) %>% 
+left_join(inat_obs_day, by="obs_day") %>%
+  mutate(Freq=coalesce(Freq,0)) %>% pull(Freq)
+calendR(2022,
+        weeknames = c("M","T","W","Th","F","Sa","Su"),
+        #monthnames = c("E","F","M","A","M","J","J","A","S","O","N","D"),
+        special.days = cal_data,
+        gradient = TRUE,
+        low.col = "#FFFFED",
+        special.col = "#FF0000")
+
+```
 
 Column3{data-width=150}
 -------
