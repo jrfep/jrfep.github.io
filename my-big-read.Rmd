@@ -8,6 +8,7 @@ Top 200 novels in the United Kingdom according to https://en.wikipedia.org/wiki/
 
 ```{r}
 library(readr)
+library(dplyr)
 BBC <- read_csv("data/big-read-2.csv", col_names=c("place", "title", "author", "best list"))
 ```
 
@@ -24,6 +25,11 @@ ZDF <- read_csv("data/big-read.csv", col_names=c("place", "title", "author", "be
 
 ```{r}
 leidos <- read_csv("data/leidos.csv")
+
+inner_join(BBC,leidos, by = c("title"="english")) %>% 
+  transmute()
+  left_join(ZDF, by = c("deutsch" = "title")) %>%
+  select(title, author, `best list`, place, cuando) %>% 
 ```
 
 
