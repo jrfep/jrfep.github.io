@@ -19,6 +19,6 @@ getItem <- function(x) {
 ```
 
 ```{r, results='asis'}
-lapply(lst_osf[[3]],getItem)
+cat(unlist(lapply(lst_osf[[3]],getItem)))
 ```
 
