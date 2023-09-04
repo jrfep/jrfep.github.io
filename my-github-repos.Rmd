@@ -1,0 +1,35 @@
+---
+title: "Repositorios de software en GitHub"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Usar el API para consultar lista de repositorios
+```{r}
+library(jsonlite)
+
+gh_rle_org <- read_json("https://api.github.com/orgs/red-list-ecosystem/repos")
+gh_jrfep <- read_json("https://api.github.com/users/jrfep/repos")
+```
+
+Función para leer datos de la consulta del API.
+```{r}
+getItem <- function(x) {
+  sprintf("<b><a href='%s'>%s</a></b><p>Description: %s</p>",x$html_url, x$full_name, x$description)
+}
+```
+
+Organización `Red List Ecosystems`
+
+```{r, results='asis'}
+
+cat(unlist(lapply(gh_rle_org, getItem)))
+
+
+```
+Repositorios en cuenta personal `jrfep`
+```{r, results='asis'}
+cat(unlist(lapply(gh_jrfep, getItem)))
+```
+

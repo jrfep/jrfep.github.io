@@ -1,0 +1,24 @@
+---
+title: "Proyectos en OSF"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Usar el API para consultar lista de proyectos
+```{r}
+library(osfr)
+lst_osf <- osf_retrieve_user("me") %>%
+  osf_ls_nodes()
+getItem <- function(x) {
+  sprintf("<b><a href='%3$s'>%1$s</a></b><p>Description: %2$s</p>",
+  x$attributes$title,
+    x$attributes$description,
+    x$links$html)
+}
+```
+
+```{r, results='asis'}
+lapply(lst_osf[[3]],getItem)
+```
+

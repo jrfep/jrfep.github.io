@@ -3,13 +3,37 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-Top 200 novels in the United Kingdom according to https://en.wikipedia.org/wiki/The_Big_Read
 
 
 ```{r}
 library(readr)
 library(dplyr)
-BBC <- read_csv("data/big-read-2.csv", col_names=c("place", "title", "author", "best list"))
+library(DT)
+BBC <- read_csv("data/big-read-uk.csv", col_names=c("place", "title", "author", "best list"))
+```
+
+
+```{r}
+ZDF <- read_csv("data/big-read-de.csv", col_names=c("place", "title", "author", "best list"))
+```
+
+
+```{r}
+leidos <- read_csv("data/leidos.csv")
+
+BBC_leidos <- inner_join(BBC,leidos, by = c("title"="english")) 
+  
+ZDF_leidos <-inner_join(ZDF,leidos, by = c("title"="deutsch")) 
+  
+#full_join(BBC_leidos, ZDF_leidos, by = ) %>%
+#  select(title, author, `best list`, place, cuando) 
+```
+
+Top 200 novels in the United Kingdom according to https://en.wikipedia.org/wiki/The_Big_Read
+
+```{r}
+
+datatable(BBC_leidos)
 ```
 
 
@@ -19,19 +43,9 @@ https://www.dieterwunderlich.de/lesen_50.htm
 https://www.fabelhafte-buecher.de/buecher/die-wichtigsten-bucher-der-weltliteratur-aus-westlicher-sicht/die-leserwahl-des-zdf-das-grose-lesen/
 
 ```{r}
-ZDF <- read_csv("data/big-read.csv", col_names=c("place", "title", "author", "best list"))
+datatable(ZDF_leidos)
+
 ```
-
-
-```{r}
-leidos <- read_csv("data/leidos.csv")
-
-inner_join(BBC,leidos, by = c("title"="english")) %>% 
-  transmute()
-  left_join(ZDF, by = c("deutsch" = "title")) %>%
-  select(title, author, `best list`, place, cuando) %>% 
-```
-
 
 The great american read
 https://www.pbs.org/the-great-american-read/results/

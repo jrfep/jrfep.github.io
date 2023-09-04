@@ -11,7 +11,7 @@
 
 
 
-<title>./jrfep</title>
+<title>Proyectos en OSF</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -346,89 +346,98 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">./jrfep</h1>
+<h1 class="title toc-ignore">Proyectos en OSF</h1>
 
 </div>
 
 
-<div id="who-wants-to-live-forever" class="section level1">
-<h1>Who wants to live forever?</h1>
-<!--//
-## Sobre mi actividad científica:
-
-* Publicaciones arbitradas
-* [Eventos científicos](/eventos)
-** [Presentaciones en eventos](/presentaciones)
-* [Publicaciones Lista Roja de Ecosistemas](https://red-list-ecosystem.github.io/RLE-publication-list/)
-//-->
-<div id="proyectos-en-curso-current-projects" class="section level2">
-<h2>2020 - Proyectos en curso (Current projects):</h2>
-<ul>
-<li><a
-href="https://jrfep.github.io/Ecosystem-profiles-comments/">Tipología
-global de ecosystemas</a></li>
-</ul>
-</div>
-<div
-id="perfiles-académicos-y-profesionales-profesional-and-academic-profiles"
-class="section level2">
-<h2>Perfiles académicos y profesionales (Profesional and academic
-profiles)</h2>
-<p>Esta es una lista de mis perfiles profesionales, más o menos
-actualizados.</p>
-<ul>
-<li>ORCID: <a
-href="http://orcid.org/0000-0002-9554-3395">0000-0002-9554-3395</a></li>
-<li>Web of Science/Publons ResearcherID: <a
-href="https://www.webofscience.com/wos/author/rid/M-3785-2015">M-3785-2015</a></li>
-<li>AuthorID de Scopus: <a
-href="http://www.scopus.com/authid/detail.uri?authorId=6507728759">6507728759</a></li>
-<li>ScienceOpen: <a
-href="https://www.scienceopen.com/user/jrfep">jrfep</a></li>
-<li>Google scholar: <a
-href="http://scholar.google.es/citations?user=A2Thq5UAAAAJ&amp;hl=en">A2Thq5UAAAAJ</a></li>
-<li>LinkedIn <a
-href="https://www.linkedin.com/pub/jos%C3%A9-ferrer/70/a47/547">Jose
-Ferrer</a></li>
-<li>Researchgate: <a
-href="https://www.researchgate.net/profile/Jose_Ferrer-Paris">Jose
-Ferrer Paris</a></li>
-<li>academia: <a href="https://ivic.academia.edu/JRFerrerParis">JR
-Ferrer Paris</a></li>
-</ul>
-<div id="taxonomía" class="section level3">
-<h3>Taxonomía:</h3>
-<ul>
-<li>Zoobank: <a
-href="http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6">José
-R. Ferrer-Paris</a></li>
-</ul>
-</div>
-</div>
-<div id="proyectos-reproducibles" class="section level2">
-<h2>Proyectos reproducibles</h2>
-<p>En los siguientes enlaces pueden encontrar algunos insumos y
-productos de mi trabajo cient€ifico.</p>
-<ul>
-<li>OSF: <a href="https://osf.io/7q5ny">José R. Ferrer Paris</a></li>
-<li>figshare: <a
-href="http://figshare.com/authors/Jos_R_Ferrer_Paris/592994">José R.
-Ferrer Paris</a></li>
-<li>zenodo: <a
-href="https://zenodo.org/communities/iucn-rle/?page=1&amp;size=20">IUCN
-Red List of Ecosystems community</a></li>
-<li>dataverse: <a
-href="https://dataverse.harvard.edu/dataverse/NeoMapas">NeoMapas
-dataverse</a></li>
-</ul>
-</div>
-<div id="versiones-viejas" class="section level2">
-<h2>Versiones viejas…</h2>
-<p>Blogger: <a
-href="https://www.blogger.com/profile/10848423852723434095">José R.
-Ferrer Paris</a></p>
-</div>
-</div>
+<p>Usar el API para consultar lista de proyectos</p>
+<pre class="r"><code>library(osfr)</code></pre>
+<pre><code>## Automatically registered OSF personal access token</code></pre>
+<pre class="r"><code>lst_osf &lt;- osf_retrieve_user(&quot;me&quot;) %&gt;%
+  osf_ls_nodes()
+getItem &lt;- function(x) {
+  sprintf(&quot;&lt;b&gt;&lt;a href=&#39;%3$s&#39;&gt;%1$s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %2$s&lt;/p&gt;&quot;,
+  x$attributes$title,
+    x$attributes$description,
+    x$links$html)
+}</code></pre>
+<pre class="r"><code>lapply(lst_osf[[3]],getItem)</code></pre>
+[[1]] [1] “<b><a href='https://osf.io/6qtep/'>Resources selection model
+application for wildlife monitoring in Gran Sabana, Venezuela</a></b>
+<p>
+Description: This repository includes analysis of resource selection by
+species, it uses a single visit occupancy model framework.
+</p>
+<p>”</p>
+[[2]] [1] “<b><a href='https://osf.io/vaund/'>Suitability of Tropical
+Alpine Ecosystems using Machine Learning</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
+[[3]] [1] “<b><a href='https://osf.io/hp8bs/'>Environmental suitability
+model for Tropical Glacier Ecosystems</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
+[[4]] [1] “<b><a href='https://osf.io/e6c5p/'>Occurrence records for
+Ecosystem Functional Groups</a></b>
+<p>
+Description: Occurrence records for Ecosystem Functional Groups (Level
+3) of the IUCN Global Ecosystem Typology
+</p>
+<p>”</p>
+[[5]] [1] “<b><a href='https://osf.io/9yzhn/'>Tropical Alpine
+Ecosystems</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
+[[6]] [1] “<b><a href='https://osf.io/ey8ft/'>Monitoring vertebrates
+with camera traps in the Gran Sabana, Venezuela</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
+[[7]] [1] “<b><a href='https://osf.io/hux9f/'>Spatial covariates for
+analysis of occurrence and abundance of vertebrate species in the Gran
+Sabana, Venezuela</a></b>
+<p>
+Description: This repository contains instructions for downloading and
+preparing data for analysis. It also includes some data files related to
+field work.
+</p>
+<p>”</p>
+[[8]] [1] “<b><a href='https://osf.io/4u8wc/'>Analysis of the effects of
+shifting cultivation and hunting in vertebrate species of the Gran
+Sabana, Venezuela</a></b>
+<p>
+Description: This code shows how we combined camera trap surveys and
+spatially explicit interview dataset on Pemón indigenous hunting scope
+and occurrence in a mosaic of savanna and forest in the Gran Sabana,
+Venezuela to evaluate to what extent the wildlife resource use
+corresponds to Garden Hunting hypothesis. We applied the Royle–Nichols
+model and binomial regression in order to: (1) assess whether abundance
+of small and medium wildlife species is higher close to conucos and (2)
+evaluate whether hunters select hunting localities based on
+accessibility to wildlife resources (closeness to conuco) more than
+wildlife abundance.
+</p>
+<p>”</p>
+[[9]] [1] “<b><a href='https://osf.io/ptkdn/'>Diagrammatic assembly
+models for the IUCN Global Ecosystem Typology</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
+[[10]] [1] “<b><a href='https://osf.io/p5n9q/'>IUCN Red List of
+Ecosystems in Africa</a></b>
+<p>
+Description:
+</p>
+<p>”</p>
 
 <hr>
 <p>Jos&eacute; R. Ferrer-Paris. 2023. Contenido compartido con licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>

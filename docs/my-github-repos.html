@@ -11,7 +11,7 @@
 
 
 
-<title>./jrfep</title>
+<title>Repositorios de software en GitHub</title>
 
 <script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -346,89 +346,218 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">./jrfep</h1>
+<h1 class="title toc-ignore">Repositorios de software en GitHub</h1>
 
 </div>
 
 
-<div id="who-wants-to-live-forever" class="section level1">
-<h1>Who wants to live forever?</h1>
-<!--//
-## Sobre mi actividad científica:
+<p>Usar el API para consultar lista de repositorios</p>
+<pre class="r"><code>library(jsonlite)
 
-* Publicaciones arbitradas
-* [Eventos científicos](/eventos)
-** [Presentaciones en eventos](/presentaciones)
-* [Publicaciones Lista Roja de Ecosistemas](https://red-list-ecosystem.github.io/RLE-publication-list/)
-//-->
-<div id="proyectos-en-curso-current-projects" class="section level2">
-<h2>2020 - Proyectos en curso (Current projects):</h2>
-<ul>
-<li><a
-href="https://jrfep.github.io/Ecosystem-profiles-comments/">Tipología
-global de ecosystemas</a></li>
-</ul>
-</div>
-<div
-id="perfiles-académicos-y-profesionales-profesional-and-academic-profiles"
-class="section level2">
-<h2>Perfiles académicos y profesionales (Profesional and academic
-profiles)</h2>
-<p>Esta es una lista de mis perfiles profesionales, más o menos
-actualizados.</p>
-<ul>
-<li>ORCID: <a
-href="http://orcid.org/0000-0002-9554-3395">0000-0002-9554-3395</a></li>
-<li>Web of Science/Publons ResearcherID: <a
-href="https://www.webofscience.com/wos/author/rid/M-3785-2015">M-3785-2015</a></li>
-<li>AuthorID de Scopus: <a
-href="http://www.scopus.com/authid/detail.uri?authorId=6507728759">6507728759</a></li>
-<li>ScienceOpen: <a
-href="https://www.scienceopen.com/user/jrfep">jrfep</a></li>
-<li>Google scholar: <a
-href="http://scholar.google.es/citations?user=A2Thq5UAAAAJ&amp;hl=en">A2Thq5UAAAAJ</a></li>
-<li>LinkedIn <a
-href="https://www.linkedin.com/pub/jos%C3%A9-ferrer/70/a47/547">Jose
-Ferrer</a></li>
-<li>Researchgate: <a
-href="https://www.researchgate.net/profile/Jose_Ferrer-Paris">Jose
-Ferrer Paris</a></li>
-<li>academia: <a href="https://ivic.academia.edu/JRFerrerParis">JR
-Ferrer Paris</a></li>
-</ul>
-<div id="taxonomía" class="section level3">
-<h3>Taxonomía:</h3>
-<ul>
-<li>Zoobank: <a
-href="http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6">José
-R. Ferrer-Paris</a></li>
-</ul>
-</div>
-</div>
-<div id="proyectos-reproducibles" class="section level2">
-<h2>Proyectos reproducibles</h2>
-<p>En los siguientes enlaces pueden encontrar algunos insumos y
-productos de mi trabajo cient€ifico.</p>
-<ul>
-<li>OSF: <a href="https://osf.io/7q5ny">José R. Ferrer Paris</a></li>
-<li>figshare: <a
-href="http://figshare.com/authors/Jos_R_Ferrer_Paris/592994">José R.
-Ferrer Paris</a></li>
-<li>zenodo: <a
-href="https://zenodo.org/communities/iucn-rle/?page=1&amp;size=20">IUCN
-Red List of Ecosystems community</a></li>
-<li>dataverse: <a
-href="https://dataverse.harvard.edu/dataverse/NeoMapas">NeoMapas
-dataverse</a></li>
-</ul>
-</div>
-<div id="versiones-viejas" class="section level2">
-<h2>Versiones viejas…</h2>
-<p>Blogger: <a
-href="https://www.blogger.com/profile/10848423852723434095">José R.
-Ferrer Paris</a></p>
-</div>
-</div>
+gh_rle_org &lt;- read_json(&quot;https://api.github.com/orgs/red-list-ecosystem/repos&quot;)
+gh_jrfep &lt;- read_json(&quot;https://api.github.com/users/jrfep/repos&quot;)</code></pre>
+<p>Función para leer datos de la consulta del API.</p>
+<pre class="r"><code>getItem &lt;- function(x) {
+  sprintf(&quot;&lt;b&gt;&lt;a href=&#39;%s&#39;&gt;%s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %s&lt;/p&gt;&quot;,x$html_url, x$full_name, x$description)
+}</code></pre>
+<p>Organización <code>Red List Ecosystems</code></p>
+<pre class="r"><code>cat(unlist(lapply(gh_rle_org, getItem)))</code></pre>
+<b><a href='https://github.com/red-list-ecosystem/redlistr'>red-list-ecosystem/redlistr</a></b>
+<p>
+Description: redlistr: Tools for the IUCN Red List of Ecosystems and
+Species
+</p>
+<b><a href='https://github.com/red-list-ecosystem/REMAP'>red-list-ecosystem/REMAP</a></b>
+<p>
+Description: Enabling large-scale ecosystem mapping and assessment
+</p>
+<b><a href='https://github.com/red-list-ecosystem/gee-redlist'>red-list-ecosystem/gee-redlist</a></b>
+<p>
+Description: Tools for the IUCN Red List of Ecosystems and Species in
+Google Earth Engine
+</p>
+<b><a href='https://github.com/red-list-ecosystem/typology-map'>red-list-ecosystem/typology-map</a></b>
+<p>
+Description: A global ecosystem typology map
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-xml-db'>red-list-ecosystem/RLE-xml-db</a></b>
+<p>
+Description: RLE assessment documentation in xml format
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-publication-list'>red-list-ecosystem/RLE-publication-list</a></b>
+<p>
+Description: List of publications related to IUCN Red List of Ecosystem
+assessments
+</p>
+<b><a href='https://github.com/red-list-ecosystem/rle_indices'>red-list-ecosystem/rle_indices</a></b>
+<p>
+Description: Ecosystem indices to support global biodiversity
+conservation
+</p>
+<b><a href='https://github.com/red-list-ecosystem/typology-web-update-content'>red-list-ecosystem/typology-web-update-content</a></b>
+<p>
+Description: Scripts to update typology web content
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-forests-panam-results'>red-list-ecosystem/RLE-forests-panam-results</a></b>
+<p>
+Description: IUCN Red List of Ecosystem assessment for the forest
+macrogroups of the Americas: tables with assessment results
+</p>
+<b><a href='https://github.com/red-list-ecosystem/assessments-map'>red-list-ecosystem/assessments-map</a></b>
+<p>
+Description: Map of IUCN Red List of Ecosystem assessments
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-forests-panam-GIS'>red-list-ecosystem/RLE-forests-panam-GIS</a></b>
+<p>
+Description: IUCN Red List of Ecosystems of Temperate and Tropical
+Forest Macrogroups of the Americas - GIS data and analysis
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-forests-panam-RLIE'>red-list-ecosystem/RLE-forests-panam-RLIE</a></b>
+<p>
+Description: IUCN RLR forest Macrogroups of the Americas: Red List Index
+of Ecosystems
+</p>
+<b><a href='https://github.com/red-list-ecosystem/GEE-IUCN-GET'>red-list-ecosystem/GEE-IUCN-GET</a></b>
+<p>
+Description: Indicative distribution maps for Ecosystem Functional
+Groups - Level 3 of IUCN Global Ecosystem Typology - Earth Engine Code
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLE-Africa'>red-list-ecosystem/RLE-Africa</a></b>
+<p>
+Description: Code for summarising progress of the IUCN Red List of
+Ecosystems in Africa
+</p>
+<b><a href='https://github.com/red-list-ecosystem/RLEpdf'>red-list-ecosystem/RLEpdf</a></b>
+<p>
+Description: Quarto extension to generate a PDF with (pretty) LaTeX
+styling for RLE assessments
+</p>
+<p>Repositorios en cuenta personal <code>jrfep</code></p>
+<pre class="r"><code>cat(unlist(lapply(gh_jrfep, getItem)))</code></pre>
+<b><a href='https://github.com/jrfep/alpine-cruiser'>jrfep/alpine-cruiser</a></b>
+<p>
+Description: Modelling the distribution of cryogenic ecosystem
+functional groups
+</p>
+<b><a href='https://github.com/jrfep/assessment-ecosystem-functional-groups'>jrfep/assessment-ecosystem-functional-groups</a></b>
+<p>
+Description: Preliminary global assessment of pressures and protection
+of Ecosystem Functional Groups
+</p>
+<b><a href='https://github.com/jrfep/australian-alps-climate-change'>jrfep/australian-alps-climate-change</a></b>
+<p>
+Description: Assessment of relative severity of environmental
+degradation in Australian Alps
+</p>
+<b><a href='https://github.com/jrfep/Cardenalito'>jrfep/Cardenalito</a></b>
+<p>
+Description: Análisis de datos espaciales sobre la distribución del
+Cardenalito en Venezuela
+</p>
+<b><a href='https://github.com/jrfep/CEBA.LEE'>jrfep/CEBA.LEE</a></b>
+<p>
+Description: Código en R para análisis del Laboratorio de Ecología
+Espacial del Centro de Estudios Botánicos y Agroforestales del IVIC
+</p>
+<b><a href='https://github.com/jrfep/clima_municipios_Venezuela'>jrfep/clima_municipios_Venezuela</a></b>
+<p>
+Description: Análisis básico de datos climáticos para los municipios de
+Venezuela
+</p>
+<b><a href='https://github.com/jrfep/dwc-from-bhl'>jrfep/dwc-from-bhl</a></b>
+<p>
+Description: Extract distribution data from BHL pages
+</p>
+<b><a href='https://github.com/jrfep/Ecosystem-profiles-comments'>jrfep/Ecosystem-profiles-comments</a></b>
+<p>
+Description: Content and map information for the IUCN Global Ecosystem
+Typology
+</p>
+<b><a href='https://github.com/jrfep/ecosystems-rwanda-uganda'>jrfep/ecosystems-rwanda-uganda</a></b>
+<p>
+Description: Exploring ecosystems in Rwanda and Uganda
+</p>
+<b><a href='https://github.com/jrfep/fire-veg-aust'>jrfep/fire-veg-aust</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - Code for managing the
+database
+</p>
+<b><a href='https://github.com/jrfep/fireveg-webapp'>jrfep/fireveg-webapp</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - WebApp
+</p>
+<b><a href='https://github.com/jrfep/GBIFgaps'>jrfep/GBIFgaps</a></b>
+<p>
+Description: GBIF vs range maps: ranking novel occurrences and knowlege
+gaps in GBIF data
+</p>
+<b><a href='https://github.com/jrfep/GEDB'>jrfep/GEDB</a></b>
+<p>
+Description: Global Ecosystems Data Base
+</p>
+<b><a href='https://github.com/jrfep/git-novice'>jrfep/git-novice</a></b>
+<p>
+Description: Version Control with Git
+</p>
+<b><a href='https://github.com/jrfep/GS-spatial-data'>jrfep/GS-spatial-data</a></b>
+<p>
+Description: Spatial covariates used for analysis of species occurrence
+and abundance in Gran Sabana. Venezuela
+</p>
+<b><a href='https://github.com/jrfep/GS-svocc'>jrfep/GS-svocc</a></b>
+<p>
+Description: Fit single visit occupancy models to data from camera trap
+and walking transects in the Gran Sabana, Venezuela
+</p>
+<b><a href='https://github.com/jrfep/hypothesisr'>jrfep/hypothesisr</a></b>
+<p>
+Description: Wrapper for the Hypothes.is API
+</p>
+<b><a href='https://github.com/jrfep/jrfep.github.io'>jrfep/jrfep.github.io</a></b>
+<p>
+Description: José R. Ferrer Paris
+</p>
+<b><a href='https://github.com/jrfep/Machine-Learning-with-tidymodels'>jrfep/Machine-Learning-with-tidymodels</a></b>
+<p>
+Description: This is a remix of the Machine-Learning-in-R workshop. This
+version of the workshop focuses on the tidymodels framework and its
+applications.
+</p>
+<b><a href='https://github.com/jrfep/MFT1.2-intertidal-forest'>jrfep/MFT1.2-intertidal-forest</a></b>
+<p>
+Description: MFT1.2 Intertidal forests and shrublands - preliminary
+level 4 units. This repository showcases the data of products of a IUCN
+workshop on the delimitation of global ecosystem subgroups for
+Mangroves.
+</p>
+<b><a href='https://github.com/jrfep/newnes-swamp-collapse-mining-analysis'>jrfep/newnes-swamp-collapse-mining-analysis</a></b>
+<p>
+Description: Analysis for “Effects of interactions between anthropogenic
+stressors and recurring perturbations on ecosystem resilience and
+collapse”
+</p>
+<b><a href='https://github.com/jrfep/ohwhaley'>jrfep/ohwhaley</a></b>
+<p>
+Description: Messages With A Whale-esque Flair
+</p>
+<b><a href='https://github.com/jrfep/poblacion-municipios-venezuela'>jrfep/poblacion-municipios-venezuela</a></b>
+<p>
+Description: Análisis básico de datos poblacionales para los municipios
+de Venezuela
+</p>
+<b><a href='https://github.com/jrfep/PoW'>jrfep/PoW</a></b>
+<p>
+Description: Papilionoidea of the World, code and data
+</p>
+<b><a href='https://github.com/jrfep/r-novice-gapminder'>jrfep/r-novice-gapminder</a></b>
+<p>
+Description: R for Reproducible Scientific Analysis
+</p>
+<b><a href='https://github.com/jrfep/redlistr'>jrfep/redlistr</a></b>
+<p>
+Description: redlistr: Tools for the IUCN Red List of Ecosystems and
+Species
+</p>
 
 <hr>
 <p>Jos&eacute; R. Ferrer-Paris. 2023. Contenido compartido con licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
