@@ -1,0 +1,51 @@
+project:
+  type: website
+
+website:
+  title: "today"
+  navbar:
+    title: "J.R. Ferrer-Paris"
+    type: inverse
+    left:
+      - text: "Home"
+        icon: fa-home
+        href: index.qmd
+      - text: "Research outputs"
+        icon: fa-gear
+        menu:
+          - text: "All the references"
+            href: research-outputs.qmd
+          - text: "Links to presentations"
+            href: presentations.qmd
+          - text: "Reproducible Code+Data"
+            href: my-osfr-projects.qmd
+          - text: "Code repositories"
+            href: my-github-repos.qmd
+      - text: "Biodiversity records"
+        icon: fa-envira
+        menu:
+          - text: "iNaturalist observations"
+            href: inat_flexdashboard.Rmd
+      - text: "Just for fun"
+        icon: fa-smile
+        menu:
+          - text: "My big read"
+            icon: fa-book
+            href: my-big-read.qmd
+          - text: "Ulysses"
+            icon: fa-book
+            href: ulysses.amd
+          - text: "Futbol"
+            icon: fa-futbol
+            href: blog_LaLiga_FinalTemp2019.qmd
+    right:
+      - text: "How to..."
+        icon: fa-question
+        menu:
+          - text: "(re-)create this site"
+            href: how-to-site.qmd
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
