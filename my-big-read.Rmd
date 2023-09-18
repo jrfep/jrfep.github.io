@@ -1,0 +1,52 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r}
+library(readr)
+library(dplyr)
+library(DT)
+BBC <- read_csv("data/big-read-uk.csv", col_names=c("place", "title", "author", "best list"))
+```
+
+
+```{r}
+ZDF <- read_csv("data/big-read-de.csv", col_names=c("place", "title", "author", "best list"))
+```
+
+
+```{r}
+leidos <- read_csv("data/leidos.csv")
+
+BBC_leidos <- inner_join(BBC,leidos, by = c("title"="english")) 
+  
+ZDF_leidos <-inner_join(ZDF,leidos, by = c("title"="deutsch")) 
+  
+#full_join(BBC_leidos, ZDF_leidos, by = ) %>%
+#  select(title, author, `best list`, place, cuando) 
+```
+
+Top 200 novels in the United Kingdom according to https://en.wikipedia.org/wiki/The_Big_Read
+
+```{r}
+
+datatable(BBC_leidos)
+```
+
+
+DIE LESERWAHL DES ZDF: DAS GROSSE LESEN!
+Quelle: 
+https://www.dieterwunderlich.de/lesen_50.htm 
+https://www.fabelhafte-buecher.de/buecher/die-wichtigsten-bucher-der-weltliteratur-aus-westlicher-sicht/die-leserwahl-des-zdf-das-grose-lesen/
+
+```{r}
+datatable(ZDF_leidos)
+
+```
+
+The great american read
+https://www.pbs.org/the-great-american-read/results/
+Full Results

@@ -1,0 +1,51 @@
+name: "jrfep"
+output_dir: "docs"
+navbar:
+  title: "J.R. Ferrer-Paris"
+  type: inverse
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "Research outputs"
+      icon: fa-gear
+      menu:
+        - text: "All the references"
+          href: research-outputs.html
+        - text: "Links to presentations"
+          href: presentations.html
+        - text: "Reproducible Code+Data"
+          href: my-osfr-projects.html
+        - text: "Code repositories"
+          href: my-github-repos.html
+    - text: "Biodiversity records"
+      icon: fa-envira
+      menu:
+        - text: "iNaturalist observations"
+          href: inat_flexdashboard.html
+    - text: "Just for fun"
+      icon: fa-smile
+      menu:
+        - text: "My big read"
+          icon: fa-book
+          href: my-big-read.html
+        - text: "Ulysses"
+          icon: fa-book
+          href: ulysses.html
+        - text: "Futbol"
+          icon: fa-futbol
+          href: blog_LaLiga_FinalTemp2019.html
+  right:
+    - text: "How to..."
+      icon: fa-question
+      menu:
+        - text: "(re-)create this site"
+          href: how-to-site.html
+    
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css

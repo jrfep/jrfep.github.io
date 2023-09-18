@@ -1,0 +1,236 @@
+---
+title: "LaLiga 2019: Qué chance tiene A de ganarle a B..."
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Abril 06, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+Hoy hay un [partido decisivo](https://as.com/opinion/2019/04/03/blogs/1554296443_094404.html) en [la primera división de España](https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Espa%C3%B1a). A falta de 8 jornadas, el equipo que lidera el campeonato tiene 8 puntos de ventaja sobre el segundo lugar, pero además hoy se enfrentan ambos, por lo que esta ventaja se puede abrir a 11 puntos o cerrar a 5. Un amigo me dice que el que gane hoy se llevará el campeonato, y yo le digo que matemáticamente aún hay muchas opciones. ¿Cómo así? me pregunta él, y yo le respondo:
+
+## La situación actual
+
+Se han jugado 30 juegos y tenemos un equipo B ([Futbol Club Barcelona](https://es.wikipedia.org/wiki/F%C3%BAtbol_Club_Barcelona)) con 70 puntos y un equipo A ([Club Atlético de Madrid](https://es.wikipedia.org/wiki/Club_Atl%C3%A9tico_de_Madrid)) con 62. Restan ocho jornadas y un equipo que gane todos los juegos puede sumar 24 puntos más.
+
+Esta imágen resume la situación con los escenarios posibles, básicamente el equipo A debe hacer nueve puntos más que sus rivales para ganar el campeonato. (No voy a considerar aquí el empate en puntos, pues allí aplican otras reglas de desempate).
+
+```{r situación J30,fig.width=5,fig.height=5}
+combs <- expand.grid(B=70+(0:24),A=62+(0:24))
+combs$primero <- with(combs,ifelse(B>A,1,ifelse(B==A,3,2)))
+head(combs)
+
+mtz <- matrix(combs$primero,nrow=25,ncol=25)
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+points(70,62,pch=19)
+
+```
+
+Para asegurar el campeonato, el equipo B tiene el [número mágico](https://en.wikipedia.org/wiki/Magic_number_(sports)) de 17 puntos, osea que cualquier combinación de puntos ganados por B y puntos perdidos por A que sume 17 o más punto le dará el campeonato.
+
+### La jornada de hoy
+
+Para el juego de hoy, hay tres posibles resultados: el equipo A gana (suma tres puntos) y el B pierde (0 puntos), B gana (+3) y A pierde, o empatan (ambos suman 1 punto). El primer resultado acerca a A a su objetivo (la zona roja del gráfico), el segundo lo aleja, y el tercero lo mantiene a la misma distancia
+
+
+```{r posibilidades J31,fig.width=5,fig.height=5}
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+points(c(70,70+0),c(62,62+3),type="b",pch=c(NA,1))
+points(c(70,70+3),c(62,62+0),type="b",pch=c(19,1))
+points(c(70,70+1),c(62,62+1),type="b",pch=c(NA,1))
+
+```
+
+## El camino de los senderos que se bifurcan...
+
+Para la próxima jornada, ambos equipos se enfrentan a rivales diferentes, por tanto pueden ganar, perder o empatar de forma independiente. Hay por tanto nueve combinaciones posibles para cada una de las tres combinaciones anteriores, sin embargo algunas combinaciones de resultados son más frecuentes (representado aquí por el tamaño del círculo), pues se pueden llegar por diferentes vias (una combinación de una derrota y una victoria, o una victoria seguida de derrota suman los mismos puntos al final de las dos jornadas). 
+
+```{r posibilidades J32,fig.width=5,fig.height=5}
+
+combs.J32 <- rbind(expand.grid(B0=70,A0=65, RB=c(0,1,3),RA=c(0,1,3)),
+	  expand.grid(B0=73,A0=62, RB=c(0,1,3),RA=c(0,1,3)),
+	  expand.grid(B0=71,A0=63, RB=c(0,1,3),RA=c(0,1,3)))
+
+combs.J32$TA <- combs.J32$A0+combs.J32$RA
+combs.J32$TB <- combs.J32$B0+combs.J32$RB
+
+ttls.J32 <- data.frame(with(combs.J32,table(TB,TA)))
+ttls.J32 <- subset(ttls.J32,Freq>0)
+ttls.J32$TB <- as.numeric(as.character(ttls.J32$TB))
+ttls.J32$TA <- as.numeric(as.character(ttls.J32$TA))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+points(c(70,70+0),c(62,62+3),type="b",pch=c(NA,NA),lty=2,cex=1.3)
+points(c(70,70+3),c(62,62+0),type="b",pch=c(19,NA),lty=2,cex=1.3)
+points(c(70,70+1),c(62,62+1),type="b",pch=c(NA,NA),lty=2,cex=1.3)
+
+ with(combs.J32,segments(B0,A0,TB,TA,lty=3,col="aliceblue"))
+with(ttls.J32,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+```
+
+Añadimos otra jornada en la que ambos equipos se enfrentan a rivales diferentes, por tanto pueden ganar, perder o empatar de forma independiente. Hay entonces nueve combinaciones posibles para cada una de las combinaciones anteriores:
+
+```{r posibilidades J33,fig.width=5,fig.height=5}
+
+combs.J33 <- data.frame()
+for (k in 1:nrow(ttls.J32)) {
+    tmp <-  expand.grid(B0=ttls.J32$TB[k],A0=ttls.J32$TA[k],
+	  	     RB=c(0,1,3),RA=c(0,1,3))
+    tmp$Freq <- ttls.J32$Freq[k]		  
+    combs.J33 <- rbind(combs.J33,tmp)
+}
+
+
+combs.J33$TA <- combs.J33$A0+combs.J33$RA
+combs.J33$TB <- combs.J33$B0+combs.J33$RB
+
+ttls.J33 <- with(combs.J33,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+
+ with(combs.J33,segments(B0,A0,TB,TA,lty=3,col="aliceblue"))
+with(ttls.J33,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+```
+
+Cada jornada que agregamos, las combinaciones de resultados posibles se va expandiendo, pero los resultados marginales son cada vez menos probables, dadas las múltiples combinaciones que existen. 
+
+```{r posibilidades J34,fig.width=5,fig.height=5}
+
+
+combs.J34 <- data.frame()
+for (k in 1:nrow(ttls.J33)) {
+    tmp <-  expand.grid(B0=ttls.J33$TB[k],A0=ttls.J33$TA[k],
+	  	     RB=c(0,1,3),RA=c(0,1,3))
+    tmp$Freq <- ttls.J33$Freq[k]		  
+    combs.J34 <- rbind(combs.J34,tmp)
+}
+
+
+combs.J34$TA <- combs.J34$A0+combs.J34$RA
+combs.J34$TB <- combs.J34$B0+combs.J34$RB
+
+ttls.J34 <- with(combs.J34,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+
+ with(combs.J34,segments(B0,A0,TB,TA,lty=3,col="aliceblue"))
+with(ttls.J34,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+
+```
+
+Ahora podemos calcular cada una de las combinaciones de resultados posibles para las jornadas restantes:
+
+```{r posibilidades otras,fig.width=5,fig.height=5}
+
+for (j in 35:38) {
+    ttls.old <- get(sprintf("ttls.J%s",j-1))
+    combs.new <- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp <-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+	  	     RB=c(0,1,3),RA=c(0,1,3))
+    	tmp$Freq <- ttls.old$Freq[k]		  
+    	combs.new <- rbind(combs.new,tmp)
+    }
+    combs.new$TA <- combs.new$A0+combs.new$RA
+    combs.new$TB <- combs.new$B0+combs.new$RB
+    ttls.new <- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf("ttls.J%s",j),ttls.new)
+}
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+with(ttls.J38,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+```
+
+En total `r sprintf("%0.1f %%",sum(subset(ttls.J38,TA>TB)$Freq)*100/sum(ttls.J38$Freq))` de las combinaciones de resultados posibles favorecen al equipo A, y el resto favorecen al equipo B. Un panorama nada alentador para el equipo que va segundo.
+
+
+## La fuente del optimismo (o pesimismo)
+
+El análisis anterior se basa en todas las combinaciones posibles de resultados, sin embargo, existe muchos factor importantes a considerar. Por ejemplo se podría calcular la probabilidad de que cada equipo gane a sus respectivos rivales según el historial de enfrentamientos, la calidad y forma de los jugadores de cada equipo, y otras condiciones de juego. Tomando esto en cuenta es muy poco probable que alguno de los equipos pierda o empate la mayoría de sus encuentros restantes, o que hile [una racha de derrotas sin precedentes](https://as.com/futbol/2019/04/05/primera/1554459205_248023.html?autoplay=1).
+
+También hay otro factor subjetivo, que es la motivación y ansiedad de cada equipo a medida que van progresando las jornadas y ve que su objetivo se aleja o acerca.
+
+
+### El significado de una pequeña victoria...
+
+```{r escenario optimista para A,fig.width=5,fig.height=5}
+combs.J32.opt <- expand.grid(B0=70,A0=65, RB=c(0,1,3),RA=c(0,1,3))
+combs.J32.opt$TA <- combs.J32.opt$A0+combs.J32.opt$RA
+combs.J32.opt$TB <- combs.J32.opt$B0+combs.J32.opt$RB
+
+ttls.J32.opt <- data.frame(with(combs.J32.opt,table(TB,TA)))
+ttls.J32.opt <- subset(ttls.J32.opt,Freq>0)
+ttls.J32.opt$TB <- as.numeric(as.character(ttls.J32.opt$TB))
+ttls.J32.opt$TA <- as.numeric(as.character(ttls.J32.opt$TA))
+
+combs.J32.pes <- expand.grid(B0=73,A0=62, RB=c(0,1,3),RA=c(0,1,3))
+combs.J32.pes$TA <- combs.J32.pes$A0+combs.J32.pes$RA
+combs.J32.pes$TB <- combs.J32.pes$B0+combs.J32.pes$RB
+
+ttls.J32.pes <- data.frame(with(combs.J32.pes,table(TB,TA)))
+ttls.J32.pes <- subset(ttls.J32.pes,Freq>0)
+ttls.J32.pes$TB <- as.numeric(as.character(ttls.J32.pes$TB))
+ttls.J32.pes$TA <- as.numeric(as.character(ttls.J32.pes$TA))
+
+for (j in 33:38) {
+    ttls.old <- get(sprintf("ttls.J%s.opt",j-1))
+    combs.new <- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp <-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+	  	     RB=c(0,1,3),RA=c(0,1,3))
+    	tmp$Freq <- ttls.old$Freq[k]		  
+    	combs.new <- rbind(combs.new,tmp)
+    }
+    combs.new$TA <- combs.new$A0+combs.new$RA
+    combs.new$TB <- combs.new$B0+combs.new$RB
+    ttls.new <- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf("ttls.J%s.opt",j),ttls.new)
+}
+
+for (j in 33:38) {
+    ttls.old <- get(sprintf("ttls.J%s.pes",j-1))
+    combs.new <- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp <-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+	  	     RB=c(0,1,3),RA=c(0,1,3))
+    	tmp$Freq <- ttls.old$Freq[k]		  
+    	combs.new <- rbind(combs.new,tmp)
+    }
+    combs.new$TA <- combs.new$A0+combs.new$RA
+    combs.new$TB <- combs.new$B0+combs.new$RB
+    ttls.new <- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf("ttls.J%s.pes",j),ttls.new)
+}
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+with(ttls.J38.opt,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+```
+
+En este caso particular las opciones del equipo A son de apenas `r sprintf("%0.1f %%",sum(subset(ttls.J38.opt,TA>TB)$Freq)*100/sum(ttls.J38.opt$Freq))` dadas todas las combinaciones posibles, pero esto puede cambiar si obtiene un resultado positivo o negativo en su próximo encuentro.
+
+Si el equipo A gana, se da un pequeño desplazamiento de las combinaciones posibles, pero el porcentaje que las opciones que le darían el campeonato sigue siendo un valor bajo: `r sprintf("%0.1f %%",sum(subset(ttls.J38.opt,TA>TB)$Freq)*100/sum(ttls.J38.opt$Freq))`. Sin embargo hay que tomar en cuenta que desde un punto de vista anímico, se percibe que las opciones de titularse campeón se duplican (o más exactamente se multiplican por `r sprintf("%0.2f",(sum(subset(ttls.J38.opt,TA>TB)$Freq)*100/sum(ttls.J38.opt$Freq)) /(sum(subset(ttls.J38,TA>TB)$Freq)*100/sum(ttls.J38$Freq)))`).
+
+Para el equipo B, la derrota no representa un cambio tan drástico en sus posibilidades (disminuyen en un `r sprintf("%0.1f %%",100*(1-(sum(subset(ttls.J38.opt,TB>TA)$Freq)*100/sum(ttls.J38.pes$Freq)) /(sum(subset(ttls.J38,TB>TA)$Freq)*100/sum(ttls.J38$Freq))))`).
+
+### ¿Qué pasa si pierde?
+
+```{r escenario pesimista para A,fig.width=5,fig.height=5}
+
+
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab="equipo B",ylab="equipo A")
+with(ttls.J38.pes,symbols(TB,TA,circle=Freq,inches=.13,add=T))
+
+```
+
+Sin embargo, si el equipo A pierde, el porcentaje que las opciones que le darían el campeonato [practicamente se desvanecen](https://as.com/futbol/2019/04/04/primera/1554383303_873741.html): `r sprintf("%0.1f %%",sum(subset(ttls.J38.pes,TA>TB)$Freq)*100/sum(ttls.J38.pes$Freq))`. 
+
+## Entonces...
+
+Volviendo a la pregunta inicial, las opciones matemáticas se mantendran en la mesa aún después del juego de hoy, pero anímicamente la diferencia entre una victoria y una derrota es completamente asimétrica, y puede ser demoledora para el que tiene menos posibilidades abiertas.

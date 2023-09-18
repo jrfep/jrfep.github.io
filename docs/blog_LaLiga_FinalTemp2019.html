@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="José R. Ferrer Paris (@jrfep)" />
+
+
+<title>LaLiga 2019: Qué chance tiene A de ganarle a B…</title>
+
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">J.R. Ferrer-Paris</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Research outputs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="research-outputs.html">All the references</a>
+    </li>
+    <li>
+      <a href="presentations.html">Links to presentations</a>
+    </li>
+    <li>
+      <a href="my-osfr-projects.html">Reproducible Code+Data</a>
+    </li>
+    <li>
+      <a href="my-github-repos.html">Code repositories</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-envira"></span>
+     
+    Biodiversity records
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="inat_flexdashboard.html">iNaturalist observations</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-smile"></span>
+     
+    Just for fun
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="my-big-read.html">
+        <span class="fa fa-book"></span>
+         
+        My big read
+      </a>
+    </li>
+    <li>
+      <a href="ulysses.html">
+        <span class="fa fa-book"></span>
+         
+        Ulysses
+      </a>
+    </li>
+    <li>
+      <a href="blog_LaLiga_FinalTemp2019.html">
+        <span class="fa fa-futbol"></span>
+         
+        Futbol
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-question"></span>
+     
+    How to...
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="how-to-site.html">(re-)create this site</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">LaLiga 2019: Qué chance tiene A de ganarle
+a B…</h1>
+<h4 class="author">José R. Ferrer Paris (<span
+class="citation">@jrfep</span>)</h4>
+<h4 class="date">Abril 06, 2019</h4>
+
+</div>
+
+
+<p>Hoy hay un <a
+href="https://as.com/opinion/2019/04/03/blogs/1554296443_094404.html">partido
+decisivo</a> en <a
+href="https://es.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_Espa%C3%B1a">la
+primera división de España</a>. A falta de 8 jornadas, el equipo que
+lidera el campeonato tiene 8 puntos de ventaja sobre el segundo lugar,
+pero además hoy se enfrentan ambos, por lo que esta ventaja se puede
+abrir a 11 puntos o cerrar a 5. Un amigo me dice que el que gane hoy se
+llevará el campeonato, y yo le digo que matemáticamente aún hay muchas
+opciones. ¿Cómo así? me pregunta él, y yo le respondo:</p>
+<div id="la-situación-actual" class="section level2">
+<h2>La situación actual</h2>
+<p>Se han jugado 30 juegos y tenemos un equipo B (<a
+href="https://es.wikipedia.org/wiki/F%C3%BAtbol_Club_Barcelona">Futbol
+Club Barcelona</a>) con 70 puntos y un equipo A (<a
+href="https://es.wikipedia.org/wiki/Club_Atl%C3%A9tico_de_Madrid">Club
+Atlético de Madrid</a>) con 62. Restan ocho jornadas y un equipo que
+gane todos los juegos puede sumar 24 puntos más.</p>
+<p>Esta imágen resume la situación con los escenarios posibles,
+básicamente el equipo A debe hacer nueve puntos más que sus rivales para
+ganar el campeonato. (No voy a considerar aquí el empate en puntos, pues
+allí aplican otras reglas de desempate).</p>
+<pre class="r"><code>combs &lt;- expand.grid(B=70+(0:24),A=62+(0:24))
+combs$primero &lt;- with(combs,ifelse(B&gt;A,1,ifelse(B==A,3,2)))
+head(combs)</code></pre>
+<pre><code>##    B  A primero
+## 1 70 62       1
+## 2 71 62       1
+## 3 72 62       1
+## 4 73 62       1
+## 5 74 62       1
+## 6 75 62       1</code></pre>
+<pre class="r"><code>mtz &lt;- matrix(combs$primero,nrow=25,ncol=25)
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+points(70,62,pch=19)</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/situacio%CC%81n%20J30-1.png" width="480" /></p>
+<p>Para asegurar el campeonato, el equipo B tiene el <a
+href="https://en.wikipedia.org/wiki/Magic_number_(sports)">número
+mágico</a> de 17 puntos, osea que cualquier combinación de puntos
+ganados por B y puntos perdidos por A que sume 17 o más punto le dará el
+campeonato.</p>
+<div id="la-jornada-de-hoy" class="section level3">
+<h3>La jornada de hoy</h3>
+<p>Para el juego de hoy, hay tres posibles resultados: el equipo A gana
+(suma tres puntos) y el B pierde (0 puntos), B gana (+3) y A pierde, o
+empatan (ambos suman 1 punto). El primer resultado acerca a A a su
+objetivo (la zona roja del gráfico), el segundo lo aleja, y el tercero
+lo mantiene a la misma distancia</p>
+<pre class="r"><code>image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+points(c(70,70+0),c(62,62+3),type=&quot;b&quot;,pch=c(NA,1))
+points(c(70,70+3),c(62,62+0),type=&quot;b&quot;,pch=c(19,1))
+points(c(70,70+1),c(62,62+1),type=&quot;b&quot;,pch=c(NA,1))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/posibilidades%20J31-1.png" width="480" /></p>
+</div>
+</div>
+<div id="el-camino-de-los-senderos-que-se-bifurcan"
+class="section level2">
+<h2>El camino de los senderos que se bifurcan…</h2>
+<p>Para la próxima jornada, ambos equipos se enfrentan a rivales
+diferentes, por tanto pueden ganar, perder o empatar de forma
+independiente. Hay por tanto nueve combinaciones posibles para cada una
+de las tres combinaciones anteriores, sin embargo algunas combinaciones
+de resultados son más frecuentes (representado aquí por el tamaño del
+círculo), pues se pueden llegar por diferentes vias (una combinación de
+una derrota y una victoria, o una victoria seguida de derrota suman los
+mismos puntos al final de las dos jornadas).</p>
+<pre class="r"><code>combs.J32 &lt;- rbind(expand.grid(B0=70,A0=65, RB=c(0,1,3),RA=c(0,1,3)),
+      expand.grid(B0=73,A0=62, RB=c(0,1,3),RA=c(0,1,3)),
+      expand.grid(B0=71,A0=63, RB=c(0,1,3),RA=c(0,1,3)))
+
+combs.J32$TA &lt;- combs.J32$A0+combs.J32$RA
+combs.J32$TB &lt;- combs.J32$B0+combs.J32$RB
+
+ttls.J32 &lt;- data.frame(with(combs.J32,table(TB,TA)))
+ttls.J32 &lt;- subset(ttls.J32,Freq&gt;0)
+ttls.J32$TB &lt;- as.numeric(as.character(ttls.J32$TB))
+ttls.J32$TA &lt;- as.numeric(as.character(ttls.J32$TA))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+points(c(70,70+0),c(62,62+3),type=&quot;b&quot;,pch=c(NA,NA),lty=2,cex=1.3)
+points(c(70,70+3),c(62,62+0),type=&quot;b&quot;,pch=c(19,NA),lty=2,cex=1.3)
+points(c(70,70+1),c(62,62+1),type=&quot;b&quot;,pch=c(NA,NA),lty=2,cex=1.3)
+
+ with(combs.J32,segments(B0,A0,TB,TA,lty=3,col=&quot;aliceblue&quot;))
+with(ttls.J32,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/posibilidades%20J32-1.png" width="480" /></p>
+<p>Añadimos otra jornada en la que ambos equipos se enfrentan a rivales
+diferentes, por tanto pueden ganar, perder o empatar de forma
+independiente. Hay entonces nueve combinaciones posibles para cada una
+de las combinaciones anteriores:</p>
+<pre class="r"><code>combs.J33 &lt;- data.frame()
+for (k in 1:nrow(ttls.J32)) {
+    tmp &lt;-  expand.grid(B0=ttls.J32$TB[k],A0=ttls.J32$TA[k],
+             RB=c(0,1,3),RA=c(0,1,3))
+    tmp$Freq &lt;- ttls.J32$Freq[k]          
+    combs.J33 &lt;- rbind(combs.J33,tmp)
+}
+
+
+combs.J33$TA &lt;- combs.J33$A0+combs.J33$RA
+combs.J33$TB &lt;- combs.J33$B0+combs.J33$RB
+
+ttls.J33 &lt;- with(combs.J33,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+
+ with(combs.J33,segments(B0,A0,TB,TA,lty=3,col=&quot;aliceblue&quot;))
+with(ttls.J33,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/posibilidades%20J33-1.png" width="480" /></p>
+<p>Cada jornada que agregamos, las combinaciones de resultados posibles
+se va expandiendo, pero los resultados marginales son cada vez menos
+probables, dadas las múltiples combinaciones que existen.</p>
+<pre class="r"><code>combs.J34 &lt;- data.frame()
+for (k in 1:nrow(ttls.J33)) {
+    tmp &lt;-  expand.grid(B0=ttls.J33$TB[k],A0=ttls.J33$TA[k],
+             RB=c(0,1,3),RA=c(0,1,3))
+    tmp$Freq &lt;- ttls.J33$Freq[k]          
+    combs.J34 &lt;- rbind(combs.J34,tmp)
+}
+
+
+combs.J34$TA &lt;- combs.J34$A0+combs.J34$RA
+combs.J34$TB &lt;- combs.J34$B0+combs.J34$RB
+
+ttls.J34 &lt;- with(combs.J34,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+
+ with(combs.J34,segments(B0,A0,TB,TA,lty=3,col=&quot;aliceblue&quot;))
+with(ttls.J34,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/posibilidades%20J34-1.png" width="480" /></p>
+<p>Ahora podemos calcular cada una de las combinaciones de resultados
+posibles para las jornadas restantes:</p>
+<pre class="r"><code>for (j in 35:38) {
+    ttls.old &lt;- get(sprintf(&quot;ttls.J%s&quot;,j-1))
+    combs.new &lt;- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp &lt;-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+             RB=c(0,1,3),RA=c(0,1,3))
+        tmp$Freq &lt;- ttls.old$Freq[k]          
+        combs.new &lt;- rbind(combs.new,tmp)
+    }
+    combs.new$TA &lt;- combs.new$A0+combs.new$RA
+    combs.new$TB &lt;- combs.new$B0+combs.new$RB
+    ttls.new &lt;- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf(&quot;ttls.J%s&quot;,j),ttls.new)
+}
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+with(ttls.J38,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/posibilidades%20otras-1.png" width="480" /></p>
+<p>En total 5.3 % de las combinaciones de resultados posibles favorecen
+al equipo A, y el resto favorecen al equipo B. Un panorama nada
+alentador para el equipo que va segundo.</p>
+</div>
+<div id="la-fuente-del-optimismo-o-pesimismo" class="section level2">
+<h2>La fuente del optimismo (o pesimismo)</h2>
+<p>El análisis anterior se basa en todas las combinaciones posibles de
+resultados, sin embargo, existe muchos factor importantes a considerar.
+Por ejemplo se podría calcular la probabilidad de que cada equipo gane a
+sus respectivos rivales según el historial de enfrentamientos, la
+calidad y forma de los jugadores de cada equipo, y otras condiciones de
+juego. Tomando esto en cuenta es muy poco probable que alguno de los
+equipos pierda o empate la mayoría de sus encuentros restantes, o que
+hile <a
+href="https://as.com/futbol/2019/04/05/primera/1554459205_248023.html?autoplay=1">una
+racha de derrotas sin precedentes</a>.</p>
+<p>También hay otro factor subjetivo, que es la motivación y ansiedad de
+cada equipo a medida que van progresando las jornadas y ve que su
+objetivo se aleja o acerca.</p>
+<div id="el-significado-de-una-pequeña-victoria" class="section level3">
+<h3>El significado de una pequeña victoria…</h3>
+<pre class="r"><code>combs.J32.opt &lt;- expand.grid(B0=70,A0=65, RB=c(0,1,3),RA=c(0,1,3))
+combs.J32.opt$TA &lt;- combs.J32.opt$A0+combs.J32.opt$RA
+combs.J32.opt$TB &lt;- combs.J32.opt$B0+combs.J32.opt$RB
+
+ttls.J32.opt &lt;- data.frame(with(combs.J32.opt,table(TB,TA)))
+ttls.J32.opt &lt;- subset(ttls.J32.opt,Freq&gt;0)
+ttls.J32.opt$TB &lt;- as.numeric(as.character(ttls.J32.opt$TB))
+ttls.J32.opt$TA &lt;- as.numeric(as.character(ttls.J32.opt$TA))
+
+combs.J32.pes &lt;- expand.grid(B0=73,A0=62, RB=c(0,1,3),RA=c(0,1,3))
+combs.J32.pes$TA &lt;- combs.J32.pes$A0+combs.J32.pes$RA
+combs.J32.pes$TB &lt;- combs.J32.pes$B0+combs.J32.pes$RB
+
+ttls.J32.pes &lt;- data.frame(with(combs.J32.pes,table(TB,TA)))
+ttls.J32.pes &lt;- subset(ttls.J32.pes,Freq&gt;0)
+ttls.J32.pes$TB &lt;- as.numeric(as.character(ttls.J32.pes$TB))
+ttls.J32.pes$TA &lt;- as.numeric(as.character(ttls.J32.pes$TA))
+
+for (j in 33:38) {
+    ttls.old &lt;- get(sprintf(&quot;ttls.J%s.opt&quot;,j-1))
+    combs.new &lt;- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp &lt;-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+             RB=c(0,1,3),RA=c(0,1,3))
+        tmp$Freq &lt;- ttls.old$Freq[k]          
+        combs.new &lt;- rbind(combs.new,tmp)
+    }
+    combs.new$TA &lt;- combs.new$A0+combs.new$RA
+    combs.new$TB &lt;- combs.new$B0+combs.new$RB
+    ttls.new &lt;- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf(&quot;ttls.J%s.opt&quot;,j),ttls.new)
+}
+
+for (j in 33:38) {
+    ttls.old &lt;- get(sprintf(&quot;ttls.J%s.pes&quot;,j-1))
+    combs.new &lt;- data.frame()
+    for (k in 1:nrow(ttls.old)) {
+        tmp &lt;-  expand.grid(B0=ttls.old$TB[k],A0=ttls.old$TA[k],
+             RB=c(0,1,3),RA=c(0,1,3))
+        tmp$Freq &lt;- ttls.old$Freq[k]          
+        combs.new &lt;- rbind(combs.new,tmp)
+    }
+    combs.new$TA &lt;- combs.new$A0+combs.new$RA
+    combs.new$TB &lt;- combs.new$B0+combs.new$RB
+    ttls.new &lt;- with(combs.new,aggregate(data.frame(Freq),list(TB=TB,TA=TA),sum))
+    assign(sprintf(&quot;ttls.J%s.pes&quot;,j),ttls.new)
+}
+
+image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+with(ttls.J38.opt,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/escenario%20optimista%20para%20A-1.png" width="480" /></p>
+<p>En este caso particular las opciones del equipo A son de apenas 12.1
+% dadas todas las combinaciones posibles, pero esto puede cambiar si
+obtiene un resultado positivo o negativo en su próximo encuentro.</p>
+<p>Si el equipo A gana, se da un pequeño desplazamiento de las
+combinaciones posibles, pero el porcentaje que las opciones que le
+darían el campeonato sigue siendo un valor bajo: 12.1 %. Sin embargo hay
+que tomar en cuenta que desde un punto de vista anímico, se percibe que
+las opciones de titularse campeón se duplican (o más exactamente se
+multiplican por 2.25).</p>
+<p>Para el equipo B, la derrota no representa un cambio tan drástico en
+sus posibilidades (disminuyen en un 9.9 %).</p>
+</div>
+<div id="qué-pasa-si-pierde" class="section level3">
+<h3>¿Qué pasa si pierde?</h3>
+<pre class="r"><code>image(70+(0:24),62+c(0:24),mtz,col=rgb(c(0,1,.5),c(0,0,.5),c(1,0,.5),.25),xlab=&quot;equipo B&quot;,ylab=&quot;equipo A&quot;)
+with(ttls.J38.pes,symbols(TB,TA,circle=Freq,inches=.13,add=T))</code></pre>
+<p><img src="blog_LaLiga_FinalTemp2019_files/figure-html/escenario%20pesimista%20para%20A-1.png" width="480" /></p>
+<p>Sin embargo, si el equipo A pierde, el porcentaje que las opciones
+que le darían el campeonato <a
+href="https://as.com/futbol/2019/04/04/primera/1554383303_873741.html">practicamente
+se desvanecen</a>: 0.6 %.</p>
+</div>
+</div>
+<div id="entonces" class="section level2">
+<h2>Entonces…</h2>
+<p>Volviendo a la pregunta inicial, las opciones matemáticas se
+mantendran en la mesa aún después del juego de hoy, pero anímicamente la
+diferencia entre una victoria y una derrota es completamente asimétrica,
+y puede ser demoledora para el que tiene menos posibilidades
+abiertas.</p>
+</div>
+
+<hr>
+<p>Jos&eacute; R. Ferrer-Paris. 2023. Contenido compartido con licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

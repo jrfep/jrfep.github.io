@@ -1,0 +1,165 @@
+---
+title: "Mis observaciones en iNaturalist"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: lumen
+    social: menu
+    source: embed
+    logo: resize_logo.gif
+    navbar:
+      - { title: "Back home", href: "index.html", align: left }
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(leaflet)
+library(ggplot2)
+library(plotly)
+library(spocc)
+library(rinat)
+#library(mapr)
+library(sf)
+library(tmap)
+library(lubridate)
+library(dplyr)
+library(calendR)
+
+library(RColorBrewer)
+palette(brewer.pal(8, "Set2"))
+
+```
+
+```{r dataread, message=FALSE, warning=FALSE, include=FALSE}
+
+here::i_am("inat_flexdashboard.Rmd")
+NeoMapas_obs <- readRDS(here::here("data","iNaturalist-obs-NeoMapas.rds"))
+
+lookup <- c(name="scientific_name",
+            user="user_login",
+            #date="observed_on",
+            taxonid="id",
+            taxon="iconic_taxon_name",
+            kingdom="taxon_kingdom_name",
+            phylum="taxon_phylum_name",
+            class="taxon_class_name",
+            order="taxon_order_name",
+            genus="taxon_genus_name"
+            )
+
+NeoMapas_obs <- NeoMapas_obs %>%
+  mutate(date=ymd(observed_on)) %>% 
+  rename(any_of(lookup)) 
+
+obs_byyear = as.data.frame(table(year(NeoMapas_obs$date)))
+colnames(obs_byyear)=c("Año","Observaciones") 
+
+```
+
+
+Column1{.tabset .tabset-fade data-width=250}
+-------
+
+Tablas de observaciones por:
+
+### Especies {data-width=245}
+```{r taxalist}
+
+NeoMapas_obs %>% 
+  group_by("Especies"=name) %>% 
+  summarise(Observaciones=n_distinct(date), Registros=n()) %>%
+  arrange(desc(Observaciones)) %>%
+  slice_head(n = 20) %>% 
+  knitr::kable()
+```
+
+### Lugares {data-width=245}
+
+```{r sitelist}
+
+NeoMapas_obs %>% 
+  group_by("Lugar"=place_guess) %>% 
+  summarise(Observaciones=n_distinct(date), Registros=n()) %>%
+  arrange(desc(Observaciones)) %>%
+  slice_head(n = 20) %>% 
+  knitr::kable()
+```
+
+Column2 {.tabset .tabset-fade}
+-------
+
+### Mapa
+```{r map, eval = TRUE}
+NeoMapas_obs_sf <- st_as_sf(
+  NeoMapas_obs,
+  coords=c("longitude","latitude"),
+  crs=4326) %>% select(any_of(c("name","date","taxon")))
+tmap_mode("view")
+
+map1 <- tm_shape(NeoMapas_obs_sf) + tm_symbols( col="orchid2") +tm_minimap()
+
+tmap_leaflet(map1)
+
+```
+
+
+### Phylum 
+```{r donut}
+##numbers of observations by phylum 
+taxranks = as.data.frame(table(NeoMapas_obs$taxon))
+##Donut plot
+p = taxranks %>% plot_ly(labels = ~Var1, values=~Freq) %>% 
+  add_pie(hole=0.6) %>% 
+  layout(title = ~paste0("Numero total de Taxa: ", length(unique(NeoMapas_obs$taxonid)))) 
+
+plotly::config(p,displayModeBar = F) 
+```
+
+### Observaciones por año
+```{r obsbyyear}
+#plot number of observation by date 
+ggplot(obs_byyear, aes(x=Año,y=Observaciones,group=1)) + geom_line() + geom_point()+ xlab("Año") + ylab("Observaciones") + theme_minimal()
+
+```
+
+
+### Calendario de observaciones 2022
+```{r calobs2022}
+inat_obs_day <- NeoMapas_obs %>% 
+  filter(year(date)==2022) %>% 
+  transmute(obs_day=yday(date)) %>% 
+  table %>%
+  data.frame %>%
+  mutate(obs_day=as.numeric(as.character(obs_day)))
+
+
+cal_data <- tibble(obs_day=1:365) %>% 
+left_join(inat_obs_day, by="obs_day") %>%
+  mutate(Freq=coalesce(Freq,0)) %>% pull(Freq)
+calendR(2022,
+        weeknames = c("M","T","W","Th","F","Sa","Su"),
+        #monthnames = c("E","F","M","A","M","J","J","A","S","O","N","D"),
+        special.days = cal_data,
+        gradient = TRUE,
+        low.col = "#FFFFED",
+        special.col = "#FF0000")
+
+```
+
+Column3{data-width=150}
+-------
+
+### Números
+```{r}
+#spp 
+nspp = length(unique(NeoMapas_obs$name))
+milestone <- ceiling(nspp/100)*100
+gauge(nspp, min=0, max=milestone,label="Taxa")
+
+qual = sum(NeoMapas_obs$quality_grade %in% "research")
+gauge(qual, min=0, max=nrow(NeoMapas_obs),label="Research grade\nobservations")
+
+```
+
+

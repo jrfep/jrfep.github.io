@@ -1,0 +1,48 @@
+---
+title: "./jrfep"
+output: html_document
+---
+
+# Who wants to live forever? 
+
+<!--//
+## Sobre mi actividad científica:
+
+* Publicaciones arbitradas
+* [Eventos científicos](/eventos)
+** [Presentaciones en eventos](/presentaciones)
+* [Publicaciones Lista Roja de Ecosistemas](https://red-list-ecosystem.github.io/RLE-publication-list/)
+//--> 
+
+## 2020 - Proyectos en curso (Current projects):
+* [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+
+## Perfiles académicos y profesionales (Profesional and academic profiles)
+
+Esta es una lista de mis perfiles profesionales, más o menos actualizados.
+
+* ORCID: [0000-0002-9554-3395](http://orcid.org/0000-0002-9554-3395)
+* Web of Science/Publons ResearcherID: [M-3785-2015](https://www.webofscience.com/wos/author/rid/M-3785-2015)
+* AuthorID de Scopus: [6507728759](http://www.scopus.com/authid/detail.uri?authorId=6507728759)
+* ScienceOpen: [jrfep](https://www.scienceopen.com/user/jrfep)
+* Google scholar: [A2Thq5UAAAAJ](http://scholar.google.es/citations?user=A2Thq5UAAAAJ&hl=en)
+* LinkedIn [Jose Ferrer](https://www.linkedin.com/pub/jos%C3%A9-ferrer/70/a47/547)
+* Researchgate: [Jose Ferrer Paris](https://www.researchgate.net/profile/Jose_Ferrer-Paris)
+* academia: [JR Ferrer Paris](https://ivic.academia.edu/JRFerrerParis)
+
+### Taxonomía:
+
+* Zoobank: [José R. Ferrer-Paris](http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6)
+
+
+## Proyectos reproducibles
+
+En los siguientes enlaces pueden encontrar algunos insumos y productos de mi trabajo cient€ifico.
+
+* OSF: [José R. Ferrer Paris](https://osf.io/7q5ny)
+* figshare: [José R. Ferrer Paris](http://figshare.com/authors/Jos_R_Ferrer_Paris/592994)
+* zenodo: [IUCN Red List of Ecosystems community](https://zenodo.org/communities/iucn-rle/?page=1&size=20)
+* dataverse: [NeoMapas dataverse](https://dataverse.harvard.edu/dataverse/NeoMapas)
+
+## Versiones viejas...
+Blogger: [José R. Ferrer Paris](https://www.blogger.com/profile/10848423852723434095)

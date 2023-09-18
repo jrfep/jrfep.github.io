@@ -1,0 +1,39 @@
+---
+title: "Material para presentaciones"
+output: html_document
+---
+
+```{r setup, include = FALSE, cache = FALSE,message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RefManageR)
+library(fontawesome)
+BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
+           bib.style = "authoryear", hyperlink = FALSE)
+```
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+bib3 <- ReadBib("bibTeX/presentations.bibtex", check = FALSE)
+NoCite(bib = bib3, 1:length(bib3), .opts = list(hyperlink = FALSE))
+```
+
+
+## `r fa("book")` Presentaciones
+
+Una lista algo incompleta de presentaciones en eventos nacionales e internacionales. Algunos afiches y presentaciones están depositados en forma digital en repositorios de acceso libre y registrados con un DOI u otro identificador permanente.
+
+---
+
+```{r results = "asis", echo = FALSE}
+PrintBibliography(bib3, .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+
+## Presentaciones compartidas
+
+* Ferrer-Paris, José R.; Y. Sánchez-Mercado, Ada; Donaldson, John (2014): The assessment of macroecological patterns in butterfly-host plant associations at a global scale. figshare. Presentation. https://doi.org/10.6084/m9.figshare.1150239.v1
+
+## Repositorios con material para presentaciones
+
+- [Rpubs](https://rpubs.com/jrfep)
+
+
