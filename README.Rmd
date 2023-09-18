@@ -30,7 +30,7 @@ renv::snapshot()
 
 ## Render site
 
-Run this to render site locally:
+Run this (in RStudio) to render site locally:
 ```{r eval=FALSE}
 rmarkdown::render_site()
 ```
@@ -46,7 +46,7 @@ If this work, we can just `git push` it to the repo and see the changes!
 
 ## Alternatives
 
-My [other branch](https://github.com/jrfep/jrfep.github.io/tree/jekyll) uses Jekyll.
+My [other branch](https://github.com/jrfep/jrfep.github.io/tree/jekyll) uses Jekyll (but I gave up on that some time ago, so do not expect any updates).
 
 ## Just in case
 
