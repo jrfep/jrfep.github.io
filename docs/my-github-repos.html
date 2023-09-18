@@ -333,7 +333,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="README.html">(re-)create this site</a>
+      <a href="how-to-site.html">(re-)create this site</a>
     </li>
   </ul>
 </li>
@@ -355,12 +355,16 @@ $(document).ready(function () {
 <pre class="r"><code>library(jsonlite)
 
 gh_rle_org &lt;- read_json(&quot;https://api.github.com/orgs/red-list-ecosystem/repos&quot;)
-gh_jrfep &lt;- read_json(&quot;https://api.github.com/users/jrfep/repos&quot;)</code></pre>
+gh_ces_org &lt;- read_json(&quot;https://api.github.com/orgs/ces-unsw-edu-au/repos&quot;)
+gh_jrfep &lt;- read_json(&quot;https://api.github.com/users/jrfep/repos&quot;)
+# https://api.github.com/search/repositories?q=user:jrfep&amp;fork:false
+# for each repo query the languages_url and summarise the lines of code for each language</code></pre>
 <p>Función para leer datos de la consulta del API.</p>
 <pre class="r"><code>getItem &lt;- function(x) {
   sprintf(&quot;&lt;b&gt;&lt;a href=&#39;%s&#39;&gt;%s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %s&lt;/p&gt;&quot;,x$html_url, x$full_name, x$description)
 }</code></pre>
-<p>Organización <code>Red List Ecosystems</code></p>
+<div id="organización-red-list-ecosystems" class="section level2">
+<h2>Organización <code>Red List Ecosystems</code></h2>
 <pre class="r"><code>cat(unlist(lapply(gh_rle_org, getItem)))</code></pre>
 <b><a href='https://github.com/red-list-ecosystem/redlistr'>red-list-ecosystem/redlistr</a></b>
 <p>
@@ -432,7 +436,32 @@ Ecosystems in Africa
 Description: Quarto extension to generate a PDF with (pretty) LaTeX
 styling for RLE assessments
 </p>
-<p>Repositorios en cuenta personal <code>jrfep</code></p>
+</div>
+<div id="organización-centre-for-ecosystem-sciences"
+class="section level2">
+<h2>Organización <code>Centre for Ecosystem Sciences</code></h2>
+<pre class="r"><code>cat(unlist(lapply(gh_ces_org, getItem)))</code></pre>
+<b><a href='https://github.com/ces-unsw-edu-au/fireveg-db'>ces-unsw-edu-au/fireveg-db</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - SQL structure of the
+database
+</p>
+<b><a href='https://github.com/ces-unsw-edu-au/cesdata'>ces-unsw-edu-au/cesdata</a></b>
+<p>
+Description: GIS data for analysis at the Centre for Ecosystem Science
+</p>
+<b><a href='https://github.com/ces-unsw-edu-au/fire-veg-aust'>ces-unsw-edu-au/fire-veg-aust</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - Code for managing the
+database
+</p>
+<b><a href='https://github.com/ces-unsw-edu-au/fireveg-webapp'>ces-unsw-edu-au/fireveg-webapp</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - WebApp
+</p>
+</div>
+<div id="repositorios-en-cuenta-personal-jrfep" class="section level2">
+<h2>Repositorios en cuenta personal <code>jrfep</code></h2>
 <pre class="r"><code>cat(unlist(lapply(gh_jrfep, getItem)))</code></pre>
 <b><a href='https://github.com/jrfep/alpine-cruiser'>jrfep/alpine-cruiser</a></b>
 <p>
@@ -558,6 +587,7 @@ forest macrogroups of the Americas
 <p>
 Description: T6.2 Polar-alpine cliffs, screes, outcrops and lava flows
 </p>
+</div>
 
 <hr>
 <p>Jos&eacute; R. Ferrer-Paris. 2023. Contenido compartido con licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
