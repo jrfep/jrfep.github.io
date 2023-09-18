@@ -333,7 +333,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="README.html">(re-)create this site</a>
+      <a href="how-to-site.html">(re-)create this site</a>
     </li>
   </ul>
 </li>
@@ -352,9 +352,8 @@ $(document).ready(function () {
 
 
 <p>Usar el API para consultar lista de proyectos</p>
-<pre class="r"><code>library(osfr)</code></pre>
-<pre><code>## Automatically registered OSF personal access token</code></pre>
-<pre class="r"><code>lst_osf &lt;- osf_retrieve_user(&quot;me&quot;) %&gt;%
+<pre class="r"><code>library(osfr)
+lst_osf &lt;- osf_retrieve_user(&quot;me&quot;) %&gt;%
   osf_ls_nodes()
 getItem &lt;- function(x) {
   sprintf(&quot;&lt;b&gt;&lt;a href=&#39;%3$s&#39;&gt;%1$s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %2$s&lt;/p&gt;&quot;,
@@ -362,82 +361,60 @@ getItem &lt;- function(x) {
     x$attributes$description,
     x$links$html)
 }</code></pre>
-<pre class="r"><code>lapply(lst_osf[[3]],getItem)</code></pre>
-[[1]] [1] “<b><a href='https://osf.io/6qtep/'>Resources selection model
-application for wildlife monitoring in Gran Sabana, Venezuela</a></b>
+<pre class="r"><code>cat(unlist(lapply(lst_osf[[3]],getItem)))</code></pre>
+<b><a href='https://osf.io/vaund/'>Suitability of Tropical Alpine
+Ecosystems using Machine Learning</a></b>
+<p>
+Description:
+</p>
+<b><a href='https://osf.io/akq4g/'>Review and validation of predictions
+of Tropical Alpine regions</a></b>
+<p>
+Description:
+</p>
+<b><a href='https://osf.io/znuge/'>Code for managing the fireveg
+database</a></b>
+<p>
+Description: Python and R scripts for data input and curation
+</p>
+<b><a href='https://osf.io/h96q2/'>Data coverage of Fire Ecology Traits
+for Plants database</a></b>
+<p>
+Description:
+</p>
+<b><a href='https://osf.io/4csyz/'>SQL structure of the fireveg
+database</a></b>
+<p>
+Description: SQL structure of the database
+</p>
+<b><a href='https://osf.io/hu96w/'>Fire Ecology Traits for Plants: A
+database for fire research and management</a></b>
+<p>
+Description: A database for fire research and management
+</p>
+<b><a href='https://osf.io/kjevh/'>Fire Ecology Traits for Plants:
+Status of the database</a></b>
+<p>
+Description: Presentations and dashboards describing progress and status
+of the database
+</p>
+<b><a href='https://osf.io/6qtep/'>Resources selection model application
+for wildlife monitoring in Gran Sabana, Venezuela</a></b>
 <p>
 Description: This repository includes analysis of resource selection by
 species, it uses a single visit occupancy model framework.
 </p>
-<p>”</p>
-[[2]] [1] “<b><a href='https://osf.io/vaund/'>Suitability of Tropical
-Alpine Ecosystems using Machine Learning</a></b>
-<p>
-Description:
-</p>
-<p>”</p>
-[[3]] [1] “<b><a href='https://osf.io/hp8bs/'>Environmental suitability
-model for Tropical Glacier Ecosystems</a></b>
-<p>
-Description:
-</p>
-<p>”</p>
-[[4]] [1] “<b><a href='https://osf.io/e6c5p/'>Occurrence records for
-Ecosystem Functional Groups</a></b>
+<b><a href='https://osf.io/e6c5p/'>Occurrence records for Ecosystem
+Functional Groups</a></b>
 <p>
 Description: Occurrence records for Ecosystem Functional Groups (Level
 3) of the IUCN Global Ecosystem Typology
 </p>
-<p>”</p>
-[[5]] [1] “<b><a href='https://osf.io/9yzhn/'>Tropical Alpine
-Ecosystems</a></b>
+<b><a href='https://osf.io/hp8bs/'>Environmental suitability model for
+Tropical Glacier Ecosystems</a></b>
 <p>
 Description:
 </p>
-<p>”</p>
-[[6]] [1] “<b><a href='https://osf.io/ey8ft/'>Monitoring vertebrates
-with camera traps in the Gran Sabana, Venezuela</a></b>
-<p>
-Description:
-</p>
-<p>”</p>
-[[7]] [1] “<b><a href='https://osf.io/hux9f/'>Spatial covariates for
-analysis of occurrence and abundance of vertebrate species in the Gran
-Sabana, Venezuela</a></b>
-<p>
-Description: This repository contains instructions for downloading and
-preparing data for analysis. It also includes some data files related to
-field work.
-</p>
-<p>”</p>
-[[8]] [1] “<b><a href='https://osf.io/4u8wc/'>Analysis of the effects of
-shifting cultivation and hunting in vertebrate species of the Gran
-Sabana, Venezuela</a></b>
-<p>
-Description: This code shows how we combined camera trap surveys and
-spatially explicit interview dataset on Pemón indigenous hunting scope
-and occurrence in a mosaic of savanna and forest in the Gran Sabana,
-Venezuela to evaluate to what extent the wildlife resource use
-corresponds to Garden Hunting hypothesis. We applied the Royle–Nichols
-model and binomial regression in order to: (1) assess whether abundance
-of small and medium wildlife species is higher close to conucos and (2)
-evaluate whether hunters select hunting localities based on
-accessibility to wildlife resources (closeness to conuco) more than
-wildlife abundance.
-</p>
-<p>”</p>
-[[9]] [1] “<b><a href='https://osf.io/ptkdn/'>Diagrammatic assembly
-models for the IUCN Global Ecosystem Typology</a></b>
-<p>
-Description:
-</p>
-<p>”</p>
-[[10]] [1] “<b><a href='https://osf.io/p5n9q/'>IUCN Red List of
-Ecosystems in Africa</a></b>
-<p>
-Description:
-</p>
-<p>”</p>
 
 <hr>
 <p>Jos&eacute; R. Ferrer-Paris. 2023. Contenido compartido con licencia <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>

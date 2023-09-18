@@ -40,7 +40,7 @@ navbar:
       icon: fa-question
       menu:
         - text: "(re-)create this site"
-          href: README.html
+          href: how-to-site.html
     
 output:
   html_document:
