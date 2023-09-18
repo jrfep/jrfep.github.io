@@ -33,7 +33,7 @@ palette(brewer.pal(8, "Set2"))
 
 ```{r dataread, message=FALSE, warning=FALSE, include=FALSE}
 
-here::i_am("inat_flexdashboard.Rmd")
+here::i_am("biodv/inat_flexdashboard.Rmd")
 NeoMapas_obs <- readRDS(here::here("data","iNaturalist-obs-NeoMapas.rds"))
 
 lookup <- c(name="scientific_name",

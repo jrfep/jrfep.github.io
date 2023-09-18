@@ -2,23 +2,24 @@
 title: "List of research outputs"
 author: "JR Ferrer-Paris"
 date: "04/09/2022"
-output: html_document
 ---
 
 ```{r setup, include = FALSE, cache = FALSE,message=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(RefManageR)
+here::i_am("rzrch/research-outputs.qmd")
+
 BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
            bib.style = "authoryear", hyperlink = FALSE)
 ```
 
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
-bib1 <- ReadBib("bibTeX/peer-review.bibtex", check = FALSE)
-bib2 <- ReadBib("bibTeX/preprints.bibtex", check = FALSE)
-bib4 <- ReadBib("bibTeX/reports.bibtex", check = FALSE)
-bib5 <- ReadBib("bibTeX/datasets.bibtex", check = FALSE)
-bib6 <- ReadBib("bibTeX/code-and-software.bibtex", check = FALSE)
+bib1 <- ReadBib(here::here("bibTeX","peer-review.bibtex"), check = FALSE)
+bib2 <- ReadBib(here::here("bibTeX","preprints.bibtex"), check = FALSE)
+bib4 <- ReadBib(here::here("bibTeX","reports.bibtex"), check = FALSE)
+bib5 <- ReadBib(here::here("bibTeX","datasets.bibtex"), check = FALSE)
+bib6 <- ReadBib(here::here("bibTeX","code-and-software.bibtex"), check = FALSE)
 NoCite(bib = bib1, 1:length(bib1), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib2, 1:length(bib2), .opts = list(hyperlink = FALSE))
 NoCite(bib = bib4, 1:length(bib4), .opts = list(hyperlink = FALSE))

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>today - Repositorios de software en GitHub</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">J.R. Ferrer-Paris</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target=""><i class="bi bi-fa-home" role="img">
+</i> 
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-outputs" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-fa-gear" role="img">
+</i> 
+ <span class="menu-text">Research outputs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research-outputs">    
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-publications.html" rel="" target="">
+ <span class="dropdown-text">My publications</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/research-outputs.html" rel="" target="">
+ <span class="dropdown-text">All research output</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html" rel="" target="">
+ <span class="dropdown-text">Reproducible Code+Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
+ <span class="dropdown-text">Code repositories</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-biodiversity-records" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-fa-envira" role="img">
+</i> 
+ <span class="menu-text">Biodiversity records</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-biodiversity-records">    
+        <li>
+    <a class="dropdown-item" href="../biodv/inat_flexdashboard.html" rel="" target="">
+ <span class="dropdown-text">iNaturalist observations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-just-for-fun" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-fa-smile" role="img">
+</i> 
+ <span class="menu-text">Just for fun</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-just-for-fun">    
+        <li>
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-fa-futbol" role="img">
+</i> 
+ <span class="dropdown-text">Futbol</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-fa-question" role="img">
+</i> 
+ <span class="menu-text">How to…</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
+        <li>
+    <a class="dropdown-item" href="../how2/how-to-site.html" rel="" target="">
+ <span class="dropdown-text">(re-)create this site</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#organización-red-list-ecosystems" id="toc-organización-red-list-ecosystems" class="nav-link active" data-scroll-target="#organización-red-list-ecosystems">Organización <code>Red List Ecosystems</code></a></li>
+  <li><a href="#organización-centre-for-ecosystem-sciences" id="toc-organización-centre-for-ecosystem-sciences" class="nav-link" data-scroll-target="#organización-centre-for-ecosystem-sciences">Organización <code>Centre for Ecosystem Sciences</code></a></li>
+  <li><a href="#repositorios-en-cuenta-personal-jrfep" id="toc-repositorios-en-cuenta-personal-jrfep" class="nav-link" data-scroll-target="#repositorios-en-cuenta-personal-jrfep">Repositorios en cuenta personal <code>jrfep</code></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Repositorios de software en GitHub</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Usar el API para consultar lista de repositorios</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>gh_rle_org <span class="ot">&lt;-</span> <span class="fu">read_json</span>(<span class="st">"https://api.github.com/orgs/red-list-ecosystem/repos"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gh_ces_org <span class="ot">&lt;-</span> <span class="fu">read_json</span>(<span class="st">"https://api.github.com/orgs/ces-unsw-edu-au/repos"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gh_jrfep <span class="ot">&lt;-</span> <span class="fu">read_json</span>(<span class="st">"https://api.github.com/users/jrfep/repos"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># https://api.github.com/search/repositories?q=user:jrfep&amp;fork:false</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># for each repo query the languages_url and summarise the lines of code for each language</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Función para leer datos de la consulta del API.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>getItem <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"&lt;b&gt;&lt;a href='%s'&gt;%s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %s&lt;/p&gt;"</span>,x<span class="sc">$</span>html_url, x<span class="sc">$</span>full_name, x<span class="sc">$</span>description)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="organización-red-list-ecosystems" class="level2">
+<h2 class="anchored" data-anchor-id="organización-red-list-ecosystems">Organización <code>Red List Ecosystems</code></h2>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">unlist</span>(<span class="fu">lapply</span>(gh_rle_org, getItem)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<b><a href="https://github.com/red-list-ecosystem/redlistr">red-list-ecosystem/redlistr</a></b>
+<p>
+Description: redlistr: Tools for the IUCN Red List of Ecosystems and Species
+</p>
+<b><a href="https://github.com/red-list-ecosystem/REMAP">red-list-ecosystem/REMAP</a></b>
+<p>
+Description: Enabling large-scale ecosystem mapping and assessment
+</p>
+<b><a href="https://github.com/red-list-ecosystem/gee-redlist">red-list-ecosystem/gee-redlist</a></b>
+<p>
+Description: Tools for the IUCN Red List of Ecosystems and Species in Google Earth Engine
+</p>
+<b><a href="https://github.com/red-list-ecosystem/typology-map">red-list-ecosystem/typology-map</a></b>
+<p>
+Description: A global ecosystem typology map
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-xml-db">red-list-ecosystem/RLE-xml-db</a></b>
+<p>
+Description: RLE assessment documentation in xml format
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-publication-list">red-list-ecosystem/RLE-publication-list</a></b>
+<p>
+Description: List of publications related to IUCN Red List of Ecosystem assessments
+</p>
+<b><a href="https://github.com/red-list-ecosystem/rle_indices">red-list-ecosystem/rle_indices</a></b>
+<p>
+Description: Ecosystem indices to support global biodiversity conservation
+</p>
+<b><a href="https://github.com/red-list-ecosystem/typology-web-update-content">red-list-ecosystem/typology-web-update-content</a></b>
+<p>
+Description: Scripts to update typology web content
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-forests-panam-results">red-list-ecosystem/RLE-forests-panam-results</a></b>
+<p>
+Description: IUCN Red List of Ecosystem assessment for the forest macrogroups of the Americas: tables with assessment results
+</p>
+<b><a href="https://github.com/red-list-ecosystem/assessments-map">red-list-ecosystem/assessments-map</a></b>
+<p>
+Description: Map of IUCN Red List of Ecosystem assessments
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-forests-panam-GIS">red-list-ecosystem/RLE-forests-panam-GIS</a></b>
+<p>
+Description: IUCN Red List of Ecosystems of Temperate and Tropical Forest Macrogroups of the Americas - GIS data and analysis
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-forests-panam-RLIE">red-list-ecosystem/RLE-forests-panam-RLIE</a></b>
+<p>
+Description: IUCN RLR forest Macrogroups of the Americas: Red List Index of Ecosystems
+</p>
+<b><a href="https://github.com/red-list-ecosystem/GEE-IUCN-GET">red-list-ecosystem/GEE-IUCN-GET</a></b>
+<p>
+Description: Indicative distribution maps for Ecosystem Functional Groups - Level 3 of IUCN Global Ecosystem Typology - Earth Engine Code
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLE-Africa">red-list-ecosystem/RLE-Africa</a></b>
+<p>
+Description: Code for summarising progress of the IUCN Red List of Ecosystems in Africa
+</p>
+<b><a href="https://github.com/red-list-ecosystem/RLEpdf">red-list-ecosystem/RLEpdf</a></b>
+<p>
+Description: Quarto extension to generate a PDF with (pretty) LaTeX styling for RLE assessments
+</p>
+</section>
+<section id="organización-centre-for-ecosystem-sciences" class="level2">
+<h2 class="anchored" data-anchor-id="organización-centre-for-ecosystem-sciences">Organización <code>Centre for Ecosystem Sciences</code></h2>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">unlist</span>(<span class="fu">lapply</span>(gh_ces_org, getItem)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<b><a href="https://github.com/ces-unsw-edu-au/fireveg-db">ces-unsw-edu-au/fireveg-db</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - SQL structure of the database
+</p>
+<b><a href="https://github.com/ces-unsw-edu-au/cesdata">ces-unsw-edu-au/cesdata</a></b>
+<p>
+Description: GIS data for analysis at the Centre for Ecosystem Science
+</p>
+<b><a href="https://github.com/ces-unsw-edu-au/fire-veg-aust">ces-unsw-edu-au/fire-veg-aust</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - Code for managing the database
+</p>
+<b><a href="https://github.com/ces-unsw-edu-au/fireveg-webapp">ces-unsw-edu-au/fireveg-webapp</a></b>
+<p>
+Description: Fire Ecology Traits for Plants - WebApp
+</p>
+</section>
+<section id="repositorios-en-cuenta-personal-jrfep" class="level2">
+<h2 class="anchored" data-anchor-id="repositorios-en-cuenta-personal-jrfep">Repositorios en cuenta personal <code>jrfep</code></h2>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">unlist</span>(<span class="fu">lapply</span>(gh_jrfep, getItem)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<b><a href="https://github.com/jrfep/alpine-cruiser">jrfep/alpine-cruiser</a></b>
+<p>
+Description: Modelling the distribution of cryogenic ecosystem functional groups
+</p>
+<b><a href="https://github.com/jrfep/assessment-ecosystem-functional-groups">jrfep/assessment-ecosystem-functional-groups</a></b>
+<p>
+Description: Preliminary global assessment of pressures and protection of Ecosystem Functional Groups
+</p>
+<b><a href="https://github.com/jrfep/australian-alps-climate-change">jrfep/australian-alps-climate-change</a></b>
+<p>
+Description: Assessment of relative severity of environmental degradation in Australian Alps
+</p>
+<b><a href="https://github.com/jrfep/Cardenalito">jrfep/Cardenalito</a></b>
+<p>
+Description: Análisis de datos espaciales sobre la distribución del Cardenalito en Venezuela
+</p>
+<b><a href="https://github.com/jrfep/CEBA.LEE">jrfep/CEBA.LEE</a></b>
+<p>
+Description: Código en R para análisis del Laboratorio de Ecología Espacial del Centro de Estudios Botánicos y Agroforestales del IVIC
+</p>
+<b><a href="https://github.com/jrfep/clima_municipios_Venezuela">jrfep/clima_municipios_Venezuela</a></b>
+<p>
+Description: Análisis básico de datos climáticos para los municipios de Venezuela
+</p>
+<b><a href="https://github.com/jrfep/dwc-from-bhl">jrfep/dwc-from-bhl</a></b>
+<p>
+Description: Extract distribution data from BHL pages
+</p>
+<b><a href="https://github.com/jrfep/Ecosystem-profiles-comments">jrfep/Ecosystem-profiles-comments</a></b>
+<p>
+Description: Content and map information for the IUCN Global Ecosystem Typology
+</p>
+<b><a href="https://github.com/jrfep/ecosystems-rwanda-uganda">jrfep/ecosystems-rwanda-uganda</a></b>
+<p>
+Description: Exploring ecosystems in Rwanda and Uganda
+</p>
+<b><a href="https://github.com/jrfep/GBIFgaps">jrfep/GBIFgaps</a></b>
+<p>
+Description: GBIF vs range maps: ranking novel occurrences and knowlege gaps in GBIF data
+</p>
+<b><a href="https://github.com/jrfep/GEDB">jrfep/GEDB</a></b>
+<p>
+Description: Global Ecosystems Data Base
+</p>
+<b><a href="https://github.com/jrfep/git-novice">jrfep/git-novice</a></b>
+<p>
+Description: Version Control with Git
+</p>
+<b><a href="https://github.com/jrfep/GS-spatial-data">jrfep/GS-spatial-data</a></b>
+<p>
+Description: Spatial covariates used for analysis of species occurrence and abundance in Gran Sabana. Venezuela
+</p>
+<b><a href="https://github.com/jrfep/GS-svocc">jrfep/GS-svocc</a></b>
+<p>
+Description: Fit single visit occupancy models to data from camera trap and walking transects in the Gran Sabana, Venezuela
+</p>
+<b><a href="https://github.com/jrfep/hypothesisr">jrfep/hypothesisr</a></b>
+<p>
+Description: Wrapper for the Hypothes.is API
+</p>
+<b><a href="https://github.com/jrfep/jrfep.github.io">jrfep/jrfep.github.io</a></b>
+<p>
+Description: José R. Ferrer Paris
+</p>
+<b><a href="https://github.com/jrfep/Machine-Learning-with-tidymodels">jrfep/Machine-Learning-with-tidymodels</a></b>
+<p>
+Description: This is a remix of the Machine-Learning-in-R workshop. This version of the workshop focuses on the tidymodels framework and its applications.
+</p>
+<b><a href="https://github.com/jrfep/MFT1.2-intertidal-forest">jrfep/MFT1.2-intertidal-forest</a></b>
+<p>
+Description: MFT1.2 Intertidal forests and shrublands - preliminary level 4 units. This repository showcases the data of products of a IUCN workshop on the delimitation of global ecosystem subgroups for Mangroves.
+</p>
+<b><a href="https://github.com/jrfep/newnes-swamp-collapse-mining-analysis">jrfep/newnes-swamp-collapse-mining-analysis</a></b>
+<p>
+Description: Analysis for “Effects of interactions between anthropogenic stressors and recurring perturbations on ecosystem resilience and collapse”
+</p>
+<b><a href="https://github.com/jrfep/ohwhaley">jrfep/ohwhaley</a></b>
+<p>
+Description: Messages With A Whale-esque Flair
+</p>
+<b><a href="https://github.com/jrfep/poblacion-municipios-venezuela">jrfep/poblacion-municipios-venezuela</a></b>
+<p>
+Description: Análisis básico de datos poblacionales para los municipios de Venezuela
+</p>
+<b><a href="https://github.com/jrfep/PoW">jrfep/PoW</a></b>
+<p>
+Description: Papilionoidea of the World, code and data
+</p>
+<b><a href="https://github.com/jrfep/r-novice-gapminder">jrfep/r-novice-gapminder</a></b>
+<p>
+Description: R for Reproducible Scientific Analysis
+</p>
+<b><a href="https://github.com/jrfep/redlistr">jrfep/redlistr</a></b>
+<p>
+Description: redlistr: Tools for the IUCN Red List of Ecosystems and Species
+</p>
+<b><a href="https://github.com/jrfep/RLE-Americas-Forest-Macrogroups">jrfep/RLE-Americas-Forest-Macrogroups</a></b>
+<p>
+Description: Application of the IUCN Red List of Ecosystems to the forest macrogroups of the Americas
+</p>
+<b><a href="https://github.com/jrfep/T6.2-polar-alpine-cliffs">jrfep/T6.2-polar-alpine-cliffs</a></b>
+<p>
+Description: T6.2 Polar-alpine cliffs, screes, outcrops and lava flows
+</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
