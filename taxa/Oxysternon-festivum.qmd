@@ -1,0 +1,9 @@
+---
+title: "Oxysternon festivum"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+---
+
+<a title="August Johan Rösel, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf"><img width="128" alt="First Illustration of Oxysternon festivum by Rösel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf/128px-First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf.png"></a>
+
+@Ferrer_Paris_2016

@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "today"
@@ -24,6 +25,8 @@ website:
       - text: "Biodiversity records"
         icon: fa-envira
         menu:
+          - text: "My favourite species"
+            href: taxa/my-favs.qmd
           - text: "iNaturalist observations"
             href: biodv/inat_flexdashboard.Rmd
       - text: "Just for fun"

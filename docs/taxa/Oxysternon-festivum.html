@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>today - Proyectos en OSF</title>
+<title>today - Oxysternon festivum</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -210,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proyectos en OSF</h1>
+<h1 class="title">Oxysternon festivum</h1>
 </div>
 
 
@@ -225,66 +210,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Usar el API para consultar lista de proyectos</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(osfr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Automatically registered OSF personal access token</code></pre>
+<p><a title="August Johan Rösel, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf"><img width="128" alt="First Illustration of Oxysternon festivum by Rösel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf/128px-First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf.png"></a></p>
+<p><span class="citation" data-cites="Ferrer_Paris_2016">Ferrer-Paris et al. (<a href="#ref-Ferrer_Paris_2016" role="doc-biblioref">2016</a>)</span></p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ferrer_Paris_2016" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Cecilia Lozano, Arlene Cardozo-Urdaneta, and Arianna Thomas Cabianca. 2016. <span>“Indicative Response of Oxysternon Festivum Linn<span>é</span> (Coleoptera: Scarabaidae) to Vegetation Condition in the Basin of the Orinoco River, Venezuela.”</span> <em>Journal of Insect Conservation</em> 20 (3): 527–38. <a href="https://doi.org/10.1007/s10841-016-9886-6">https://doi.org/10.1007/s10841-016-9886-6</a>.
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lst_osf <span class="ot">&lt;-</span> <span class="fu">osf_retrieve_user</span>(<span class="st">"me"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">osf_ls_nodes</span>()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>getItem <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"&lt;b&gt;&lt;a href='%3$s'&gt;%1$s&lt;/a&gt;&lt;/b&gt;&lt;p&gt;Description: %2$s&lt;/p&gt;"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  x<span class="sc">$</span>attributes<span class="sc">$</span>title,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">$</span>attributes<span class="sc">$</span>description,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">$</span>links<span class="sc">$</span>html)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">unlist</span>(<span class="fu">lapply</span>(lst_osf[[<span class="dv">3</span>]],getItem)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<b><a href="https://osf.io/vaund/">Suitability of Tropical Alpine Ecosystems using Machine Learning</a></b>
-<p>
-Description:
-</p>
-<b><a href="https://osf.io/akq4g/">Review and validation of predictions of Tropical Alpine regions</a></b>
-<p>
-Description:
-</p>
-<b><a href="https://osf.io/znuge/">Code for managing the fireveg database</a></b>
-<p>
-Description: Python and R scripts for data input and curation
-</p>
-<b><a href="https://osf.io/h96q2/">Data coverage of Fire Ecology Traits for Plants database</a></b>
-<p>
-Description:
-</p>
-<b><a href="https://osf.io/4csyz/">SQL structure of the fireveg database</a></b>
-<p>
-Description: SQL structure of the database
-</p>
-<b><a href="https://osf.io/hu96w/">Fire Ecology Traits for Plants: A database for fire research and management</a></b>
-<p>
-Description: A database for fire research and management
-</p>
-<b><a href="https://osf.io/kjevh/">Fire Ecology Traits for Plants: Status of the database</a></b>
-<p>
-Description: Presentations and dashboards describing progress and status of the database
-</p>
-<b><a href="https://osf.io/6qtep/">Resources selection model application for wildlife monitoring in Gran Sabana, Venezuela</a></b>
-<p>
-Description: This repository includes analysis of resource selection by species, it uses a single visit occupancy model framework.
-</p>
-<b><a href="https://osf.io/e6c5p/">Occurrence records for Ecosystem Functional Groups</a></b>
-<p>
-Description: Occurrence records for Ecosystem Functional Groups (Level 3) of the IUCN Global Ecosystem Typology
-</p>
-<b><a href="https://osf.io/hp8bs/">Environmental suitability model for Tropical Glacier Ecosystems</a></b>
-<p>
-Description:
-</p>
-
-
-
-</main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

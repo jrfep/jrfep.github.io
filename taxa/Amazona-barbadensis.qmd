@@ -1,0 +1,9 @@
+---
+title: "Amazona barbadensis"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+---
+
+<a title="Eleazar  Albin (and his Daughter), Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Psittacus_viridis_et_luteous_Barbadensis,_Eleazr._Albin.jpg"><img width="256" alt="Psittacus viridis et luteous Barbadensis, Eleazr. Albin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Psittacus_viridis_et_luteous_Barbadensis%2C_Eleazr._Albin.jpg/256px-Psittacus_viridis_et_luteous_Barbadensis%2C_Eleazr._Albin.jpg"></a>
+
+@Ferrer_Paris_2014_distribution_Amazon @Ferrer-Paris_2021_Distribution_Psittaciformes
