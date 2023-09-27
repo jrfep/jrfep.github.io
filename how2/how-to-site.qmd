@@ -95,3 +95,11 @@ wget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif
 magick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif
 ```
 
+## Multiple languages
+
+A solution is available here: 
+- https://github.com/ropensci-review-tools/babelquarto
+
+```{r}
+install.packages('babelquarto', repos = c('https://ropensci.r-universe.dev', 'https://cloud.r-project.org'))
+```

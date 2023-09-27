@@ -8,31 +8,31 @@ website:
     title: "J.R. Ferrer-Paris"
     type: inverse
     left:
-      - text: "Home"
+      - text: "Inicio"
         icon: fa-home
         href: index.qmd
-      - text: "Research outputs"
+      - text: "Mi ciencia"
         icon: fa-gear
         menu:
-          - text: "My publications"
+          - text: "Mis publicaciones"
             href: rzrch/my-publications.qmd
-          - text: "All research output"
+          - text: "Productos de investigación"
             href: rzrch/research-outputs.qmd
-          - text: "Reproducible Code+Data"
+          - text: "Proyectos reproducibles (Código+Datos)"
             href: rzrch/my-osfr-projects.qmd
-          - text: "Code repositories"
+          - text: "Repositorios (Código)"
             href: rzrch/my-github-repos.qmd
-      - text: "Biodiversity records"
+      - text: "Biodiversidad"
         icon: fa-envira
         menu:
-          - text: "My favourite species"
+          - text: "Mis especies favoritas"
             href: taxa/my-favs.qmd
-          - text: "iNaturalist observations"
+          - text: "Observaciones en iNaturalist"
             href: biodv/inat_flexdashboard.Rmd
       - text: "Just for fun"
         icon: fa-smile
         menu:
-          - text: "Futbol"
+          - text: "Fútbol"
             icon: fa-futbol
             href: j4fun/blog_LaLiga_FinalTemp2019.qmd
     right:

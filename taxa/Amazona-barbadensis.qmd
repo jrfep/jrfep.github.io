@@ -4,6 +4,8 @@ bibliography:
   - ../bibTeX/peer-review.bibtex
 ---
 
+La Cotorra margariteña es una especie de loro del género Amazona y tiene una historia muy interesante. El primer registro escrito la describe como un "psitácido verde y amarillo proveniente de Barbados" pero realmente es una especie de la costa del Caribe Venezolano y las islas aledañas.
+
 <a title="Eleazar  Albin (and his Daughter), Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Psittacus_viridis_et_luteous_Barbadensis,_Eleazr._Albin.jpg"><img width="256" alt="Psittacus viridis et luteous Barbadensis, Eleazr. Albin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Psittacus_viridis_et_luteous_Barbadensis%2C_Eleazr._Albin.jpg/256px-Psittacus_viridis_et_luteous_Barbadensis%2C_Eleazr._Albin.jpg"></a>
 
-@Ferrer_Paris_2014_distribution_Amazon @Ferrer-Paris_2021_Distribution_Psittaciformes
+Con la iniciativa NeoMapas hemos trabajado en un par de publicaciones dedicadas a predecir la distribución de las especies de Psitácidos en Venezuela [@Ferrer_Paris_2014_distribution_Amazon; @Ferrer-Paris_2021_Distribution_Psittaciformes]
