@@ -25,6 +25,8 @@ website:
       - text: "Biodiversity records"
         icon: fa-envira
         menu:
+          - text: "My favourite ecosystems"
+            href: ecos/my-favs.qmd
           - text: "My favourite species"
             href: taxa/my-favs.qmd
           - text: "iNaturalist observations"
