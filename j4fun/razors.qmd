@@ -1,0 +1,38 @@
+Por amor al conocimiento
+
+## Occam’s razor: 
+
+Entities should not be multiplied without necessity
+
+## Sagan standard: 
+
+Extraordinary claims require extraordinary evidence
+
+## Hitchens razor: 
+
+What can be asserted without evidence can be dismissed without evidence
+
+## Hume’s 
+- razor: Causes must be sufficiently able to produce the effect assigned to them
+- guillotine: https://en.wikipedia.org/wiki/Is–ought_problem
+- fork: https://en.wikipedia.org/wiki/Hume%27s_fork
+> If we take in our hand any volume; of divinity or school metaphysics, for instance; let us ask, Does it contain any abstract reasoning concerning quantity or number? No. Does it contain any experimental reasoning concerning matter of fact and existence? No. Commit it then to the flames: for it can contain nothing but sophistry and illusion.[16] — An Enquiry Concerning Human Understanding
+
+## Duck test: 
+If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck
+https://en.wikipedia.org/wiki/Duck_test
+
+## Popper’s falsifiability principle: 
+For a theory to be considered scientific, it must be possible to disprove or refute it
+https://en.wikipedia.org/wiki/Falsifiability
+
+Black swan and industrial melanism
+
+## Newton’s flaming laser sword: 
+If something cannot be settled by experiment, it is not worth debating
+
+## Grice’s razor: 
+Address what the speaker actually meant, instead of addressing the literal meaning of what they actually said
+
+## Hanlon’s razor: 
+Never attribute to malice that which can be adequately explained by incompetence or stupidity

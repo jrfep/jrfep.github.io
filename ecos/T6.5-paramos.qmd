@@ -4,7 +4,7 @@ bibliography:
   - ../bibTeX/peer-review.bibtex
 ---
 
-Mariposas endémicas de los páramos de Venezuela [@Viloria_2015_description_Redonda,@Viloria_2003]
+Mariposas endémicas de los páramos de Venezuela [@Viloria_2015_description_Redonda; @Viloria_2003]
 
-Oso frontino [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos,@S_nchez_Mercado_2008]
+Oso frontino [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008]
 

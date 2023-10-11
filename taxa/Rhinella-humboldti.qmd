@@ -1,0 +1,16 @@
+---
+title: "Rhinella humboldti"
+bibliography: 
+  - ../bibTeX/preprints.bibtex
+  - ../bibTeX/reports.bibtex
+---
+
+- Monitoreo acústico en el Jardín Botánico de Maracaibo: @ferrer-paris_JBM_acustico_2015
+
+- Observaciones en el parque Ojo de Agua: @JRFP_Ojo_de_agua_2015
+
+https://www.inaturalist.org/observations/1480363
+
+Description en BHL:
+- https://www.biodiversitylibrary.org/page/10618585#page/135/mode/1up
+- https://www.biodiversitylibrary.org/page/10618585#page/144/mode/1up
