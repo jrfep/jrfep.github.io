@@ -3,7 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "today"
+  repo-url: https://github.com/jrfep/jrfep.github.io
+  repo-actions: [edit, issue]
+  title: "Hola mundo!"
   navbar:
     title: "J.R. Ferrer-Paris"
     type: inverse
@@ -46,3 +48,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+lang: es

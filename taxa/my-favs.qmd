@@ -1,4 +1,4 @@
 ---
-title: "My favourite animals and plants"
+title: "Mis animales y plantas favoritos"
 listing: default
 ---
