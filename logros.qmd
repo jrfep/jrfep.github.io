@@ -1,0 +1,55 @@
+Neotropical biodiversity mapping initiative
+2003-2010
+
+Sampling design and implementation
+Coordination of field work
+Teams of volunteers + students
+International courses
+Curation of invertebrate collection
+Database management
+Data analysis
+Publication of results
++ my PhD thesis!
+
+
+Spatial ecology lab
+2011-2018
+
+Head of a new lab at a new campus of IVIC
+Digital and specimen collection
+Species distribution and abundance
+Camera trap and acoustic monitoring 
+Lecturer in post-graduate programs
+Invited lecturer in Colombia, Paraguay, Ecuador
+Mentoring undergrad students
+Supervisor and advisor of PhD, MSc
+
+Red list of ecosystems assessments at continental scale
+(2016-2019)
+Spatial analysis at continental scale
+Global and regional datasets
+Workflow for 136 assessment units
+Member of IUCN RLE thematic group
+Database design for assessments
+International collaborations
+Impact in policy and conservation action
+
+Global ecosystem typology
+(2019-2022)
+
+Large international collaboration
+Global maps for 110 ecosystem groups
+Spatio-temporal indicators
+Complex workflows
+HPC and cloud computing
+Webapp, webservices and database
+Integration with global RLE assessments
+
+Postdoctoral fellow at SANBI / UCT
+(2011-2013)
+Biotic interactions
+Macroevolution
+Overlap in spatial distribution
+Biodiversity databases
+Species traits
+2013 EOL Rubenstein Fellowship Award
