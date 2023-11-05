@@ -72,7 +72,7 @@
   {
     "objectID": "taxa/my-favs.html",
     "href": "taxa/my-favs.html",
-    "title": "My favourite animals and plants",
+    "title": "Mis animales y plantas favoritos",
     "section": "",
     "text": "Amazona barbadensis\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nOxysternon festivum\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nPanthera onca\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nRhinella humboldti\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
@@ -81,35 +81,35 @@
     "href": "how2/how-to-site.html",
     "title": "This is how we built this!",
     "section": "",
-    "text": "This is a test of a personal website for jrfep\nAll files are available in a GitHub repository. The mostly-harmless branch uses Rmarkdown to build the site.\nI am just following instructions."
+    "text": "This is a test of a personal website for jrfep.\nThese instructions are in English, but this site has content in multiple languages… I know it is confusing, but this is how I work. If you require clarifications please open an issue or send me a message.\nAll files are available in a GitHub repository. The mostly-harmless branch uses Quarto to build the site."
   },
   {
     "objectID": "how2/how-to-site.html#no-place-like-home",
     "href": "how2/how-to-site.html#no-place-like-home",
     "title": "This is how we built this!",
     "section": "",
-    "text": "This is a test of a personal website for jrfep\nAll files are available in a GitHub repository. The mostly-harmless branch uses Rmarkdown to build the site.\nI am just following instructions."
+    "text": "This is a test of a personal website for jrfep.\nThese instructions are in English, but this site has content in multiple languages… I know it is confusing, but this is how I work. If you require clarifications please open an issue or send me a message.\nAll files are available in a GitHub repository. The mostly-harmless branch uses Quarto to build the site."
   },
   {
     "objectID": "how2/how-to-site.html#libraries",
     "href": "how2/how-to-site.html#libraries",
     "title": "This is how we built this!",
     "section": "Libraries",
-    "text": "Libraries\nTo manage and update the version of libraries that we need, we use renv:\nWe need to run different commands, until all the changes have been synchronised1 :\n\nrenv::init()\nrenv::status()\nrenv::install()\nrenv::status()\nrenv::snapshot()"
+    "text": "Libraries\nTo manage and update the version of libraries that we need, I used renv for some iterations, but it was complex to keep version across machines and different OSs…\nWhen we use renv we need to run different commands, until all the changes have been synchronised1 :\n\nrenv::init()\nrenv::status()\nrenv::install()\nrenv::status()\nrenv::snapshot()\n\nBut if we don’t update the .gitignore file things can get messy."
   },
   {
     "objectID": "how2/how-to-site.html#render-site",
     "href": "how2/how-to-site.html#render-site",
     "title": "This is how we built this!",
     "section": "Render site",
-    "text": "Render site\nRun this (in RStudio) to render site locally:\n\nrmarkdown::render_site()\n\nOr preview one file\n\nrmarkdown::render_site(\"presentations.Rmd\")\n\nSing All the rowboats in the meantime (optional).\nIf this work, we can just git push it to the repo and see the changes!"
+    "text": "Render site\nWith Rmarkdown we could run this (in RStudio) to render site locally:\n\nrmarkdown::render_site()\n\nOr preview one file\n\nrmarkdown::render_site(\"presentations.Rmd\")\n\nWith quarto and RStudio we can open the Build tab and select Build Website…\nSing All the rowboats in the meantime (optional).\nIf this work, we can just git push it to the repo and see the changes!"
   },
   {
     "objectID": "how2/how-to-site.html#alternatives",
     "href": "how2/how-to-site.html#alternatives",
     "title": "This is how we built this!",
     "section": "Alternatives",
-    "text": "Alternatives\nMy other branch uses Jekyll (but I gave up on that some time ago, so do not expect any updates).\nI also tried Rmarkdown for some time, might get back to that if this one does not work."
+    "text": "Alternatives\nMy other branch uses Jekyll (but I gave up on that some time ago, so do not expect any updates).\nI also tried Rmarkdown for some time, might get back to that if this one does not work.\nI was tempted to create a multi-lingual site using babelquarto:\n\ninstall.packages('babelquarto', repos = c('https://ropensci.r-universe.dev', 'https://cloud.r-project.org'))\n\nBut it was a short-lived experiment. I think it could work for simple sites, but would require more tweaks to make it work with my current site."
   },
   {
     "objectID": "how2/how-to-site.html#just-in-case",
@@ -123,7 +123,7 @@
     "href": "how2/how-to-site.html#flexdashboard-and-inaturalist",
     "title": "This is how we built this!",
     "section": "Flexdashboard and iNaturalist",
-    "text": "Flexdashboard and iNaturalist\nInspired by this example: https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG\n\nGet the data\nI first install the rinat package:\n\nhere::i_am(\"README.Rmd\")\nif (!require(rinat)) {\n  install.packages(\"rinat\")\n  library(rinat)\n}\n\nThen I can download the observations from iNaturalist and save them in a data folder:\n\n# Download observations and save to RDS file\nuser_obs &lt;- get_inat_obs_user(\"NeoMapas\",maxresults = 5000)\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"iNaturalist-obs-NeoMapas.rds\")\nsaveRDS(file=file_name, user_obs)\n\n\n\nGet a logo\nWith wget and ImageMagick, it is easy to download and resize in the terminal (bash) with two lines of code:\n##mkdir \nwget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif\nmagick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif"
+    "text": "Flexdashboard and iNaturalist\nI use to have a dashboard here, but it works better with Rmarkdown than with quarto. SO I moved it to another site/repo.\nThere might be some alternatives in quarto for this, but haven’t tested them yet.\nThat OLD dashboard was inspired by this example: https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG\n\nGet the data\nI first install the rinat package:\n\nhere::i_am(\"README.Rmd\")\nif (!require(rinat)) {\n  install.packages(\"rinat\")\n  library(rinat)\n}\n\nThen I can download the observations from iNaturalist and save them in a data folder:\n\n# Download observations and save to RDS file\nuser_obs &lt;- get_inat_obs_user(\"NeoMapas\",maxresults = 5000)\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"iNaturalist-obs-NeoMapas.rds\")\nsaveRDS(file=file_name, user_obs)\n\n\n\nGet a logo\nWith wget and ImageMagick, it is easy to download and resize in the terminal (bash) with two lines of code:\n##mkdir \nwget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif\nmagick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif"
   },
   {
     "objectID": "how2/how-to-site.html#footnotes",
