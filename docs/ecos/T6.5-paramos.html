@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>today - ./jrfep</title>
+<title>today - Páramos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">J.R. Ferrer-Paris</span>
     </a>
   </div>
@@ -82,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-fa-home" role="img">
+    <a class="nav-link" href="../index.html" rel="" target=""><i class="bi bi-fa-home" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </li>  
@@ -94,19 +113,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research-outputs">    
         <li>
-    <a class="dropdown-item" href="./rzrch/my-publications.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-publications.html" rel="" target="">
  <span class="dropdown-text">My publications</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/research-outputs.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/research-outputs.html" rel="" target="">
  <span class="dropdown-text">All research output</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/my-osfr-projects.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html" rel="" target="">
  <span class="dropdown-text">Reproducible Code+Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/my-github-repos.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
  <span class="dropdown-text">Code repositories</span></a>
   </li>  
     </ul>
@@ -119,15 +138,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-biodiversity-records">    
         <li>
-    <a class="dropdown-item" href="./ecos/my-favs.html" rel="" target="">
+    <a class="dropdown-item" href="../ecos/my-favs.html" rel="" target="">
  <span class="dropdown-text">My favourite ecosystems</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./taxa/my-favs.html" rel="" target="">
+    <a class="dropdown-item" href="../taxa/my-favs.html" rel="" target="">
  <span class="dropdown-text">My favourite species</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./biodv/inat_flexdashboard.html" rel="" target="">
+    <a class="dropdown-item" href="../biodv/inat_flexdashboard.html" rel="" target="">
  <span class="dropdown-text">iNaturalist observations</span></a>
   </li>  
     </ul>
@@ -140,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-just-for-fun">    
         <li>
-    <a class="dropdown-item" href="./j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-fa-futbol" role="img">
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-fa-futbol" role="img">
 </i> 
  <span class="dropdown-text">Futbol</span></a>
   </li>  
@@ -156,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
         <li>
-    <a class="dropdown-item" href="./how2/how-to-site.html" rel="" target="">
+    <a class="dropdown-item" href="../how2/how-to-site.html" rel="" target="">
  <span class="dropdown-text">(re-)create this site</span></a>
   </li>  
     </ul>
@@ -173,29 +192,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#who-wants-to-live-forever" id="toc-who-wants-to-live-forever" class="nav-link active" data-scroll-target="#who-wants-to-live-forever">Who wants to live forever?</a>
-  <ul class="collapse">
-  <li><a href="#proyectos-en-curso-current-projects" id="toc-proyectos-en-curso-current-projects" class="nav-link" data-scroll-target="#proyectos-en-curso-current-projects">2020 - Proyectos en curso (Current projects):</a></li>
-  <li><a href="#perfiles-académicos-y-profesionales-profesional-and-academic-profiles" id="toc-perfiles-académicos-y-profesionales-profesional-and-academic-profiles" class="nav-link" data-scroll-target="#perfiles-académicos-y-profesionales-profesional-and-academic-profiles">Perfiles académicos y profesionales (Profesional and academic profiles)</a>
-  <ul class="collapse">
-  <li><a href="#taxonomía" id="toc-taxonomía" class="nav-link" data-scroll-target="#taxonomía">Taxonomía:</a></li>
-  </ul></li>
-  <li><a href="#proyectos-reproducibles" id="toc-proyectos-reproducibles" class="nav-link" data-scroll-target="#proyectos-reproducibles">Proyectos reproducibles</a></li>
-  <li><a href="#versiones-viejas" id="toc-versiones-viejas" class="nav-link" data-scroll-target="#versiones-viejas">Versiones viejas…</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">./jrfep</h1>
+<h1 class="title">Páramos</h1>
 </div>
 
 
@@ -210,53 +214,26 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="who-wants-to-live-forever" class="level1">
-<h1>Who wants to live forever?</h1>
-<section id="proyectos-en-curso-current-projects" class="level2">
-<h2 class="anchored" data-anchor-id="proyectos-en-curso-current-projects">2020 - Proyectos en curso (Current projects):</h2>
-<ul>
-<li><a href="https://jrfep.github.io/Ecosystem-profiles-comments/">Tipología global de ecosystemas</a></li>
-</ul>
-</section>
-<section id="perfiles-académicos-y-profesionales-profesional-and-academic-profiles" class="level2">
-<h2 class="anchored" data-anchor-id="perfiles-académicos-y-profesionales-profesional-and-academic-profiles">Perfiles académicos y profesionales (Profesional and academic profiles)</h2>
-<p>Esta es una lista de mis perfiles profesionales, más o menos actualizados.</p>
-<ul>
-<li>ORCID: <a href="http://orcid.org/0000-0002-9554-3395">0000-0002-9554-3395</a></li>
-<li>Web of Science/Publons ResearcherID: <a href="https://www.webofscience.com/wos/author/rid/M-3785-2015">M-3785-2015</a></li>
-<li>AuthorID de Scopus: <a href="http://www.scopus.com/authid/detail.uri?authorId=6507728759">6507728759</a></li>
-<li>ScienceOpen: <a href="https://www.scienceopen.com/user/jrfep">jrfep</a></li>
-<li>Google scholar: <a href="http://scholar.google.es/citations?user=A2Thq5UAAAAJ&amp;hl=en">A2Thq5UAAAAJ</a></li>
-<li>LinkedIn <a href="https://www.linkedin.com/pub/jos%C3%A9-ferrer/70/a47/547">Jose Ferrer</a></li>
-<li>Researchgate: <a href="https://www.researchgate.net/profile/Jose_Ferrer-Paris">Jose Ferrer Paris</a></li>
-<li>academia: <a href="https://ivic.academia.edu/JRFerrerParis">JR Ferrer Paris</a></li>
-</ul>
-<section id="taxonomía" class="level3">
-<h3 class="anchored" data-anchor-id="taxonomía">Taxonomía:</h3>
-<ul>
-<li>Zoobank: <a href="http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6">José R. Ferrer-Paris</a></li>
-</ul>
-</section>
-</section>
-<section id="proyectos-reproducibles" class="level2">
-<h2 class="anchored" data-anchor-id="proyectos-reproducibles">Proyectos reproducibles</h2>
-<p>En los siguientes enlaces pueden encontrar algunos insumos y productos de mi trabajo cient€ifico.</p>
-<ul>
-<li>OSF: <a href="https://osf.io/7q5ny">José R. Ferrer Paris</a></li>
-<li>figshare: <a href="http://figshare.com/authors/Jos_R_Ferrer_Paris/592994">José R. Ferrer Paris</a></li>
-<li>zenodo: <a href="https://zenodo.org/communities/iucn-rle/?page=1&amp;size=20">IUCN Red List of Ecosystems community</a></li>
-<li>dataverse: <a href="https://dataverse.harvard.edu/dataverse/NeoMapas">NeoMapas dataverse</a></li>
-</ul>
-</section>
-<section id="versiones-viejas" class="level2">
-<h2 class="anchored" data-anchor-id="versiones-viejas">Versiones viejas…</h2>
-<p>Blogger: <a href="https://www.blogger.com/profile/10848423852723434095">José R. Ferrer Paris</a></p>
+<p>Mariposas endémicas de los páramos de Venezuela <span class="citation" data-cites="Viloria_2015_description_Redonda Viloria_2003">(<a href="#ref-Viloria_2015_description_Redonda" role="doc-biblioref">Á. L. Viloria et al. 2015</a>; <a href="#ref-Viloria_2003" role="doc-biblioref">A. L. Viloria et al. 2003</a>)</span></p>
+<p>Oso frontino <span class="citation" data-cites="Sanchez_Mercado_2014_Ecological_traps_Tremarctos S_nchez_Mercado_2008">(<a href="#ref-Sanchez_Mercado_2014_Ecological_traps_Tremarctos" role="doc-biblioref">A. Sánchez-Mercado et al. 2014</a>; <a href="#ref-S_nchez_Mercado_2008" role="doc-biblioref">Ada Sánchez-Mercado et al. 2008</a>)</span></p>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-S_nchez_Mercado_2008" class="csl-entry" role="listitem">
+Sánchez-Mercado, Ada, José Rafael Ferrer-Paris, Edgard Yerena, Shaenandhoa García-Rangel, and Kathryn M. Rodríguez-Clark. 2008. <span>“Factors Affecting Poaching Risk to Vulnerable Andean Bears Tremarctos Ornatus in the Cordillera de m<span>é</span>rida, Venezuela: Space, Parks and People.”</span> <em>Oryx</em> 42 (03). <a href="https://doi.org/10.1017/s0030605308006996">https://doi.org/10.1017/s0030605308006996</a>.
+</div>
+<div id="ref-Sanchez_Mercado_2014_Ecological_traps_Tremarctos" class="csl-entry" role="listitem">
+Sánchez-Mercado, A., José Rafael Ferrer-Paris, S. García-Rangel, E. Yerena, B. A. Robertson, and K. M. Rodríguez-Clark. 2014. <span>“Combining Threat and Occurrence Models to Predict Potential Ecological Traps for Andean Bears in the Cordillera de m<span>é</span>rida, Venezuela.”</span> <em>Animal Conservation</em> 17 (4): 388–98. <a href="https://doi.org/10.1111/acv.12106">https://doi.org/10.1111/acv.12106</a>.
+</div>
+<div id="ref-Viloria_2003" class="csl-entry" role="listitem">
+Viloria, Angel L., Tomasz W. Pyrcz, Janusz Wojtusiak, José Rafael Ferrer-Paris, George W. Beccaloni, Klaus Sattler, and David C. Lees. 2003. <span>“A Brachypterous Butterfly?”</span> <em>Proceedings of the Royal Society of London. Series B: Biological Sciences</em> 270 (suppl<span>_</span>1). <a href="https://doi.org/10.1098/rsbl.2003.0015">https://doi.org/10.1098/rsbl.2003.0015</a>.
+</div>
+<div id="ref-Viloria_2015_description_Redonda" class="csl-entry" role="listitem">
+Viloria, Ángel L., José Rafael Ferrer-Paris, Jesús Camacho, and Mauro Costa. 2015. <span>“New Satyrine Butterflies from the Venezuelan Andes (Lepidoptera: Nymphalidae).”</span> <em>Anartia</em> 25: 95­–160. <a href="https://doi.org/10.5281/ZENODO.18332">https://doi.org/10.5281/ZENODO.18332</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

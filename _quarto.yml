@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "today"
+  navbar:
+    title: "J.R. Ferrer-Paris"
+    type: inverse
+    left:
+      - text: "Home"
+        icon: fa-home
+        href: index.qmd
+      - text: "Research outputs"
+        icon: fa-gear
+        menu:
+          - text: "My publications"
+            href: rzrch/my-publications.qmd
+          - text: "All research output"
+            href: rzrch/research-outputs.qmd
+          - text: "Reproducible Code+Data"
+            href: rzrch/my-osfr-projects.qmd
+          - text: "Code repositories"
+            href: rzrch/my-github-repos.qmd
+      - text: "Biodiversity records"
+        icon: fa-envira
+        menu:
+          - text: "My favourite ecosystems"
+            href: ecos/my-favs.qmd
+          - text: "My favourite species"
+            href: taxa/my-favs.qmd
+          - text: "iNaturalist observations"
+            href: biodv/inat_flexdashboard.Rmd
+      - text: "Just for fun"
+        icon: fa-smile
+        menu:
+          - text: "Futbol"
+            icon: fa-futbol
+            href: j4fun/blog_LaLiga_FinalTemp2019.qmd
+    right:
+      - text: "How to..."
+        icon: fa-question
+        menu:
+          - text: "(re-)create this site"
+            href: how2/how-to-site.qmd
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

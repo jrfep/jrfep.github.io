@@ -1,0 +1,16 @@
+---
+title: "List of research outputs"
+author: "JR Ferrer-Paris"
+date: "04/09/2022"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+nocite: |
+  @*
+---
+
+## Peer reviewed
+
+This is the list of publication with peer-review, includes articles in journals and reports subjected to peer-review.
+
+::: {#refs}
+:::

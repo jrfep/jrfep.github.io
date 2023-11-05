@@ -60,3 +60,5 @@ rsconnect/
 /*_files/
 
 .Rproj.user
+
+/.quarto/

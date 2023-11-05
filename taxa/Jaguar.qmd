@@ -1,0 +1,13 @@
+---
+title: "Panthera onca"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+---
+
+<a title="See page for author, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Jaguar_warrior.jpg"><img width="256" alt="Jaguar warrior" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Jaguar_warrior.jpg/256px-Jaguar_warrior.jpg"></a>
+
+@Jedrzejewski2017
+
+@Stachowicz_2021_Hunting_Gran_Sabana
+
+@Stachowicz_2020_Monitoring_Gran_Sabana
