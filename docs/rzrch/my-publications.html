@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="JR Ferrer-Paris">
+<meta name="dcterms.date" content="2022-04-09">
 
-<title>today - Mis ecosistemas favoritos</title>
+<title>today - List of research outputs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +51,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,38 +80,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -206,21 +194,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#peer-reviewed" id="toc-peer-reviewed" class="nav-link active" data-scroll-target="#peer-reviewed">Peer reviewed</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mis ecosistemas favoritos</h1>
+<h1 class="title">List of research outputs</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>JR Ferrer-Paris </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 9, 2022</p>
+    </div>
+  </div>
   
     
   </div>
@@ -228,38 +234,109 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="peer-reviewed" class="level2">
+<h2 class="anchored" data-anchor-id="peer-reviewed">Peer reviewed</h2>
+<p>This is the list of publication with peer-review, includes articles in journals and reports subjected to peer-review.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Blanco_Perez_2016_Metodos_Distribucion" class="csl-entry" role="listitem">
+Blanco Pérez, Eliana, and José Rafael Ferrer-Paris. 2016. <span>“Métodos de Estimación de Cambios Espacio-Temporales En La Distribución Geográfica de Especies.”</span> <em>Métodos En Ecología y Sistemática</em> 11 (2): 121.
+</div>
+<div id="ref-Bland_2019_Impact_RLE" class="csl-entry" role="listitem">
+Bland, Lucie M., Emily Nicholson, Rebecca M. Miller, Angela Andrade, Aurélien Carré, Andres Etter, José Rafael Ferrer-Paris, et al. 2019. <span>“Impacts of the IUCN Red List of Ecosystems on Conservation Policy and Practice.”</span> <em>Conservation Letters</em> 12 (5): e12666. https://doi.org/<a href="https://doi.org/10.1111/conl.12666">https://doi.org/10.1111/conl.12666</a>.
+</div>
+<div id="ref-Eberhard_2021_Acoustics_Eupsittula" class="csl-entry" role="listitem">
+Eberhard, Jessica R, Irene Zager, José Rafael Ferrer-Paris, and Kathryn Rodríguez-Clark. 2021. <span>“<span class="nocase">Contact calls of island Brown-throated Parakeets exhibit both character and variance shifts compared to calls of their mainland relatives</span>.”</span> <em>Ornithology</em> 139 (1). <a href="https://doi.org/10.1093/ornithology/ukab076">https://doi.org/10.1093/ornithology/ukab076</a>.
+</div>
+<div id="ref-Ferrer-Paris_2022_Distribution_Oxysternon" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Cecilia Lozano, and Arlene Cardozo-Urdaneta. 2022. <span>“Evaluando La Novedad de Un Nuevo Registro de &amp;Lt;em&amp;gt;oxysternon Ebeninum&amp;lt;/Em&amp;gt; (Nevison, 1890) (Coleoptera: Scarabaeidae: Scarabaeinae) En Venezuela.”</span> <em>Revista Chilena de Entomología</em> 48 (2). <a href="https://www.biotaxa.org/rce/article/view/75123">https://www.biotaxa.org/rce/article/view/75123</a>.
+</div>
+<div id="ref-Ferrer_Paris_2016" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Cecilia Lozano, Arlene Cardozo-Urdaneta, and Arianna Thomas Cabianca. 2016. <span>“Indicative Response of Oxysternon Festivum Linn<span>é</span> (Coleoptera: Scarabaidae) to Vegetation Condition in the Basin of the Orinoco River, Venezuela.”</span> <em>Journal of Insect Conservation</em> 20 (3): 527–38. <a href="https://doi.org/10.1007/s10841-016-9886-6">https://doi.org/10.1007/s10841-016-9886-6</a>.
+</div>
+<div id="ref-Ferrer_Paris_2012" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Jon P. Rodríguez, Tatjana C. Good, Ada Y. Sánchez-Mercado, Kathryn M. Rodríguez-Clark, Gustavo A. Rodríguez, and Angel Solís. 2012. <span>“Systematic, Large-Scale National Biodiversity Surveys: <span>NeoMaps</span> as a Model for Tropical Regions.”</span> <em>Diversity and Distributions</em> 19 (2): 215–31. <a href="https://doi.org/10.1111/ddi.12012">https://doi.org/10.1111/ddi.12012</a>.
+</div>
+<div id="ref-Ferrer-Paris_2020_Occurrence_Psittacidae" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, and Ada Sánchez-Mercado. 2020. <span>“Making Inferences about Non-Detection Observations to Improve Occurrence Predictions in Venezuelan Psittacidae.”</span> <em>Bird Conservation International</em> 30 (3): 406–22. <a href="https://doi.org/10.1017/S0959270919000522">https://doi.org/10.1017/S0959270919000522</a>.
+</div>
+<div id="ref-Ferrer-Paris_2021_Distribution_Psittaciformes" class="csl-entry" role="listitem">
+———. 2021. <span>“Contributions of Distribution Modelling to the Ecological Study of Psittaciformes.”</span> <em>Diversity</em> 13 (12). <a href="https://doi.org/10.3390/d13120611">https://doi.org/10.3390/d13120611</a>.
+</div>
+<div id="ref-Ferrer_Paris_2013" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Ada Sánchez-Mercado, Ángel L. Viloria, and John Donaldson. 2013. <span>“Congruence and Diversity of Butterfly-Host Plant Associations at Higher Taxonomic Levels.”</span> Edited by Hans Henrik Bruun. <em><span>PLoS</span> <span>ONE</span></em> 8 (5): e63570. <a href="https://doi.org/10.1371/journal.pone.0063570">https://doi.org/10.1371/journal.pone.0063570</a>.
+</div>
+<div id="ref-Ferrer_Paris_2014_distribution_Amazon" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Ada Sánchez-Mercado, Kathryn M. Rodríguez-Clark, Jon Paul Rodríguez, and Gustavo A. Rodríguez. 2014. <span>“Using Limited Data to Detect Changes in Species Distributions: Insights from Amazon Parrots in Venezuela.”</span> <em>Biological Conservation</em> 173 (May): 133–43. <a href="https://doi.org/10.1016/j.biocon.2013.07.032">https://doi.org/10.1016/j.biocon.2013.07.032</a>.
+</div>
+<div id="ref-Ferrer-Paris_2019_RLE_Forests" class="csl-entry" role="listitem">
+Ferrer-Paris, José Rafael, Irene Zager, David A. Keith, María A. Oliveira-Miranda, Jon Paul Rodríguez, Carmen Josse, Mario González-Gil, Rebecca M. Miller, Carlos Zambrana-Torrelio, and Edmund Barrow. 2019. <span>“An Ecosystem Risk Assessment of Temperate and Tropical Forests of the Americas with an Outlook on Future Conservation Strategies.”</span> <em>Conservation Letters</em> 12 (2): e12623. <a href="https://doi.org/10.1111/conl.12623">https://doi.org/10.1111/conl.12623</a>.
+</div>
+<div id="ref-Herrera2018b" class="csl-entry" role="listitem">
+Herrera, Ileana, José Rafael Ferrer-Paris, D Benzo, S Flores, B García, and Jafet M Nassar. 2018. <span>“An Invasive Succulent Plant (Kalanchoe Daigremontiana) Influences Soil Carbon and Nitrogen Mineralization in a Neotropical Semiarid Zone.”</span> <em>Pedosphere</em> 28 (4): 632–43. <a href="https://doi.org/10.1016/S1002-0160(18)60029-3">https://doi.org/10.1016/S1002-0160(18)60029-3</a>.
+</div>
+<div id="ref-Herrera_2016" class="csl-entry" role="listitem">
+Herrera, Ileana, José Rafael Ferrer-Paris, José I. Hernández-Rosas, and Jafet M. Nassar. 2016. <span>“Impact of Two Invasive Succulents on Native-Seedling Recruitment in Neotropical Arid Environments.”</span> <em>Journal of Arid Environments</em> 132 (September): 15–25. <a href="https://doi.org/10.1016/j.jaridenv.2016.04.007">https://doi.org/10.1016/j.jaridenv.2016.04.007</a>.
+</div>
+<div id="ref-Jedrzejewski2017" class="csl-entry" role="listitem">
+Jędrzejewski, Włodzimierz, Ernesto O Boede, María Abarca, Ada Sánchez-Mercado, José Rafael Ferrer-Paris, Margarita Lampo, Grisel Velásquez, et al. 2017. <span>“Predicting Carnivore Distribution and Extirpation Rate Based on Human Impacts and Productivity Factors; Assessment of the State of Jaguar (Panthera Onca) in Venezuela.”</span> <em>Biological Conservation</em> 206 (February): 132–42. <a href="https://doi.org/10.1016/j.biocon.2016.09.027">https://doi.org/10.1016/j.biocon.2016.09.027</a>.
+</div>
+<div id="ref-Keith_2022_Resilience_Swamps" class="csl-entry" role="listitem">
+Keith, DA, DH Benson, IRC Baird, L Watts, CC Simpson, M Krogh, S Gorissen, José Rafael Ferrer-Paris, and TJ Mason. n.d. <span>“Effects of Interactions Between Anthropogenic Stressors and Recurring Perturbations on Ecosystem Resilience and Collapse.”</span> <em>Conservation Biology</em> n/a (n/a). https://doi.org/<a href="https://doi.org/10.1111/cobi.13995">https://doi.org/10.1111/cobi.13995</a>.
+</div>
+<div id="ref-Keith_2020_Ecosystem_Typology" class="csl-entry" role="listitem">
+Keith, David A., Jose R. Ferrer-Paris, Emily Nicholson, and Richard T. Kingsford, eds. 2020. <em><span>IUCN</span> Global Ecosystem Typology 2.0: Descriptive Profiles for Biomes and Ecosystem Functional Groups</em>. <span>IUCN</span>, International Union for Conservation of Nature. <a href="https://doi.org/10.2305/iucn.ch.2020.13.en">https://doi.org/10.2305/iucn.ch.2020.13.en</a>.
+</div>
+<div id="ref-Keith_2022_Ecosystem_Typology" class="csl-entry" role="listitem">
+Keith, David A., José R. Ferrer-Paris, Emily Nicholson, Melanie J. Bishop, Beth A. Polidoro, Eva Ramirez-Llodra, Mark G. Tozer, et al. 2022. <span>“A Function-Based Typology for Earth’s Ecosystems.”</span> <em>Nature</em> 610: 513–18. <a href="https://doi.org/10.1038/s41586-022-05318-4">https://doi.org/10.1038/s41586-022-05318-4</a>.
+</div>
+<div id="ref-https://doi.org/10.1111/cobi.14169" class="csl-entry" role="listitem">
+Keith, David A., Somaya Magdy M. Ghoraba, Eric Kaly, Kendall R. Jones, Ané Oosthuizen, David Obura, Hugo M. Costa, et al. n.d. <span>“Contributions of Red Lists of Ecosystems to Risk-Based Design and Management of Protected and Conserved Areas in Africa.”</span> <em>Conservation Biology</em> n/a (n/a). https://doi.org/<a href="https://doi.org/10.1111/cobi.14169">https://doi.org/10.1111/cobi.14169</a>.
+</div>
+<div id="ref-Moran2018" class="csl-entry" role="listitem">
+Morán, Lisandro, Luis García, José D Ferrebuz, Roxana Sánchez, Ada Sánchez-Mercado, Alberto Porta, and José Rafael Ferrer-Paris. 2018. <span>“Interannual and Daily Activity Patterns of Mid-Sized Mammals in Maracaibo Lake Basin, Venezuela.”</span> <em>Therya</em> 9 (3): 227 —–236. <a href="https://doi.org/10.12933/therya-18-616">https://doi.org/10.12933/therya-18-616</a>.
+</div>
+<div id="ref-Murray_2020_RLE_Myanmar" class="csl-entry" role="listitem">
+Murray, Nicholas J., David A. Keith, Adam Duncan, Robert Tizard, José Rafael Ferrer-Paris, Thomas A. Worthington, Kate Armstrong, et al. 2020. <span>“Myanmar’s Terrestrial Ecosystems: Status, Threats and Conservation Opportunities.”</span> <em>Biological Conservation</em> 252: 108834. https://doi.org/<a href="https://doi.org/10.1016/j.biocon.2020.108834">https://doi.org/10.1016/j.biocon.2020.108834</a>.
+</div>
+<div id="ref-Rodr_guez_2012" class="csl-entry" role="listitem">
+Rodríguez, Gustavo A., Jon Paul Rodríguez, José Rafael Ferrer-Paris, and Ada Sánchez-Mercado. 2012. <span>“A Nation-Wide Standardized Bird Survey Scheme for Venezuela.”</span> <em>The Wilson Journal of Ornithology</em> 124 (2): 230–44. <a href="https://doi.org/10.1676/11-057.1">https://doi.org/10.1676/11-057.1</a>.
+</div>
+<div id="ref-Rowland_2019_Indices_Ecosystem" class="csl-entry" role="listitem">
+Rowland, Jessica A., Lucie M. Bland, David A. Keith, Diego Juffe-Bignoli, Mark A. Burgman, Andres Etter, José Rafael Ferrer-Paris, Rebecca M. Miller, Andrew L. Skowno, and Emily Nicholson. 2019. <span>“Ecosystem Indices to Support Global Biodiversity Conservation.”</span> <em>Conservation Letters</em> 13 (1). <a href="https://doi.org/10.1111/conl.12680">https://doi.org/10.1111/conl.12680</a>.
+</div>
+<div id="ref-Sanchez-Mercado_2021_IWT_Psittaciformes" class="csl-entry" role="listitem">
+Sánchez-Mercado, Ada, José Rafael Ferrer-Paris, Jon Paul Rodríguez, and José L. Tella. 2021. <span>“A Literature Synthesis of Actions to Tackle Illegal Parrot Trade.”</span> <em>Diversity</em> 13 (5). <a href="https://doi.org/10.3390/d13050191">https://doi.org/10.3390/d13050191</a>.
+</div>
+<div id="ref-S_nchez_Mercado_2008" class="csl-entry" role="listitem">
+Sánchez-Mercado, Ada, José Rafael Ferrer-Paris, Edgard Yerena, Shaenandhoa García-Rangel, and Kathryn M. Rodríguez-Clark. 2008. <span>“Factors Affecting Poaching Risk to Vulnerable Andean Bears Tremarctos Ornatus in the Cordillera de m<span>é</span>rida, Venezuela: Space, Parks and People.”</span> <em>Oryx</em> 42 (03). <a href="https://doi.org/10.1017/s0030605308006996">https://doi.org/10.1017/s0030605308006996</a>.
+</div>
+<div id="ref-Sanchez_Mercado_2014_Ecological_traps_Tremarctos" class="csl-entry" role="listitem">
+Sánchez-Mercado, A., José Rafael Ferrer-Paris, S. García-Rangel, E. Yerena, B. A. Robertson, and K. M. Rodríguez-Clark. 2014. <span>“Combining Threat and Occurrence Models to Predict Potential Ecological Traps for Andean Bears in the Cordillera de m<span>é</span>rida, Venezuela.”</span> <em>Animal Conservation</em> 17 (4): 388–98. <a href="https://doi.org/10.1111/acv.12106">https://doi.org/10.1111/acv.12106</a>.
+</div>
+<div id="ref-Sanchez-Mercado2018" class="csl-entry" role="listitem">
+Sánchez-Mercado, A, K M Rodríguez-Clark, J Miranda, José Rafael Ferrer-Paris, B Coyle, S Toro, A Cardozo-Urdaneta, and M J Braun. 2018. <span>“How to Deal with Ground Truthing Affected by Human-Induced Habitat Change?: Identifying High-Quality Habitats for the Critically Endangered Red Siskin.”</span> <em>Ecology and Evolution</em> 8 (2): 841 —–851. <a href="https://doi.org/10.1002/ece3.3628">https://doi.org/10.1002/ece3.3628</a>.
+</div>
+<div id="ref-Stachowicz_2020_Monitoring_Gran_Sabana" class="csl-entry" role="listitem">
+Stachowicz, Izabela, José Rafael Ferrer-Paris, Marcial Quiroga-Carmona, Lisandro Moran, and Cecilia Lozano. 2020. <span>“Baseline for Monitoring and Habitat Use of Medium to Large Non-Volant Mammals in Gran Sabana, Venezuela.”</span> <em>Therya</em> 11 (2): 169–79. <a href="https://doi.org/10.12933/therya-20-891">https://doi.org/10.12933/therya-20-891</a>.
+</div>
+<div id="ref-Stachowicz_2021_Hunting_Gran_Sabana" class="csl-entry" role="listitem">
+Stachowicz, Izabela, José Rafael Ferrer-Paris, and Ada Sánchez-Mercado. 2021. <span>“Shifting Cultivation and Hunting Across the Savanna-Forest Mosaic in the Gran Sabana, Venezuela: Facing Changes.”</span> <em>PeerJ</em> 9 (June): e11612. <a href="https://doi.org/10.7717/peerj.11612">https://doi.org/10.7717/peerj.11612</a>.
+</div>
+<div id="ref-Thomas_Cabianca_2015_Invasion_Chrysomya" class="csl-entry" role="listitem">
+Thomas Cabianca, Arianna, and José Rafael Ferrer-Paris. 2015. <span>“Primer Reporte de La Especie Exótica Chrysomya Rufifacies Macquart 1844 y Nuevos Registros de c. Putoria Wiedemann 1818 (Diptera: Calliphoridae) Para Venezuela.”</span> <em>Bioinvasiones</em> 1 (19).
+</div>
+<div id="ref-Viloria_2003" class="csl-entry" role="listitem">
+Viloria, Angel L., Tomasz W. Pyrcz, Janusz Wojtusiak, José Rafael Ferrer-Paris, George W. Beccaloni, Klaus Sattler, and David C. Lees. 2003. <span>“A Brachypterous Butterfly?”</span> <em>Proceedings of the Royal Society of London. Series B: Biological Sciences</em> 270 (suppl<span>_</span>1). <a href="https://doi.org/10.1098/rsbl.2003.0015">https://doi.org/10.1098/rsbl.2003.0015</a>.
+</div>
+<div id="ref-Viloria_2015_description_Redonda" class="csl-entry" role="listitem">
+Viloria, Ángel L., José Rafael Ferrer-Paris, Jesús Camacho, and Mauro Costa. 2015. <span>“New Satyrine Butterflies from the Venezuelan Andes (Lepidoptera: Nymphalidae).”</span> <em>Anartia</em> 25: 95­–160. <a href="https://doi.org/10.5281/ZENODO.18332">https://doi.org/10.5281/ZENODO.18332</a>.
+</div>
+</div>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1699154169492" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../ecos/T6.5-paramos.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="../ecos/T6.5-paramos.html">
-<h3 class="no-anchor listing-title">
-Páramos
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Mariposas endémicas de los páramos de Venezuela <span class="citation" data-cites="Viloria_2015_description_Redonda Viloria_2003">(Á. L. Viloria et al. 2015; A. L. Viloria et al. 2003)</span>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../ecos/T6.5-paramos.html"> </a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
