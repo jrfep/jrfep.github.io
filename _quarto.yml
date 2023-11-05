@@ -29,8 +29,6 @@ website:
             href: ecos/my-favs.qmd
           - text: "My favourite species"
             href: taxa/my-favs.qmd
-          - text: "iNaturalist observations"
-            href: biodv/inat_flexdashboard.Rmd
       - text: "Just for fun"
         icon: fa-smile
         menu:
