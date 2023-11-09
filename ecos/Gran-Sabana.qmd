@@ -1,0 +1,9 @@
+---
+title: "Llanos de Venezuela"
+bibliography: 
+  - ../bibTeX/other.bibtex
+---
+
+
+Ejemplo con mariposas de NeoMapas [@Ferrer-Paris2014_congreso]
+

@@ -1,0 +1,33 @@
+Tengo que recuperar algunas referencias que no he actualizado, por ejemplo de eventos y congresos:
+
+https://scholar.google.es/citations?view_op=view_citation&hl=en&user=A2Thq5UAAAAJ&cstart=20&pagesize=80&citation_for_view=A2Thq5UAAAAJ%3A2l5NCbZemmgC&inst=7289110936595769722
+
+https://www.researchgate.net/publication/309571440_MARIPOSAS_ALTIANDINAS_LEPIDOPTERA_NYMPHALIDAE_SATYRINAE_Y_LA_CONSERVACION_DE_LOS_PARAMOS_EN_VENEZUELA
+
+https://www.researchgate.net/profile/Angel-Viloria/publication/309571440_MARIPOSAS_ALTIANDINAS_LEPIDOPTERA_NYMPHALIDAE_SATYRINAE_Y_LA_CONSERVACION_DE_LOS_PARAMOS_EN_VENEZUELA/links/5817f63908aedc7d896908a9/MARIPOSAS-ALTIANDINAS-LEPIDOPTERA-NYMPHALIDAE-SATYRINAE-Y-LA-CONSERVACION-DE-LOS-PARAMOS-EN-VENEZUELA.pdf
+
+https://www.researchgate.net/publication/309571440_MARIPOSAS_ALTIANDINAS_LEPIDOPTERA_NYMPHALIDAE_SATYRINAE_Y_LA_CONSERVACION_DE_LOS_PARAMOS_EN_VENEZUELA/stats
+
+Plantas medicinales del municipio Maracaibo
+
+Algunos posters como el de Charaxes en Africa
+
+Y las tesis
+
+La pagina de especies amenazas esta nuevamente en linea, puedo anadir la lista de especies de mariposas y escarabajos amenazados!
+
+
+Los blog post viejos de NeoMapas se pueden revisar aqui:
+
+https://www.blogger.com/blog/posts/5411230886461028973
+
+Por ejemplo:
+
+<p dir="ltr">Hacemos un gran esfuerzo para documentar la biodiversidad de Venezuela. Miles de horas de trabajo de campo se resumen en planillas y ejemplares que debemos organizar y procesar. Una vez digitalizados es posible analizar los resultados, pero el respaldo f&#237;sico de los originales es esencial para el control de calidad y la constante verificaci&#243;n de dudas. </p>
+<p dir="ltr">M&#225;s all&#225; del ejemplar, imprescindible para el trabajo taxon&#243;mico y morfol&#243;gico, las planillas proveen toda la informaci&#243;n asociada al evento de captura u observaci&#243;n: fecha, hora, localidad, esfuerzo de muestreo,&nbsp; habitat y perturbaciones, entre otros detalles y mediciones que pueden ser &#250;tiles para comprender mejor las asociaciones de las especies con su entorno natural. </p>
+<p dir="ltr">En 31 carpetas guardamos planillas, listas, mapas y formatos que surgieron de las visitas a 53 regiones de nuestro pa&#237;s. </p>
+<div class="separator" style="clear: both; text-align: center;"> <a href="https://lh3.googleusercontent.com/-Xp6Irp403-Y/VxeD1m2Yc4I/AAAAAAAAERQ/d4FocQkkESw/s1600/20160420_082741.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"> <img border="0" src="https://lh3.googleusercontent.com/-Xp6Irp403-Y/VxeD1m2Yc4I/AAAAAAAAERQ/d4FocQkkESw/s640/20160420_082741.jpg"> </a> </div>
+
+
+
+<a href="http://www.ivic.gob.ve/ecologia/?mod=prs.php&amp;prsid=jonpaul&amp;nmbr=Jon+Paul+Rodr%26iacute%3Bguez">Jon Paul Rodríguez</a>: investigador del Centro de Ecología del IVIC, propone en 2002, junto  a Chris Sharpe, la iniciativa de NeoMapas como un modelo para la creación de bases de datos georeferenciadas sobre la distribución y abundancia de la biodiversidad neotropical. NeoMapas se fundamenta en el diseño de protocolos que minimizan el esfuerzo de muestreo de campo, a la vez que sistematizan los métodos para su fácil replicación y la comparación entre localidades, y hace énfasis en la creación y fortalecimiento de equipos de trabajo locales.<br /><br /><a href="http://www.ivic.gob.ve/ecologia/?mod=prs.php&amp;prsid=jferrer&amp;nmbr=Jos%26eacute%3B+Rafael+Ferrer+Paris">JR Ferrer-Paris</a>: como estudiante doctoral comienza a participar desde 2002 en el diseño muestral, los protocolos de campo y el desarrollo de la base de datos de NeoMapas. Actualmente, como coordinador de bioinformática de la Unidad de Biodiversidad del IVIC (BiodiVen), está encargado de la organización de todo el flujo de trabajo, desde la captura de ejemplares en campo, hasta la generación automática de reportes a partir de la información almacenada en las bases de datos.<br /><br /><a href="http://www.ivic.gob.ve/ecologia/?mod=prs.php&amp;prsid=asanchez&amp;nmbr=Ada+Yelitza+Sanchez+Mercado">Ada Yelitza Sánchez-Mercado</a>: A partir de 2008 participa activamente en la coordinación de los cursos, las actividades de divulgación, y el desarrollo de productos (manuscritos científicos, página web, etc) de NeoMapas.<br /><br /><a href="http://www.ivic.gob.ve/ecologia/?mod=prs.php&amp;prsid=kmrc&amp;nmbr=Kathryn+M.+Rodr%26iacute%3Bguez-Clark">Kathryn Rodríguez-Clark</a>: Investigadora del Centro de Ecología del IVIC, participa en el desarrollo de productos científicos de NeoMapas y coordina parte del mantenimiento de las colecciones de invertebrados.<br /><br />Gustavo Rodríguez: Ornitólogo venezolano, a partir de mayo 2009 se encarga de planificar el primer censo nacional de aves de la iniciativa NeoMapas realizado en marzo-abril de 2010.<br /><br />Ángel Solís: Entomologo costaricense del Instituto Nacional de Biodiversidad de Costa Rica (INBio), colabora desde 2007 en la identificación de los escarabajos coprófagos capturados en las salidas de campo de NeoMapas.<br /><br /><a href="http://www.coralcoe.org.au/research/tatjanagood.html">Tatjana Good</a>: entre los años 2004 y 2006 participa en la iniciativa NeoMapas como investigadora de Diversitas invitada en el Centro de Ecología del IVIC. Contribuyó a la planificación, discusión y puesta en práctica de los protocolos de trabajo de campo de mariposas y escarabajos. Actualmente se encuentra residenciada en Australia.<br /><a href="http://www.ivic.gob.ve/ecologia/?mod=prs.php&amp;prsid=aviloria&amp;nmbr=%26Aacute%3Bngel+L.+Viloria+P."><br />Ángel L. Viloria</a>: investigador y actualmente Director del IVIC, ha apoyado todo el trabajo sobre las mariposas diurnas en el marco de la iniciativa de NeoMapas.<br /><br />Asistentes de campo y laboratorio: Helios Martínez, Mónica Núñez, Katiusca González, Arianna Thomas.

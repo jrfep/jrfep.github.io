@@ -2,9 +2,11 @@
 title: "Páramos"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/LRAV.bibtex
 ---
 
-Mariposas endémicas de los páramos de Venezuela [@Viloria_2015_description_Redonda; @Viloria_2003]
+Mariposas endémicas de los páramos de Venezuela [@Viloria_2015_description_Redonda; @Viloria_2003]. Especialmente [*Redonda chiquinquirana*](/taxa/Redonda-chiquinquirana.qmd), *Diaphanos huberi* y otras especies en el libro rojo de la fauna venezolana [@LRFV_huberi; @LRFV_bordoni].
 
-Oso frontino [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008]
+[Oso frontino](/taxa/Oso-frontino.qmd) [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008]
 
+Prueba de cambios

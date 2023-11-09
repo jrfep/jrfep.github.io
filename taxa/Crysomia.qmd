@@ -1,0 +1,8 @@
+---
+title: "*Chrysomya rufifacies* Macquart 1844"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/reports.bibtex
+---
+
+[@Thomas_Cabianca_2015_Invasion_Chrysomya]

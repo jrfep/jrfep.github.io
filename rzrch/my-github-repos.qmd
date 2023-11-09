@@ -3,21 +3,18 @@ title: "Repositorios de software en GitHub"
 output: html_document
 editor_options: 
   chunk_output_type: console
+execute:
+  echo: false
 ---
 
-Usar el API para consultar lista de repositorios
-```{r}
-library(jsonlite)
+A continuación una lista de los repositorios de código de acceso abierto en los que contribuyo. [Usamos el [API de GitHub](https://docs.github.com/en/rest?apiVersion=2022-11-28) para consultar listas de repositorios por usuario y una función sencilla en R para leer los datos de la consulta.]{.aside}
 
-gh_rle_org <- read_json("https://api.github.com/orgs/red-list-ecosystem/repos")
-gh_ces_org <- read_json("https://api.github.com/orgs/ces-unsw-edu-au/repos")
-gh_jrfep <- read_json("https://api.github.com/users/jrfep/repos")
-# https://api.github.com/search/repositories?q=user:jrfep&fork:false
-# for each repo query the languages_url and summarise the lines of code for each language
-```
-
-Función para leer datos de la consulta del API.
 ```{r}
+#| message: false
+here::i_am("rzrch/my-github-repos.qmd")
+file_name <- here::here("data","GitHub-data.rda")
+load(file=file_name)
+
 getItem <- function(x) {
   sprintf("<b><a href='%s'>%s</a></b><p>Description: %s</p>",x$html_url, x$full_name, x$description)
 }
@@ -25,18 +22,21 @@ getItem <- function(x) {
 
 ## Organización `Red List Ecosystems`
 
-```{r, results='asis'}
+```{r}
+#| results: asis
 cat(unlist(lapply(gh_rle_org, getItem)))
 ```
 
 ## Organización `Centre for Ecosystem Sciences`
 
-```{r, results='asis'}
+```{r}
+#| results: asis
 cat(unlist(lapply(gh_ces_org, getItem)))
 ```
 
 ## Repositorios en cuenta personal `jrfep`
-```{r, results='asis'}
+```{r}
+#| results: asis
 cat(unlist(lapply(gh_jrfep, getItem)))
 ```
 

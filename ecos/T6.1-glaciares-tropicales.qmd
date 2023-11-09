@@ -1,0 +1,7 @@
+---
+title: "Glaciares tropicales"
+bibliography: 
+  - ../bibTeX/preprints.bibtex
+---
+
+Glaciar tropical de la Cordillera de Mérida [@Ferrer-Paris_Llambi_Melfo_Keith_2023]

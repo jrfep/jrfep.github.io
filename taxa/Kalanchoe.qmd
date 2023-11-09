@@ -1,0 +1,8 @@
+---
+title: "Kalanchoe daigremontana"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/reports.bibtex
+---
+
+Estudios liderados por mi amiga Ileana [@Herrera_2016;@Herrera2018b] en el [Parque Nacional Cerro Saroche](https://es.wikipedia.org/wiki/Parque_nacional_Cerro_Saroche).

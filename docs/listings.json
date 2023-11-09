@@ -2,15 +2,27 @@
   {
     "listing": "/taxa/my-favs.html",
     "items": [
+      "/taxa/Crysomia.html",
+      "/taxa/Redonda-chiquinquirana.html",
       "/taxa/Amazona-barbadensis.html",
+      "/taxa/Kalanchoe.html",
+      "/taxa/Kricogonia-lyside.html",
       "/taxa/Oxysternon-festivum.html",
       "/taxa/Jaguar.html",
-      "/taxa/Rhinella-humboldti.html"
+      "/taxa/Rhinella-humboldti.html",
+      "/taxa/Oso-frontino.html"
     ]
   },
   {
     "listing": "/ecos/my-favs.html",
     "items": [
+      "/ecos/T1.2-tropical-dry-forest.html",
+      "/ecos/Burro-Negro.html",
+      "/ecos/Africa-example.html",
+      "/ecos/T6.1-glaciares-tropicales.html",
+      "/ecos/Myanmar-example.html",
+      "/ecos/Gran-Sabana.html",
+      "/ecos/Llanos-anzoategui.html",
       "/ecos/T6.5-paramos.html"
     ]
   }

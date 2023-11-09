@@ -1,5 +1,6 @@
 ---
-title: "Water in the ecosphere according to Joyce (a crosswalk)"
+title: "Water in the ecosphere according to Joyce"
+subtitle: "(a crosswalk)"
 author: "JR Ferrer-Paris"
 date: "04/09/2022"
 ---

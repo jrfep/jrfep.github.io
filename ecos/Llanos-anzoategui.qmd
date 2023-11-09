@@ -1,0 +1,10 @@
+---
+title: "Llanos de Venezuela"
+bibliography: 
+  - ../bibTeX/other.bibtex
+---
+
+
+Mariposas en los llanos orientales de Venezuela [@Ferrer-Paris2014_congreso]
+
+https://global-ecosystems.org/T4.2

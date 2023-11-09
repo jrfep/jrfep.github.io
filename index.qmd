@@ -1,15 +1,13 @@
 ---
-title: "./jrfep"
+title: "Homo faber"
 ---
 
-# Who wants to live forever? 
+## Proyectos en curso
 
-## 2020 - Proyectos en curso (Current projects):
 * [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+* [UNSW codeRs](https://unsw-coders.netlify.app/)
 
-## Perfiles académicos y profesionales (Profesional and academic profiles)
-
-Esta es una lista de mis perfiles profesionales, más o menos actualizados.
+## Perfiles académicos y profesionales
 
 * ORCID: [0000-0002-9554-3395](http://orcid.org/0000-0002-9554-3395)
 * Web of Science/Publons ResearcherID: [M-3785-2015](https://www.webofscience.com/wos/author/rid/M-3785-2015)
@@ -19,15 +17,16 @@ Esta es una lista de mis perfiles profesionales, más o menos actualizados.
 * LinkedIn [Jose Ferrer](https://www.linkedin.com/pub/jos%C3%A9-ferrer/70/a47/547)
 * Researchgate: [Jose Ferrer Paris](https://www.researchgate.net/profile/Jose_Ferrer-Paris)
 * academia: [JR Ferrer Paris](https://ivic.academia.edu/JRFerrerParis)
+* Redalyc: [José R. Ferrer-Paris](https://www.redalyc.org/autor.oa?id=68544)
 
-### Taxonomía:
+### Taxonomía
 
 * Zoobank: [José R. Ferrer-Paris](http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6)
 
 
 ## Proyectos reproducibles
 
-En los siguientes enlaces pueden encontrar algunos insumos y productos de mi trabajo cient€ifico.
+En los siguientes enlaces pueden encontrar algunos insumos y productos de mi trabajo científico.
 
 * OSF: [José R. Ferrer Paris](https://osf.io/7q5ny)
 * figshare: [José R. Ferrer Paris](http://figshare.com/authors/Jos_R_Ferrer_Paris/592994)
@@ -35,4 +34,5 @@ En los siguientes enlaces pueden encontrar algunos insumos y productos de mi tra
 * dataverse: [NeoMapas dataverse](https://dataverse.harvard.edu/dataverse/NeoMapas)
 
 ## Versiones viejas...
+
 Blogger: [José R. Ferrer Paris](https://www.blogger.com/profile/10848423852723434095)

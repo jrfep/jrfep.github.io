@@ -1,6 +1,5 @@
 ---
 title: "List of research outputs"
-author: "JR Ferrer-Paris"
 date: "04/09/2022"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
@@ -8,9 +7,9 @@ nocite: |
   @*
 ---
 
-## Peer reviewed
+## Publicaciones arbitradas
 
-This is the list of publication with peer-review, includes articles in journals and reports subjected to peer-review.
+Está es la lista de mis publicaciones arbitradas, incluye revistas científicas y reportes/libros editados por un comité científico.
 
 ::: {#refs}
 :::

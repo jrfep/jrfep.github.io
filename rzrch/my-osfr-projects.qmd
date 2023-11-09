@@ -7,9 +7,10 @@ editor_options:
 
 Usar el API para consultar lista de proyectos
 ```{r}
-library(osfr)
-lst_osf <- osf_retrieve_user("me") %>%
-  osf_ls_nodes()
+here::i_am("rzrch/my-osfr-projects.qmd")
+file_name <- here::here("data","OSF-data.rds")
+lst_osf <- readRDS(file=file_name)
+
 getItem <- function(x) {
   sprintf("<b><a href='%3$s'>%1$s</a></b><p>Description: %2$s</p>",
   x$attributes$title,

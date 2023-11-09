@@ -1,0 +1,34 @@
+https://credit.niso.org/
+
+https://jats4r.org/credit-taxonomy
+
+Conceptualization
+
+Data curation
+https://credit.niso.org/contributor-roles/data-curation/
+
+Formal Analysis
+
+Funding acquisition
+
+Investigation
+https://credit.niso.org/contributor-roles/investigation/
+
+Methodology
+
+Project administration
+
+Resources
+https://credit.niso.org/contributor-roles/resources/
+
+Software
+
+Supervision
+
+Validation
+
+Visualization
+
+Writing – original draft
+
+Writing – review & editing

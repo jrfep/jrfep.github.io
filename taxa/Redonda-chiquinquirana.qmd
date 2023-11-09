@@ -1,0 +1,56 @@
+---
+title: "*Redonda chiquinquirana*"
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/reports.bibtex
+  - ../bibTeX/other.bibtex
+  - ../bibTeX/thesis.bibtex
+  - ../bibTeX/LRAV.bibtex
+execute: 
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+Sobre la braquipteria en mariposas [@Viloria_2003; @Ferrer_Paris_2000_Diplom_thesis].
+
+Conservación de mariposas altiandinas [@Ferrer-Paris2015]
+
+Descripción de especies endémicas [@Viloria_2015_description_Redonda].
+
+En el libro rojo de la fauna venezolana [@LRFV_bordoni]
+
+```{r}
+#| message: false
+library(dplyr)
+library(rinat)
+library(leaflet)
+library(sf)
+here::i_am("taxa/Redonda-chiquinquirana.qmd")
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+inat_obs <- readRDS(file=file_name)
+```
+
+```{r}
+redonda <- inat_obs %>% filter(scientific_name %in% "Steromapedaliodes chiquinquirana")
+```
+
+```{r}
+
+obs_df <- 
+redonda  %>% 
+  select(longitude, latitude, datetime, common_name, 
+      scientific_name, image_url) %>%
+  st_as_sf(coords=c("longitude", "latitude"), crs=4326)
+popup_html <- with(obs_df, 
+                   sprintf("<p><b>%s</b><br/><i>%s</i></p>
+                           <p>Observed: %s<br/>
+                           <p><img src='%s' width='200'/></p>", 
+                           common_name,  scientific_name,
+                           datetime, image_url))
+leaflet(obs_df) %>% 
+  addProviderTiles("Esri.WorldImagery") %>% 
+  addMarkers(data = obs_df,
+                   popup = ~popup_html)
+```
+

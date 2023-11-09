@@ -34,12 +34,14 @@ But if we don't update the .gitignore file things can get messy.
 ## Render site
 
 With Rmarkdown we could run this (in RStudio) to render site locally:
-```{r eval=FALSE}
+```{r}
+#| eval: false
 rmarkdown::render_site()
 ```
 
 Or preview one file
-```{r eval=FALSE}
+```{r}
+#| eval: false
 rmarkdown::render_site("presentations.Rmd")
 ```
 
@@ -71,6 +73,42 @@ But it was a short-lived experiment. I think it could work for simple sites, but
 
 [^1]: Yes, I use this [weird spelling...](https://english.stackexchange.com/questions/230494/should-i-always-use-the-ised-ending-for-uk-english-and-the-ized-for-us)
 
+## OSF data
+
+```{r}
+#| eval: false
+here::i_am("how2/how-to-site.qmd")
+if (!require(osfr)) {
+  install.packages("osfr")
+  library(osfr)
+}
+lst_osf <- osf_retrieve_user("me") %>%
+  osf_ls_nodes()
+if (!dir.exists(here::here("data")))
+    dir.create(here::here("data"))
+file_name <- here::here("data","OSF-data.rds")
+saveRDS(file=file_name, lst_osf)
+```
+
+
+## GitHub data
+
+```{r}
+#| eval: false
+here::i_am("how2/how-to-site.qmd")
+if (!require(jsonlite)) {
+  install.packages("jsonlite")
+  library(jsonlite)
+}
+gh_rle_org <- read_json("https://api.github.com/orgs/red-list-ecosystem/repos")
+gh_ces_org <- read_json("https://api.github.com/orgs/ces-unsw-edu-au/repos")
+gh_jrfep <- read_json("https://api.github.com/users/jrfep/repos")
+# https://api.github.com/search/repositories?q=user:jrfep&fork:false
+# for each repo query the languages_url and summarise the lines of code for each language
+file_name <- here::here("data","GitHub-data.rda")
+save(file=file_name, gh_rle_org, gh_ces_org, gh_jrfep)
+```
+
 ## Flexdashboard and iNaturalist
 
 I use to have a dashboard here, but it works better with Rmarkdown than with quarto. SO I moved it to another site/repo.
@@ -83,7 +121,8 @@ https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG
 ### Get the data
 
 I first install the `rinat` package:
-```{r eval=FALSE}
+```{r}
+#| eval: false
 here::i_am("README.Rmd")
 if (!require(rinat)) {
   install.packages("rinat")
@@ -93,7 +132,8 @@ if (!require(rinat)) {
 
 Then I can download the observations from iNaturalist and save them in a data folder:
 
-```{r eval=FALSE}
+```{r}
+#| eval: false
 # Download observations and save to RDS file
 user_obs <- get_inat_obs_user("NeoMapas",maxresults = 5000)
 if (!dir.exists(here::here("data")))
