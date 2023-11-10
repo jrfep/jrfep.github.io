@@ -47,9 +47,23 @@ rmarkdown::render_site("presentations.Rmd")
 
 With quarto and RStudio we can open the Build tab and select Build Website...
 
+Or we can go to the command line and render the site: 
+
+```{sh}
+#| eval: false
+quarto render 
+```
+
 Sing [All the rowboats](https://youtu.be/2CZ8ossU4pc) in the meantime (optional).
 
-If this work, we can just `git push` it to the repo and see the changes!
+And then launch a preview:
+
+```{sh}
+#| eval: false
+quarto preview
+```
+
+If this work, we can just `git add`, `git commit` and `git push` it to the repo and see the changes!
 
 ## Alternatives
 
@@ -66,6 +80,18 @@ install.packages('babelquarto', repos = c('https://ropensci.r-universe.dev', 'ht
 
 But it was a short-lived experiment. I think it could work for simple sites, but would require more tweaks to make it work with my current site. 
 
+## Font Awesome
+
+They work well out of the box with Rmarkdown, but for quarto we need to install an extension.
+
+Switch to the repository folder and checkout the git branch we are working on, and then:
+
+```sh
+quarto install extension quarto-ext/fontawesome
+```
+
+Now I can use `{{{< fa smile >}}}` in the text and get a {{< fa smile >}}, or `{{{< fa lemon >}}}` and get a {{< fa lemon >}}.
+
 ## Just in case
 
 ![ [Stand back, I know regular expressions.](https://xkcd.com/208/)](https://imgs.xkcd.com/comics/regular_expressions.png)
@@ -73,7 +99,9 @@ But it was a short-lived experiment. I think it could work for simple sites, but
 
 [^1]: Yes, I use this [weird spelling...](https://english.stackexchange.com/questions/230494/should-i-always-use-the-ised-ending-for-uk-english-and-the-ized-for-us)
 
-## OSF data
+## Prepare data for some pages
+
+### OSF data
 
 ```{r}
 #| eval: false
@@ -91,7 +119,7 @@ saveRDS(file=file_name, lst_osf)
 ```
 
 
-## GitHub data
+### GitHub data
 
 ```{r}
 #| eval: false
@@ -109,7 +137,7 @@ file_name <- here::here("data","GitHub-data.rda")
 save(file=file_name, gh_rle_org, gh_ces_org, gh_jrfep)
 ```
 
-## Flexdashboard and iNaturalist
+### Flexdashboard and iNaturalist
 
 I use to have a dashboard here, but it works better with Rmarkdown than with quarto. SO I moved it to another site/repo.
 
@@ -118,9 +146,8 @@ There might be some alternatives in quarto for this, but haven't tested them yet
 That OLD dashboard was inspired by this example:
 https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG
 
-### Get the data
+To get the data I first install the `rinat` package:
 
-I first install the `rinat` package:
 ```{r}
 #| eval: false
 here::i_am("README.Rmd")
@@ -143,7 +170,7 @@ saveRDS(file=file_name, user_obs)
 
 ```
 
-### Get a logo
+To get the logo
 
 With `wget` and ImageMagick, it is easy to download and resize in the terminal (`bash`) with two lines of code:
 
