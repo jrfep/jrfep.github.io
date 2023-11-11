@@ -12,10 +12,10 @@ website:
     title: "J.R. Ferrer-Paris"
     type: inverse
     left:
-      - text: "Inicio"
+      - text: "{{< fa gear >}} Homo faber"
         icon: fa-home
         href: index.qmd
-      - text: "{{< fa gear >}} Ciencia y academia"
+      - text: "{{< fa landmark >}} Ciencia y academia"
         menu:
           - text: "Mis publicaciones"
             href: rzrch/my-publications.qmd
@@ -25,7 +25,7 @@ website:
             href: rzrch/my-osfr-projects.qmd
           - text: "Repositorios / código"
             href: rzrch/my-github-repos.qmd
-      - text: "{{< fab envira >}} Biodiversidad"
+      - text: "{{< fa leaf >}} Biodiversidad"
         menu:
           - text: "Mis ecosistemas favoritos"
             href: ecos/my-favs.qmd

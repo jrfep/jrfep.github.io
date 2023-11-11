@@ -3,10 +3,15 @@ title: "Páramos"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
   - ../bibTeX/LRAV.bibtex
+  - ../bibTeX/thesis.bibtex
 ---
 
-Mariposas endémicas de los páramos de Venezuela [@Viloria_2015_description_Redonda; @Viloria_2003]. Especialmente [*Redonda chiquinquirana*](/taxa/Redonda-chiquinquirana.qmd), *Diaphanos huberi* y otras especies en el libro rojo de la fauna venezolana [@LRFV_huberi; @LRFV_bordoni].
+En los páramos de Venezuela realicé mi tesis de pregrado enfocado en la ecología y biogeografía de las especies del género Redonda y otros mariposas paramunas [@Ferrer_Paris_2000_Diplom_thesis]. 
 
-[Oso frontino](/taxa/Oso-frontino.qmd) [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008]
+A partir de este trabajo empezamos a evaluar el estado de conservación de especies endémicas de nuestros páramos [@Viloria_2003] y la diversidad de especies y subespecies en este grupo de mariposas [@Viloria_2015_description_Redonda]. 
 
-Prueba de cambios
+Posteriormente realicé evaluaciones para la Lista Roja de Especies Amenazadas de Venezuela, en las que se incluye a [*Redonda chiquinquirana*](/taxa/Redonda-chiquinquirana.qmd), *Diaphanos huberi* y otras especies  [@LRFV_huberi; @LRFV_bordoni].
+
+Otro habitante del páramo que ha sido objeto de mis estudios es el [Oso frontino](/taxa/Oso-frontino.qmd) [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008].
+
+

@@ -4,6 +4,17 @@ bibliography:
   - ../bibTeX/peer-review.bibtex
 ---
 
-<a title="August Johan Rösel, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf"><img width="128" alt="First Illustration of Oxysternon festivum by Rösel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf/128px-First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf.png"></a>
+En los estudios de monitoreo ambiental es necesario contar con indicadores que nos permitan cuantificar el estado del sistema de estudio.
 
-@Ferrer_Paris_2016
+Por ejemplo, si el estudio se enfoca en la biodiversidad de un sitio o región, debemos considerar tres propiedades fundamentales: estructura, composición y función. Un muestreo a nivel de comunidades puede medir riqueza, equidad y diversidad&nbsp; (estructura), la diversidad beta o recambio de especies (composición), y la diversidad funcional. 
+
+Sin embargo la repuesta de la comunidad de organismos es compleja y puede ser difícil de interpretar. Un estudio directo de las poblaciones de especies seleccionadas puede ofrecer una medida más directa del estado del sistema de estudio. Para ello es necesario comprender la respuesta funcional de una especie a los cambios en su entorno. 
+
+NeoMapas aporta datos de abundancia y distribución de varias especies que pueden servir como indicadores de la respuesta biótica de la comunidad de invertebrados a la transformación del paisaje. Un ejemplo lo tenemos en el escarabajo *Oxysternon festivum* (Linné 1767), referido con el nombre vernáculo de "Torococo vinotinto" por su vistosa coloración de un rojo cobrizo brillante. 
+
+<a title="August Johan Rösel, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf"><img width="256" alt="First Illustration of Oxysternon festivum by Rösel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf/128px-First_Illustration_of_Oxysternon_festivum_by_R%C3%B6sel.xcf.png"></a>
+
+En un trabajo publicado en la revista _Journal of Insect Conservation_ el grupo de trabajo de NeoMapas estudio a fondo las poblaciones de esta especie al sur del Orinoco [@Ferrer_Paris_2016]. Este escarabajo se encuentra en los bosques del escudo Guayanes, usualmente acompañado de una gran diversidad de otros escarabajos. Lo interesante de esta especie es su respuesta a los cambios ambientales: cuando otras especies más sensibles desaparecen del bosque, el torococo vinotinto ocupa su lugar en la comunidad, lo que le permite incrementar su tamaño y abundancia y de esta forma contribuir a mantener el funcionamiento del ecosistema ante la pérdida de diversidad. En otras palabras, la presencia de *O. festivum* es una buena señal, pero una alta abundancia puede alertarnos sobre un desbalance en la composición natural de especies, y sobe la necesidad de realizar acciones urgentes para preservar la integridad del bosque.
+
+
+

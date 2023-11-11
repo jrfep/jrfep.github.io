@@ -1,12 +1,13 @@
 ---
-title: "Homo faber {{< fa gear >}}"
+title: "Homo faber"
 ---
 
-## Proyectos en curso
+## Mis proyectos 
 
 * [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
-* [UNSW codeRs](https://unsw-coders.netlify.app/)
+* [Fire Ecology Traits for Plants](http://13.54.3.205<b>)
 * [NeoMapas](https://neomapas.github.io)
+
 
 ## Perfiles académicos y profesionales
 
@@ -34,6 +35,9 @@ En los siguientes enlaces pueden encontrar algunos insumos y productos de mi tra
 * zenodo: [IUCN Red List of Ecosystems community](https://zenodo.org/communities/iucn-rle/?page=1&size=20)
 * dataverse: [NeoMapas dataverse](https://dataverse.harvard.edu/dataverse/NeoMapas)
 
+## Otras contribuciones
+
+* [UNSW codeRs](https://unsw-coders.netlify.app/)
 
 ## Versiones viejas...
 
