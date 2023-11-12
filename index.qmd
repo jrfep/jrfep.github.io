@@ -2,6 +2,14 @@
 title: "Homo faber"
 ---
 
+Investigador en la Universidad de New South Wales, Australia.
+
+Trabajo en el Centro de Estudio de Ecosistemas de la Escuela de Ciencias Biológica, Geológicas y Ambientales.
+
+<https://research.unsw.edu.au/people/dr-jose-rafael-ferrer>
+
+También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Internacional para la Conservación de la Naturaleza (UICN) y contribuyo activamente con el Grupo Temático de Lista Roja de Ecosistemas.
+
 ## Mis proyectos 
 
 * [Lista Roja de Ecosistemas: Glaciares tropicales](https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/)
