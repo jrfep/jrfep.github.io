@@ -8,6 +8,8 @@ bibliography:
 
 En los páramos de Venezuela realicé mi tesis de pregrado enfocado en la ecología y biogeografía de las especies del género Redonda y otros mariposas paramunas [@Ferrer_Paris_2000_Diplom_thesis]. 
 
+![Páramos del montículo de las mariposas en el valle de la Morrena de la Laguna de Mucubají](fotos/Paramo-Venezuela.png){fig-alt="Fotografía del paisaje y vegetación del páramo en Mucubají, Venezuela"}
+
 A partir de este trabajo empezamos a evaluar el estado de conservación de especies endémicas de nuestros páramos [@Viloria_2003] y la diversidad de especies y subespecies en este grupo de mariposas [@Viloria_2015_description_Redonda]. 
 
 Posteriormente realicé evaluaciones para la Lista Roja de Especies Amenazadas de Venezuela, en las que se incluye a [*Redonda chiquinquirana*](/taxa/Redonda-chiquinquirana.qmd), *Diaphanos huberi* y otras especies  [@LRFV_huberi; @LRFV_bordoni].
