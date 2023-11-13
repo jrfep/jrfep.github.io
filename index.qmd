@@ -10,8 +10,12 @@ También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Inter
 
 ## Mis proyectos 
 
-* [Lista Roja de Ecosistemas: Glaciares tropicales](https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/)
-* [Tipología global de ecosystemas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+* Tipología global de ecosystemas
+    - [Ecosistemas del mundo](https://global-ecosystems.org/)
+    - [Información sobre los mapas](https://jrfep.github.io/Ecosystem-profiles-comments/)
+    - [Manglares: Unidades ecoregionales](https://ecosphere.shinyapps.io/Mangrove-L4-map/)
+* Lista Roja de Ecosistemas
+    - [Glaciares tropicales](https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/)
 * [Contribuciones al Centre of Ecosystem Science, UNSW](https://ces-unsw-edu-au.github.io/cesdata/)
 * [Fire Ecology Traits for Plants](http://13.54.3.205<b>)
 * [NeoMapas](https://neomapas.github.io)
@@ -45,9 +49,16 @@ En los siguientes enlaces pueden encontrar algunos insumos y productos de mi tra
     - [Monitoreo de biodiversidad en Venezuela](https://zenodo.org/communities/neomapas/?q=&l=list&p=1&s=10&sort=newest)
 * dataverse: [NeoMapas dataverse](https://dataverse.harvard.edu/dataverse/NeoMapas)
 
-## Otras contribuciones
+## Presentaciones
+
+- Algunas recientes en <https://rpubs.com/jrfep>
+
+## Tutoriales
 
 * [UNSW codeRs](https://unsw-coders.netlify.app/)
+* Datos geoespaciales en R:
+    - [Parte 1](https://ecosphere.shinyapps.io/tutorial-1-create-spatial-object/)
+    - [Parte 2](https://ecosphere.shinyapps.io/tutorial-2-points-lines-polygons/)
 
 ## Versiones viejas...
 
