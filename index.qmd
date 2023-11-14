@@ -16,6 +16,7 @@ También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Inter
     - [Manglares: Unidades ecoregionales](https://ecosphere.shinyapps.io/Mangrove-L4-map/)
 * Lista Roja de Ecosistemas
     - [Glaciares tropicales](https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/)
+    - [Lista de publicaciones](https://red-list-ecosystem.github.io/RLE-publication-list/)
 * [Contribuciones al Centre of Ecosystem Science, UNSW](https://ces-unsw-edu-au.github.io/cesdata/)
 * [Fire Ecology Traits for Plants](http://13.54.3.205<b>)
 * [NeoMapas](https://neomapas.github.io)
