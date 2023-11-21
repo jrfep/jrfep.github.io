@@ -1,0 +1,10 @@
+---
+title: "*Oressinoma typhla*"
+bibliography: 
+  - ../bibTeX/teaching.bibtex
+---
+
+Oressinoma typhla es una mariposa de la subfamilia Satyrinae que habita
+en zonas montanas intermedias.
+
+Usé datos de detección de esta especie de mariposa en un gradiente altitudinal  como un ejemplo para el material del curso de Modelos de nicho y distibución de especies [@Modelo_nicho_I].

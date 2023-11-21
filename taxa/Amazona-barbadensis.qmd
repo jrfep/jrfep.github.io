@@ -1,5 +1,5 @@
 ---
-title: "Amazona barbadensis"
+title: "*Amazona barbadensis*"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
 ---
