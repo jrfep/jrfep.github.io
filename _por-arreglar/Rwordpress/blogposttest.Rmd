@@ -1,0 +1,97 @@
+---
+title: "Ejemplo R + Markdown + WordPress en español"
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Enero 2, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+La versatilidad de [R](https://cran.r-project.org/) permite integrar los análisis matemáticos y estadísticos en flujos de trabajo complejos. Sin embargo usualmente unas pocas líneas de código es todo lo que se necesita para resolver problemas sencillos pero recurrentes.
+
+Es útil tener a la mano estos códigos para poder reutilizarlos, y mejor aún si adjuntamos una explicación concisa de su utilidad y los pasos necesarios, de tal forma que podamos reconstruir y mejorar su funcionalidad.
+
+Anteriormente he utilizado [Sweave](https://www.rdocumentation.org/packages/utils/versions/3.5.1/topics/Sweave) para generar documentos y reportes en formato pdf, algunos de los cuales tengo publicados en mi perfil de [fig**share**](https://figshare.com/authors/Jos_R_Ferrer-Paris/592994). Sin embargo, al empezar a administrar mi sitio web empecé a buscar otras herramientas que me permitieran generar código html para ingresarlo directamente al manejador de contenido de WordPress.
+
+Este es mi primer intento de publicar en WordPress desde una sesión de R usando los paquetes [**knitr**](https://yihui.name/knitr/) y [**RWordPress**](https://github.com/duncantl/RWordPress), siguiendo las recomendaciones de otros usuarios como [yihui](https://yihui.name/knitr/demo/wordpress/), [3.14a](http://3.14a.ch/archives/2015/03/08/how-to-publish-with-r-markdown-in-wordpress/) y [Heather Urry](http://sites.tufts.edu/emotiononthebrain/2017/08/12/blog-posting-from-r-markdown-to-wordpress/). 
+
+## Paso 1. Instalar los paquetes relevantes
+Primero, instalé los paquetes **rmarkdown**, **knitr**, **devtools**, y **RWordPress**: 
+
+```{r install}
+
+if (!require('rmarkdown')) {
+  install.packages("rmarkdown")
+}
+if (!require('knitr')) {
+  install.packages("knitr")
+}
+if (!require('devtools')) {
+  install.packages("devtools")
+}
+if (!require('RWordPress')) {
+  devtools::install_github(c("duncantl/XMLRPC", "duncantl/RWordPress"))
+}
+
+```
+
+## Paso 2. Usar R Markdown para escribir texto y código
+
+Mi segundo paso fue aprender a usar R Markdown. Debo admitir que después de haber usado durante años una combinación de LaTex y Sweave para crear documentos, el código de R Markdown me pareció asombrosa- y sospechosamente sencillo. De hecho el código de Markdown se parece más a escribir para una wiki. Yo empecé con un código prestado de un [ejemplo en inglés](https://mfr.osf.io/render?url=https://osf.io/hj2yq/?action=download%26mode=render), y me pareció todo muy intuitivo. Pero para el que necesite ayuda adicional con R Markdown les recomiendo usar [su buscador favorito](http://lmgtfy.com/?q=R+Markdown+basics).
+
+El archivo .Rmd contiene texto y código que es procesado por el paquete **knitr** para generar un documento en el formato deseado. El código en R es procesado y los resultados se pueden mostrar como texto o figuras:
+
+
+```{r, examplePlot, eval='true', results='verbatim', fig.height=4, fig.width=4}
+x <- 1:10
+y <- 40+x-x^2
+y
+plot(x,y)
+```
+
+Para verificar localmente el progreso del artículo utilicé el siguiente código:
+
+```{r renderMarkdown}
+render('blogposttest.Rmd',"html_document")
+
+```
+
+El cual genera un archivo local en formato html que podemos revisar con nuestro navegador favorito.
+
+
+## Paso 3. Publicar en Wordpress
+
+Una vez estamos satisfechos con nuestro borrador en formato .Rmd es el momento de publicarlo. Primero es necesario establecer las opciones de configuración de la conección. El paquete **RWordPress** sólo nos pide tres datos: el nombre de usuario, contraseña y la dirección de acceso al servidor. Para configurar esta información correctamente usamos la función *options* tal y como se muestra a continuación:
+
+```{r publish}
+
+
+# Tell RWordPress how to set the user name, password, and URL for your WordPress site.
+options(WordpressLogin = c(usuario1 = 'supercontraseña'),
+        WordpressURL = 'https://yoursite.wordpress.com/xmlrpc.php')
+```
+
+Hay que prestar atención en el nombre de las opciones (en mi versión del paquete las opciones *WordpressLogin* y *WordpressURL* se escriben con "p" minúscula), si una de estas opciones está mal escrita, o si los datos no son correctos, la conexión no se establece, y aparecen mensajes de error tales como
+```diff
+! Error: faultCode:  403  faultString:  Incorrect username or password. !-
+```
+o
+```diff
+! Error in function (type, msg, asError = TRUE)  : Could not resolve host: XXX !-
+```
+En la opción de la dirección de acceso al servidor hay que incluir la ruta al archivo de configuración XML-RPC, la omisión de esta información genera una larga lista de errores. 
+
+¡Ahora si estamos listos para publicar! Para ello invocamos la función **knit2wp** que utiliza knitr para crear el código html y subirlo directamente al sitio WordPress pre-establecido. Entre las opciones de la función debemos especificar el nombre (y dirección) del archivo .Rmd, y podemos además asignarle un título a la entrada del blog, y otros meta-datos como categorías o palabras clave. Yo uso la opción "publish = FALSE" para que la entrada quede almacenada como un borrador que puedo revisar y editar manualmente antes de publicar. Con la opción  "publish = TRUE", el post queda automáticamente publicado.
+
+```{r knit2wpquery}
+
+# Tell knitr to create the html code and upload it to your WordPress site
+knit2wp('blogposttest.Rmd', title = 'Ejemplo R + Markdown + WordPress en español',  categories = c('R','Stats'), mt_keywords = c('knitr', 'wordpress'), publish = FALSE)
+
+```
+
+## Listo
+
+Eso es todo lo que se necesita para lograr un primer "post" o entrada en el blog. De ahora en adelante será más fácil generar estas entradas y poblar el sitio con comentarios y recomendaciones relacionadas con el uso de código escrito en R. 
+Para comentarios y sugerencias pueden escribirme a mi cuenta de Twitter [@jrfep](http://twitter.com/jrfep).

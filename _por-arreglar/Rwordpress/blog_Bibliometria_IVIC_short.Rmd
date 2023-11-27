@@ -1,0 +1,344 @@
+---
+title: "Producción científica del IVIC"
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Febrero 25, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+El [Instituto Venezolano de Investigaciones Científicas](https://es.wikipedia.org/wiki/Instituto_Venezolano_de_Investigaciones_Cient%C3%ADficas) (IVIC) cumplió este mes 60 años. Mientras [las autoridades celebran](http://www.ivic.gob.ve/es/actualidad-6/galerias-60-aniversario), muchos investigadores [denuncian](http://talcualdigital.com/index.php/2019/02/14/60-anos-del-ivic-por-gioconda-cunto-de-san-blas/) y [documentan](http://efectococuyo.com/principales/ivic-cumple-60-anos-en-medio-de-una-crisis-que-desmembro-a-su-comunidad-cientifica/) el triste deterioro de una institución fundamental para la ciencia en Venezuela.
+
+Me parece que cada aniversario es un momento oportuno para ver con un ojo crítico el pasado y el presente de la institución, y hacer un balance de logros, aciertos y desaciertos, y reflexionar sobre como reorientar las políticas futuras. 
+
+En ocasiones anteriores me he enfocado en la [memoria histórica](https://es.wikipedia.org/w/index.php?title=Instituto_Venezolano_de_Investigaciones_Cient%C3%ADficas&action=history) del instituto y en [analizar la formación de talento humano](https://doi.org/10.6084/m9.figshare.3394789.v4) del Centro de Estudios Avanzados. Aunque actualmente estoy alejado físicamente, espero que mis humildes aportes sean útiles para aquellos que pueden (o podrán) tomar decisiones para recuperar la capacidad científica nacional.
+
+Hoy voy a contribuir con un par de líneas de código para mostrar como hacer un [análisis bibliométrico](https://es.wikipedia.org/wiki/Bibliometr%C3%ADa) de la producción científica del IVIC usando un par de herramientas libres.
+
+## Explorando los datos
+
+Para este análisis voy a descargar una lista de publicaciones que esté asociada con investigadores y laboratorios del IVIC y otros institutos y universidades venezolanas.
+
+Para ello voy a utilizar la herramienta **[Crossref REST API](https://github.com/CrossRef/rest-api-doc)**. La base de datos de CrossRef es una herramienta de acceso libre para análisis bibliométricos. La interfase API permite acceder a esta base de datos utilizando intrucciones codificadas en una dirección en formato URL y obtener la respuesta en formato JSON. Estos datos los leemos directamente con el paquete **RJSONIO** para guardar los resultados en un objeto de R.
+
+```{r query IVIC}
+require(RJSONIO)
+if (!exists("qry.IVIC"))
+   qry.IVIC <- fromJSON("http://api.crossref.org/works?query.affiliation=Instituto+Venezolano+Investigaciones+Cientificas+Caracas+Miranda+Venezuela&rows=1000")
+```
+
+En esta consulta la búsqueda por el campo de afiliación de los autores se hace con la expresión *works?query.affiliation=X*. El número máximo de trabajos que se pueden consultar son 1000. Estos resultados son ordenados por un algoritmo de relevancia por aproximación de las palabras claves, por tanto se espera que los primeros resultados de este conjunto se ajusten mejor a la búsqueda, pero también puede incluir algunos resultados pocos relevantes.
+
+Por otro lado la búsqueda no se puede considerar exhaustiva, si no más bien representativa (o al menos eso esperamos). Por ejemplo en este caso no vamos a obtener todos los resultados que hayan sido publicados por investigadores del IVIC, sino una muestra de los trabajos de la base de datos que contengan esta información. Por tanto pueden haber sesgos por omisión de datos en la fuente (afiliación no reportada o errónea) o por falta de cobertura de algunas revistas o casas editoriales, etc. Es importante tomar esto en cuenta al comparar los resultados con otras herramientas bibliográficas más exhaustivas.
+
+Continuando con este análisis, el objeto que guardamos tiene un formato de lista, y navegando por esta estructura se llega a una lista interna de *items*, cada *item* tiene una cantidad variable de nodos de información, incluyendo datos de revista, DOI, autores, etc.
+
+```{r structure query}
+str(qry.IVIC,1)
+str(qry.IVIC$message$items[[1]],1)
+```
+
+Para minimizar algunos de los sesgos mencionados arriba, debemos revisar y verificar los resultados para filtrar aquellos resultados que nos interesan y descartar los dudosos o errados. Para ello vamos a hacer una tabla (o *data.frame*) con la lista de autores, y su respectiva afiliación para cada publicación. Utilizamos el DOI ("digital object identifier") como código de identificación del documento.
+
+En un primer paso, vamos a revisar donde está esta información. Tomamos por ejemplo uno de los items de la búsqueda y vemos la estructura de la lista de autores:
+
+```{r ejemplo autores}
+w <- qry.IVIC$message$items[[252]]
+str(w$author,2)
+```
+
+Vamos a asociar estos datos a una tabla. Usamos la función *iconv* para corregir los acentos en los nombres y afiliaciones. Vemos que en este caso hay tres autores del IVIC, otro autor venezolano y dos más con afiliación foránea.
+
+```{r inicio tabla autores}
+lista.autores <- data.frame()
+for (k in 1:length(w$author)) {
+    lista.autores <- rbind(lista.autores,
+    		  data.frame(DOI=w$DOI,
+			orig.given=iconv(w$author[[k]]$given,"latin1","utf8"),
+			orig.family=iconv(w$author[[k]]$family,"latin1","utf8"),
+			orig.affiliation=iconv(w$author[[k]]$affiliation[[1]],"latin1","utf8")))
+}
+lista.autores			
+```
+
+Añadimos una *loop* adicional para extraer la lista de varias referencias:
+
+```{r añadir referencias}
+for (ws in c(1,253,345,678,975)) {
+w <- qry.IVIC$message$items[[ws]]
+for (k in 1:length(w$author)) {
+    lista.autores <- rbind(lista.autores,
+    		  data.frame(DOI=w$DOI,
+			orig.given=iconv(w$author[[k]]$given,"latin1","utf8"),
+			orig.family=iconv(w$author[[k]]$family,"latin1","utf8"),
+			orig.affiliation=iconv(w$author[[k]]$affiliation[[1]],"latin1","utf8")))
+}
+}
+```
+Y luego podemos usar las funciones *grepl* y *aggregate* para resumir el número de autores que incluyen la información deseada en su afiliación:
+```{r resumir datos}
+rsm.autores <- with(lista.autores,
+	aggregate(data.frame(IVIC=grepl("Instituto Venezolano de Investigaciones Científicas",orig.affiliation),
+		vzla=grepl("Venezuela",orig.affiliation)),
+		by=list(DOI=DOI),sum))
+```
+
+Vemos que en esta pequeña selección de artículos algunos tienen autores del IVIC (que son los que queremos analizar), y otros no tienen autores del IVIC ni de Venezuela (que tal vez debamos excluir). 
+
+Por otro lado también queremos tener información básica sobre los artículos, por ejemplo:
+```{r info artículos}
+info.arts <- data.frame()
+for (ws in c(1,252,253,345,678,975)) {
+w <- qry.IVIC$message$items[[ws]]
+    info.arts <- rbind(info.arts,
+    		  data.frame(DOI=w$DOI,
+		  titulo=substr(iconv(w$title,"latin1","utf8"),1,50),
+		  citas=w[["is-referenced-by-count"]]))
+}
+
+```
+
+Y podemos combinar ambas tablas:
+
+```{r combinar tablas}
+merge(info.arts,rsm.autores,by="DOI")
+
+```
+
+Para poder hacer los análisis al nivel deseado, es necesario que repitamos varias búsquedas y re-escalemos el código para poder aplicar estos datos a todos los *items* descargados, y luego filtrarlos y validarlos hasta tener una base de datos robusta. Por ejemplo, si queremos comparar el desempeño del IVIC con la producción científica venezolana, debemos descargar un conjunto comparable de referencias para varias instituciones académicas. Las herramientas que hemos visto permiten hacer esto de una forma automática con muy pocas líneas de código (que no muestro aquí por motivos de espacio).
+
+
+Con todos los filtros y pasos aplicados pasamos de una lista de `r length(qry)` resultados crudos a una selección de apenas `r nrow(info.articulos)` con los cuales hacer los análisis en la siguiente sección.
+
+## Análisis y resultados
+
+Generalmente preparar los datos consume la mayor parte del tiempo, pero la parte interesante empieza con los análisis. Aquí vamos a probar con algunas medidas sencillas para tener una visión inicial de la producción científica del IVIC comparada con otras instituciones de Venezuela.
+
+### Tasa de publicaciones anuales
+
+Para cada artículo en nuestra lista tenemos la fecha de publicación, y podemos ver si la tasa de acumulación de artículos incrementa o se mantiene en el periodo registrado en la base de datos de CrossRef.
+
+Hacemos una tabla que resuma el número de artículos acumulados por año:
+
+```{r tabla años}
+yr <- range(info.articulos$fecha)
+dts <- data.frame()
+for (ys in yr[1]:yr[2]) {
+ss <- subset(info.articulos,fecha<=ys)
+
+dts <- rbind(dts,data.frame(fecha=ys,n.articulos=nrow(ss),n.articulos.IVIC=sum(ss$IVIC>0)))
+}
+```
+
+Hacemos un gráfico para visualizar la tendencia general de los últimos 60 años de producción científica en Venezuela:
+
+```{r grafico años}
+plot(n.articulos~fecha,data=dts,xlim=c(1959,2019),pch=19,ylab="Número de artículos acumulados")
+points(n.articulos.IVIC~fecha,data=dts,xlim=c(1959,2019),pch=6)
+
+```
+
+Esperamos que estas tendencias sean aproximadamente exponenciales, debido a que un aumento constante en las infraestructuras y capacidades científicas debería reflejarse en un aumento proporcional de la producción anual.
+
+Sin embargo, el mismo gráfico en escala logarítmica muestra que no hay un incremento contínuo, sino que hay periodos de aceleración y desaceleración evidentes.
+
+```{r log grafico años}
+plot(n.articulos~fecha,data=dts,xlim=c(1959,2019),pch=19,ylab="Número de artículos",log="y")
+points(n.articulos.IVIC~fecha,data=dts,xlim=c(1959,2019),pch=6)
+```
+
+### Medidas de impacto: Número de citas por artículo
+
+El número de citas es la medida más utilizada para medir el impacto de la producción científica. Si, todo el que ha estado involucrado en este tema ha pasado por esos ciclos recurrentes de discusión sobre la importancia y relevancia de las citas, sus pro y sus contras, la necesidad de buscar otros indicadores, etc. Pero al final, siempre terminan siendo parte del cálculo.
+
+En nuestra colección de artículos tenemos un total de citas de:
+```{r total de citas}
+## todos los de Venezuela
+sum(info.articulos$citas)
+## publicaciones del IVIC
+sum(subset(info.articulos,IVIC>0)$citas)
+```
+
+O sea el número promedio de citas por artículo es:
+```{r promedio citas}
+ ## para toda Venezuela
+mean(info.articulos$citas)
+## publicaciones del IVIC
+mean(subset(info.articulos,IVIC>0)$citas)
+```
+
+Lo cual parece indicar que las publicaciones del IVIC generalmente tienen un mayor impacto que el promedio de Venezuela
+
+Sin embargo este valor es poco informativo. Generalmente la distribución de citas en un conjunto de artículos tiene una distribución muy desigual y apenas se aprecian los valores extremos:
+
+```{r histograma citas}
+hist(info.articulos$citas,border="orangered",col="orange",
+breaks=seq(0,700,by=10),
+xlab="citas",main=sprintf("Total de %s artículos",nrow(info.articulos)))
+```
+
+Esto quiere decir que la mayoría de los artículos tienen un impacto muy pequeño en el total de citas del conjunto. Vemos que por ejemplo la media y el promedio tienen valores muy diferentes, y ofrecen diferentes interpretaciones:
+```{r summary citas}
+ ## para toda Venezuela
+summary(info.articulos$citas)
+## publicaciones del IVIC
+summary(subset(info.articulos,IVIC>0)$citas)
+```
+
+Por otro lado estamos comparando un subconjunto de datos con el total, y no sabemos si existe una diferencia significativa entre ellos. Recordemos que los artículos del IVIC representan el `r round(mean(info.articulos$IVIC>0)*100,1)` del conjunto total.
+
+Por eso utilizo un método de *[rarefacción](https://es.wikipedia.org/wiki/Rarefacci%C3%B3n)* y *[regresión de cuantíles](https://en.wikipedia.org/wiki/Quantile_regression) para comprobar si el valor observado para el IVIC es efectivamente mejor de lo que esperariamos para una muestra aleatoria del total de artículos. Para ello cargo el paquete *[quantreg](https://CRAN.R-project.org/package=quantreg)* de *R*.
+
+En el gráfico, los puntos grises representan la relación entre citas y número de artículos en miles de muestras aleatorias de diferentes tamaños. Las líneas representan la media y los valores de los cuantíles 0.25 y 0.75 que dividen los datos en cuatro campos de desempeño que podemos considerar como "muy bajo", "bajo", "alto" y "muy alto". Los puntos indican cuales instituciones se ubican en estos cuatro campos.
+
+```{r rarefaccion citas, fig.height=8,fig.width=8}
+require(quantreg)
+
+t0 <- c()
+ns <- c()
+for (k in 1:10000) {
+    n <- round(runif(1,0,1200))
+    h <- sum(sample(info.articulos$citas,n))
+    if (length(h)==1) {
+        ns <- c(ns,n)
+    	t0 <- c(t0,h)
+	}
+    }
+
+plot(ns,t0,col="grey77",pch=18,xlab="artículos",
+	xlim=c(100,650),ylim=c(500,5000),
+	ylab="citas totales")
+taus <- c(.25,.05,.75)
+  xx <- 1:1200
+     f <- coef(rq(t0~ns,tau=taus))
+     yy <- cbind(1,xx)%*%f
+
+lines(xx,yy[,1],col = "slateblue",lty=1,lwd=2)
+lines(xx,yy[,2],col = "slateblue",lty=1,lwd=2)
+lines(xx,yy[,3],col = "slateblue",lty=1,lwd=2)
+
+ss <- subset(info.articulos,IVIC>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"IVIC",col="maroon",adj=1.35)
+
+ss <- subset(info.articulos,UDO>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"UDO",col="maroon",adj=c(1.1,1.1))
+
+ss <- subset(info.articulos,ULA>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"ULA",col="maroon",adj=-.2)
+
+ss <- subset(info.articulos,UCV>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"UCV",col="maroon",adj=1.2)
+
+ss <- subset(info.articulos,UC>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"UC",col="maroon",adj=1.35)
+
+ss <- subset(info.articulos,LUZ>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"LUZ",col="maroon",adj=1.2)
+
+ss <- subset(info.articulos,USB>0)
+points(nrow(ss),sum(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),sum(ss$citas),"USB",col="maroon",adj=-.2)
+
+```
+
+Efectivamente en este caso el IVIC aparece en el campo superior, acompañado de dos instituciones que en teoría tienen una planta profesional y académica mucho mayor. 
+
+
+### Medidas de impacto: índice h o índice de Hirsch
+
+En el gráfico anterior vemos que sobresale [La Universidad del Zulia](http://www.luz.edu.ve/) con pocos artículos pero muchas citas. En parte este resultado puede explicarse por la inclusión del artículo *`r sprintf("[%s](https://dx.doi.org/%s)",info.articulos[which.max(info.articulos$citas),"titulo"],info.articulos[which.max(info.articulos$citas),"DOI"])`* con un considerable número de [citas reportadas](`r sprintf("https://badge.dimensions.ai/details/doi/%s",info.articulos[which.max(info.articulos$citas),"DOI"])`).
+
+El índice h o [índice de Hirsch](https://en.wikipedia.org/wiki/H-index) es usado comunmente como una medida de impacto que reduce el sesgo por la distribución de valores extremos en una colección de artículos. El valor h indica que *h* artículos tienen *h* o más citas, y lo podemos calcular con la siguiente función en R:
+
+```{r indice H}
+Hindex <- function(x) {
+ xs <- sort(unique(x))
+ ys <- c()
+ for (k in xs) {
+  ys <- c(ys,sum(x>=k))
+ }
+return(xs[which.min(ifelse(ys>xs,ys-xs,NA))])
+}
+```
+
+Para nuestra colección tenemos los siguientes valores:
+
+```{r H IVIC}
+## para toda la colección
+Hindex(info.articulos$citas)
+## para las publicaciones del IVIC
+Hindex(subset(info.articulos,IVIC>0)$citas)
+```
+
+Pero al igual que con el valor de citas totales, debemos considerar las diferencias de tamaño muestral. Con este código aplicamos nuevamente el principio de rarefacción para el caso del índice h, y vemos como se desempeñan las instituciones en comparación con el gradiente esperado en una muestra aleatoria.
+
+
+```{r H index, fig.height=8,fig.width=8}
+h0 <- c()
+ns <- c()
+for (k in 1:10000) {
+    n <- round(runif(1,0,1200))
+    h <- Hindex(sample(info.articulos$citas,n))
+    if (length(h)==1) {
+        ns <- c(ns,n)
+    	h0 <- c(h0,h)
+	}
+    }
+
+plot(ns,h0,col="grey77",pch=18,xlab="artículos",
+	xlim=c(100,650),ylim=c(10,35),
+	ylab="Índice h")
+mdl2 <- nlrq(h0 ~ SSasymp(ns, Asym, RO, lrc), tau=0.5)
+lines(1:1200,predict(mdl2,newdata=data.frame(ns=1:1200)),lty=1,lwd=2,col="slateblue4")
+
+mdl3 <- nlrq(h0 ~ SSasymp(ns, Asym, RO, lrc), tau=0.25)
+lines(1:1200,predict(mdl3,newdata=data.frame(ns=1:1200)),lty=1,lwd=2,col="slateblue4")
+mdl4 <- nlrq(h0 ~ SSasymp(ns, Asym, RO, lrc), tau=0.75)
+lines(1:1200,predict(mdl4,newdata=data.frame(ns=1:1200)),lty=1,lwd=2,col="slateblue4")
+
+ss <- subset(info.articulos,USB>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"USB",col="maroon",adj=-.2)
+ 
+
+ss <- subset(info.articulos,IVIC>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"IVIC",col="maroon",adj=1.35)
+
+ss <- subset(info.articulos,UDO>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"UDO",col="maroon",adj=c(1.1,1.1))
+
+ss <- subset(info.articulos,ULA>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"ULA",col="maroon",adj=-.2)
+
+ss <- subset(info.articulos,UCV>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"UCV",col="maroon",adj=1.2)
+
+ss <- subset(info.articulos,UC>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"UC",col="maroon",adj=1.35)
+
+ss <- subset(info.articulos,LUZ>0)
+points(nrow(ss),Hindex(ss$citas),pch=19,cex=1.2,col="maroon")
+text(nrow(ss),Hindex(ss$citas),"LUZ",col="maroon",adj=1.2)
+
+```
+
+Para este indicador, el IVIC se encuentra en un campo de desempeño "alto", pero no tanto como otras instituciones. 
+
+## Listo por hoy
+
+Con estos resultados se muestra que la producción científica del IVIC no mantiene una tasa de producción constante en estos 60 años de vida, y se compara su desempeño con el de otras instituciones científicas en Venezuela usando dos indicadores de impacto basados en las citas bibliográficas. 
+
+Este análisis es una breve introducción a este tema que espero seguir desarrollando en futuras contribuciones. 
+
