@@ -2,7 +2,14 @@
 title: "Ecosistemas africanos"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/preprints.bibtex
 ---
 
-@RLE_Africa
+En 2022 organizamos una [sesión](https://osf.io/fgzac) sobre Lista Roja de Ecosistemas en el Congreso Africano sobre Áreas Protegidas  (IUCN Africa Protected Area Congress, APAC, <https://apacongress.africa/>).
+
+El título del taller fue _Red List of Ecosystems in Africa, supporting policy, practice and planning_ y los participantes refleccionaron sobre cómo y dónde se ha utilizado la Lista Roja de Ecosistemas en África y cuáles han sido los beneficios para el manejo de áreas protegidas y otras acciones de conservación en le continente.
+
+Posterior al taller preparamos un manuscrito que compartimos en forma de pre-print [@keith_ghoraba_Africa_RLE_2022], y después de un par de rondas de revisión publicamos en la revista Conservation Biology [@RLE_Africa].
+
+
 
