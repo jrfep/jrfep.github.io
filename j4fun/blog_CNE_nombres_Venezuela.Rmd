@@ -24,8 +24,11 @@ Para estos análisis voy a utilizar los datos del [registro electoral de Venezue
 Para un primer ejercicio utilizamos una matriz de la frecuencia de aparición de los apellidos por estado. La versión que utilizo ha sido parcialmente depurada para facilitar los análisis, pero no ha sido posible realizar una revisión y validación completa. Estos datos están disponibles en un [repositorio público de mi cuenta de github](https://github.com/jrfep/poblacion-municipios-venezuela).
 
 ```{r matriz}
-git.home <- "~/mi.git/poblacion-municipios-Venezuela/Rdata"
-mi.rda <- sprintf("%s/MatrizApellidosVenezuela.rda",git.home)
+here::i_am("j4fun/blog_CNE_nombres_Venezuela.Rmd")
+mi.url <- "https://github.com/jrfep/poblacion-municipios-venezuela/raw/master/Rdata/MatrizApellidosVenezuela.rda"
+mi.rda <- here::here("data","MatrizApellidosVenezuela.rda")
+if (!file.exists(mi.rda))
+  download.file(mi.url,destfile = mi.rda)
 (load(mi.rda))   
 ```
 
