@@ -14,7 +14,6 @@ Los apellidos se heredan según sistemas tradicionales y/o legales, y vienen a s
 
 Existen muchos ejemplos de análisis estadísticos relacionadas con la historia (o [futuro](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0018105)) de los nombres, con su [distribución geográfica](http://research.ucc.ie/doi/atlas), etc.
 
-
 En esta serie de análisis voy a ilustrar algunas curiosidades sobre nombres y apellidos venezolanos en general (y zulianos en particular), y mostrar ejemplos de código en *R* que puede ser útil para visualizar la distribución y frecuencia de nombres en Venezuela.
 
 ## Los datos
@@ -144,7 +143,7 @@ Tabla.Zulia <- data.frame(n.Zulia=m0[,"ZULIA"],n.Vzla=rowSums(m0),
                           freq.Zulia=m1[,"ZULIA"],p.Zulia=m2["ZULIA",])
 Tabla.Zulia <- subset(Tabla.Zulia,n.Zulia>20000 & p.Zulia>.2)
 ##Tabla.Zulia <- subset(Tabla.Zulia,n.Vzla>20000 & p.Zulia>.2)
-Tabla.Zulia[order(Tabla.Zulia$p.Zulia),]
+DT::datatable(Tabla.Zulia[order(Tabla.Zulia$p.Zulia),])
 
 ```
 
