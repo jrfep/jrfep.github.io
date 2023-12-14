@@ -1,0 +1,13 @@
+---
+title: "Workshop: Predictive modelling of Species distribution"
+date: 2-4 Noviembre 2005
+params:
+ code: 2005_Baeza
+ lugar: Baeza
+ pais: España
+ participacion: Presentación cartel
+ tipo: Taller
+ ambito: Internacional
+---
+
+Workshop: Predictive modelling of Species distribution. New Tools for the XXI Century. Universidad Internacional de Andalucía. Baeza, España, 2-4 Noviembre 2005. [Publication from the workshop](https://www.jstor.org/stable/4539918)

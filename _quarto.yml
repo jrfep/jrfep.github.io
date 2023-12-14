@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: docs
-  
 
 website:
   title: "./jrfep"
@@ -25,6 +24,8 @@ website:
             href: rzrch/my-osfr-projects.qmd
           - text: "Repositorios / código"
             href: rzrch/my-github-repos.qmd
+          - text: "Eventos"
+            href: evnts/evnt-list.qmd
       - text: "{{< fa leaf >}} Biodiversidad"
         menu:
           - text: "Mis ecosistemas favoritos"

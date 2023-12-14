@@ -1,0 +1,14 @@
+---
+title: IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate
+date: February 2018
+params:
+ lugar: Abu Dhabi
+ pais: United Arab Emirates
+ participacion: Instructor
+ tipo: Taller
+ ambito: Nacional
+---
+
+IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate.
+
+Abu Dhabi, United Arab Emirates, February 2018.
