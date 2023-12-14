@@ -1,7 +1,6 @@
 ---
-name: First Latin American and Caribbean Congress for Conservation Biology
-code: 2018_LACA_I
-fini: 2018
+title: First Latin American and Caribbean Congress for Conservation Biology
+date: 2018
 ffin:
 lugar: St. Augustine, Trinidad & Tobago
 participacion:

@@ -1,0 +1,17 @@
+---
+title: ResBaz Sydney
+date: 2021
+params:
+ lugar: Sydney
+ pais: Australia
+ participacion: Presentador
+ tipo: Virtual
+ ambito: Nacional
+---
+
+https://resbaz.github.io/resbaz2021/sydney/speakers/
+
+Presentación: [en GitHub](https://github.com/UNSW-codeRs/geospatial-data-in-R/tree/332afeb63f669d9bccdcde133f6ceb2480c3e0be)
+
+A partir de la presentación desarrollé el material para talleres virtuales sobre análisis geo-espacial en R, la versión actual está disponible en: https://github.com/UNSW-codeRs/geospatial-data-in-R
+
