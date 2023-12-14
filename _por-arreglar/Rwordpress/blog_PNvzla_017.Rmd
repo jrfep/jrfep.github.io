@@ -1,8 +1,10 @@
 ---
 title: "Una breve caracterización ambiental del Parque Nacional Guatopo en Venezuela"
 author: "José R. Ferrer Paris (@jrfep)"
-date: "Marzo 31, 2019"
+date: "Marzo 31, 2022"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
@@ -14,26 +16,86 @@ Durante un tiempo la página web de la antigua *Unidad de Sistemas de Informaci�
 
 Desde el [*Laboratorio de Ecología Espacial*](http://www.ivic.gob.ve/es/investigacion-3/centros-31/estudios-botanicos-y-agroforestales-ceba-zulia/laboratorios/ecologi-a-espacial/personal) del IVIC realizamos algunos trabajos enfocados en la caracterización ambiental de diferentes regiones del país. Algunos de esos trabajos están publicados en formato de reportes electrónicos en un perfil público en [fig**share**](https://figshare.com/search?q=NeoMapas&searchMode=1). A través de esta página quisiera continuar difundiendo al menos parte de los resultados que durante años hemos tratado de promover desde el laboratorio, y que no hemos podido concluir por la falta de presupuesto del área de investigación del instituto.
 
-Para el día de hoy aprovecho el 61 aniversario de la creación del parque "Guatopo" para mostrar algunos detalles de la caracterización ambiental del parque basada en la evaluación de datos de sensores remotos.
+Para el día de hoy aprovecho el 64 aniversario de la creación del parque "Guatopo" para mostrar algunos detalles de la caracterización ambiental del parque basada en la evaluación de datos de sensores remotos.
+
+## Análisis en R
+
+Para este análisis necesito varias funciones de los siguientes paquetes de R:
+
+```{r}
+library(dplyr)
+library(mapview)
+library(terra)
+library(wdpar)
+library(elevatr)
+```
+
 
 ## Datos utilizados
 
-Los datos geográficos de los linderos del parque fueron obtenidos de la página web del ecoSIG cuendo esta se encontraba activa.
+Los datos geográficos de los linderos del parque fueron obtenidos de tres fuentes electrónicas de libre acceso utilizando paquetes de R para la descarga de los datos.
 
-Utilicé datos de elevación derivados del sensor *SRTM* [versión 4.0](http://srtm.csi.cgiar.org/) y precipitación derivada del la base de datos *CHIRPS* [versión 2.0](http://chg.geog.ucsb.edu/data/chirps/) que combina información de sensosres remotos y estaciones climáticas (Funk et al. 2015).
+Los linderos del parque los descargamos de la base de datos de áreas protegidas del mundo [WDPA](https://www.protectedplanet.net/325) usando el paquete `wdpar`. La función `wdpa_fetch` descarga los datos de los parques de Venezuela (indicado con el valor de "VEN"), y la función `wdpa_clean` realiza varios pasos de limpieza y verificación de los datos. Luego uso las funciones `filter` y `select` del paquete `dplyr` para filtrar los datos.
+
+```{r}
+library(wdpar)
+cod_raw_pa_data <- wdpa_fetch("VEN") %>% filter(WDPAID == 325)
+cod_pa_data <- wdpa_clean(cod_raw_pa_data)
+Guatopo <- cod_pa_data  %>% select(DESIG,ORIG_NAME,IUCN_CAT,REP_AREA,STATUS_YR,MANG_AUTH)
+```
+
+Para los datos de elevación utilizo el paquete [`elevatr`](https://cran.r-project.org/web/packages/elevatr/vignettes/introduction_to_elevatr.html) que utiliza una variedad de API para el acceso programático a datos de diversas fuentes. La función `get_elev_raster` descarga datos de [Terrain Tiles en Amazon Web Services](https://registry.opendata.aws/terrain-tiles/) que provienen de la compilación del difunto servicio Mapzen, que a su vez compila datos de varios productos globales y regionales de modelos de elevación digital. El valor de `z` indica el nivel de resolución deseado, según la documentación de [Mapzen](https://github.com/tilezen/joerd/blob/master/docs/data-sources.md#what-is-the-ground-resolution).
+
+```{r}
+library(elevatr)
+Guatopo.SRTM <- get_elev_raster(Guatopo, z = 9)
+```
+
+Para los datos de precipitación utilizo la base de datos *CHIRPS* [versión 2.0](http://chg.geog.ucsb.edu/data/chirps/) que combina información de sensores remotos y estaciones climáticas (Funk et al. 2015). El paquete
+
+
+```{r}
+library(chirps)
+
+# selecciones tres puntos dentro del lindero del parque
+set.seed(1234)
+Guatopo_sample <- st_sample(Guatopo %>% st_transform("EPSG:4326"), 3) %>% 
+  st_as_sf()
+
+library(doParallel)
+library(foreach)
+
+cl <- makeCluster(8)
+registerDoParallel(cl)
+
+Guatopo.CHIRPS <- foreach(yy = 1982:1990, 
+                          .combine='rbind',
+                          .packages = 'chirps') %dopar% {
+  qry_dates <- sprintf(c("%s-01-01","%s-12-31"), yy) 
+  dat <- get_chirps(Guatopo_sample,
+                  qry_dates, 
+                  server = "ClimateSERV")
+  return(dat)
+                          }
+nrow(Guatopo.CHIRPS)
+stopCluster(cl)
+
+
+
+
+#Guatopo.vect <- vect(Guatopo %>% st_transform("EPSG:4326"))
+#Guatopo.CHIRPS <- get_chirps(Guatopo.vect, dates, server = "CHC", as.raster = TRUE)
+```
+
+
+
 
 ## Ubicación relativa del PN Guatopo
 
 El [Parque Nacional Guatopo](https://es.wikipedia.org/wiki/Parque_nacional_Guatopo) se encuentra entre los estados Miranda, Aragua y Guárico.
 
 ```{r Ubicacion,fig.width=7,fig.height=6}
-  plot(Vzla.xy,lty=3,lwd=4,
-         col=rgb(c(.9,.7,.6),c(.9,.7,.6),c(.6,.8,1),.25))
-    plot(Vzla.xy,lty=1,border="aliceblue",add=T)
-    plot(PN.xy,add=T,col=rgb(.2,.7,.1,.5),border="darkgreen")
-    text(PN.xy,sprintf("Parque Nacional %s",PN.xy@data$NOMBRE),
-         col="darkgreen",cex=1.6)
-    text(Vzla.xy,"ESTADO")
+mapview(Guatopo)
 ```
 
 ## Elevación y precipitación según sensores remotos
@@ -41,10 +103,9 @@ El [Parque Nacional Guatopo](https://es.wikipedia.org/wiki/Parque_nacional_Guato
 Visualizamos la topografía del parque usando los datos de elevación derivados de SRTM. Se aprecia en la porción sur del parque la Fila Maestra de la Serranía del Interior en [donde nacen varios ríos](http://guatopoenlahistoria.blogspot.com/2011/08/proyecto-embalse-del-rio-macaira.html) que drenan hacia la cuenca del río Tuy en el norte y hacia los llanos de Guárico en el sur.  
 
 ```{r Elevación,fig.width=8,fig.height=5.5}
-  plot(PN.SRTM,
-         col=terrain.colors(10))
-  contour(PN.SRTM,add=T)
- plot(PN.xy,add=T,border="maroon",lwd=2)
+plot(Guatopo.SRTM)
+contour(Guatopo.SRTM,add=T)
+plot(st_geometry(Guatopo), add = TRUE, border = "maroon", lwd=3, alpha=.6)
 ```
 
 Precisamente el decreto de creación del parque busca proteger las cabeceras de estos ríos por la importancia que tienen para las zonas densamente pobladas del estado Miranda y las zonas productivas en la vertiente llanera. 
@@ -53,6 +114,9 @@ A partir de las mediciones de la base de datos Chirps construimos una serie de t
 
 ```{r Precipitación,fig.width=8,fig.height=5}
 dias <- (cumsum(c(31,28,31,30,31,30,31,31,30,31,30,31))-15)/365
+
+lubridate::yday(dat$date)
+
 y <- t(values(PN.chirps))
 x <- as.numeric(substr(names(PN.chirps),13,16))+
   dias[as.numeric(substr(names(PN.chirps),18,21))]
