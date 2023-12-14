@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="José R. Ferrer Paris (@jrfep)">
+
+<title>./jrfep - Todos los nombres (I)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+<script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../site_libs/datatables-binding-0.30/datatables.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">J.R. Ferrer-Paris</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target=""><i class="bi bi-fa-home" role="img">
+</i> 
+ <span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> Ciencia y academia</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-landmark--ciencia-y-academia">    
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-publications.html" rel="" target="">
+ <span class="dropdown-text">Mis publicaciones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/research-outputs.html" rel="" target="">
+ <span class="dropdown-text">Productos científicos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html" rel="" target="">
+ <span class="dropdown-text">Proyectos reproducibles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
+ <span class="dropdown-text">Repositorios / código</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-leaf--biodiversidad" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-leaf" aria-label="leaf"></i> Biodiversidad</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-leaf--biodiversidad">    
+        <li>
+    <a class="dropdown-item" href="../ecos/my-favs.html" rel="" target="">
+ <span class="dropdown-text">Mis ecosistemas favoritos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../taxa/my-favs.html" rel="" target="">
+ <span class="dropdown-text">Mis especies favoritas</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-smile--homo-ludens" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-smile" aria-label="smile"></i> Homo ludens</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-smile--homo-ludens">    
+        <li>
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-futbol" role="img">
+</i> 
+ <span class="dropdown-text">Futbol</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../j4fun/ulysses.html" rel="" target=""><i class="bi bi-book" role="img">
+</i> 
+ <span class="dropdown-text">Ulysses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html" rel="" target=""><i class="bi bi-family" role="img">
+</i> 
+ <span class="dropdown-text">Todos los nombres</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+      <i class="bi bi-question" role="img">
+</i> 
+ <span class="menu-text">How to…</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
+        <li>
+    <a class="dropdown-item" href="../how2/how-to-site.html" rel="" target="">
+ <span class="dropdown-text">(re-)create this site</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#los-datos" id="toc-los-datos" class="nav-link active" data-scroll-target="#los-datos">Los datos</a></li>
+  <li><a href="#diversidad-de-apellidos" id="toc-diversidad-de-apellidos" class="nav-link" data-scroll-target="#diversidad-de-apellidos">Diversidad de apellidos</a></li>
+  <li><a href="#diferencias-regionales" id="toc-diferencias-regionales" class="nav-link" data-scroll-target="#diferencias-regionales">Diferencias regionales</a></li>
+  <li><a href="#nombres-zulianos" id="toc-nombres-zulianos" class="nav-link" data-scroll-target="#nombres-zulianos">Nombres zulianos</a></li>
+  <li><a href="#listo-por-hoy" id="toc-listo-por-hoy" class="nav-link" data-scroll-target="#listo-por-hoy">Listo por hoy</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/j4fun/blog_CNE_nombres_Venezuela.Rmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Todos los nombres (I)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>José R. Ferrer Paris (<span class="citation" data-cites="jrfep">@jrfep</span>) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">16 de febrero de 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Los nombres personales y apellidos son un fascinante tema, <a href="https://es.wikipedia.org/wiki/Todos_los_nombres">no sólo para obras literarias</a>, sino también para análisis estadísticos muy variados, en las áreas de ciencias sociales, ciencias históricas, medicina y ecología humana.</p>
+<p>Los apellidos se heredan según sistemas tradicionales y/o legales, y vienen a ser una medida indirecta de la genealogía, siguiendo (en la mayor parte de los casos) la línea paternal. Por otro lado los nombres son escogidos siguiendo muchas pautas sociales distintas y pueden reflejar tradiciones, idiosincracias o modas temporales.</p>
+<p>Existen muchos ejemplos de análisis estadísticos relacionadas con la historia (o <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0018105">futuro</a>) de los nombres, con su <a href="http://research.ucc.ie/doi/atlas">distribución geográfica</a>, etc.</p>
+<p>En esta serie de análisis voy a ilustrar algunas curiosidades sobre nombres y apellidos venezolanos en general (y zulianos en particular), y mostrar ejemplos de código en <em>R</em> que puede ser útil para visualizar la distribución y frecuencia de nombres en Venezuela.</p>
+<section id="los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="los-datos">Los datos</h2>
+<p>Para estos análisis voy a utilizar los datos del <a href="http://www.cne.gov.ve/web/registro_electoral_descarga/abril2012/">registro electoral de Venezuela del año 2012</a>. <em>La base de datos del registro electoral tiene información muy valiosa, pero también incluye algunos errores de transcripción e inconsistencias que pueden entorpecer los análisis.</em></p>
+<p>Para un primer ejercicio utilizamos una matriz de la frecuencia de aparición de los apellidos por estado. La versión que utilizo ha sido parcialmente depurada para facilitar los análisis, pero no ha sido posible realizar una revisión y validación completa. Estos datos están disponibles en un <a href="https://github.com/jrfep/poblacion-municipios-venezuela">repositorio público de mi cuenta de github</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">i_am</span>(<span class="st">"j4fun/blog_CNE_nombres_Venezuela.Rmd"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/z3529065/proyectos/personal/jrfep.github.io</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mi.url <span class="ot">&lt;-</span> <span class="st">"https://github.com/jrfep/poblacion-municipios-venezuela/raw/master/Rdata/MatrizApellidosVenezuela.rda"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mi.rda <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"MatrizApellidosVenezuela.rda"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(mi.rda))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">download.file</span>(mi.url,<span class="at">destfile =</span> mi.rda)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>(<span class="fu">load</span>(mi.rda))   </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "mtz.ap.vzla"</code></pre>
+</div>
+</div>
+<p>La base de datos original contiene datos de más de 20 millones de personas registradas, pero después de descartar algunos datos dudosos o incompletos, la matriz resultante incluye datos de aproximadamente 16.421.396 personas, entre las que hay al menos 192.200 apellidos diferentes.</p>
+<p>Con estos datos podemos ver la lista de los <a href="https://es.wikipedia.org/wiki/Anexo:Apellidos_m%C3%A1s_comunes_en_Espa%C3%B1a_e_Hispanoam%C3%A9rica#Venezuela">20 apellidos más frecuentes en Venezuela</a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">sort</span>(<span class="fu">rowSums</span>(mtz.ap.vzla)),<span class="dv">20</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>GUTIERREZ    MORENO    MEDINA   MENDOZA FERNANDEZ    TORRES    ROMERO     GOMEZ 
+   199351    204016    217038    223960    225231    230289    238567    259606 
+ CASTILLO   RAMIREZ     ROJAS      DIAZ     LOPEZ   SANCHEZ  MARTINEZ    GARCIA 
+   264066    298429    317125    342789    368141    400301    420947    532944 
+HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ 
+   576155    603874    833224    914348 </code></pre>
+</div>
+</div>
+</section>
+<section id="diversidad-de-apellidos" class="level2">
+<h2 class="anchored" data-anchor-id="diversidad-de-apellidos">Diversidad de apellidos</h2>
+<p>El estado Delta Amacuro tiene solo 5740 apellidos diferentes con una población registrada de aproximadamente 93.214 votantes, mientras que el estado con mayor riqueza de apellidos es Miranda con 71488 entre 1.719.922 personas registradas.</p>
+<p>Para cada estado comparamos esta riqueza (número de apellidos) con la diversidad de Shannon, la cual puede interpretarse como el logaritmo de la riqueza ajustada por la abundancia relativa de cada elemento.</p>
+<p>Aquí uso la función <em>diversity</em> del paquete <em><a href="https://github.com/vegandevs/vegan">vegan</a></em> en <em>R</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(vegan)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: vegan</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: permute</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>This is vegan 2.6-4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">colSums</span>(mtz.ap.vzla<span class="sc">&gt;</span><span class="dv">0</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">diversity</span>(<span class="fu">t</span>(mtz.ap.vzla))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para generar el gráfico utilizo el siguiente bloque de código:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>oo <span class="ot">&lt;-</span> <span class="fu">order</span>(S)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">4</span>),<span class="at">las=</span><span class="dv">2</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(S[oo],<span class="at">axes=</span>F,<span class="at">xlab=</span><span class="st">""</span>,<span class="at">ylab=</span><span class="st">"Número de apellidos"</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">12</span>),<span class="at">pch=</span><span class="dv">19</span>,<span class="at">col=</span><span class="st">"peru"</span>,<span class="at">cex=</span><span class="fl">1.2</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">6</span>,<span class="fu">log</span>(<span class="dv">22000</span>),<span class="st">"Riqueza"</span>,<span class="at">col=</span><span class="st">"peru"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(H[oo],<span class="at">col=</span><span class="st">"slateblue4"</span>,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span><span class="fl">1.2</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">6</span>,<span class="fu">log</span>(<span class="dv">700</span>),<span class="st">"Diversidad"</span>,<span class="at">col=</span><span class="st">"slateblue4"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>,S[oo]<span class="sc">*</span><span class="fu">mean</span>(H<span class="sc">/</span>S),<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">"orangered"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(oo),<span class="fu">names</span>(S)[oo])</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">las=</span><span class="dv">0</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"Escala logarítmica"</span>,<span class="at">side=</span><span class="dv">4</span>,<span class="at">line=</span><span class="dv">3</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>,<span class="fu">log</span>(<span class="fu">c</span>(<span class="dv">500</span>,<span class="dv">3000</span>,<span class="dv">9000</span>,<span class="dv">25000</span>,<span class="dv">60000</span>)),<span class="fu">c</span>(<span class="dv">500</span>,<span class="dv">3000</span>,<span class="dv">9000</span>,<span class="dv">25000</span>,<span class="dv">60000</span>))</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">4</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">box</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotDiversity-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<p>La línea naranja representa la diversidad esperada según el logaritmo de la riqueza, es decir la relación promedio entre riqueza y diversidad.</p>
+<p>El patrón observado muestra que los estados con mayor riqueza (De Miranda hasta Mérida) tienden a tener una diversidad menor a la esperada, posiblemente por sobrerepresentación de algunos apellidos dominantes.</p>
+<p>Por otro lado, los estados con menor riqueza (de Vargas a Delta Amacuro) tienden a tener una diversidad observada por encima de la esperada. Esto puede deberse a una mayor “equidad” entre los apellidos, o sea que sus frecuencias relativas tienen una distribución más homogénea.</p>
+</section>
+<section id="diferencias-regionales" class="level2">
+<h2 class="anchored" data-anchor-id="diferencias-regionales">Diferencias regionales</h2>
+<p>En un segundo paso vamos a comparar la frecuencia de los apellidos entre estados para calcular su similitud en composición.</p>
+<p>En primer lugar vamos a seleccionar solamente los apellidos con una frecuencia mayor a 500.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> mtz.ap.vzla[<span class="fu">rowSums</span>(mtz.ap.vzla)<span class="sc">&gt;</span><span class="dv">500</span>,]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m0)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2932   24</code></pre>
+</div>
+</div>
+<p>Luego transformamos la matriz resultante de tal forma que todas las columnas sumen a uno. De esta manera todos los estados tienen el mismo peso en el análisis, y se comparan las frecuencias relativas de los apellidos en vez de sus valores absolutos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">apply</span>(m0,<span class="dv">2</span>,<span class="cf">function</span>(x) x<span class="sc">/</span><span class="fu">sum</span>(x))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En este caso voy a usar un par de función <em>agnes</em> del paquete <em><a href="https://cran.r-project.org/package=cluster">cluster</a></em> para hacer un agrupación jerárquica de los estados. Entre los métodos disponibles escogí el <a href="https://en.wikipedia.org/wiki/Ward%27s_method">método de Ward</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(cluster)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: cluster</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>h0 <span class="ot">&lt;-</span> <span class="fu">agnes</span>(<span class="fu">t</span>(m1),<span class="at">method=</span><span class="st">"ward"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Estos resultados se visualizan en un dendrograma, en el cuál se pueden identificar al menos 4 grupos bien definidos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(h0,  <span class="at">which.plot =</span> <span class="dv">2</span>,<span class="at">xlab=</span><span class="st">"Basado en la frequencia de apellidos por estado"</span>,<span class="at">sub=</span><span class="fu">sprintf</span>(<span class="st">"Coeficiente de aglomeración = %0.2f"</span>,h0<span class="sc">$</span>ac),<span class="at">main=</span><span class="st">"Dendrograma de agrupamiento jerárquico según el método de Ward"</span>,<span class="at">ylab=</span><span class="st">"Disimilitud"</span>,<span class="at">hang=</span><span class="fl">0.4</span>,<span class="at">cex=</span>.<span class="dv">8</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(h0, <span class="at">k=</span><span class="dv">4</span>, <span class="at">border =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.085</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">"orangered"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotComposicion-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<p>El primer grupo, incluye la mitad de los estados de Venezuela, representantes de los Llanos, la Cordillera de la Costa, y que incluye también un estado de Occidente (Lara) y otro del sur (Amazonas). Luego están los estados Zulia y Falcón formando un grupo aparte. En el tercer grupo están estados andinos (incluyendo Barinas). Finalmente los estados de Oriente y Guayana forman un último bloque.</p>
+<p>Más adelante trataré de analizar en más detalle estas diferencias regionales al incluir información espacialmente explícita sobre la distribución de los nombres.</p>
+</section>
+<section id="nombres-zulianos" class="level2">
+<h2 class="anchored" data-anchor-id="nombres-zulianos">Nombres zulianos</h2>
+<p>Es notable como algunos apellidos representan de idiosincrácias regionales. En la novela “<a href="https://www.goodreads.com/book/show/12863608-sobre-la-misma-tierra">Sobre la misma tierra</a>” nuestro novelista <a href="https://es.wikipedia.org/wiki/R%C3%B3mulo_Gallegos">Rómulo Gallegos</a> representó a una sociedad marabina con raices Wayuu e influencias alemanas, pero con una fuerte identidad regional. Al anti-héroe de la historia lo bautizó con el nombre de Demetrio Montiel, o “Montiel Montiel de los Montieles”, para hacer una singular referencia a su arraigado linaje zuliano.</p>
+<p>Mi pregunta es muy sencilla: ¿Es éste el apellido más zuliano que puede haber?</p>
+<p>Al igual que en el paso anterior debo hacer algunas modificaciones a la matriz para realizar los análisis: escoger los apellidos con una frecuencia mayor a 500, y calcular la importancia del apellido dentro del estado (re-escalar por el total de las columnas) y la importancia del estado para cada apellido (re-escalar por el total de las filas).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> mtz.ap.vzla[<span class="fu">rowSums</span>(mtz.ap.vzla)<span class="sc">&gt;</span><span class="dv">500</span>,]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">## calcular proporción dentro del estado (dividir entre el total del estado) </span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">apply</span>(m0,<span class="dv">2</span>,<span class="cf">function</span>(x) x<span class="sc">/</span><span class="fu">sum</span>(x))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## calcular proporción entre estados (dividir entre el total del país) </span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">apply</span>(m0,<span class="dv">1</span>,<span class="cf">function</span>(x) x<span class="sc">/</span><span class="fu">sum</span>(x))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Con estos datos elaboro una tabla con el número de personas con cada apellido en el estado Zulia y en toda Venezuela, y luego la frecuencia del apellido en el Zulia (porcentaje de habitantes con ese apellido), y su representación en el Zulia comparado con el total de Venezuela. Sólo muestro aquí las familias con tienen más de 20% de sus representantes en el estado Zulia, y que suman más de 20.000 personas en el estado (Que me perdonen los Chacín, Portillo, Morán y otros por dejarlos fuera…).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Tabla.Zulia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">n.Zulia=</span>m0[,<span class="st">"ZULIA"</span>],<span class="at">n.Vzla=</span><span class="fu">rowSums</span>(m0),</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">freq.Zulia=</span>m1[,<span class="st">"ZULIA"</span>],<span class="at">p.Zulia=</span>m2[<span class="st">"ZULIA"</span>,])</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>Tabla.Zulia <span class="ot">&lt;-</span> <span class="fu">subset</span>(Tabla.Zulia,n.Zulia<span class="sc">&gt;</span><span class="dv">20000</span> <span class="sc">&amp;</span> p.Zulia<span class="sc">&gt;</span>.<span class="dv">2</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="do">##Tabla.Zulia &lt;- subset(Tabla.Zulia,n.Vzla&gt;20000 &amp; p.Zulia&gt;.2)</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(Tabla.Zulia[<span class="fu">order</span>(Tabla.Zulia<span class="sc">$</span>p.Zulia),])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47bb7d3875d11e61e281" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-47bb7d3875d11e61e281">{"x":{"filter":"none","vertical":false,"data":[["ROMERO","QUINTERO","PARRA","MORALES","GONZALEZ","CHIRINOS","SOTO","FERNANDEZ","BRACHO","FERRER","RINCON","NAVA","PAZ","PIRELA","FUENMAYOR","VILLALOBOS","URDANETA","MONTIEL","PALMAR"],[49167,29432,31166,37798,241608,23912,22969,66759,29599,26560,33731,29406,28036,23530,33619,45340,59078,39430,23864],[238567,134943,140205,148957,914348,82803,79393,225231,58052,47990,59560,46544,38895,32629,43636,57160,74457,46130,25666],[0.012545588018781,0.007509950710207302,0.007952402957132398,0.009644642462096209,0.06164936705598552,0.006101452207885193,0.0058608337137385,0.01703441150661624,0.007552562893157989,0.006777123228564349,0.008606895467722291,0.007503316478131147,0.007153743480272218,0.006003980028920148,0.008578317237240394,0.01156908008972544,0.0150745062536568,0.01006106810626101,0.006089204394821523],[0.2060930472362062,0.2181069043966712,0.2222887914125744,0.2537510825271723,0.2642407485990017,0.2887818074224364,0.2893076215787286,0.2964023602434834,0.5098704609660305,0.5534486351323192,0.5663364674278039,0.6317892746648333,0.7208124437588379,0.7211376382972202,0.7704418370153084,0.7932120363890833,0.7934512537437716,0.8547582917840885,0.9297903841658225]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>n.Zulia<\/th>\n      <th>n.Vzla<\/th>\n      <th>freq.Zulia<\/th>\n      <th>p.Zulia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Por lo visto Gallegos debió manejar muy bien el análisis estadístico de los apellidos… En esta selecta lista efectivamente aparece Montiel como un serio candidato al apellido más zuliano. Según el registro electoral de 2012 en Venezuela hay más de 45 mil “Montieles” en edad de votar y más del 85% están registrados en el Zulia.</p>
+<p>Pero aún así hay que considerar otras alternativas no menos zulianas. Palmar es un apellido menos frecuente en el país (sólo 25 mil), pero más del 90% de ellos están en el Zulia. Los apellidos Urdaneta y Villalobos son más numerosos en Venezuela y en el Zulia, pero la proporción de ellos registrados en el estado es de “apenas” 79%.</p>
+<p>Estos cuatro apellidos pueden considerarse “indicativos” del estado Zulia, pues son mucho más frecuentes aquí que en el resto del país. Lo cual quiere decir que si conoces a alguien con ese apellido, lo más probable es que le gusten las <a href="https://es.wikipedia.org/wiki/Maracaibo#Gastronom%C3%ADa">mandocas</a> y escuche <a href="https://es.wikipedia.org/wiki/Gaita_zuliana">gaitas en diciembre</a>.</p>
+<p>Sin embargo, si te encuentras en el estado Zulia, es más probable que te encuentres con más González que con cualquier otro de los apellidos zulianos. En el Zulia hay más de 240 mil González (o 1,4 veces más que los Palmar, Montiel, Urdaneta y Villalobos juntos), que representan al menos 26% de los González de Venezuela.</p>
+</section>
+<section id="listo-por-hoy" class="level2">
+<h2 class="anchored" data-anchor-id="listo-por-hoy">Listo por hoy</h2>
+<p>Bueno, eso es todo por el día de hoy. En otra ocasión retomaré este tema para dedicarle un par de sesiones más a explorar otros aspectos de la</p>
+<p>Para comentarios y sugerencias pueden escribirme a mi cuenta de Twitter <a href="http://twitter.com/jrfep"><span class="citation" data-cites="jrfep">@jrfep</span></a>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
