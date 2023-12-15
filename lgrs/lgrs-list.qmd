@@ -1,7 +1,9 @@
 ---
-title: "Ciudades y lugares"
-subtitle: "con recuerdos"
+title: "Galeria de recuerdos"
+subtitle: "Ciudades y lugares"
 listing: 
  type: grid
  categories: true
 ---
+
+Una muestra de mi mundo, pequeño pero en expansión.

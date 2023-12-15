@@ -34,6 +34,8 @@ website:
             href: taxa/my-favs.qmd
       - text: "{{< fa smile >}} Homo ludens"
         menu:
+          - text: "{{< fa world >}} Mi mundo"
+            href: lgrs/lgrs-list.qmd
           - text: "Futbol"
             icon: futbol
             href: j4fun/blog_LaLiga_FinalTemp2019.qmd

@@ -1,0 +1,8 @@
+---
+title: Bayreuth
+categories:
+ - Alemania
+ - Baviera
+ - Franken
+ - Universidad
+---
