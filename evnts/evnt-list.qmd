@@ -1,4 +1,8 @@
 ---
 title: "Participación en eventos"
-listing: default
+listing: 
+ type: default
+ sort: "date desc"
+ categories: true
+ sort-ui: [title, date]
 ---

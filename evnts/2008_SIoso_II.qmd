@@ -1,0 +1,14 @@
+---
+title: Segundo simposio internacional sobre el oso andino
+date: 10 Noviembre 2008
+categories:
+ - Perú
+ - Simposio
+ - Internacional
+params:
+ code: 2008_SIoso_II
+ ffin: 12 Noviembre 2008
+ lugar: Lima, Perú
+---
+
+Segundo simposio internacional sobre el oso andino. Lima, Perú, 10-12 Noviembre 2008. [Anuncio del simposio](https://andeanbear.wcs.org/Datos-e-informaci%C3%B3n/Simposio-internacional.aspx)

@@ -1,0 +1,7 @@
+---
+title: "Ciudades y lugares"
+subtitle: "con recuerdos"
+listing: 
+ type: grid
+ categories: true
+---
