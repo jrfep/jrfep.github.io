@@ -1,5 +1,7 @@
 ---
 title: "Glaciares tropicales"
+categories:
+  - T6.1
 bibliography: 
   - ../bibTeX/preprints.bibtex
 ---

@@ -1,9 +1,11 @@
 ---
-title: "Llanos de Venezuela"
+title: "Gran Sabana"
+categories:
+  - T1.1
+  - T3.1
+  - T4.2
 bibliography: 
   - ../bibTeX/other.bibtex
 ---
 
-
-Ejemplo con mariposas de NeoMapas [@Ferrer-Paris2014_congreso]
-
+Apoyo al trabajo de Izabela Stachowicz en la Gran Sabana en Venezuela.

@@ -1,5 +1,7 @@
 ---
 title: "Llanos de Venezuela"
+categories:
+  - T4.2
 bibliography: 
   - ../bibTeX/other.bibtex
 ---

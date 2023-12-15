@@ -1,5 +1,7 @@
 ---
 title: "Bosques secos tropicales"
+categories:
+  - T1.2
 bibliography: 
   - ../bibTeX/peer-review.bibtex
 ---

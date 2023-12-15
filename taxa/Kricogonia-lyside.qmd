@@ -14,6 +14,30 @@ Mi fascinación personal con las zonas áridas/secas tiene una vieja data, pero 
 
 Mis constantes viajes a diferentes regiones de Venezuela, como parte del proyecto NeoMapas [@NM01;@NM03] y mi propio proyecto doctoral [@Ferrer_Paris_2008_PhD_thesis], me ofrecieron otras experiencias intensas con zonas áridas y secas de la costa venezolana. Entre Cariaco y Guayacán, en la península de Paria, y luego en un recorrido por todo el centro-norte de la península de Paraguaná [@NM02], encontré muchos motivos para admirar la belleza que se esconde entre las espinas, el calor y el polvo. En esos viajes logré capturar algunos ejemplares de una pequeña mariposa que en este momento es la "excusa perfecta" para dedicarle más tiempo a este hábitat particular.
 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: asis
+
+library(FlickrAPI)
+suppressMessages(library(dplyr))
+suppressMessages(here::i_am("lgrs/Trieste.qmd"))
+file_name <- here::here("data","flickr-photos.rds")
+all_photos <- readRDS(file=file_name)
+
+seleccion <- "Kricogonia|Guiacum"
+photos <- all_photos %>% filter(grepl(seleccion,title)) %>% slice_sample(n=1)
+photos_info <- getPhotoInfo(photo_id = photos$id, output = "url")
+
+cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>", 
+         photos$url_m, photos$width_m, photos$height_m,
+         photos$title,
+         photos_info$content))
+```
+
+
 _Kricogonia lyside_ es una mariposa piéride de tamaño pequeño a mediano, que a primera vista no parece encerrar ningún misterio. En mi tesis doctoral, teniendo que trabajar con datos de distribución y abundancia de 119 especies de esta familia [@Ferrer_Paris_2008_PhD_thesis], era natural que no le prestara mucha atención a ésta en particular. Sí sabía que esta mariposa está restringida a zonas costeras y secas, que sus larvas son huésped probablemente exclusivos del guayacán (lo cual es muy evidente por su comportamiento) y que a pesar de formar movimientos migratorios masivos en el norte del continente, en Venezuela parece ser más bien escasa.
 
 Casi fue por casualidad que encontré en el libro rojo de la flora de Venezuela al guayacán (_Guaiacum officinale_), del cuál sólo conocía que era el árbol emblemático del estado Nueva Esparta y poco más. Al leer sobre la situación de riesgo del guayacán, cuyas poblaciones se han visto mermadas por la explotación de madera y la pérdida del hábitat, fue que empecé a prestarle más atención a _K. lyside_. De repente todo lo que había leído sobre la mariposa cobró una importancia mayor de la que le había prestado en un principio. El género Kricogonia está conformado por tan sólo dos especies que, dentro de la familia Pieridae, son las únicas que se alimentan de plantas de la familia Zygophyllacea. Este género es atípico entre las piérides, y está prácticamente circunscrito a la cuenca del mar Caribe, y parte del Pacífico de Centro y Norte-América.

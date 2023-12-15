@@ -3,7 +3,6 @@
     "listing": "/evnts/evnt-list.html",
     "items": [
       "/evnts/2021_ESAus.html",
-      "/evnts/2007_ELEN_II.html",
       "/evnts/2021_ResBaz.html",
       "/evnts/2020_IUCN_Marseille.html",
       "/evnts/2018_LACA_I.html",
@@ -22,6 +21,7 @@
       "/evnts/2009_TheoEco.html",
       "/evnts/2008_SIoso_II.html",
       "/evnts/2007_CVE_VII.html",
+      "/evnts/2007_ELEN_II.html",
       "/evnts/2005_Diversitas_I.html",
       "/evnts/2005_Baeza.html",
       "/evnts/2005_SCCS.html",
@@ -63,6 +63,7 @@
     "listing": "/lgrs/lgrs-list.html",
     "items": [
       "/lgrs/Bogota.html",
+      "/lgrs/Panama.html",
       "/lgrs/Trieste.html"
     ]
   }
