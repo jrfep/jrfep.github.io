@@ -1,5 +1,7 @@
 ---
 title: "Páramos"
+categories:
+  - T6.5
 bibliography: 
   - ../bibTeX/peer-review.bibtex
   - ../bibTeX/LRAV.bibtex
@@ -7,6 +9,31 @@ bibliography:
 ---
 
 En los páramos de Venezuela realicé mi tesis de pregrado enfocado en la ecología y biogeografía de las especies del género Redonda y otros mariposas paramunas [@Ferrer_Paris_2000_Diplom_thesis]. 
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| output: asis
+
+library(FlickrAPI)
+suppressMessages(library(dplyr))
+suppressMessages(here::i_am("ecos/T6.5-paramos.qmd"))
+file_name <- here::here("data","flickr-photos.rds")
+all_photos <- readRDS(file=file_name)
+
+seleccion <- c("Venado de cola blanca en el páramo de Mucubají","Páramos del montículo de las mariposas en el valle de la Morrena de la Laguna de Mucubají")
+
+photos <- all_photos %>% filter(title %in% seleccion) %>% slice_sample(n=1)
+photos_info <- getPhotoInfo(photo_id = photos$id, output = "url")
+
+cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>", 
+         photos$url_m, photos$width_m, photos$height_m,
+         photos$title,
+         photos_info$content))
+```
+
 
 ![Páramos del montículo de las mariposas en el valle de la Morrena de la Laguna de Mucubají](fotos/Paramo-Venezuela.png){fig-alt="Fotografía del paisaje y vegetación del páramo en Mucubají, Venezuela"}
 

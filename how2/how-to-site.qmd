@@ -203,20 +203,20 @@ setFlickrAPIKey(api_key = "YOUR_API_KEY_HERE", install = TRUE)
 
 And finally, it works!
 
+Let's now query our photos (up to 1000) and save the information in a RDS file:
+
 ```{r}
+#| eval: false
+here::i_am("how2/how-to-site.qmd")
 library(FlickrAPI)
-photos <- getPhotos(user_id = "jferrer", img_size="s", extras = c("url_s"))
-knitr::kable(photos[1,])
-photo_info <- getPhotoInfo(photo_id = photos$id[1], output = "url")
-knitr::kable(photo_info[c(1:2),])
-photo_exif <- getExif(photo_id = photos$id[10])
-knitr::kable(photo_exif[1,])
+library(foreach)
+here::i_am("how2/how-to-site.qmd")
+photos <- foreach(i=1:2,.combine = "rbind") %do% {
+  getPhotos(user_id = "jferrer", img_size="m", extras = c("url_m"), per_page=1000, page=i)
+}
 
-photo_search <- getPhotoSearch(
-  sort = "date-taken-desc",
-  tags = c("biodiven", "venezuela"),
-  per_page = 50)
+dim(photos)
 
-knitr::kable(photo_search[1,])
-
+file_name <- here::here("data","flickr-photos.rds")
+saveRDS(file=file_name, photos)
 ```
