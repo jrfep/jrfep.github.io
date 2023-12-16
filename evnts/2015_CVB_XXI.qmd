@@ -10,4 +10,4 @@ categories:
  - Congreso
  - Nacional
 ---
-XXI Congreso Venezolano de Botánica. Caracas, Venezuela, 12-16 mayo 2015.
+XXI Congreso Venezolano de Botánica. [Caracas](/lgrs/Caracas.qmd), Venezuela, 12-16 mayo 2015.

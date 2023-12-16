@@ -12,4 +12,4 @@ categories:
  - Internacional
 ---
 
-GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. Stuttgart, Germany, 21-23 May 2003.  [Workshop program and presentations](http://www.insects-online.de/gartfron.htm)
+GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. [Stuttgart](/lgrs/Stuttgart.qmd), Germany, 21-23 May 2003.  [Workshop program and presentations](http://www.insects-online.de/gartfron.htm)

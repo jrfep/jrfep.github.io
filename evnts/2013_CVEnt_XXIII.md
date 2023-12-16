@@ -11,7 +11,7 @@ categories:
 ---
 # Evento
 
-XXIII Congreso Venezolano de Entomología “Dr. José Ramón Labrador”, Maracaibo, 9-12 julio 2013.
+XXIII Congreso Venezolano de Entomología “Dr. José Ramón Labrador”, [Maracaibo](/lgrs/Maracaibo.qmd), 9-12 julio 2013.
 
 ## Enlaces
 

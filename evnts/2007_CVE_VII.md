@@ -1,13 +1,14 @@
 ---
 title: VII Congreso Venezolano de Ecología
-code: 2007_CVE_VII
 date: 5 noviembre 2007
 ffin: 9 noviembre 2007
+code: 2007_CVE_VII
 lugar: Ciudad Guayana
-pais: Venezuela
-participacion: Presentacion oral
-tipo: Congreso
-ambito: Nacional
+categories:
+ - Venezuela
+ - Ponencia
+ - Congreso
+ - Nacional
 ---
 
 VII Congreso Venezolano de Ecologia

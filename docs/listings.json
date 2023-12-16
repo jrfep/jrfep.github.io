@@ -62,9 +62,30 @@
   {
     "listing": "/lgrs/lgrs-list.html",
     "items": [
+      "/lgrs/Abu-Dhabi.html",
+      "/lgrs/Altos-de-Pipe.html",
+      "/lgrs/Baeza.html",
+      "/lgrs/Bayreuth.html",
       "/lgrs/Bogota.html",
+      "/lgrs/Caracas.html",
+      "/lgrs/Castilletes.html",
       "/lgrs/Panama.html",
-      "/lgrs/Trieste.html"
+      "/lgrs/Cape-Town.html",
+      "/lgrs/Darmstadt.html",
+      "/lgrs/Guarenas.html",
+      "/lgrs/Göttingen.html",
+      "/lgrs/Karlsruhe.html",
+      "/lgrs/London.html",
+      "/lgrs/Maracaibo.html",
+      "/lgrs/Merida.html",
+      "/lgrs/Paris.html",
+      "/lgrs/San-Antonio.html",
+      "/lgrs/San-Diego.html",
+      "/lgrs/Stuttgart.html",
+      "/lgrs/Trieste.html",
+      "/lgrs/Turku.html",
+      "/lgrs/Melbourne.html",
+      "/lgrs/San_Jose.html"
     ]
   }
 ]

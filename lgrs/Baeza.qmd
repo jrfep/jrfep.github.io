@@ -1,0 +1,6 @@
+---
+title: Baeza
+categories:
+ - España
+ - Taller
+---

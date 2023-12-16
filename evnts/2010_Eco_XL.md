@@ -10,4 +10,4 @@ categories:
  - Nacional
 ---
 
-XL Aniversario del Centro de Ecología: Investigación Científica, Diversidad Biológica y Sociedad, Instituto Venezolano de Investigaciones Científicas. Caracas, 7-10 diciembre 2010.
+XL Aniversario del Centro de Ecología: Investigación Científica, Diversidad Biológica y Sociedad, Instituto Venezolano de Investigaciones Científicas. [San Antonio de los Altos](/lgrs/San-Antonio.qmd), 7-10 diciembre 2010.
