@@ -6,6 +6,7 @@ categories:
  - Kricogonia
  - Guayacán
  - Trabajo de campo
+ - Mariposas
 ---
 
 Un hito.

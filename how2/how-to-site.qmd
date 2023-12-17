@@ -220,3 +220,13 @@ dim(photos)
 file_name <- here::here("data","flickr-photos.rds")
 saveRDS(file=file_name, photos)
 ```
+
+### Galleries with `pixture`
+
+I am experimenting with the [pixture package](https://www.royfrancis.com/pixture/index.html) to create image galleries.
+
+```{r}
+#| eval: false
+install.packages(c("htmlwidgets","shiny","remotes"))
+remotes::install_github('royfrancis/pixture')
+```

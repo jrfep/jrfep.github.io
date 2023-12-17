@@ -1,0 +1,8 @@
+---
+title: Sydney
+categories:
+ - Australia
+ - Familia
+editor_options: 
+  chunk_output_type: console
+---

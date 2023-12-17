@@ -4,6 +4,7 @@ categories:
  - Venezuela
  - Familia
  - Origenes
+ - IVIC
 ---
 
 Mi ciudad natal, única e irrepetible.
@@ -13,21 +14,43 @@ Mi ciudad natal, única e irrepetible.
 #| echo: false
 #| warning: false
 #| message: false
-#| output: asis
 
 library(FlickrAPI)
+library(pixture)
 suppressMessages(library(dplyr))
 suppressMessages(here::i_am("lgrs/Trieste.qmd"))
 file_name <- here::here("data","flickr-photos.rds")
 all_photos <- readRDS(file=file_name)
+htmlcode <- "<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='https://www.flickr.com/photos/jferrer/%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>"
+```
 
+```{r}
+#| echo: false
+#| output: asis
 seleccion <- c("Boulevard 5 de Julio", "Las Laras", "Bella Vista")
+photos <- all_photos %>% filter(title %in% seleccion) 
+show_photo <- photos %>% 
+    slice_sample(n=1) %>%
+    transmute(code = sprintf(htmlcode, url_m, width_m, height_m, title, id)) %>% pull()
+cat(show_photo)
+```
 
-photos <- all_photos %>% filter(title %in% seleccion) %>% slice_sample(n=1)
-photos_info <- getPhotoInfo(photo_id = photos$id, output = "url")
+```{r}
+#| echo: false
+paths <- photos %>% pull(url_m)
+captions <- photos %>% 
+  transmute(caption=sprintf("<strong>%s</strong> por <a href='https://www.flickr.com/photos/jferrer/%s' target='flickr'>JR Ferrer Paris @ flickr</a>",title,id)) %>% pull()
 
-cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>", 
-         photos$url_m, photos$width_m, photos$height_m,
-         photos$title,
-         photos_info$content))
+pixgallery(paths, caption=captions)
+
+```
+
+```{r}
+#| echo: false
+paths <- sprintf("http://i.imgur.com/%s.jpg?1",
+c("BO7Hzhx", "JF1MDBE"))
+captions <- sprintf("Imágen por <a href='https://i.imgur.com/%s.jpg' target='imgur'>NeoMapas @ imgur</a>",  c("BO7Hzhx", "SOHUc09"))
+
+pixgallery(paths, caption=captions)
+
 ```

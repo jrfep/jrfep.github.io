@@ -4,6 +4,8 @@ categories:
  - Venezuela
  - IVIC
  - Amigos
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -14,6 +16,7 @@ categories:
 #| output: asis
 
 library(FlickrAPI)
+library(pixture)
 suppressMessages(library(dplyr))
 suppressMessages(here::i_am("lgrs/Trieste.qmd"))
 file_name <- here::here("data","flickr-photos.rds")
@@ -21,11 +24,11 @@ all_photos <- readRDS(file=file_name)
 
 seleccion <- c("Insomnia01", "Insomnia02", "Insomnia03")
 
-photos <- all_photos %>% filter(title %in% seleccion) %>% slice_sample(n=1)
-photos_info <- getPhotoInfo(photo_id = photos$id, output = "url")
+photos <- all_photos %>% filter(title %in% seleccion) %>% slice_sample()
 
-cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>", 
-         photos$url_m, photos$width_m, photos$height_m,
-         photos$title,
-         photos_info$content))
+paths <- all_photos %>% filter(title %in% seleccion) %>% pull(url_m)
+captions <- all_photos %>% filter(title %in% seleccion) %>% 
+  transmute(caption=sprintf("<strong>%s</strong> by <a href='https://www.flickr.com/photos/jferrer/%s' target='flickr'>JR Ferrer Paris @ flickr</a>",title,id)) %>% pull()
+
+pixgallery(paths, caption=captions)
 ```

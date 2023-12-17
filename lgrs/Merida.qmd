@@ -2,4 +2,7 @@
 title: Mérida
 categories:
  - Venezuela
+ - Congresos
+ - Tesis
+ - Mariposas
 ---
