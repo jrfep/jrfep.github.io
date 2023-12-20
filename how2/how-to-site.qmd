@@ -150,7 +150,7 @@ To get the data I first install the `rinat` package:
 
 ```{r}
 #| eval: false
-here::i_am("README.Rmd")
+here::i_am("how2/how-to-site.qmd")
 if (!require(rinat)) {
   install.packages("rinat")
   library(rinat)
@@ -210,9 +210,11 @@ Let's now query our photos (up to 1000) and save the information in a RDS file:
 here::i_am("how2/how-to-site.qmd")
 library(FlickrAPI)
 library(foreach)
+library(dplyr)
 here::i_am("how2/how-to-site.qmd")
-photos <- foreach(i=1:2,.combine = "rbind") %do% {
-  getPhotos(user_id = "jferrer", img_size="m", extras = c("url_m"), per_page=1000, page=i)
+photos <- foreach(u=c("jferrer","jferrer","199798864@N08"), i=c(1,2,1),.combine = "bind_rows") %do% {
+  getPhotos(user_id = u, img_size="m", extras = c("description","owner_name",
+  "url_m"), per_page=1000, page=i)
 }
 
 dim(photos)
@@ -220,6 +222,71 @@ dim(photos)
 file_name <- here::here("data","flickr-photos.rds")
 saveRDS(file=file_name, photos)
 ```
+
+### Photos from google 
+
+This is a trial-and-error test of reading my photos from a google account, based on [some blogs](https://www.listendata.com/2021/10/r-wrapper-for-google-photos-api.html), [medium posts](https://max-coding.medium.com/loading-photos-and-metadata-using-google-photos-api-with-python-7fb5bd8886ef) and [stack overflow posts](https://stackoverflow.com/questions/50573196/access-google-photo-api-with-python-using-google-api-python-client):
+
+1. I created a project in google cloud, 
+2. enabled Photos Library API (not sure if this is relevant here),
+3. configured a simple consent page, 
+4. created a OAuth 2.0 client ID and downloaded the json file.
+5. added `GC_PROJECT_EMAIL` and `GC_PROJECT_CRED_JSON` to my .Renviron file
+
+Then I ran these lines of code
+
+```{r}
+#| eval: false
+library(gargle)
+library(dplyr)
+library(jsonlite)
+library(httr)
+
+readRenviron("~/.Renviron")
+cred_json <- Sys.getenv("GC_PROJECT_CRED_JSON")
+if (!file.exists(cred_json)) {
+  stop("credentials not found, please update Renviron file")
+} else {
+  clnt <- gargle_oauth_client_from_json(path=cred_json)
+}
+
+tkn <- gargle2.0_token(
+  email = Sys.getenv("GC_PROJECT_EMAIL"),
+  client = clnt,
+  scope = "https://www.googleapis.com/auth/photoslibrary.readonly"
+)
+k <- token_fetch(token=tkn)
+authorization = paste('Bearer', k$credentials$access_token)
+
+getalbum <-
+  GET("https://photoslibrary.googleapis.com/v1/albums",
+      add_headers(
+        'Authorization' = authorization,
+        'Accept'  = 'application/json')) %>% 
+  content(., as = "text", encoding = "UTF-8") %>%
+  fromJSON(., flatten = TRUE) %>% 
+  data.frame()
+
+aID <- getalbum %>% filter(albums.title %in% "Tesaurus") %>% pull(albums.id)
+
+photos <-
+  POST("https://photoslibrary.googleapis.com/v1/mediaItems:search",
+    add_headers(
+      'Authorization' = authorization,
+      'Accept'  = 'application/json'),
+    body = list("albumId" = aID,
+                "pageSize" = 25),
+    encode = "json"
+    ) %>% 
+  content(., as = "text", encoding = "UTF-8") %>%
+  fromJSON(., flatten = TRUE) %>% 
+  data.frame()
+
+here::i_am("how2/how-to-site.qmd")
+file_name <- here::here("data","google-photos.rds")
+saveRDS(file=file_name, photos)
+```
+
 
 ### Galleries with `pixture`
 

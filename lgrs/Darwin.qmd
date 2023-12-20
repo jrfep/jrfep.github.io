@@ -2,6 +2,36 @@
 title: Darwin
 categories:
  - Australia
+ - Conferencia
+ - Visita
 editor_options: 
   chunk_output_type: console
 ---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(pixture)
+library(dplyr)
+here::i_am("lgrs/Trieste.qmd")
+
+```
+
+## Observaciones en iNaturalist
+
+```{r}
+#| echo: false
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+all_photos <- readRDS(file=file_name) 
+paths <- all_photos %>% 
+    filter(grepl("Darwin",place_guess)) %>% 
+    pull(image_url)
+captions <- all_photos %>% 
+    filter(grepl("Darwin",place_guess)) %>% 
+    transmute(caption=sprintf("<strong>%s</strong> (<emph>%s</emph>) by <a href='%s' target='iNat'>NeoMapas @ iNaturalist</a>",species_guess,scientific_name,url)) %>% pull()
+
+pixgallery(paths, caption=captions)
+```

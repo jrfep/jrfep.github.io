@@ -1,0 +1,31 @@
+---
+title: 'IUCN Africa Protected Area Congress, APAC'
+date: July 2022
+categories:
+  - Rwanda
+  - Congreso
+  - Internacional
+  - IUCN
+  - LRE
+  - Áreas Protegidas
+  - Taller
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/preprints.bibtex
+---
+
+# El evento 
+
+IUCN Africa Protected Area Congress, APAC
+
+## Enlaces
+
+- https://apacongress.africa/
+
+## Participación
+
+En 2022 organizamos una [sesión](https://osf.io/fgzac) sobre Lista Roja de Ecosistemas en el Congreso Africano sobre Áreas Protegidas en [Kigali](/lgrs/Kigali.qmd), Rwanda. 
+
+El título del taller fue _Red List of Ecosystems in Africa, supporting policy, practice and planning_ y los participantes refleccionaron sobre cómo y dónde se ha utilizado la Lista Roja de Ecosistemas en África y cuáles han sido los beneficios para el manejo de áreas protegidas y otras acciones de conservación en le continente.
+
+Posterior al taller preparamos un manuscrito que compartimos en forma de pre-print [@keith_ghoraba_Africa_RLE_2022], y después de un par de rondas de revisión publicamos en la revista Conservation Biology [@RLE_Africa].

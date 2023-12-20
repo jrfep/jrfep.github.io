@@ -1,0 +1,37 @@
+---
+title: 7th International Conference on the Biology of Butterflies
+date: 11 August 2014
+params:
+ - code: 2014_ICBB_VII
+ - ffin: 14 August 2014
+ - lugar: Turku
+categories:
+ - Finland
+ - Conferencia
+ - Internacional
+ - Ponencia
+bibliography:
+ - ../bibTeX/presentations.bibtex
+ - ../bibTeX/datasets.bibtex
+ - ../bibTeX/peer-review.bibtex
+---
+
+# El evento 
+
+7th International Conference on the Biology of Butterflies. [Turku](/lgrs/Turku.qmd), Finland, 11-14 August 2014.
+
+## Presentación y publicaciones
+
+> **The assessment of macroecological patterns in butterfly-hostplant associations at a global scale**, [@Ferrer_ICCB_2014]
+
+Esta presentación está relacionada con una publicación sobre mariposas y sus plantas hospederas [@FerrerParis2013_Hosts] y el conjunto de datos compilado para ese trabajo [@FerrerParis_EOL_dataset_2014].
+
+## Enlaces
+
+- [Conference web page](http://www.nymphalidae.net/icbb2014/index.html)
+- [Información sobre la sesión](http://www.nymphalidae.net/icbb2014/genbutbio.html)
+- [Conference report](http://www.nymphalidae.net/icbb2014/Antenna2.pdf)
+
+## Financiamiento
+
+Mi participación fue cubierta por los fondos del premio **2013 EOL Rubenstein Research Fellowship Award**.

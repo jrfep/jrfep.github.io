@@ -3,4 +3,31 @@ title: Turku
 categories:
  - Finlandia
  - Mariposas
+ - Conferencia
+ - Visita
 ---
+Visité Finlandia para una [conferencia sobre mariposas](/evnts/2014_ICBB_VII.qmd). Impresionado con la presencia de grandes personajes del estudio de estos insectos y la ecología en general. 
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: asis
+
+library(pixture)
+suppressMessages(library(dplyr))
+suppressMessages(here::i_am("lgrs/Trieste.qmd"))
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+all_photos <- readRDS(file=file_name) 
+
+photos <- all_photos %>% filter(grepl("Turku",place_guess))
+
+htmlcode <- "<center>\n<img src='%s'>\n<br/>\n**%s** (*%s*) by <a href='%s' target='iNat'>NeoMapas @ inaturalist</a><br/></center>"
+
+cat(sprintf(htmlcode, 
+         photos$image_url, 
+         photos$species_guess,
+         photos$scientific_name,
+         photos$url))
+```

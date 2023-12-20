@@ -12,7 +12,37 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r}
+#| message: false
+library(dplyr)
+library(rinat)
+library(leaflet)
+library(sf)
+library(FlickrAPI)
+library(pixture)
+here::i_am("taxa/Redonda-chiquinquirana.qmd")
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+inat_obs <- readRDS(file=file_name)
+file_name <- here::here("data","flickr-photos.rds")
+all_photos <- readRDS(file=file_name)
+```
+
+
 Sobre la braquipteria en mariposas [@Viloria_2003; @Ferrer_Paris_2000_Diplom_thesis].
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+seleccion <- c("Redonda")
+photos <- all_photos %>% filter(grepl(seleccion,title) )
+paths <- photos %>% pull(url_m)
+captions <- photos %>% 
+  transmute(caption=sprintf("<strong>%s</strong> por <a href='https://www.flickr.com/photos/%s/%s' target='flickr'>JR Ferrer Paris @ flickr</a>",title,owner,id)) %>% pull()
+pixfigure(paths, captions)
+```
 
 Conservación de mariposas altiandinas [@Ferrer-Paris2015]
 
@@ -20,16 +50,6 @@ Descripción de especies endémicas [@Viloria_2015_description_Redonda].
 
 En el libro rojo de la fauna venezolana [@LRFV_bordoni]
 
-```{r}
-#| message: false
-library(dplyr)
-library(rinat)
-library(leaflet)
-library(sf)
-here::i_am("taxa/Redonda-chiquinquirana.qmd")
-file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
-inat_obs <- readRDS(file=file_name)
-```
 
 ```{r}
 redonda <- inat_obs %>% filter(scientific_name %in% "Steromapedaliodes chiquinquirana")
@@ -53,4 +73,3 @@ leaflet(obs_df) %>%
   addMarkers(data = obs_df,
                    popup = ~popup_html)
 ```
-

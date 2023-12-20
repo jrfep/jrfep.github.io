@@ -4,6 +4,7 @@ categories:
  - Venezuela
  - IVIC
  - Amigos
+ - Trabajo
 editor_options: 
   chunk_output_type: console
 ---
