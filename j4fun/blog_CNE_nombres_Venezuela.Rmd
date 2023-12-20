@@ -128,6 +128,8 @@ Más adelante trataré de analizar en más detalle estas diferencias regionales 
 
 Es notable como algunos apellidos representan de idiosincrácias regionales. En la novela "[Sobre la misma tierra](https://www.goodreads.com/book/show/12863608-sobre-la-misma-tierra)" nuestro novelista [Rómulo Gallegos](https://es.wikipedia.org/wiki/R%C3%B3mulo_Gallegos) representó a una sociedad marabina con raices Wayuu e influencias alemanas, pero con una fuerte identidad regional. Al anti-héroe de la historia lo bautizó con el nombre de Demetrio Montiel, o "Montiel Montiel de los Montieles", para hacer una singular referencia a su arraigado linaje zuliano.
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="k11KxTr"><a href="https://imgur.com/k11KxTr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 Mi pregunta es muy sencilla: ¿Es éste el apellido más zuliano que puede haber?
 
 Al igual que en el paso anterior debo hacer algunas modificaciones a la matriz para realizar los análisis: escoger los apellidos con una frecuencia mayor a 500, y calcular la importancia del apellido dentro del estado (re-escalar por el total de las columnas) y la importancia del estado para cada apellido (re-escalar por el total de las filas). 
