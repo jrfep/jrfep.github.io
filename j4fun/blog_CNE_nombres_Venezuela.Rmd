@@ -1,7 +1,13 @@
 ---
 title: "Todos los nombres (I)"
-author: "José R. Ferrer Paris (@jrfep)"
+author: 
+ - name: 
+    given: José R. 
+    family: Ferrer-Paris
 date: "Febrero 16, 2019"
+citation: 
+ url: https://jrfep.github.io/j4fun/blog_CNE_nombres_Venezuela.html
+
 output: html_document
 ---
 ```{r setup, include=FALSE}
@@ -158,6 +164,5 @@ Sin embargo, si te encuentras en el estado Zulia, es más probable que te encuen
 
 ## Listo por hoy
 
-Bueno, eso es todo por el día de hoy. En otra ocasión retomaré este tema para dedicarle un par de sesiones más a explorar otros aspectos de la
+Bueno, eso es todo por el día de hoy. En otra ocasión retomaré este tema para dedicarle un par de sesiones más a explorar otros aspectos de los apellidos venezolanos.
 
-Para comentarios y sugerencias pueden escribirme a mi cuenta de Twitter [@jrfep](http://twitter.com/jrfep).
