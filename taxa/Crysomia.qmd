@@ -5,4 +5,6 @@ bibliography:
   - ../bibTeX/reports.bibtex
 ---
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/APrHNyb"  ><a href="//imgur.com/a/APrHNyb">un cuento de Monterroso</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 [@Thomas_Cabianca_2015_Invasion_Chrysomya]

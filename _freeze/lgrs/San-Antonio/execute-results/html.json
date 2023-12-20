@@ -1,0 +1,14 @@
+{
+  "hash": "f91dc3991562db34fe26ebeea83a1d6f",
+  "result": {
+    "markdown": "---\ntitle: San Antonio\ncategories:\n - Venezuela\n - Familia\n - Amigos\n - IVIC\n---\n\n<center>\n<img src='https://live.staticflickr.com/2163/2544377779_ac0c013a6d.jpg' width='500'  height='359'>\n<br/>\n**Simbiosis Perfecta (25/365+ñ)** by <a href='https://www.flickr.com/photos/jferrer/2544377779/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

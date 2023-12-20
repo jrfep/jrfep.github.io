@@ -1,0 +1,18 @@
+{
+  "hash": "2307ecca9f2c6035dfd6e607ac17540c",
+  "result": {
+    "markdown": "---\ntitle: Altos de Pipe\ncategories:\n - Venezuela\n - IVIC\n - Amigos\n - Trabajo\neditor_options: \n  chunk_output_type: console\n---\n\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-e531c23df065e119ba47\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-e531c23df065e119ba47\">{\"x\":{\"path\":[\"https://live.staticflickr.com/2209/2015466503_5eddb5c19d.jpg\",\"https://live.staticflickr.com/2165/2015487655_b654bb98d0.jpg\",\"https://live.staticflickr.com/2351/2016315710_1b5cefea42.jpg\"],\"caption\":[\"<strong>Insomnia01<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/2015466503' target='flickr'>JR Ferrer Paris @ flickr<\\/a>\",\"<strong>Insomnia02<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/2015487655' target='flickr'>JR Ferrer Paris @ flickr<\\/a>\",\"<strong>Insomnia03<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/2016315710' target='flickr'>JR Ferrer Paris @ flickr<\\/a>\"],\"dim\":\"200px\",\"gap\":\"6px\",\"shuffle\":false,\"type\":\"grid\"},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../site_libs/simplelightbox-0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/simplelightbox-0/js/simplelightbox.js\"></script>\n<link href=\"../site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

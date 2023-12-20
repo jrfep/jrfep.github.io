@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="José R. Ferrer Paris (@jrfep)">
 
 <title>./jrfep - Todos los nombres (I)</title>
 <style>
@@ -97,15 +96,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-<script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="../site_libs/datatables-binding-0.30/datatables.js"></script>
+<script src="../site_libs/datatables-binding-0.31/datatables.js"></script>
 <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="../site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="../site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -154,6 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
  <span class="dropdown-text">Repositorios / código</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../evnts/evnt-list.html" rel="" target="">
+ <span class="dropdown-text">Eventos</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -176,6 +179,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><i class="fa-solid fa-smile" aria-label="smile"></i> Homo ludens</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-smile--homo-ludens">    
+        <li>
+    <a class="dropdown-item" href="../lgrs/lgrs-list.html" rel="" target="">
+ <span class="dropdown-text"><i class="fa-solid fa-world" aria-label="world"></i> Mi mundo</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-futbol" role="img">
 </i> 
@@ -247,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-contents">
-             <p>José R. Ferrer Paris (<span class="citation" data-cites="jrfep">@jrfep</span>) </p>
+             <p>José R. Ferrer-Paris </p>
           </div>
   </div>
     
@@ -386,6 +393,10 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 <section id="nombres-zulianos" class="level2">
 <h2 class="anchored" data-anchor-id="nombres-zulianos">Nombres zulianos</h2>
 <p>Es notable como algunos apellidos representan de idiosincrácias regionales. En la novela “<a href="https://www.goodreads.com/book/show/12863608-sobre-la-misma-tierra">Sobre la misma tierra</a>” nuestro novelista <a href="https://es.wikipedia.org/wiki/R%C3%B3mulo_Gallegos">Rómulo Gallegos</a> representó a una sociedad marabina con raices Wayuu e influencias alemanas, pero con una fuerte identidad regional. Al anti-héroe de la historia lo bautizó con el nombre de Demetrio Montiel, o “Montiel Montiel de los Montieles”, para hacer una singular referencia a su arraigado linaje zuliano.</p>
+<blockquote class="imgur-embed-pub blockquote" lang="en" data-id="k11KxTr">
+<a href="https://imgur.com/k11KxTr">View post on imgur.com</a>
+</blockquote>
+<script async="" src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 <p>Mi pregunta es muy sencilla: ¿Es éste el apellido más zuliano que puede haber?</p>
 <p>Al igual que en el paso anterior debo hacer algunas modificaciones a la matriz para realizar los análisis: escoger los apellidos con una frecuencia mayor a 500, y calcular la importancia del apellido dentro del estado (re-escalar por el total de las columnas) y la importancia del estado para cada apellido (re-escalar por el total de las filas).</p>
 <div class="cell">
@@ -404,8 +415,8 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(Tabla.Zulia[<span class="fu">order</span>(Tabla.Zulia<span class="sc">$</span>p.Zulia),])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47bb7d3875d11e61e281" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-47bb7d3875d11e61e281">{"x":{"filter":"none","vertical":false,"data":[["ROMERO","QUINTERO","PARRA","MORALES","GONZALEZ","CHIRINOS","SOTO","FERNANDEZ","BRACHO","FERRER","RINCON","NAVA","PAZ","PIRELA","FUENMAYOR","VILLALOBOS","URDANETA","MONTIEL","PALMAR"],[49167,29432,31166,37798,241608,23912,22969,66759,29599,26560,33731,29406,28036,23530,33619,45340,59078,39430,23864],[238567,134943,140205,148957,914348,82803,79393,225231,58052,47990,59560,46544,38895,32629,43636,57160,74457,46130,25666],[0.012545588018781,0.007509950710207302,0.007952402957132398,0.009644642462096209,0.06164936705598552,0.006101452207885193,0.0058608337137385,0.01703441150661624,0.007552562893157989,0.006777123228564349,0.008606895467722291,0.007503316478131147,0.007153743480272218,0.006003980028920148,0.008578317237240394,0.01156908008972544,0.0150745062536568,0.01006106810626101,0.006089204394821523],[0.2060930472362062,0.2181069043966712,0.2222887914125744,0.2537510825271723,0.2642407485990017,0.2887818074224364,0.2893076215787286,0.2964023602434834,0.5098704609660305,0.5534486351323192,0.5663364674278039,0.6317892746648333,0.7208124437588379,0.7211376382972202,0.7704418370153084,0.7932120363890833,0.7934512537437716,0.8547582917840885,0.9297903841658225]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>n.Zulia<\/th>\n      <th>n.Vzla<\/th>\n      <th>freq.Zulia<\/th>\n      <th>p.Zulia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-6bebec7deecb05165374" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6bebec7deecb05165374">{"x":{"filter":"none","vertical":false,"data":[["ROMERO","QUINTERO","PARRA","MORALES","GONZALEZ","CHIRINOS","SOTO","FERNANDEZ","BRACHO","FERRER","RINCON","NAVA","PAZ","PIRELA","FUENMAYOR","VILLALOBOS","URDANETA","MONTIEL","PALMAR"],[49167,29432,31166,37798,241608,23912,22969,66759,29599,26560,33731,29406,28036,23530,33619,45340,59078,39430,23864],[238567,134943,140205,148957,914348,82803,79393,225231,58052,47990,59560,46544,38895,32629,43636,57160,74457,46130,25666],[0.012545588018781,0.007509950710207302,0.007952402957132398,0.009644642462096209,0.06164936705598552,0.006101452207885193,0.0058608337137385,0.01703441150661624,0.007552562893157989,0.006777123228564349,0.008606895467722291,0.007503316478131147,0.007153743480272218,0.006003980028920148,0.008578317237240394,0.01156908008972544,0.0150745062536568,0.01006106810626101,0.006089204394821523],[0.2060930472362062,0.2181069043966712,0.2222887914125744,0.2537510825271723,0.2642407485990017,0.2887818074224364,0.2893076215787286,0.2964023602434834,0.5098704609660305,0.5534486351323192,0.5663364674278039,0.6317892746648333,0.7208124437588379,0.7211376382972202,0.7704418370153084,0.7932120363890833,0.7934512537437716,0.8547582917840885,0.9297903841658225]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>n.Zulia<\/th>\n      <th>n.Vzla<\/th>\n      <th>freq.Zulia<\/th>\n      <th>p.Zulia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"n.Zulia","targets":1},{"name":"n.Vzla","targets":2},{"name":"freq.Zulia","targets":3},{"name":"p.Zulia","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Por lo visto Gallegos debió manejar muy bien el análisis estadístico de los apellidos… En esta selecta lista efectivamente aparece Montiel como un serio candidato al apellido más zuliano. Según el registro electoral de 2012 en Venezuela hay más de 45 mil “Montieles” en edad de votar y más del 85% están registrados en el Zulia.</p>
@@ -415,13 +426,22 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 </section>
 <section id="listo-por-hoy" class="level2">
 <h2 class="anchored" data-anchor-id="listo-por-hoy">Listo por hoy</h2>
-<p>Bueno, eso es todo por el día de hoy. En otra ocasión retomaré este tema para dedicarle un par de sesiones más a explorar otros aspectos de la</p>
-<p>Para comentarios y sugerencias pueden escribirme a mi cuenta de Twitter <a href="http://twitter.com/jrfep"><span class="citation" data-cites="jrfep">@jrfep</span></a>.</p>
+<p>Bueno, eso es todo por el día de hoy. En otra ocasión retomaré este tema para dedicarle un par de sesiones más a explorar otros aspectos de los apellidos venezolanos.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ferrer-paris2019,
+  author = {Ferrer-Paris, José R.},
+  title = {Todos los nombres (I)},
+  date = {2019-02-16},
+  url = {https://jrfep.github.io/j4fun/blog_CNE_nombres_Venezuela.html},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-ferrer-paris2019" class="csl-entry quarto-appendix-citeas" role="listitem">
+Ferrer-Paris, José R. 2019. <span>“Todos los nombres (I).”</span>
+February 16, 2019. <a href="https://jrfep.github.io/j4fun/blog_CNE_nombres_Venezuela.html">https://jrfep.github.io/j4fun/blog_CNE_nombres_Venezuela.html</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

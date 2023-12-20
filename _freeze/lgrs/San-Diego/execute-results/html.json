@@ -1,0 +1,14 @@
+{
+  "hash": "54c21c7356961f8e2ee1a716c43c3487",
+  "result": {
+    "markdown": "---\ntitle: San Diego\ncategories:\n - Venezuela\n - Amigos\n---\n\n<center>\n<img src='https://live.staticflickr.com/2038/1644467990_8d0f42bea5.jpg' width='500'  height='333'>\n<br/>\n**Quietos** by <a href='https://www.flickr.com/photos/jferrer/1644467990/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

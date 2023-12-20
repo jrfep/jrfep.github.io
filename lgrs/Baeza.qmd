@@ -8,3 +8,29 @@ categories:
 Aparte de la ciudad de Baeza también visitamos el Mirador del Puerto de las Palomas y entramos al Parque Natural de las Sierras de Cazorla, Segura y Las Villas. Visitamos el Centro de Recuperación de Especies Amenazadas (CREA) Quiebrajano de Jaén.
 
 https://www.agenciamedioambienteyagua.es/DetalleCentroA.aspx?Id=17
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(FlickrAPI)
+library(pixture)
+library(dplyr)
+here::i_am("lgrs/Trieste.qmd")
+```
+
+```{r}
+#| echo: false
+file_name <- here::here("data","google-photos.rds")
+ggl_photos <- readRDS(file=file_name)
+photos <- ggl_photos %>% filter(grepl("Baeza", mediaItems.description))
+
+paths <- pull(photos, mediaItems.baseUrl)
+captions <- photos %>% transmute(caption=sprintf("<strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a>",mediaItems.description,mediaItems.productUrl)) %>% pull
+
+pixgallery(paths, caption=captions)
+
+```

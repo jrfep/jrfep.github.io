@@ -1,0 +1,14 @@
+{
+  "hash": "5f5fca6ccafaa0002df9d02ac414864c",
+  "result": {
+    "markdown": "---\ntitle: Bogotá\ncategories:\n - Colombia\n - Congresos\n - Familia\n---\n\n\nPara mis padres fue un hogar durante 10 años. De visita en varias oportunidades, Bogotá nos recibió cuando buscabamos camino. Fue nuestro puente entre Venezuela y Australia.\n\n<blockquote class=\"imgur-embed-pub\" lang=\"en\" data-id=\"IsKcZNg\"><a href=\"https://imgur.com/IsKcZNg\">View post on imgur.com</a></blockquote><script async src=\"//s.imgur.com/min/embed.js\" charset=\"utf-8\"></script>\n\n\n<center>\n<img src='https://live.staticflickr.com/2743/4496733762_747cf50b46.jpg' width='333'  height='500'>\n<br/>\n**¡Chócala!** by <a href='https://www.flickr.com/photos/jferrer/4496733762/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

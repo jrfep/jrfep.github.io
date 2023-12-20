@@ -1,0 +1,14 @@
+{
+  "hash": "1bab51375a0a40a96904a040d433cd1f",
+  "result": {
+    "markdown": "---\ntitle: Ciudad de Panamá\ncategories:\n - Panamá\n - Eventos\n - Amigos\n---\n\n\nAprovecho una [reunión de trabajo](/evnts/2007_ELEN_II.qmd) para conocer un rincón muy colorido del continente, y visitar viejos amigos.\n\n\n<center>\n<img src='https://live.staticflickr.com/169/476304621_c387c09993.jpg' width='375'  height='500'>\n<br/>\n**Las Mercedes** by <a href='https://www.flickr.com/photos/jferrer/476304621/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

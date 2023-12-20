@@ -211,6 +211,7 @@ here::i_am("how2/how-to-site.qmd")
 library(FlickrAPI)
 library(foreach)
 library(dplyr)
+readRenviron("~/.Renviron") # read the API key
 here::i_am("how2/how-to-site.qmd")
 photos <- foreach(u=c("jferrer","jferrer","199798864@N08"), i=c(1,2,1),.combine = "bind_rows") %do% {
   getPhotos(user_id = u, img_size="m", extras = c("description","owner_name",

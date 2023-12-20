@@ -1,0 +1,14 @@
+{
+  "hash": "a2817b9e27e1b043bbce1fc828574a7b",
+  "result": {
+    "markdown": "---\ntitle: Turku\ncategories:\n - Finlandia\n - Mariposas\n - Conferencia\n - Visita\n---\n\nVisité Finlandia para una [conferencia sobre mariposas](/evnts/2014_ICBB_VII.qmd). Impresionado con la presencia de grandes personajes del estudio de estos insectos y la ecología en general. \n\n\n\n<center>\n<img src='https://inaturalist-open-data.s3.amazonaws.com/photos/83720015/medium.jpeg'>\n<br/>\n**Trauermantel** (*Nymphalis antiopa*) by <a href='https://www.inaturalist.org/observations/52655747' target='iNat'>NeoMapas @ inaturalist</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "7876e68ebc601e5a673a684e5a46b8ba",
+  "result": {
+    "markdown": "---\ntitle: \"Páramos\"\ncategories:\n  - T6.5\nbibliography: \n  - ../bibTeX/peer-review.bibtex\n  - ../bibTeX/LRAV.bibtex\n  - ../bibTeX/thesis.bibtex\n---\n\n\nEn los páramos de Venezuela realicé mi tesis de pregrado enfocado en la ecología y biogeografía de las especies del género Redonda y otros mariposas paramunas [@Ferrer_Paris_2000_Diplom_thesis]. \n\n\n\n<center>\n<img src='https://live.staticflickr.com/2727/4287542665_abf1b9ed0a.jpg' width='500'  height='333'>\n<br/>\n**Páramos del montículo de las mariposas en el valle de la Morrena de la Laguna de Mucubají** by <a href='https://www.flickr.com/photos/jferrer/4287542665/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>\n\n\n\n![Páramos del montículo de las mariposas en el valle de la Morrena de la Laguna de Mucubají](fotos/Paramo-Venezuela.png){fig-alt=\"Fotografía del paisaje y vegetación del páramo en Mucubají, Venezuela\"}\n\nA partir de este trabajo empezamos a evaluar el estado de conservación de especies endémicas de nuestros páramos [@Viloria_2003] y la diversidad de especies y subespecies en este grupo de mariposas [@Viloria_2015_description_Redonda]. \n\nPosteriormente realicé evaluaciones para la Lista Roja de Especies Amenazadas de Venezuela, en las que se incluye a [*Redonda chiquinquirana*](/taxa/Redonda-chiquinquirana.qmd), *Diaphanos huberi* y otras especies  [@LRFV_huberi; @LRFV_bordoni].\n\nOtro habitante del páramo que ha sido objeto de mis estudios es el [Oso frontino](/taxa/Oso-frontino.qmd) [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos; @S_nchez_Mercado_2008].\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

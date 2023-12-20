@@ -1,0 +1,14 @@
+{
+  "hash": "b317e306b48f338f1f00617c285dcf6b",
+  "result": {
+    "markdown": "---\ntitle: Trieste, Padua y Venecia\ncategories:\n - Italia\n - Taller\n - Visita\neditor_options: \n  chunk_output_type: console\n---\n\n\nUn emocionante [taller](/evnts/2009_TheoEco.md), muy instructivo. Una experiencia vibrante. La visita a Padua con el convento de San Antonio fue muy emotiva.\n\n\n<center>\n<img src='https://live.staticflickr.com/3648/3343035941_615895bd38.jpg' width='500'  height='333'>\n<br/>\n**Bona sera** by <a href='https://www.flickr.com/photos/jferrer/3343035941/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

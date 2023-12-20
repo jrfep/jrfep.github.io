@@ -1,0 +1,14 @@
+{
+  "hash": "34d437f252d70e2b4f1136b08ad9e1e8",
+  "result": {
+    "markdown": "---\ntitle: II Encuentro Sobre Lepidoptera Neogropical\ndate: 29 April 2007\ncode: 2007_ELEN_II\nffin: 2007\ncategories:\n - Panamá\n - Reunión \n - Internacional\n---\n\n\nII Encuentro Sobre Lepidoptera Neogropical, ELEN II. Smithsonian Tropical Research Institute. [Ciudad de Panamá](/lgrs/Panama.qmd), Panamá, 29 de abril al 3 de mayo de 2007.\n\n\n\n<center>\n<img src='https://live.staticflickr.com/197/503191612_109b6886c6.jpg' width='500'  height='375'>\n<br/>\n**Participantes del II ELEN** by <a href='https://www.flickr.com/photos/jferrer/503191612/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

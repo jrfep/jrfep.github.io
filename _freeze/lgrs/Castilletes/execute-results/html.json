@@ -1,0 +1,14 @@
+{
+  "hash": "e5dec5a446248be1a6a995427fef9fd3",
+  "result": {
+    "markdown": "---\ntitle: Castilletes\ncategories:\n - Venezuela\n - IVIC\n - Kricogonia\n - Guayacán\n - Trabajo de campo\n - Mariposas\n---\n\n\nUn hito.\n\n\n<center>\n<img src='https://live.staticflickr.com/4013/4288281462_0d225ddb82.jpg' width='500'  height='333'>\n<br/>\n**Fauna de Castilletes** by <a href='https://www.flickr.com/photos/jferrer/4288281462/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
