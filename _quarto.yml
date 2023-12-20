@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto
+
 website:
   title: "./jrfep"
   repo-url: https://github.com/jrfep/jrfep.github.io
@@ -42,6 +45,9 @@ website:
           - text: "Ulysses"
             icon: book
             href: j4fun/ulysses.qmd
+          - text: "Todos los nombres"
+            icon: family
+            href: j4fun/blog_CNE_nombres_Venezuela.Rmd
     right:
       - text: "How to..."
         icon: question

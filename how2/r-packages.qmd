@@ -1,0 +1,8 @@
+Algunos paquetes de R necesitan pasos adicionales de configuración:
+
+```{r}
+#| eval: false
+install.packages("wdpar")
+webdriver::install_phantomjs()
+```
+

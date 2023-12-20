@@ -1,0 +1,94 @@
+---
+title: "Una breve caracterización ambiental del Parque Nacional Terepaima en Venezuela"
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Abril 14, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+```
+
+Continuando con las [contribuciones sobre los parques nacionales de Venezuela](http://jrferrerparis.info/tag/areas-protegidas/), hoy voy a dedicarle un espacio al Parque Nacional "Terepaima" en su 42 aniversario.
+
+## Datos utilizados
+
+El Parque Nacional "Terepaima" fue creado el 14 de Abril de 1976 y está ubicado entre los estados Lara y Portuguesa. Los datos geográficos de los linderos del parque fueron obtenidos de la página web del ecoSIG cuendo esta se encontraba activa.
+
+Utilicé datos de elevación derivados del sensor *SRTM* [versión 4.0](http://srtm.csi.cgiar.org/) y precipitación derivada del la base de datos *CHIRPS* [versión 2.0](http://chg.geog.ucsb.edu/data/chirps/) que combina información de sensosres remotos y estaciones climáticas (Funk et al. 2015).
+
+## Ubicación relativa del PN Terepaima
+
+```{r Ubicacion,fig.height=4,fig.width=8}
+      par(mar=c(0,0,0,0))
+plot(Vzla.xy,lty=1,lwd=4,
+         col=rgb(c(.9,.7,.5,.3,.3,1,.1),
+	 c(.9,.4,.6,.8,1,.1,1),
+	 c(.2,.8,1,.3,.7,0,1),.05))
+##    plot(Vzla.xy,lty=1,border="aliceblue",add=T)
+    plot(PN.xy,add=T,col=rgb(.2,.7,.1,.5),border="darkgreen")
+    text(PN.xy,sprintf("Parque Nacional %s",PN.xy@data$NOMBRE),
+         col="darkgreen",cex=1,adj=1)
+    text(Vzla.xy,"ESTADO")
+```
+
+## Elevación y precipitación según sensores remotos
+
+Visualizamos la topografía del parque usando los datos de elevación derivados de SRTM. Los objetivos de creación del parque son la protección de los recursos hídricos y la biodiversidad de la región, pero posteriormente se ha discutido la necesidad de conectarlo con otros parques para poder cumplir con estos objetivos (Yerena et al 2003). 
+
+```{r Elevación,fig.height=7,fig.width=5}
+  plot(PN.SRTM,
+         col=terrain.colors(10))
+  contour(PN.SRTM,add=T)
+ plot(PN.xy,add=T,border="maroon",lwd=2)
+```
+
+Al igual que hemos visto en el [PN Guatopo](http://jrferrerparis.info/profesional/faber/una-breve-caracterizacion-ambiental-del-parque-nacional-guatopo-en-venezuela/#more-273), la tendencia de precipitaciones en la región de este parque muestra una tendencia negativa.
+
+A partir de las mediciones de la base de datos Chirps construimos una serie de tiempo de la precipitación mensual estimada desde 1981 hasta 2018. En la parte inferior del gráfico se observa la variabilidad de los valores mensuales, y en los gráficos intermedio y superior se observan los valores agregados para periodos semestrales y anuales, que permiten observar efectos acumulados de los cambios de la precipitación.
+
+```{r Precipitación}
+dias <- (cumsum(c(31,28,31,30,31,30,31,31,30,31,30,31))-15)/365
+y <- t(values(PN.chirps))
+x <- as.numeric(substr(names(PN.chirps),13,16))+
+  dias[as.numeric(substr(names(PN.chirps),18,21))]
+
+layout(matrix(c(3,2,1,1),ncol=1))
+par(mar=c(5,5,1,0),oma=c(0,2,0,0))
+matplot(x,y,type="l",col=rgb(.5,.5,.5,.15),ylab="",axes=F,xlab="")
+axis(2)
+mtext("mensual",2,line=3)
+yy <- 1981:2018
+lines(x,apply(y,1,median))
+axis(1,yy[yy %% 10 >0],cex.axis=.7,line=0,col="slateblue",las=2,lwd=3,lwd.ticks=1)
+axis(1,yy[yy %% 10 %in% 0],cex.axis=1.15,line=0,col="slateblue",las=2,lwd.ticks=3,lwd=0)
+
+par(mar=c(0,5,0,0))
+matplot(x,filter(y, rep(1, 6),sides=1),col=rgb(.1,.1,.8,.15),lwd=2,type="l",axes=F,ylab="")
+axis(2,line=-1)
+mtext("semestral",2,line=2)
+
+plot(x,filter(apply(y,1,median), rep(1, 12),sides=1),type="l",col="slateblue4",lwd=4,axes=F,ylab="")
+axis(2,line=-2)
+mtext("anual",2,line=1)
+
+mtext("Precipitación [mm]",2,outer=T)
+
+
+```
+
+En este caso se observa una ligera tendencia negativa desde los años 80, pero con acentuadas disrupciones en los últimos quince años con dos periodos de marcado déficit (2005-2009 y 2013-2017) interrumpidos por un periodo de alto volumen de precipitación (2010-2012).
+
+
+## Continuará...
+
+Este es un breve ejemplo de los datos que se pueden extraer de sensores remotos para el monitoreo ambiental del Parque Nacional "Terepaima" que pueden ser de utilidad para trabajos ecológicos futuros en esta importante área protegida del país.
+
+Les agradezco sus comentarios y sugerencias a traves de las cuentas de twitter @[jrfep](http://twitter.com/jrfep) y @[NeoMapas](http://twitter.com/NeoMapas).
+
+
+### Referencias
+
+Yerena et al. (2003) [*Building Consensus on Biological Corridors in the Venezuelan Andes*](https://doi.org/10.1659/0276-4741(2003)023[0215:BCOBCI]2.0.CO;2). **Mountain Research and Development**, 23(3) : 215-218.
+
+Funk et al. (2015) [*The climate hazards infrared precipitation with stations—a new environmental record for monitoring extremes*](https://doi.org/10.1038/sdata.2015.66). **Scientific Data** 2: 150066.
+

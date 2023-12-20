@@ -1,0 +1,286 @@
+---
+title: "Dime con quién publicas y te dire..."
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Marzo 26, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+En contribuciones anteriores ([aquí](http://jrferrerparis.info/profesional/r-scripts/impacto-de-la-lista-roja-de-ecosistemas-de-la-iucn/) y [aquí](http://jrferrerparis.info/profesional/r-scripts/produccion-ivic-60-anos/)) he revisado diferentes formas de medir el impacto de las publicaciones científicas, ya sea utilizando el número de citas bibliográficas o usando indicadores de atención recibida en redes sociales y otros medios. 
+
+Un aspecto diferente de las publicaciones son las redes de colaboración que se forman por la coautoría de los artículos. Si nos fijamos quienes publican juntos y con que frecuencia podemos inferir sobre los procesos de formación de grupos de trabajo y las interacciones entre ellos.
+
+Hoy voy a explorar estos aspectos usando dos colecciones de artículos científicos para comparar las redes de colaboración de cada uno de ellos.
+
+## Los datos
+
+Ya les he hablado de la ***Lista Roja de Ecosistemas*** (LRE) de la **Unión Internacional para la Conservación de la Naturaleza** (UICN) en [reiteradas ocasiones](http://jrferrerparis.info/category/profesional/rle/).
+
+Para el ejercicio de hoy tomé un grupo de publicaciones relacionada con la LRE y lo comparé con un grupo similar de publicaciones de otros [productos de conocimiento de la UICN](https://portals.iucn.org/library/sites/library/files/documents/2012-015.pdf). Específicamente tome los datos de las publicaciones destacadas reportadas en las páginas web oficiales de la [Lista Roja de Ecosistemas](https://iucnrle.org/resources/), [Lista Roja de Especies Amenazadas](https://www.iucnredlist.org/resources/list) y la [Base de datos de Áreas Importantes para la Biodiversidad](http://www.keybiodiversityareas.org/publications). En estas páginas se mencionan más de cien publicaciones en total, pero solo incluí en el análisis las que pude consultar a través del sistema de información de [CrossRef](https://www.crossref.org/services/metadata-delivery/rest-api/). A pesar de que este filtro, la mayoría de los artículos pudieron incluirse y trabajo bajo el supuesto de que no hay un sesgo sistemático en este procedimiento.
+
+Primero cargo los datos guardados en un repositorio con dos matrices de datos. Cada matriz representa los autores (columnas) de una serie de publicaciones identificadas por su DOI (filas).
+
+```{r cargar datos}
+if (!exists("mtz.LRE")) {
+   con <- url("https://github.com/jrfep/CEBA.LEE/raw/master/Rdata/20190324_pubsLRE.rda")
+   load(con)
+   close(con)
+}
+
+dim(mtz.LRE)
+dim(mtz.OTR)
+```
+
+Vemos que ambos objetos tienen un número similar de trabajos, pero muy diferente número de autores totales. En *mtz.LRE*, las `r nrow(mtz.LRE)` publicaciones sobre Lista Roja de Ecosistemas fueron escritas por  `r ncol(mtz.LRE)` co-autores, mientras que en *mtz.OTR*, las `r nrow(mtz.OTR)` publicaciones sobre Lista Roja de Especies y Áreas Importantes para la Biodiversidad fueron escritas por  `r ncol(mtz.OTR)` co-autores.
+
+## Cargar paquetes estadísticos
+
+Usamos el paquete *igraph* en el entorno de [**R**](https://cran.r-project.org/).
+
+```{r cargar paquetes}
+require(igraph)
+```
+
+## Grafos de coautoría
+
+Convertimos la matriz de autores por publicaciones en una matriz de co-ocurrencia de autores (también llamada matriz de adyacencia) y luego la convertimos en un grafo con las funciones del paquete *igraph*:
+
+```{r grafos}
+co.LRE <- t(mtz.LRE) %*% mtz.LRE
+g.LRE <- graph.adjacency(co.LRE,
+                         weighted=TRUE,
+                         mode="undirected",
+                         diag=FALSE)
+```
+
+Como punto de comparación vamos a usar la matriz de coautores de los otros productos de conocimiento de UICN:
+
+```{r grafo otros}
+co.OTR <- t(mtz.OTR) %*% mtz.OTR
+g.OTR <- graph.adjacency(co.OTR,
+                         weighted=TRUE,
+                         mode="undirected",
+                         diag=FALSE)
+
+```
+
+Con estos objetos podemos empezar a explorar y comparar las propiedades de ambos grafos (red de coautores) y de sus vértices o nodos (autores dentro de la red).
+
+### Propiedades del grafo
+
+Existen varios indicadores que permiten calcular las propiedades fundamentales de la red de colaboración como un todo.
+
+Primero podemos ver las funciones que resumen información de los vértices del grafo y calculan el índice de [centralización o centralidad](https://es.wikipedia.org/wiki/Centralidad) por grados, autovalores o intermediación. En este caso el valor es dividido por el máximo teórico para un grafo con las mismas dimensiones, de tal forma que se obtiene una medida relativa de la centralidad.
+
+```{r centralizacion grados}
+centr_degree(g.LRE, mode="all", normalized=T)$centralization
+centr_degree(g.OTR, mode="all", normalized=T)$centralization
+```
+Estos valores describen que tan bien conectados están los nodos en terminos del número de sus enlaces. En este caso la segunda matriz tienen más de la mitad del valor esperado para un grafo de dicho tamaño, pero la red de autores de LRE solo llega a un tercio.
+
+```{r centralizacion auto}
+centr_eigen(g.LRE, normalized=T)$centralization
+centr_eigen(g.OTR, normalized=T)$centralization
+```
+En este indicador se miden la centralidad por influencia de los enlaces (enlaces hacia nodos con más enlaces). En este caso el grafo de LRE tienen un valor superior que se puede interpretar como una tendencia a mayor aglomeración de los enlaces o mayor dominancia de un grupo reducido de nodos.
+
+```{r centralizacion inter}
+centr_betw(g.LRE, normalized=T)$centralization
+centr_betw(g.OTR, normalized=T)$centralization
+```
+Estos indicadores miden la interconección de un nodo entre grupos de nodos, y en este caso se obtiene un valor mayor para el grafo de LRE. Esto indica que hay menos caminos alternativos entre grupos de nodos, y por tanto mayor división en grupos o compartimientos en el grafo.
+
+Existen otros indicadores igualmente informativos. Por ejemplo, la siguiente función calcula el promedio de la distancia mínima entre nodos.
+
+```{r distancia}
+mean_distance(g.LRE)
+mean_distance(g.OTR)
+```
+
+En este caso la distancia promedio es mayor entre nodos del grafo de coautores de LRE.
+
+Por otro lado la densidad se obtiene al dividir las conecciones o aristas del grafo entre el máximo número de aristas posibles según la cantidad de nodos existentes.
+
+```{r density}
+graph.density(g.LRE)
+graph.density(g.OTR)
+```
+En este caso, el grafo basado en la matriz de LRE es menos denso que el otro conjunto.
+
+Tomando estos resultados podemos decir que el grafo de LRE es en su conjunto menos denso, más compartimentalizado y tiene mayor dominancia de un menor número de nodos influyentes.
+
+### Visualización del grafo
+
+Estas diferencias se hacen evidentes al comparar visualmente ambos grafos. En primer lugar utilizamos el algoritmo de Kamada-Kawai para calcular la ubicación óptima de los vértices de cada grafo, y luego procedemos a graficar el resultado.
+
+```{r plot grafo,fig.width=8,fig.height=5}
+l1 <- layout_with_kk(g.LRE)
+l2 <- layout_with_kk(g.OTR)
+
+## método alternativo para calcular ubicación de nodos
+##l1 <- layout_with_graphopt(g.LRE)
+##l2 <- layout_with_graphopt(g.OTR)
+
+layout(matrix(c(1,2),byrow=T,ncol=2))
+
+plot(g.LRE, layout=l1,vertex.color=rgb(.4,.6,.8,.5), vertex.size=4,vertex.label=NA) 
+plot(g.OTR, layout=l2,vertex.color=rgb(.8,.4,.6,.5), vertex.size=4,vertex.label=NA)
+```
+
+
+### Propiedades de los vértices
+
+Las medidas anteriores representan los valores promedios o totales para un grafo, pero los valores calculados para cada vértice son muy variables. 
+
+```{r indicadores}
+layout(matrix(1:6,byrow=T,ncol=2))
+
+hist(centr_degree(g.LRE)$res,col=rgb(.4,.6,.8,.5),
+	main="Centralidad de grado",xlab="")
+hist(centr_degree(g.OTR)$res,col=rgb(.8,.4,.6,.5),
+	main="Centralidad de grado",xlab="")
+
+hist(centr_eigen(g.LRE)$vector,col=rgb(.4,.6,.8,.5),
+		main="Centralidad de auto-valor",xlab="")
+hist(centr_eigen(g.OTR)$vector,col=rgb(.8,.4,.6,.5),
+		main="Centralidad de auto-valor",xlab="")
+
+hist(sqrt(centr_betw(g.LRE)$res),col=rgb(.4,.6,.8,.5),
+		main="Intermediación (raíz cuadrada)",xlab="")
+hist(sqrt(centr_betw(g.OTR)$res),col=rgb(.8,.4,.6,.5),
+		main="Intermediación (raíz cuadrada)",xlab="")
+
+
+```
+
+Aquellos nodos con valores altos de alguna de estas medidas tienen una importancia excepcional dentro del grafo, y por ellos podemos inferir algunas propiedades de los autores representados en estos nodos. Por ejemplo, podemos calcular grado e intermediación de cada nodo, y mostrar una selección de nodos con altos valores en ambos indicadores:
+
+```{r plot grafo2}
+
+vert.info <-data.frame(deg=degree(g.LRE, mode="all"),
+	  bet=betweenness(g.LRE))
+
+tail(vert.info[order(rank(vert.info[,1])+rank(vert.info[,2])),])
+
+```
+
+Entre estos seis autores [David A. Keith](https://www.ecosystem.unsw.edu.au/people/david-keith) es el que tiene mayor número de colaboraciones, mientras que [Carlos Zambrana-Torrelio](https://www.ecohealthalliance.org/personnel/carlos-zambrana-torrelio) es el que tiene mayor conección entre grupos. 
+
+### Visualización de nodos en el grafo
+
+Podemos utilizar esta información para mejorar la visualización del grafo y sus elementos. Por ejemplo, podemos usar estas variables para generar un gradiente de colores que indiquen el balance entre centralidad de grados e intermediación.
+
+En este caso usamos el color rojo para indicar grado y el verde para indicar intermediación, la mezcla de ambos genera valores amarillos. Los tonos claros indican valores altos de uno u otro indicador y los oscuros indican valores bajos.
+
+```{r plot grafo3,fig.width=6,fig.height=6}
+clrs <- rgb(rank(vert.info[,1])/nrow(vert.info),
+     rank(vert.info[,2])/nrow(vert.info),0)
+     
+plot(g.LRE, layout=l1, vertex.color=clrs, vertex.size=8,vertex.label=NA)
+```
+
+Una alternativa para mejorar la visualización ([sobretodo pensando en personas con daltonismo](http://www.somersault1824.com/tips-for-designing-scientific-figures-for-color-blind-readers/)) es combinar tonalidad y tamaño en la visualización. En este caso, los tonos más brillantes indica mayores valores de intermediación, y el tamaño indica la centralidad de grado.
+
+```{r plot grafo4,fig.width=6,fig.height=6}
+clrs <- rgb(0,rank(vert.info[,2])/nrow(vert.info),0,.75)
+tmñs <- sqrt(vert.info[,1])
+plot(g.LRE, layout=l1, vertex.color=clrs, vertex.size=tmñs,vertex.label=NA)
+```
+
+También podemos seleccionar y etiquetar vértices específicos para ubicarlos en el grafo:
+
+```{r plot grafo5,fig.width=6,fig.height=6}
+slc <- rev(rownames(tail(vert.info[order(rank(vert.info[,1])+rank(vert.info[,2])),])))
+
+nmbrs <- V(g.LRE)$name
+##nmbrs <- ifelse(nmbrs %in% slc,nmbrs,NA)
+nmbrs <- match(nmbrs,slc)
+clrs <- ifelse(is.na(nmbrs),"grey","white")
+tmñs <- ifelse(is.na(nmbrs),2,10)
+
+plot(g.LRE, layout=l1, vertex.color=clrs, vertex.size=tmñs,
+	    vertex.label=nmbrs,vertex.label.cex=1.2,
+	    vertex.label.color="black",vertex.label.font=2)
+
+legend("bottomright",slc,pch=as.character(1:6),ncol=1)
+
+```
+
+En este último gráfico destaca la ubicación de CZT como el autor que conecta un grupo grande de coautores con el resto del grafo. Esta posición es la que se refleja en su alto índice de intermediación.
+
+### Componentes y grupos
+
+Como hemos visto un grafo puede contener varios subconjuntos de autores que están completamente aislados del resto (las "islas" de nodos separadas del resto), o que están atados al grafo por un número reducido de conección (como en el caso de los coautores de CZT).
+
+Para calcular el número de componentes desconectados usamos la función clusters
+
+```{r descomponer1}
+sizes(clusters(g.LRE))
+```
+
+Vemos un componente grande y el resto mucho más pequeños. Es posible descomponer el grafo y analizarlos estos subconjuntos por separado. En este caso nos vamos a fijar en el componente que aglutina la mayoría de los co-autores y repetimos algunos pasos anteriores, pero esta vez usamos un algoritmo diferente para ubicar los vértices.
+
+```{r componentes, fig.width=6,fig.height=6}
+c.LRE <- decompose(g.LRE, min.vertices=2)
+
+vert.info <-data.frame(deg=degree(c.LRE[[1]], mode="all"),
+	  bet=betweenness(c.LRE[[1]]))
+
+clrs <- rgb(0,rank(vert.info[,2])/nrow(vert.info),0,.75)
+tmñs <- sqrt(vert.info[,1])*1.2
+nmbrs <- V(c.LRE[[1]])$name
+nmbrs <- match(nmbrs,slc)
+
+l3 <- layout_with_graphopt(c.LRE[[1]])
+
+
+plot(c.LRE[[1]], layout=l3, vertex.color=clrs, vertex.size=tmñs,
+	    vertex.label=nmbrs,vertex.label.cex=1.2,
+	    vertex.label.color="black",vertex.label.font=2)
+```
+
+Un método alternativo para identificar subconjuntos en el grafo es usando algoritmo de optimización de modularidad. En este caso, el grafo se descompone en más subconjuntos, incluyendo algunos que pueden estar tenuemente conectados entre sí.
+
+```{r fast greedy}
+f.LRE <- cluster_fast_greedy(g.LRE)
+sizes(f.LRE)
+```
+
+En este colorido gráfico podemos visualizar los diferentes grupos y sus conecciones.
+
+```{r fg plot, fig.width=6,fig.height=6}
+plot(f.LRE, g.LRE, vertex.size=2,vertex.label=NA)
+
+```
+
+Y podemos resumir la información de cada grupo así:
+
+```{r fg plot2, fig.width=6,fig.height=6}
+vert.info <-data.frame(deg=degree(g.LRE, mode="all"),
+	  bet=betweenness(g.LRE))
+info.grp <- data.frame()
+for (k in 1:length(groups(f.LRE))) {
+    slc <- groups(f.LRE)[[k]]
+    miembro.relevante <- slc[which.max(rank(vert.info[match(slc, rownames(vert.info)),1])+
+    rank(vert.info[match(slc, rownames(vert.info)),2]))]
+
+    info.grp <- rbind(info.grp,
+    	     data.frame(miembro.relevante,
+	            n.grupo=length(slc),
+		    n.pubs=sum(mtz.LRE[,miembro.relevante]),
+	     	    mean.deg=mean(vert.info[match(slc, rownames(vert.info)),1]),
+	     	    mean.bet=mean(vert.info[match(slc, rownames(vert.info)),2])))
+}
+
+info.grp
+
+```
+
+## ¡Listo!
+
+Esta es sólo una pequeña muestra de lo que se puede hacer con el análisis de grafo de redes de coautores. Les recomiendo revisar otros ejemplos disponibles en la red y en los que me he inspirado para parte de este análisis. 
+
+http://kateto.net/netscix2016
+
+https://poldham.github.io/abs/crossref.html

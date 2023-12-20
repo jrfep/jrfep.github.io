@@ -1,0 +1,189 @@
+---
+title: "¿Cómo medir el impacto de la Lista Roja de Ecosistemas de la IUCN?"
+author: "José R. Ferrer Paris (@jrfep)"
+date: "Enero 6, 2019"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+La ***Lista Roja de Ecosistemas*** de la **Unión Internacional para la Conservación de la Naturaleza** (UICN) es un estandard global para la evaluación de riesgo de colapso de los ecosistemas.
+
+Desde 2016 he colaborado con [Provita](http://www.provita.org.ve/) en esta iniciativa, y actualmente formo parte del [Grupo Temático de la Lista Roja de Ecosistemas](https://iucnrle.org/about-rle/how-we-work/rle-team/).
+
+Una de las tareas que he emprendido junto con mis colegas es buscar nuevas maneras de medir el impacto de las listas rojas. No es sencillo medir el impacto de productos científicos aplicados, y para ello hay que considerar diferentes componentes. Mis colegas Rebecca Miller y Lucie Bland han preparado un manuscrito ([actualmente en revisión](https://www.preprints.org/manuscript/201812.0097/v1)) que resume lo que se ha logrado hasta la fecha.
+
+Mi contribución a ese manuscrito se concentró en medir el impacto de las publicaciones relacionadas con las listas rojas de ecosistemas usando indicadores convencionales y alternativos de importancia de las publicaciones científicas. A continuación les comparto el código de [**R**](https://cran.r-project.org/) que utilicé para realizar estos cálculos.
+
+## Cargar y configurar los paquetes
+
+Existen varios paquetes de **R** para manejar datos bibliográficos, pero en esta breve contribución me enfocaré en **rcrossref** para consultar información y citas bibliográficas y el paquete **rAltmetric** para consultar medidas alternativas relacionadas con la difusión en medios digitales.
+
+```{r install}
+require(rcrossref)
+require(rAltmetric)
+```
+
+Según las indicaciones del paquete [rcrossref](https://github.com/ropensci/rcrossref) se debe agregar una línea en el archivo de configuración *.Renviron* con la la dirección de contacto del usuario, por ejemplo:
+
+```diff
+crossref_email= "mi.direccion@de.email"
+```
+Este archivo se encuentra usualmente en la carpeta personal del usuario.
+
+Para usar el paquete [rAltmetric](https://github.com/ropensci/rAltmetric) se puede especificar la clave de usuario del API de altmetric como una variable dentro de R:
+
+```{r APIs,eval=FALSE}
+options(altmetricKey="...somealphanumericsequence...")
+```
+Esta clave se obtiene al registrarse en el servicio de [Altmetric](https://www.altmetric.com/research-access/) pero no es de uso obligatorio.
+
+## Extraer información bibliográfica para un artículo
+
+Para usar los servicios de estas APIs es necesario conocer algún identificador digital del artículo a consultar. El DOI ("Digital Object Identifier") es tal vez el identificador más utilizado. En este caso busco la información bibliográfica de un artículo de David A. Keith y colaboradores identificado con el DOI [10.1111/cobi.12988](http://dx.doi.org/10.1111/cobi.12988)
+
+```{r biblio}
+cr_cn(dois = "10.1111/cobi.12988",
+      format = "text", style = "apa")
+```
+
+Uso la función "cr_citation_count" para estimar el número de citas de la referencia. Debemos tomar en cuenta que este número de citas está calculado en base al registro de un operador de bases de datos bibliográficas (crossref) y puede ser diferente de los números de citas calculados con otros operadores como google scholar, scopus, etc.
+
+```{r citation}
+ cr_citation_count(doi = "10.1111/cobi.12988")
+```
+
+Para obtener indicadores alternativos uso la función *almetrics*:
+
+```{r altmetrics}
+( qry <- altmetrics(doi="10.1111/cobi.12988"))
+```
+
+El objeto *qry* es ahora una lista con varios nodos de información. Generalmente el valor más importante a consultar es el *altmetric score*, un valor númerico que representa un índice de impacto ponderado de las diferentes menciones que se hacen del artículo en diferentes redes y medios. El objeto guardado incluye el valor numérico del score y una referencia a la imágen que representa el score usando la "dona" (o "rosquilla") de colores de altmetric. 
+
+```{r altmetricscore,fig.align='center'}
+qry$score
+knitr::include_graphics(qry$images.small)
+```
+
+```{r altmetriclink, echo=FALSE, results="asis"}
+sprintf('Esta es la misma "dona" que se puede observar en la página de altmetric dedicada a [dicho artículo](https://www.altmetric.com/details/%s).',qry$altmetric_id)
+```
+
+Sin embargo existe mucha más información almacenada en la respuesta de la función. Por ejemplo, una consulta del número de lectores registrados nos revela el número de veces que el artículo ha sido compartido en citeulike, connotea o mendeley:
+```{r altmetricReaders}
+qry[grep("readers",names(qry))]
+```
+De manera similar, podemos consultar las "citas" en diferentes medios:
+```{r altmetricCited}
+qry[grep("cited_by",names(qry))]
+```
+
+## Extraer información bibliográfica para varios artículos
+
+Con la versatilidad de R es posible repetir estos pasos para diferentes artículos y obtener una lista de resultados. Empezamos con un vector de DOIs y unos objetos en blanco para almacenar los resultados.
+
+```{r citationVariosSetup}
+## vector de DOI de los artículos a consultar
+mis.dois <- c("10.1371/journal.pone.0062111",
+	        "10.1111/cobi.12988",
+                "10.1101/212464",
+                "10.1371/journal.pone.0160640",
+                "10.1111/conl.12167",
+                "10.1111/conl.12111",
+                "10.1111/avsc.12112",
+                "10.1002/fee.1747",
+                "10.1111/ddi.12533",
+                "10.1111/aec.12148",
+                "10.1111/cobi.13107")
+## lista de resultados en blanco
+lst.qry <- vector("list",length(mis.dois))
+## vector de resultados de citas en blanco
+ctcns <- vector(length=length(mis.dois))
+names(ctcns) <- mis.dois
+
+```
+
+Aquí empieza la parte divertida. Agregué comentarios para explicar los pasos más importantes del código.
+
+
+```{r citationVarios}
+## inicializar un índice de elementos consultados
+k <- 0
+
+## empieza el loop
+for (midoi in mis.dois) {
+    k <- k+1
+
+    ## aquí colocamos los resultados del conteo de citas de crossref
+    ctcns[midoi] <- cr_citation_count(doi = midoi)
+
+    ## la función "try" para capturar los errores en caso
+    ## que el doi no esté registrado en altmetrics
+    qry <- try(altmetrics(doi=midoi))
+    ## en caso de error se coloca este valor
+    if (any(class(qry) %in% "try-error")) {
+        lst.qry[[k]] <- "error"
+    } else {
+        ## en caso que el resultado sea nulo se coloca este valor
+        if (is.null(qry)) {
+            lst.qry[[k]] <- NA
+        } else {
+	    ## en caso contrario se almacena el resultado
+            lst.qry[[k]] <- qry
+        }       
+    }
+}
+
+```
+
+Ahora podemos consultar el número total de citas y ver la distribución de citas por publicación:
+
+```{r citationPlot}
+sum(ctcns)
+plot(length(ctcns):1,ctcns[order(ctcns)],ylab="Citas según CrossRef",xlab="Orden")
+    
+```
+
+También podemos consultar la suma de altmetric scores y ver su distribución por publicación
+
+```{r altmetricResults}
+
+altm <- as.numeric(unlist(as.vector(sapply(lst.qry,function(x) x["score"]))))
+sum(altm,na.rm=T)
+plot(length(altm):1,altm[order(altm)],ylab="Score de Altmetrics",xlab="Orden")
+
+```
+
+Y comparar ambos resultados
+
+```{r altmetricVsCitas}
+
+plot(altm~ctcns,ylab="Score de Altmetrics",xlab="Citas según CrossRef")
+
+```
+
+Pero también podemos revisar y hacer resumenes más detallados de los datos, y calcular el número de usuarios o cuentas, menciones, etc. para el total de los artículos
+
+```{r altmetricResumenes}
+
+    counts <- c("feeds","gplus","msm","policies","posts","rh","tweeters","wikipedia","fbwalls","accounts")
+readers <- c("mendeley","connotea","citeulike")
+ttls <- vector(length=length(counts)+length(readers))
+names(ttls) <- c(counts,readers)
+for (k in counts) {
+    ttls[k] <- sum(as.numeric(unlist(as.vector(sapply(lst.qry,function(x) x[sprintf("cited_by_%s_count",k)])))),na.rm=T)
+}
+for (k in readers) {
+    ttls[k] <- sum(as.numeric(unlist(as.vector(sapply(lst.qry,function(x) x[sprintf("readers.%s",k)])))),na.rm=T)
+}
+
+ttls
+```
+
+## ¡Listo!
+
+Como queda demostrado, a partir de una lista de artículos identificados es posible extraer información de citas bibliográficas y otros índices de atención alternativos. Les recomiendo hacer la prueba y explorar los objetos creados para hacerse una idea de toda la información que almacenan.
+
+Por último les insto a seguir la cuenta oficial de Twitter de la Lista Roja de Ecosistemas [@redlisteco](https://twitter.com/redlisteco) para mantenerse actualizados sobre el impacto de esta herramienta de conservación.

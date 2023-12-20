@@ -1,0 +1,93 @@
+---
+title: "AQUIVAELTITULO"
+author: "José R. Ferrer Paris (@jrfep)"
+date: "AQUIVALAFECHAPUBLICACION"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+```
+
+El Parque Nacional "AQUIVAELPARQUE" fue creado el AQUIVALAFECHA y está ubicado entre los estados AQUIVALAUBICACION. A pesar de la importancia de las zonas protegidas para la política de conservación de nuestro país, muchas de estas áreas no han sido evaluadas y caracterizadas detalladamente, y gran parte de las investigaciones se mantienen sin publicar o publicadas en informes de difusión restringida.
+
+Durante un tiempo la página web de la antigua *Unidad de Sistemas de Información Geográfica del Centro de Ecología* ([ecoSIG](http://www.ecosig.org.ve)) del **Instituto Venezolano de Investigaciones Científicas** ([IVIC](http://www.ivic.gob.ve/)) fue un punto de referencia de información sobre los parques nacionales y otras áreas protegidas de Venezuela. Lamentablemente no existe en este momento una persona encargada de darle continuidad y mantenimiento a este recurso.
+
+Desde el [*Laboratorio de Ecología Espacial*](http://www.ivic.gob.ve/es/investigacion-3/centros-31/estudios-botanicos-y-agroforestales-ceba-zulia/laboratorios/ecologi-a-espacial/personal) del IVIC realizamos algunos trabajos enfocados en la caracterización ambiental de diferentes regiones del país. Algunos de esos trabajos están publicados en formato de reportes electrónicos en un perfil público en [fig**share**](https://figshare.com/search?q=NeoMapas&searchMode=1). A través de esta página quisiera continuar difundiendo al menos parte de los resultados que durante años hemos tratado de promover desde el laboratorio, y que no hemos podido concluir por la falta de presupuesto del área de investigación del instituto.
+
+Para el día de hoy aprovecho el AQUIVANLOSAÑOS aniversario de la creación del parque "AQUIVAELPARQUE" para mostrar algunos detalles de la caracterización ambiental del parque basada en la evaluación de datos de sensores remotos.
+
+## Datos utilizados
+
+Los datos geográficos de los linderos del parque fueron obtenidos de la página web del ecoSIG cuendo esta se encontraba activa.
+
+Utilicé datos de elevación derivados del sensor *SRTM* [versión 4.0](http://srtm.csi.cgiar.org/) y precipitación derivada del la base de datos *CHIRPS* [versión 2.0](http://chg.geog.ucsb.edu/data/chirps/) que combina información de sensosres remotos y estaciones climáticas (Funk et al. 2015).
+
+## Ubicación relativa del PN AQUIVAELPARQUE
+
+```{r Ubicacion,fig.height=4,fig.width=8}
+      par(mar=c(0,0,0,0))
+plot(Vzla.xy,lty=1,lwd=4,
+         col=rgb(c(.9,.7,.6),c(.9,.7,.6),c(.6,.8,1),.25))
+##    plot(Vzla.xy,lty=1,border="aliceblue",add=T)
+    plot(PN.xy,add=T,col=rgb(.2,.7,.1,.5),border="darkgreen")
+    text(PN.xy,sprintf("Parque Nacional %s",PN.xy@data$NOMBRE),
+         col="darkgreen",cex=1)
+    text(Vzla.xy,"ESTADO")
+```
+
+## Elevación y precipitación según sensores remotos
+
+Visualizamos la topografía del parque usando los datos de elevación derivados de SRTM.
+
+```{r Elevación,fig.height=7,fig.width=4}
+  plot(PN.SRTM,
+         col=terrain.colors(10))
+  contour(PN.SRTM,add=T)
+ plot(PN.xy,add=T,border="maroon",lwd=2)
+```
+
+A partir de las mediciones de la base de datos Chirps construimos una serie de tiempo de la precipitación mensual estimada desde 1981 hasta 2018. En la parte inferior del gráfico se observa la variabilidad de los valores mensuales, y en los gráficos intermedio y superior se observan los valores agregados para periodos semestrales y anuales, que permiten observar efectos acumulados de los cambios de la precipitación.
+
+```{r Precipitación}
+dias <- (cumsum(c(31,28,31,30,31,30,31,31,30,31,30,31))-15)/365
+y <- t(values(PN.chirps))
+x <- as.numeric(substr(names(PN.chirps),13,16))+
+  dias[as.numeric(substr(names(PN.chirps),18,21))]
+
+layout(matrix(c(3,2,1,1),ncol=1))
+par(mar=c(5,5,1,0),oma=c(0,2,0,0))
+matplot(x,y,type="l",col=rgb(.5,.5,.5,.15),ylab="",axes=F,xlab="")
+axis(2)
+mtext("mensual",2,line=3)
+yy <- 1981:2018
+lines(x,apply(y,1,median))
+axis(1,yy[yy %% 10 >0],cex.axis=.7,line=0,col="slateblue",las=2,lwd=3,lwd.ticks=1)
+axis(1,yy[yy %% 10 %in% 0],cex.axis=1.15,line=0,col="slateblue",las=2,lwd.ticks=3,lwd=0)
+
+par(mar=c(0,5,0,0))
+matplot(x,filter(y, rep(1, 6),sides=1),col=rgb(.1,.1,.8,.15),lwd=2,type="l",axes=F,ylab="")
+axis(2,line=-1)
+mtext("semestral",2,line=2)
+
+plot(x,filter(apply(y,1,median), rep(1, 12),sides=1),type="l",col="slateblue4",lwd=4,axes=F,ylab="")
+axis(2,line=-2)
+mtext("anual",2,line=1)
+
+mtext("Precipitación [mm]",2,outer=T)
+
+
+```
+
+
+
+## Continuará...
+
+Este es un breve ejemplo de los datos que se pueden extraer de sensores remotos para el monitoreo ambiental del Parque Nacional "AQUIVAELPARQUE" que pueden ser de utilidad para trabajos ecológicos futuros en esta importante área protegida del país.
+
+Les agradezco sus comentarios y sugerencias a traves de las cuentas de twitter @[jrfep](http://twitter.com/jrfep) y @[NeoMapas](http://twitter.com/NeoMapas).
+
+
+### Referencias
+
+Funk et al. (2015) [*The climate hazards infrared precipitation with stations—a new environmental record for monitoring extremes*](https://doi.org/10.1038/sdata.2015.66). **Scientific Data** 2: 150066.
+

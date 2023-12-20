@@ -1,0 +1,44 @@
+---
+title: "Actualización sobre mi presencia en la red"
+author: "José R. Ferrer Paris (@jrfep)"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
+```
+
+Aprovecho el cambio de mes para actualizar mis [estadísticas personales](http://jrferrerparis.info/profesional/r-scripts/actualizacion-sobre-mi-presencia-en-la-red/).
+
+## Actividad destacada de marzo 2019
+
+Este mes publiqué `r nrow(subset(prb,grepl("^2019-03",dateCreated) & post_status %in% "publish"))` contribuciones en mi blog, realicé `r sum(grepl("^2019-03",fecha5))` contribuciones en proyectos de [github](https://github.com/jrfep) y  `r sum(grepl("^2019-03",fecha1))+sum(grepl("^2019-03",fecha2))` contribuciones a wikipedia en [inglés](https://en.wikipedia.org/wiki/Usuario:Jrfep) y [español](https://es.wikipedia.org/wiki/Usuario:Jrfep).
+
+Además añadí una presentación de uno de mis cursos sobre *[modelos de distribución de especies](https://figshare.com/articles/Material_did_ctico_sobre_modelos_de_nicho_y_distribuci_n_de_especies_Sesi_n_pr_ctica_sobre_el_algoritmo_BioClim_en_R/7891052)*  en el portal de figshare.
+
+## Publicaciones y citas
+
+Para una selección de `r nrow(dcs)` documentos acumulo `r sum(dcs$g.cites,na.rm=T)` citas según [Google Scholar](https://scholar.google.co.ve/citations?user=A2Thq5UAAAAJ&hl=en) o `r sum(dcs$cr.cites,na.rm=T)` citas según [Crossref](https://www.crossref.org/) y el score acumulado de impacto según [Altmetric](https://www.altmetric.com/) es `r sum(dcs$score)`.
+
+En el siguiente gráfico muestro la distribución de citas y *altmetric scores* para estos documentos:
+
+
+```{r Publicaciones,fig.align='center',fig.width=9,fig.height=7,fig.cap='Figura 1: Impacto de publicaciones de JRFeP'}
+par(mar=c(18,4,1,1),las=2,cex.axis=0.75)
+barplot(t(dcs[,c("score","g.cites","cr.cites")]),
+        names.arg=substr(sapply(as.character(dcs$ref),function(x) strsplit(x,"). ")[[1]][2]),1,50),col=brewer.pal(3,"Set3"),cex.axis=1)
+legend("topright",c("Altmetric score","GS cites","CR cites"),fill=brewer.pal(3,"Set3"))
+```
+
+## Contribuciones en portales y redes
+
+Aquí les dejo una breve instantánea para comparar mis contribuciones del mes con mi actividad en la web de los dos últimos años:
+
+```{r calendario Actividad,fig.align='center',fig.width=9,fig.height=4,fig.cap='Figura 2: Calendario de actividad en diversos portales web'}
+actividad <- data.frame(table(fechas))
+actividad <- subset(actividad,grepl("^1[7-9]",fechas))
+
+actividad$cats <- as.numeric(cut(actividad$Freq,c(0,1,2,4,8,16,32,Inf)))
+calendarHeat(actividad$fechas, actividad$cats, 
+             varname="web de JRFeP")
+```
+

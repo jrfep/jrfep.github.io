@@ -1,0 +1,14 @@
+{
+  "hash": "888f3df49851839afa6f83822146ad9c",
+  "result": {
+    "markdown": "Algunos paquetes de R necesitan pasos adicionales de configuración:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"wdpar\")\nwebdriver::install_phantomjs()\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
