@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>./jrfep - Mérida</title>
+<title>./jrfep - Ecological Society of Australia 2023</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -95,11 +61,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="../site_libs/simplelightbox-0/css/simplelightbox.css" rel="stylesheet">
-<script src="../site_libs/simplelightbox-0/js/simplelightbox.js"></script>
-<link href="../site_libs/pixgallery-0/css/pixgallery.css" rel="stylesheet">
-<script src="../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -224,12 +185,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mérida</h1>
+<h1 class="title">Ecological Society of Australia 2023</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Venezuela</div>
-    <div class="quarto-category">Congresos</div>
-    <div class="quarto-category">Tesis</div>
-    <div class="quarto-category">Mariposas</div>
+    <div class="quarto-category">Australia</div>
+    <div class="quarto-category">Congreso</div>
+    <div class="quarto-category">Nacional</div>
   </div>
   </div>
 
@@ -238,6 +198,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 de julio de 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -245,21 +211,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Muchas horas y kilómetros recorridos, noches de frío y mañanas neblinosas, coros encantadores, y mundos por explorar.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> all_photos <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mérida"</span>,place_guess)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(image_url)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>captions <span class="ot">&lt;-</span> all_photos <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Mérida"</span>,place_guess)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transmute</span>(<span class="at">caption=</span><span class="fu">sprintf</span>(<span class="st">"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;"</span>,species_guess,scientific_name,url)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pixgallery</span>(paths, <span class="at">caption=</span>captions)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="htmlwidget-1e0364a360a35f545df6" style="width:100%;height:100%;" class="pixgallery html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1e0364a360a35f545df6">{"x":{"path":["https://inaturalist-open-data.s3.amazonaws.com/photos/335659026/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335659075/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335659020/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335658695/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335658652/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335658653/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335658335/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335657822/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/335656198/medium.png","https://inaturalist-open-data.s3.amazonaws.com/photos/335646238/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/97201638/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/97201492/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/96117037/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/91374772/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/91374764/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/91374212/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/90835882/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/90835859/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/90835852/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/1966074/medium.JPG"],"caption":["<strong>Water, Rove, Scarab, Long-horned, Leaf, and Snout Beetles<\/strong> (<emph>Polyphaga<\/emph>) by <a href='https://www.inaturalist.org/observations/191347698' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Tanymecini<\/strong> (<emph>Tanymecini<\/emph>) by <a href='https://www.inaturalist.org/observations/191347697' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Tanymecini<\/strong> (<emph>Tanymecini<\/emph>) by <a href='https://www.inaturalist.org/observations/191347695' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Epiphile<\/strong> (<emph>Epiphile<\/emph>) by <a href='https://www.inaturalist.org/observations/191347500' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Dartwhites<\/strong> (<emph>Catasticta<\/emph>) by <a href='https://www.inaturalist.org/observations/191347499' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Sisters<\/strong> (<emph>Adelpha<\/emph>) by <a href='https://www.inaturalist.org/observations/191347497' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Tanymecini<\/strong> (<emph>Tanymecini<\/emph>) by <a href='https://www.inaturalist.org/observations/191347263' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Leucanella<\/strong> (<emph>Leucanella<\/emph>) by <a href='https://www.inaturalist.org/observations/191346930' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Espeletia<\/strong> (<emph>Espeletia<\/emph>) by <a href='https://www.inaturalist.org/observations/191346001' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>northern banana passionfruit<\/strong> (<emph>Passiflora mixta<\/emph>) by <a href='https://www.inaturalist.org/observations/191341181' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Bromeliaceae<\/strong> (<emph>Bromeliaceae<\/emph>) by <a href='https://www.inaturalist.org/observations/60775660' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Passiflora gritensis<\/strong> (<emph>Passiflora gritensis<\/emph>) by <a href='https://www.inaturalist.org/observations/60775658' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Steromapedaliodes chiquinquirana<\/strong> (<emph>Steromapedaliodes chiquinquirana<\/emph>) by <a href='https://www.inaturalist.org/observations/60126411' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Pronophila epidipnis<\/strong> (<emph>Pronophila epidipnis<\/emph>) by <a href='https://www.inaturalist.org/observations/57294295' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Pedaliodes montagna<\/strong> (<emph>Pedaliodes montagna<\/emph>) by <a href='https://www.inaturalist.org/observations/57294294' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Corades enyo<\/strong> (<emph>Corades enyo<\/emph>) by <a href='https://www.inaturalist.org/observations/57293992' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>anthuriums<\/strong> (<emph>Anthurium<\/emph>) by <a href='https://www.inaturalist.org/observations/56973971' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Espeletia lindenii<\/strong> (<emph>Espeletia lindenii<\/emph>) by <a href='https://www.inaturalist.org/observations/56973970' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Espeletia neriifolia<\/strong> (<emph>Espeletia neriifolia<\/emph>) by <a href='https://www.inaturalist.org/observations/56973969' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Steromapedaliodes chiquinquirana<\/strong> (<emph>Steromapedaliodes chiquinquirana<\/emph>) by <a href='http://www.inaturalist.org/observations/1599473' target='iNat'>NeoMapas @ iNaturalist<\/a>"],"dim":"200px","gap":"6px","shuffle":false,"type":"grid"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
+<p>2023 Ecological Society of Australia Conference in <a href="../lgrs/Darwin.html">Darwin</a>.</p>
+<center>
+<img src="https://live.staticflickr.com/65535/53407767550_36ae60fa3f.jpg" width="500" height="413"> <br> <strong>David @ ESA2023 in Darwin</strong> by <a href="https://www.flickr.com/photos/199798864@N08/53407767550/" target="flickr">JR Ferrer Paris @ flickr</a><br>
+</center>
 
 
 
@@ -501,4 +456,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/lgrs/Merida.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/evnts/2023_ESAus.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></div></div></footer></body></html>

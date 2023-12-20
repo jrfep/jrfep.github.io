@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -61,6 +95,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/simplelightbox-0/css/simplelightbox.css" rel="stylesheet">
+<script src="../site_libs/simplelightbox-0/js/simplelightbox.js"></script>
+<link href="../site_libs/pixgallery-0/css/pixgallery.css" rel="stylesheet">
+<script src="../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -212,7 +251,23 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. <a href="../lgrs/Stuttgart.html">Stuttgart</a>, Germany, 21-23 May 2003. <a href="http://www.insects-online.de/gartfron.htm">Workshop program and presentations</a></p>
+<p>GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. <a href="../lgrs/Stuttgart.html">Stuttgart</a>, Germany, 21-23 May 2003.</p>
+<p><a href="http://www.insects-online.de/gartfron.htm">Workshop program and presentations</a></p>
+<p>Posterior al taller se consolidó el <a href="https://www.gbif.org/dataset/153c2909-ab0b-4e85-b43e-8f6a2a484216">Global Butterfly Information System</a>, hospedado por el proyecto <a href="https://www.catalogueoflife.org">Catalogue of Life</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_name <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"google-photos.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ggl_photos <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="at">file=</span>file_name)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>photos <span class="ot">&lt;-</span> ggl_photos <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Stuttgart"</span>,mediaItems.description))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> <span class="fu">pull</span>(photos, mediaItems.baseUrl)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>captions <span class="ot">&lt;-</span> photos <span class="sc">%&gt;%</span> <span class="fu">transmute</span>(<span class="at">caption=</span><span class="fu">sprintf</span>(<span class="st">"&lt;strong&gt;%s&lt;/strong&gt;  por &lt;a href='%s' target='googlephotos'&gt;JR Ferrer-Paris @ Google Photos&lt;/a&gt;"</span>,mediaItems.description,mediaItems.productUrl)) <span class="sc">%&gt;%</span> pull</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pixgallery</span>(paths, <span class="at">caption=</span>captions)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-a9bc6524893648572876" style="width:100%;height:100%;" class="pixgallery html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a9bc6524893648572876">{"x":{"path":[],"caption":[],"dim":"200px","gap":"6px","shuffle":false,"type":"grid"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 

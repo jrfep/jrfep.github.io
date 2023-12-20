@@ -17,6 +17,7 @@
       "/lgrs/Göttingen.html",
       "/lgrs/Hobart.html",
       "/lgrs/Karlsruhe.html",
+      "/lgrs/Kigali.html",
       "/lgrs/London.html",
       "/lgrs/Maracaibo.html",
       "/lgrs/Melbourne.html",
@@ -32,8 +33,39 @@
     ]
   },
   {
+    "listing": "/ecos/my-favs.html",
+    "items": [
+      "/ecos/Myanmar-example.html",
+      "/ecos/Gran-Sabana.html",
+      "/ecos/T1.2-tropical-dry-forest.html",
+      "/ecos/Aguaro-Guariquito.html",
+      "/ecos/Llanos-anzoategui.html",
+      "/ecos/T6.1-glaciares-tropicales.html",
+      "/ecos/T6.5-paramos.html",
+      "/ecos/Africa-example.html"
+    ]
+  },
+  {
+    "listing": "/taxa/my-favs.html",
+    "items": [
+      "/taxa/Amazona-barbadensis.html",
+      "/taxa/Aulacorhynchus-sulcatus.html",
+      "/taxa/Crysomia.html",
+      "/taxa/Oressinoma-typhla.html",
+      "/taxa/Redonda-chiquinquirana.html",
+      "/taxa/Kalanchoe.html",
+      "/taxa/Kricogonia-lyside.html",
+      "/taxa/Oxysternon-festivum.html",
+      "/taxa/Jaguar.html",
+      "/taxa/Rhinella-humboldti.html",
+      "/taxa/Oso-frontino.html"
+    ]
+  },
+  {
     "listing": "/evnts/evnt-list.html",
     "items": [
+      "/evnts/2023_ESAus.html",
+      "/evnts/2022_APAC.html",
       "/evnts/2021_ResBaz.html",
       "/evnts/2021_ESAus.html",
       "/evnts/2020_IUCN_Marseille.html",
@@ -61,35 +93,6 @@
       "/evnts/2003_CVE_V.html",
       "/evnts/2003_GART.html",
       "/evnts/2002_CMP_I.html"
-    ]
-  },
-  {
-    "listing": "/taxa/my-favs.html",
-    "items": [
-      "/taxa/Amazona-barbadensis.html",
-      "/taxa/Aulacorhynchus-sulcatus.html",
-      "/taxa/Crysomia.html",
-      "/taxa/Oressinoma-typhla.html",
-      "/taxa/Redonda-chiquinquirana.html",
-      "/taxa/Kalanchoe.html",
-      "/taxa/Kricogonia-lyside.html",
-      "/taxa/Oxysternon-festivum.html",
-      "/taxa/Jaguar.html",
-      "/taxa/Rhinella-humboldti.html",
-      "/taxa/Oso-frontino.html"
-    ]
-  },
-  {
-    "listing": "/ecos/my-favs.html",
-    "items": [
-      "/ecos/Myanmar-example.html",
-      "/ecos/Gran-Sabana.html",
-      "/ecos/T1.2-tropical-dry-forest.html",
-      "/ecos/Aguaro-Guariquito.html",
-      "/ecos/Llanos-anzoategui.html",
-      "/ecos/T6.1-glaciares-tropicales.html",
-      "/ecos/T6.5-paramos.html",
-      "/ecos/Africa-example.html"
     ]
   }
 ]
