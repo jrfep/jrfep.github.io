@@ -4,6 +4,7 @@ categories:
  - Australia
  - Conferencia
  - Visita
+ - Fuego
 editor_options: 
   chunk_output_type: console
 ---

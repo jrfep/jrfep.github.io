@@ -6,7 +6,7 @@ categories:
  - Congreso
  - Internacional
  - Ponencia
- - IUCN RLE
+ - UICN LRE
 params:
  code: 2017_ICCB_XXVIII
  ffin: 27 Julio 2017

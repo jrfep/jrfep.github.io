@@ -10,5 +10,9 @@ tipo: Congreso
 ambito: Nacional
 ---
 
+# Evento
+
 V Congreso Venezolano de Diversidad Biológica. [Maracaibo](/lgrs/Maracaibo.qmd), 21-26 julio 2014
-https://issuu.com/ejercito.comunicacional/docs/resumenes_pantalla_v5
+
+## Enlaces
+- [Libro de resúmenes](https://issuu.com/ejercito.comunicacional/docs/resumenes_pantalla_v5)

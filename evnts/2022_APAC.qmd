@@ -5,8 +5,7 @@ categories:
   - Rwanda
   - Congreso
   - Internacional
-  - IUCN
-  - LRE
+  - UICN LRE
   - Áreas Protegidas
   - Taller
 bibliography: 
@@ -18,11 +17,15 @@ bibliography:
 
 IUCN Africa Protected Area Congress, APAC
 
+## Logo
+
+![](https://apacongress.africa/wp-content/uploads/2021/04/apac-web-logo-retina.png)
+
 ## Enlaces
 
-- https://apacongress.africa/
+- [Página Web](https://apacongress.africa/)
 
-## Participación
+## Participación y productos relacionados
 
 En 2022 organizamos una [sesión](https://osf.io/fgzac) sobre Lista Roja de Ecosistemas en el Congreso Africano sobre Áreas Protegidas en [Kigali](/lgrs/Kigali.qmd), Rwanda. 
 

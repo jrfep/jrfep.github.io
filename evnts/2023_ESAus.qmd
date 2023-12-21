@@ -7,9 +7,9 @@ categories:
   - Nacional
 ---
 
- 2023 Ecological Society of Australia Conference in [Darwin](/lgrs/Darwin.qmd).
+# ESA 2023
 
-
+Conference of the Ecological Society of Australia. 3–7 Julio 2023, [Darwin](/lgrs/Darwin.qmd), Northern Territory
 
 ```{r}
 #| echo: false
@@ -33,3 +33,19 @@ cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by 
          photos$title,
          photos_info$content))
 ```
+
+## Logo
+
+<img src="https://esa2023.org.au/wp-content/uploads/2022/10/ESA2023-logos-01e-02.svg" style="background-color: #13032333;" width=303/>
+
+## Enlaces
+
+- [Página web](https://esa2023.org.au)
+- [Programa de la conferencia](https://esa2023.org.au/conference-program/)
+
+## Presentación y productos relacionados
+
+
+### Fire ecology traits of Australian plants: Creating a database to summarise scientific knowledge about plant response to fire events
+
+Por: Dr José Rafael Ferrer-Paris, University of New South Wales

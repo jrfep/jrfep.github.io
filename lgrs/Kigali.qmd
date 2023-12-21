@@ -4,6 +4,8 @@ categories:
  - Rwanda
  - Congreso
  - Visita
+ - IUCN
+ - LRE
 ---
 
 ![Kigali Convention Centre](http://i.imgur.com/hXu7hMl.jpg?1)

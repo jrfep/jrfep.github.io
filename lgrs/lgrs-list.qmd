@@ -6,4 +6,7 @@ listing:
  categories: true
 ---
 
-Una muestra de mi mundo, pequeño pero en expansión.
+<center>
+
+![Una muestra de mi mundo, pequeño pero en expansión.](animation.gif)
+</center>
