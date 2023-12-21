@@ -1,5 +1,52 @@
 [
   {
+    "listing": "/evnts/evnt-list.html",
+    "items": [
+      "/evnts/2023_ESAus.html",
+      "/evnts/2022_ESA-SCBO.html",
+      "/evnts/2022_APAC.html",
+      "/evnts/2021_ResBaz.html",
+      "/evnts/2021_ESAus.html",
+      "/evnts/2020_IUCN_Marseille.html",
+      "/evnts/2018_LACA_I.html",
+      "/evnts/2018_AbuDhabi.html",
+      "/evnts/2018_CCZ_V.html",
+      "/evnts/2017_ICCB_XXVIII.html",
+      "/evnts/2016_EUTropEcol.html",
+      "/evnts/2015_CVE_XI.html",
+      "/evnts/2015_CVB_XXI.html",
+      "/evnts/2014_ICBB_VII.html",
+      "/evnts/2014_CVDB_V.html",
+      "/evnts/2013_CVE_X.html",
+      "/evnts/2013_CVEnt_XXIII.html",
+      "/evnts/2011_TEAM_IV.html",
+      "/evnts/2010_Eco_XL.html",
+      "/evnts/2009_TheoEco.html",
+      "/evnts/2008_SIoso_II.html",
+      "/evnts/2007_CVE_VII.html",
+      "/evnts/2007_ELEN_II.html",
+      "/evnts/2005_Diversitas_I.html",
+      "/evnts/2005_Baeza.html",
+      "/evnts/2005_SCCS.html",
+      "/evnts/2005_CVEnt_XIX.html",
+      "/evnts/2003_CVE_V.html",
+      "/evnts/2003_GART.html",
+      "/evnts/2002_CMP_I.html"
+    ]
+  },
+  {
+    "listing": "/ecos/my-favs.html",
+    "items": [
+      "/ecos/Myanmar-example.html",
+      "/ecos/Gran-Sabana.html",
+      "/ecos/T1.2-tropical-dry-forest.html",
+      "/ecos/Aguaro-Guariquito.html",
+      "/ecos/Llanos-anzoategui.html",
+      "/ecos/T6.1-glaciares-tropicales.html",
+      "/ecos/T6.5-paramos.html"
+    ]
+  },
+  {
     "listing": "/lgrs/lgrs-list.html",
     "items": [
       "/lgrs/Abu-Dhabi.html",
@@ -33,18 +80,6 @@
     ]
   },
   {
-    "listing": "/ecos/my-favs.html",
-    "items": [
-      "/ecos/Myanmar-example.html",
-      "/ecos/Gran-Sabana.html",
-      "/ecos/T1.2-tropical-dry-forest.html",
-      "/ecos/Aguaro-Guariquito.html",
-      "/ecos/Llanos-anzoategui.html",
-      "/ecos/T6.1-glaciares-tropicales.html",
-      "/ecos/T6.5-paramos.html"
-    ]
-  },
-  {
     "listing": "/taxa/my-favs.html",
     "items": [
       "/taxa/Amazona-barbadensis.html",
@@ -58,40 +93,6 @@
       "/taxa/Jaguar.html",
       "/taxa/Rhinella-humboldti.html",
       "/taxa/Oso-frontino.html"
-    ]
-  },
-  {
-    "listing": "/evnts/evnt-list.html",
-    "items": [
-      "/evnts/2023_ESAus.html",
-      "/evnts/2022_APAC.html",
-      "/evnts/2021_ResBaz.html",
-      "/evnts/2021_ESAus.html",
-      "/evnts/2020_IUCN_Marseille.html",
-      "/evnts/2018_LACA_I.html",
-      "/evnts/2018_AbuDhabi.html",
-      "/evnts/2018_CCZ_V.html",
-      "/evnts/2017_ICCB_XXVIII.html",
-      "/evnts/2016_EUTropEcol.html",
-      "/evnts/2015_CVE_XI.html",
-      "/evnts/2015_CVB_XXI.html",
-      "/evnts/2014_ICBB_VII.html",
-      "/evnts/2014_CVDB_V.html",
-      "/evnts/2013_CVE_X.html",
-      "/evnts/2013_CVEnt_XXIII.html",
-      "/evnts/2011_TEAM_IV.html",
-      "/evnts/2010_Eco_XL.html",
-      "/evnts/2009_TheoEco.html",
-      "/evnts/2008_SIoso_II.html",
-      "/evnts/2007_CVE_VII.html",
-      "/evnts/2007_ELEN_II.html",
-      "/evnts/2005_Diversitas_I.html",
-      "/evnts/2005_Baeza.html",
-      "/evnts/2005_SCCS.html",
-      "/evnts/2005_CVEnt_XIX.html",
-      "/evnts/2003_CVE_V.html",
-      "/evnts/2003_GART.html",
-      "/evnts/2002_CMP_I.html"
     ]
   }
 ]
