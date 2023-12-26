@@ -254,7 +254,8 @@ if (!file.exists(cred_json)) {
 tkn <- gargle2.0_token(
   email = Sys.getenv("GC_PROJECT_EMAIL"),
   client = clnt,
-  scope = "https://www.googleapis.com/auth/photoslibrary.readonly"
+  scope = c("https://www.googleapis.com/auth/photoslibrary.readonly", # need to remove the "readonly"
+            "https://www.googleapis.com/auth/photoslibrary.sharing")
 )
 k <- token_fetch(token=tkn)
 authorization = paste('Bearer', k$credentials$access_token)
@@ -288,6 +289,7 @@ file_name <- here::here("data","google-photos.rds")
 saveRDS(file=file_name, photos)
 ```
 
+This downloads the information, but it does not allow to share the links to the photos (they become defunct after the session is closed). It seems that the way forward would be to select existing files, [create shareable albums with the API](https://developers.google.com/photos/library/guides/share-media#rest) and download the shareableURL of the album and photos. Still needs some testing...
 
 ### Galleries with `pixture`
 
