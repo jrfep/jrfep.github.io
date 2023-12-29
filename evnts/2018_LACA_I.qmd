@@ -16,6 +16,10 @@ params:
 
 First Latin American and Caribbean Congress for Conservation Biology. St. Augustine, Trinidad & Tobago, 2018. [Conference web page](https://lacccb2018.org/)
 
+## Logo
+
+![LACCCB 2018 logo](https://images.squarespace-cdn.com/content/v1/59ece4196f4ca3771ef086ff/1512337248275-QD9IXSRO9IF3MXDRO5VI/LACCCB2018%404xminim.png?format=1500w){width=300}
+
 ## Contribuciones
 
 Ponencia: "Risk of ecosystem collapse under different scenarios of management as a measure of conservation opportunities and challenges" José R. Ferrer-Paris

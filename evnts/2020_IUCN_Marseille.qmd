@@ -12,8 +12,13 @@ categories:
 
 IUCN World Conservation Congress Marseille 2021
 
+## Logo 
+
+![IUCN congress 2020 logo](https://www.iucncongress2020.org/profiles/iucn_master/themes/custom/iucnuapp_theme/img/uicn_logo_en.png){width=300}
+
 ## Enlaces
 
+- [Web del evento](https://www.iucncongress2020.org)
 - [Mi perfil en la web del evento](https://www.iucncongress2020.org/programme/speakers/jose-rafael-ferrer-paris)
 
 ## Participación

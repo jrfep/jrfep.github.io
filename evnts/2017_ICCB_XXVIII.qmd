@@ -15,4 +15,16 @@ params:
 
 # ICCB 2017
 
-28th International Congress for Conservation Biology. Cartagena, Colombia, 23-27 Julio 2017. [Conference program](https://conbio.org/images/content_conferences/ICCB2017_Program_web.pdf)
+28th International Congress for Conservation Biology. Cartagena, Colombia, 23-27 Julio 2017. 
+![](https://conbio.org/images/content_conferences/2017_logo_w_building.png)
+
+## Logo del evento
+
+![](https://conbio.org/images/content_static_pages/iccb2017_webbnr_950x150.jpg)
+
+## Enlaces
+
+- [Web del evento](https://conbio.org/mini-sites/iccb-2017)
+- [Programa de la conferencia](https://conbio.org/images/content_conferences/ICCB2017_Program_web.pdf)
+- [Libro de resumenes](https://conbio.org/images/content_conferences/ICCB2017_Abstract_Book_web_w_doi_022018.pdf)
+- [Jess' blog](https://conservationscience.org.au/2017/08/23/iccb-2017-symposium-new-tools-for-ecosystem-monitoring-and-assessment/)

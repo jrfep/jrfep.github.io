@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources: 
+    - "lgrs/img/"
+    - "evnts/img/"
 
 execute:
   freeze: auto
