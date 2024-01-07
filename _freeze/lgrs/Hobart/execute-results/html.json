@@ -1,0 +1,14 @@
+{
+  "hash": "edc4556b7304b86c43118e20f172b806",
+  "result": {
+    "markdown": "---\ntitle: Hobart\ncategories:\n - Australia\neditor_options: \n  chunk_output_type: console\n---\n\n::: {.cell}\n\n:::\n\n\n## Galería de fotos\n\n\n::: {.cell}\n\n:::\n\n<center>\n<img src='https://live.staticflickr.com/65535/53407641089_a7b64050dc.jpg' width='500'  height='333'>\n<br/>\n**Delfines alrededor de Bruny Island** by <a href='https://www.flickr.com/photos/jferrer/53407641089' target='flickr'>CEBA LEE @ flickr</a><br/></center>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

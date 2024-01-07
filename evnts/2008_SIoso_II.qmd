@@ -5,10 +5,19 @@ categories:
  - Perú
  - Simposio
  - Internacional
+ - Oso frontino
 params:
  code: 2008_SIoso_II
  ffin: 12 Noviembre 2008
  lugar: Lima, Perú
 ---
 
-Segundo simposio internacional sobre el oso andino. Lima, Perú, 10-12 Noviembre 2008. [Anuncio del simposio](https://andeanbear.wcs.org/Datos-e-informaci%C3%B3n/Simposio-internacional.aspx)
+Segundo simposio internacional sobre el [oso andino](taxa/Oso-frontino.qmd). Lima, Perú, 10-12 Noviembre 2008. 
+
+
+## Enlaces
+- [Web del evento](https://programs.wcs.org/osoandino/language/es-ES/Datos-e-información/Simposio-internacional.aspx)
+- Programa: 
+    - [Primer día](https://programs.wcs.org/osoandino/Datos-e-información/Simposio-internacional/Primer-día.aspx)
+    - [Segundo día](https://programs.wcs.org/osoandino/language/es-ES/Datos-e-información/Simposio-internacional/Segundo-día.aspx)
+    - [Tercer día](https://programs.wcs.org/osoandino/language/es-ES/Datos-e-información/Simposio-internacional/Tercer-día.aspx)
