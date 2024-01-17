@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>./jrfep - Darmstadt</title>
+<title>./jrfep - Monterrey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -61,6 +95,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/simplelightbox-0/css/simplelightbox.css" rel="stylesheet">
+<script src="../site_libs/simplelightbox-0/js/simplelightbox.js"></script>
+<link href="../site_libs/pixgallery-0/css/pixgallery.css" rel="stylesheet">
+<script src="../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -190,9 +229,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Darmstadt</h1>
+<h1 class="title">Monterrey</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Alemania</div>
+    <div class="quarto-category">Mexico</div>
+    <div class="quarto-category">Familia</div>
   </div>
   </div>
 
@@ -208,6 +248,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>paths <span class="ot">&lt;-</span> all_photos <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Santiago"</span>,place_guess)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pull</span>(image_url)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>captions <span class="ot">&lt;-</span> all_photos <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Santiago"</span>,place_guess)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transmute</span>(<span class="at">caption=</span><span class="fu">sprintf</span>(<span class="st">"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;"</span>,species_guess,scientific_name,url)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pixgallery</span>(paths, <span class="at">caption=</span>captions)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-49c315089add2050dfd6" style="width:100%;height:100%;" class="pixgallery html-widget"></div>
+<script type="application/json" data-for="htmlwidget-49c315089add2050dfd6">{"x":{"path":["https://inaturalist-open-data.s3.amazonaws.com/photos/177175462/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/176288770/medium.jpg","https://inaturalist-open-data.s3.amazonaws.com/photos/176018189/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/176017823/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/176017104/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/176016075/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175981691/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175981085/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175980093/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175979691/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175964325/medium.jpeg","https://inaturalist-open-data.s3.amazonaws.com/photos/175963545/medium.jpeg"],"caption":["<strong>Mariposa malaquita<\/strong> (<emph>Siproeta stelenes<\/emph>) by <a href='https://www.inaturalist.org/observations/105577945' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Mexican Dartwhite<\/strong> (<emph>Archonias nimbice<\/emph>) by <a href='https://www.inaturalist.org/observations/105112908' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Harvester Ants<\/strong> (<emph>Pogonomyrmex<\/emph>) by <a href='https://www.inaturalist.org/observations/104972999' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Kingbirds<\/strong> (<emph>Tyrannus<\/emph>) by <a href='https://www.inaturalist.org/observations/104972830' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Hormiga chicatana negra<\/strong> (<emph>Atta mexicana<\/emph>) by <a href='https://www.inaturalist.org/observations/104972600' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Marsupiales y placentarios<\/strong> (<emph>Theria<\/emph>) by <a href='https://www.inaturalist.org/observations/104971912' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Mariposa azufre elegante<\/strong> (<emph>Nathalis iole<\/emph>) by <a href='https://www.inaturalist.org/observations/104953766' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Mariposa amarilla mimosa de borde grueso<\/strong> (<emph>Pyrisitia nise<\/emph>) by <a href='https://www.inaturalist.org/observations/104953488' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Common Mestra<\/strong> (<emph>Mestra amymone<\/emph>) by <a href='https://www.inaturalist.org/observations/104952817' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Texan Crescent<\/strong> (<emph>Anthanassa texana<\/emph>) by <a href='https://www.inaturalist.org/observations/104952659' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Zanate mexicano<\/strong> (<emph>Quiscalus mexicanus<\/emph>) by <a href='https://www.inaturalist.org/observations/104944208' target='iNat'>NeoMapas @ iNaturalist<\/a>","<strong>Great Kiskadee<\/strong> (<emph>Pitangus sulphuratus<\/emph>) by <a href='https://www.inaturalist.org/observations/104944205' target='iNat'>NeoMapas @ iNaturalist<\/a>"],"dim":"200px","gap":"6px","shuffle":false,"type":"grid"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 
@@ -449,4 +503,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/lgrs/Darmstadt.md" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/lgrs/Monterrey.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></div></div></footer></body></html>

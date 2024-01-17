@@ -8,3 +8,5 @@ bibliography:
 En colaboración con mi Dr. Ada Sánchez-Mercado, he participado en un par de trabajos sobre la distribución del Oso frontino en Venezuela y los riesgos de la cacería para sus poblaciones [@S_nchez_Mercado_2008;@Sanchez_Mercado_2009_Spatial_Tremarctos]. Particularmente nos planteamos el reto de identificar habitat de alto riesgo y refugios seguros para la especie en base a la intersección de predicciones de calidad de habitat y riesgo de caceria [@Sanchez_Mercado_2014_Ecological_traps_Tremarctos].
 
 <a title="Santiago Ron, CC BY 2.0 &lt;https://creativecommons.org/licenses/by/2.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Tremarctos_ornatus_Maquipucuna(2).jpg"><img width="512" alt="Tremarctos ornatus Maquipucuna(2)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tremarctos_ornatus_Maquipucuna%282%29.jpg/512px-Tremarctos_ornatus_Maquipucuna%282%29.jpg"></a>
+
+Estos trabajos fueron presentados en el [Segundo simposio internacional sobre el oso andino](/evnts/2008_SIoso_II.qmd) en Lima, Perú.

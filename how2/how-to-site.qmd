@@ -243,6 +243,7 @@ library(dplyr)
 library(jsonlite)
 library(httr)
 library(foreach)
+library(stringr)
 
 readRenviron("~/.Renviron")
 cred_json <- Sys.getenv("GC_PROJECT_CRED_JSON")
@@ -297,7 +298,11 @@ photos <- foreach(aID=aIDs, .combine = "bind_rows") %do% {
     fromJSON(., flatten = TRUE) %>% 
     data.frame()
   dts$album <- album_info %>% filter(id %in% aID) %>% pull(title)
-  dts
+  dts <- dts %>% 
+    mutate(
+      output_file = str_replace_all(mediaItems.description, "[ ,/]+", "-"),
+      output_id = abbreviate(mediaItems.id))
+  dts 
 }
 
 here::i_am("how2/how-to-site.qmd")
@@ -307,7 +312,7 @@ if (!dir.exists(img_folder))
 for (i in seq(along=photos$mediaItems.id)[photos$album %in% "Lugareños"]) {
   photo <- photos %>% slice(i)
   durl <- sprintf("%s=w400-h400-d", photo$mediaItems.baseUrl)
-  dfile <- sprintf("%s/%s",img_folder, photo$mediaItems.filename)
+  dfile <- sprintf("%s/%s-%s.jpg",img_folder, photo$output_id, photo$output_file)
   if (!file.exists(dfile))
     download.file(url=durl, destfile=dfile)
 }
@@ -318,7 +323,7 @@ if (!dir.exists(img_folder))
 for (i in seq(along=photos$mediaItems.id)[photos$album %in% "Eventuales"]) {
   photo <- photos %>% slice(i)
   durl <- sprintf("%s=w400-h400-d", photo$mediaItems.baseUrl)
-  dfile <- sprintf("%s/%s",img_folder, photo$mediaItems.filename)
+  dfile <- sprintf("%s/%s-%s.jpg",img_folder, photo$output_id, photo$output_file)
   if (!file.exists(dfile))
     download.file(url=durl, destfile=dfile)
 }
