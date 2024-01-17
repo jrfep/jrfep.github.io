@@ -45,7 +45,4 @@ cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by 
 
 ## Presentación y productos relacionados
 
-
-### Fire ecology traits of Australian plants: Creating a database to summarise scientific knowledge about plant response to fire events
-
-Por: Dr José Rafael Ferrer-Paris, University of New South Wales
+- **Fire ecology traits of Australian plants: Creating a database to summarise scientific knowledge about plant response to fire events**. Por: Dr José Rafael Ferrer-Paris, University of New South Wales. [Presentación en `RPubs`](https://rpubs.com/jrfep/firevegdb-ESA2023)

@@ -27,3 +27,35 @@ Ponencia: "Risk of ecosystem collapse under different scenarios of management as
 Presentada en el simposio “[An Insight into the Orinoco Mining Arc: its implications for Venezuela and the eastern Caribbean](https://lacccb2018.org/orinoco-mining-arc)”, organizado por la Sociedad Venezolana de Ecología.
 
 Durante la conferencia también contribuí junto a varios asistentes del congreso a preparar la [Declaración de la conferencia](https://lacccb2018.org/orinoco-mining-arc-conference-statement), la cual fue aprobada en la reunión de los miembros de LACA.
+
+
+## Galería de fotos
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(FlickrAPI)
+library(pixture)
+library(dplyr)
+here::i_am("lgrs/Trieste.qmd")
+```
+
+```{r}
+#| echo: false
+file_name <- here::here("data","google-photos.rds")
+ggl_photos <- readRDS(file=file_name)
+img_folder <- "img"
+
+photos <- ggl_photos %>% 
+    filter(
+        album %in% "Eventuales",
+        grepl("LACCCB",mediaItems.filename))
+
+paths <- sprintf("%s/%s",img_folder, pull(photos,mediaItems.filename))
+captions <- photos %>% transmute(caption=sprintf("<strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a>",mediaItems.description,mediaItems.productUrl)) %>% pull
+
+pixgallery(paths, caption=captions)
+
+```

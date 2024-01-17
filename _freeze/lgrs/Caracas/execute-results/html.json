@@ -1,8 +1,10 @@
 {
-  "hash": "ab6829e7097c8eaa83881654d62c88d1",
+  "hash": "055eb0bd54f0a1b85c6c63554ded18e2",
   "result": {
-    "markdown": "---\ntitle: Caracas\ncategories:\n - Venezuela\n - Familia\n - Amigos\n---\n\n<center>\n<img src='https://live.staticflickr.com/2306/2119065359_2c29b88c08.jpg' width='500'  height='333'>\n<br/>\n**...y del cielo bajó La Arepa...** by <a href='https://www.flickr.com/photos/jferrer/2119065359/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
-    "supporting": [],
+    "markdown": "---\ntitle: Caracas\ncategories:\n - Venezuela\n - Familia\n - Amigos\n---\n\n\n```\n\nAttaching package: 'dplyr'\n```\n\n```\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n```\n\n```\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n```\n\n```\nhere() starts at /Users/jferrer/proyectos/jrfep.github.io\n```\n\n<center>\n<img src='https://live.staticflickr.com/2630/4079708198_f7b771b0d1.jpg' width='500'  height='333'>\n<br/>\n**N/W** by <a href='https://www.flickr.com/photos/jferrer/4079708198/' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [
+      "Caracas_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

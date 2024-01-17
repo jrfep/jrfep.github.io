@@ -1,0 +1,14 @@
+{
+  "hash": "801d5140ad13fda5a455d07d73406a5a",
+  "result": {
+    "markdown": "---\ntitle: Paris\ncategories:\n - Francia\n - Mariposas\n---\n\n\nMe encanta visitar Paris, y explorar lo moderno y lo antiguo sin presiones ni apuros.\n\n\n\n::: {.cell}\n\n:::\n\n<center>\n<img src='https://live.staticflickr.com/1306/4670542897_a90809c8cb.jpg' width='500'  height='333'>\n<br/>\n**Cheveux** by <a href='https://www.flickr.com/photos/76585510@N00/4670542897' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

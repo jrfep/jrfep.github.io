@@ -1,0 +1,20 @@
+{
+  "hash": "74e1479e3db686b0709ec1aee9d80ea7",
+  "result": {
+    "markdown": "---\ntitle: Abu Dhabi\ncategories:\n - Emiratos Árabes Unidos\n - Visita\n - Taller\n - IUCN RLE\n---\n\n\nMi experiencia en Abu Dhabi fue corta, rica en contrastes.\n\nUn taller de trabajo intenso y productivo, todo un reto.\n\nDe la parte cultural, lo mejor para mi fue la visita al Louvre de Abu Dhabi.\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n<center>\n<img src='https://live.staticflickr.com/65535/53427483792_c6d570a539.jpg' width='500'  height='375'>\n<br/>\n**Torres Al Bahr, Abu Dhabi** by <a href='https://www.flickr.com/photos/jferrer/53427483792' target='flickr'>ceba.lee @ flickr</a><br/></center>\n\n\n## Galería de fotos\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-6ad189032800f82b1e30\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-6ad189032800f82b1e30\">{\"x\":{\"path\":[\"https://live.staticflickr.com/65535/53428564123_f4743e98b1.jpg\",\"https://live.staticflickr.com/65535/53428833690_047bca14fa.jpg\",\"https://live.staticflickr.com/65535/53428729449_5b67a2a5e4.jpg\",\"https://live.staticflickr.com/65535/53427480857_5648405c67.jpg\",\"https://live.staticflickr.com/65535/53427479812_04a3edd787.jpg\",\"https://live.staticflickr.com/65535/53428847085_e51164a44e.jpg\",\"https://live.staticflickr.com/65535/53428427236_c86accc26c.jpg\",\"https://live.staticflickr.com/65535/53427487892_ee86bd1918.jpg\",\"https://live.staticflickr.com/65535/53428746914_941320737a.jpg\",\"https://live.staticflickr.com/65535/53427498962_58e7d18dba.jpg\"],\"caption\":[\"<strong>Mezquita Sheikh Zayed, Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428564123' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Mezquita modesta, Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428833690' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Detalles de la Mezquita Sheikh Zayed, Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428729449' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Detalles de la Mezquita Sheikh Zayed, Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53427480857' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Detalles de la Mezquita Sheikh Zayed, Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53427479812' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Louvre Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428847085' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Escarabajo egipcio, Louvre Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428427236' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Horseman/Cavalier, Louvre Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53427487892' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Danzas en Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53428746914' target='flickr'>ceba.lee @ flickr<\\/a>\",\"<strong>Danzas en Abu Dhabi<\\/strong> by <a href='https://www.flickr.com/photos/jferrer/53427498962' target='flickr'>ceba.lee @ flickr<\\/a>\"],\"dim\":\"200px\",\"gap\":\"6px\",\"shuffle\":false,\"type\":\"grid\"},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::",
+    "supporting": [
+      "Abu-Dhabi_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../site_libs/simplelightbox-0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/simplelightbox-0/js/simplelightbox.js\"></script>\n<link href=\"../site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

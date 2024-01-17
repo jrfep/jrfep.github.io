@@ -1,0 +1,20 @@
+{
+  "hash": "d70cb4714b67f437056905e63872b2ad",
+  "result": {
+    "markdown": "---\ntitle: Kigali\ncategories:\n - Rwanda\n - Congreso\n - Visita\n - IUCN RLE\n---\n\n\n![Kigali Convention Centre](http://i.imgur.com/hXu7hMl.jpg?1)\n\n\n\n::: {.cell}\n\n:::\n\n<center>\n<img src='https://live.staticflickr.com/65535/53454295498_b56fef746c.jpg' width='500'  height='375'>\n<br/>\n**Up the mountains in Rwanda / Uganda** by <a href='https://www.flickr.com/photos/199798864@N08/53454295498' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>\n\n::: {.cell}\n\n:::\n\n\n\n## Observaciones en iNaturalist\n\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-98b9785710266cce75db\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-98b9785710266cce75db\">{\"x\":{\"path\":[\"https://inaturalist-open-data.s3.amazonaws.com/photos/344170694/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/293605561/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/293604942/medium.jpeg\"],\"caption\":[\"<strong>White-browed Robin-Chat<\\/strong> (<emph>Cossypha heuglini<\\/emph>) by <a href='https://www.inaturalist.org/observations/195608311' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Ridgeback Agamas<\\/strong> (<emph>Acanthocercus<\\/emph>) by <a href='https://www.inaturalist.org/observations/169356800' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Pea Blue<\\/strong> (<emph>Lampides boeticus<\\/emph>) by <a href='https://www.inaturalist.org/observations/169356246' target='iNat'>NeoMapas @ iNaturalist<\\/a>\"],\"dim\":\"200px\",\"gap\":\"6px\",\"shuffle\":false,\"type\":\"grid\"},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::",
+    "supporting": [
+      "Kigali_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../site_libs/simplelightbox-0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/simplelightbox-0/js/simplelightbox.js\"></script>\n<link href=\"../site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

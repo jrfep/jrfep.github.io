@@ -14,8 +14,8 @@ categories:
 #| output: asis
 
 library(FlickrAPI)
-suppressMessages(library(dplyr))
-suppressMessages(here::i_am("lgrs/Trieste.qmd"))
+library(dplyr)
+here::i_am("lgrs/Trieste.qmd")
 file_name <- here::here("data","flickr-photos.rds")
 all_photos <- readRDS(file=file_name)
 

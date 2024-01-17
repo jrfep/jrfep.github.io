@@ -22,7 +22,7 @@ suppressMessages(here::i_am("lgrs/Trieste.qmd"))
 file_name <- here::here("data","flickr-photos.rds")
 all_photos <- readRDS(file=file_name)
 
-seleccion <- c("¡Chócala!","Gael en el tren")
+seleccion <- c("¡Chócala!","Gael en el tren","ArtBo")
 
 photos <- all_photos %>% filter(title %in% seleccion) %>% slice_sample(n=1)
 photos_info <- getPhotoInfo(photo_id = photos$id, output = "url")

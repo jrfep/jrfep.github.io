@@ -26,19 +26,20 @@ ggl_photos <- readRDS(file=file_name)
 img_folder <- "img"
 photos <- ggl_photos %>% filter(grepl("Maracaibo",mediaItems.description),
 album %in% "Lugareños")
-slc <- sample(seq(along=photos),size=1)
+slc <- sample(seq(along=photos$output_id),size=1)
 ```
 
 ```{r}
 #| echo: false
 #| output: asis
-htmlcode <- "<center>\n<img src='%s/%s'>\n<br/>\n
+htmlcode <- "<center>\n<img src='%s/%s-%s.jpg'>\n<br/>\n
 <strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a><br/>
 </center>"
 
 show_photo <- photos %>% 
     slice(slc) %>%
-    transmute(code = sprintf(htmlcode, img_folder, mediaItems.filename, mediaItems.description, mediaItems.productUrl)) %>% pull()
+    transmute(code = sprintf(htmlcode, img_folder, 
+    output_id, output_file, mediaItems.description, mediaItems.productUrl)) %>% pull()
 cat(show_photo)
 ```
 
@@ -47,7 +48,11 @@ cat(show_photo)
 ```{r}
 #| echo: false
 
-paths <- sprintf("%s/%s",img_folder, pull(photos[-slc,],mediaItems.filename))
+paths <- sprintf("%s/%s-%s.jpg",
+  img_folder, 
+  pull(photos[-slc,],output_id),
+  pull(photos[-slc,],output_file)
+  )
 captions <- photos %>%
   slice(-slc) %>% 
   transmute(caption=sprintf("<strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a>",mediaItems.description,mediaItems.productUrl)) %>% 

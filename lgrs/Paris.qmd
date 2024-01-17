@@ -6,3 +6,29 @@ categories:
 ---
 
 Me encanta visitar Paris, y explorar lo moderno y lo antiguo sin presiones ni apuros.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(FlickrAPI)
+library(pixture)
+library(dplyr)
+here::i_am("lgrs/Trieste.qmd")
+file_name <- here::here("data","flickr-photos.rds")
+all_photos <- readRDS(file=file_name)
+htmlcode <- "<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by <a href='https://www.flickr.com/photos/%s/%s' target='flickr'>JR Ferrer Paris @ flickr</a><br/></center>"
+```
+
+```{r}
+#| echo: false
+#| output: asis
+seleccion <- c("Cheveux")
+photos <- all_photos %>% filter(grepl(seleccion,title) )
+show_photo <- photos %>% 
+    slice_sample(n=1) %>%
+    transmute(code = sprintf(htmlcode, url_m, width_m, height_m, title, owner, id)) %>% pull()
+cat(show_photo)
+```

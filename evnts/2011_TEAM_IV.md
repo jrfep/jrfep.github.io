@@ -21,3 +21,4 @@ Dar es Salaam, Tanzania, 2-9 April 2011.
 ## Enlaces
 
 - [Team Newsletter](http://www.teamnetwork.org/files/newsletter/TEAM_Newsletter_Vol1_Issue1.pdf)
+- [Team Network is moving to Wildlife Insights](https://www.wildlifeinsights.org/team-network)

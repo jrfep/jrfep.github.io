@@ -1,0 +1,18 @@
+{
+  "hash": "f7051c9d89a3709c67af4379a74e07cd",
+  "result": {
+    "markdown": "---\ntitle: First Latin American and Caribbean Congress for Conservation Biology\ndate: 25 Jul 2018\ncategories:\n  - \"Trinidad & Tobago\"\n  - Conferencia\n  - Internacional\nparams:\n lugar: St. Augustine, Trinidad & Tobago\n participacion:\n tipo: Conference\n ambito: International\n---\n\n\n# LACCCB 2018\n\nFirst Latin American and Caribbean Congress for Conservation Biology. St. Augustine, Trinidad & Tobago, 2018. [Conference web page](https://lacccb2018.org/)\n\n## Logo\n\n![LACCCB 2018 logo](https://images.squarespace-cdn.com/content/v1/59ece4196f4ca3771ef086ff/1512337248275-QD9IXSRO9IF3MXDRO5VI/LACCCB2018%404xminim.png?format=1500w){width=300}\n\n## Contribuciones\n\nPonencia: \"Risk of ecosystem collapse under different scenarios of management as a measure of conservation opportunities and challenges\" José R. Ferrer-Paris\n\nPresentada en el simposio “[An Insight into the Orinoco Mining Arc: its implications for Venezuela and the eastern Caribbean](https://lacccb2018.org/orinoco-mining-arc)”, organizado por la Sociedad Venezolana de Ecología.\n\nDurante la conferencia también contribuí junto a varios asistentes del congreso a preparar la [Declaración de la conferencia](https://lacccb2018.org/orinoco-mining-arc-conference-statement), la cual fue aprobada en la reunión de los miembros de LACA.\n\n\n## Galería de fotos\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-31a0277c1b56982ee6bd\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-31a0277c1b56982ee6bd\">{\"x\":{\"path\":[],\"caption\":[],\"dim\":\"200px\",\"gap\":\"6px\",\"shuffle\":false,\"type\":\"grid\"},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../site_libs/simplelightbox-0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/simplelightbox-0/js/simplelightbox.js\"></script>\n<link href=\"../site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
