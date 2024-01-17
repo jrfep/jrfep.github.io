@@ -28,3 +28,6 @@ Plaza de Santa Cruz, s/n
 - [Publicación sobre el taller](https://www.jstor.org/stable/4539918)
 - <http://www.unia.es>
 
+## Participación
+
+<iframe src="https://widgets.figshare.com/articles/1322143/embed?show_title=1" width="568" height="351" allowfullscreen frameborder="0"></iframe>

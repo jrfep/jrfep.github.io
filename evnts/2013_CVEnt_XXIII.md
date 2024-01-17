@@ -108,3 +108,5 @@ relación entre las especies nativas y su habitat.
 
 *Palabras clave*: Detectabilidad, monitoreo, NeoMapas,
 sensores remotos.
+
+<iframe src="https://widgets.figshare.com/articles/1133764/embed?show_title=1" width="568" height="351" allowfullscreen frameborder="0"></iframe>
