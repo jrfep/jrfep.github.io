@@ -5,6 +5,8 @@ categories:
  - Colombia
  - Congreso
  - Nacional
+ - Ponente
+ - Coautor
 params:
  code: 2018_CCZ_V
  ffin:

@@ -5,6 +5,7 @@ categories:
   - Australia
   - Congreso
   - Nacional
+  - Asistente
 ---
 
 # ESA-SCBO 2022

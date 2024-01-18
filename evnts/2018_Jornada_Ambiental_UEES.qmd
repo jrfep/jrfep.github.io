@@ -5,6 +5,8 @@ categories:
   - Ecuador
   - Jornadas
   - Internacional
+  - Ponente
+  - Invitado
 ---
 
 # Evento

@@ -1,0 +1,5 @@
+bibliography: 
+  - ../bibTeX/peer-review.bibtex
+  - ../bibTeX/projects.bibtex
+  - ../bibTeX/datasets.bibtex
+  - ../bibTeX/reports.bibtex

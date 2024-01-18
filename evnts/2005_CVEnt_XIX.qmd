@@ -49,6 +49,8 @@ inventarios de la biodiversidad.
 
 *Palabras clave*: biodiversidad, inventario, Papilionoidea, Hesperioidea, Miranda
 
+Presentamos aquí parte de los resultados preliminares del estudio piloto de NeoMapas [@FerrerParis_Calibracion_2006].
+
 ### PEDCAT: un catálogo taxonómico y geográfico del complejo Pedaliodes (Lepidoptera: Nymphalidae)
 
 Por: José R. Ferrer-Paris, Ángel L. Viloria

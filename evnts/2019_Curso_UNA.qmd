@@ -6,6 +6,7 @@ categories:
  - Curso 
  - Postgrado
  - Instructor
+ - Invitado
 ---
 
 # Evento

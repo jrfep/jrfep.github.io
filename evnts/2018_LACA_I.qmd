@@ -5,6 +5,7 @@ categories:
   - "Trinidad & Tobago"
   - Conferencia
   - Internacional
+  - Ponente
 params:
  lugar: St. Augustine, Trinidad & Tobago
  participacion:
