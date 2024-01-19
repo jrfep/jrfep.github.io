@@ -6,6 +6,7 @@ bibliography:
   - ../bibTeX/other.bibtex
   - ../bibTeX/thesis.bibtex
   - ../bibTeX/LRAV.bibtex
+  - ../bibTeX/presentations.bibtex
 execute: 
   echo: false
 editor_options: 
@@ -44,11 +45,11 @@ captions <- photos %>%
 pixfigure(paths, captions)
 ```
 
-Conservación de mariposas altiandinas [@Ferrer-Paris2015]
+Conservación de mariposas altiandinas [@Ferrer-Paris2004].
 
 Descripción de especies endémicas [@Viloria_2015_description_Redonda].
 
-En el libro rojo de la fauna venezolana [@LRFV_bordoni]
+En el libro rojo de la fauna venezolana [@LRFV_bordoni].
 
 
 ```{r}
