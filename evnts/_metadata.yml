@@ -3,3 +3,6 @@ bibliography:
   - ../bibTeX/projects.bibtex
   - ../bibTeX/datasets.bibtex
   - ../bibTeX/reports.bibtex
+  - ../bibTeX/presentations.bibtex
+  - ../bibTeX/thesis.bibtex
+  - ../bibTeX/LRAV.bibtex

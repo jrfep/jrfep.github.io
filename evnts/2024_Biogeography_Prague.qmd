@@ -16,7 +16,7 @@ International Biogeography Society ([IBS](https://www.biogeography.org/)) 11th B
 
 https://www.biogeography.org/prague2024_home/
 
-## logo
+## Logo
 
 ![Logo del IBS](https://www.biogeography.org/wp-content/uploads/2017/06/IBS_logo_ret.png)
 

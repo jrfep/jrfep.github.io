@@ -10,14 +10,28 @@ categories:
  - Ponencia
  - Taller
  - Internacional
+ - Mariposas
 ---
+
+# Evento
 
 GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. [Stuttgart](/lgrs/Stuttgart.qmd), Germany, 21-23 May 2003.  
 
-[Workshop program and presentations](http://www.insects-online.de/gartfron.htm)
+## Logo 
+
+![Logo de GART](https://api.gbif.org/v1/image/unsafe/https%3A%2F%2Fgithub.com%2FSp2000%2Fcolplus-repo%2Fraw%2Fmaster%2Flogos%2FGloBIS_(GART).png)
+
+## Enlaces
+
+- [Workshop program and presentations](http://www.insects-online.de/gartfron.htm)
+- Registro en [Catalogue of Life](https://www.catalogueoflife.org/data/dataset/1046)
+
+
+## Participación y productos relacionados
 
 Posterior al taller se consolidó el [Global Butterfly Information System](https://www.gbif.org/dataset/153c2909-ab0b-4e85-b43e-8f6a2a484216), hospedado por el proyecto [Catalogue of Life](https://www.catalogueoflife.org). 
 
+Por mi parte, me mantuve involucrado en el tema por varios años hasta que logramos conectarlo con un proyecto auspiciado por la Encyclopedia of Life [@Ferrer_ICCB_2014;@FerrerParis_EOL_2014].
 
 ```{r}
 #| echo: false
@@ -42,7 +56,7 @@ photos <- ggl_photos %>%
         album %in% "Eventuales",
         grepl("Stuttgart",mediaItems.description))
 
-paths <- sprintf("%s/%s",img_folder, pull(photos,mediaItems.filename))
+paths <- sprintf("%s/%s-%s.jpg",img_folder, pull(photos, output_id), pull(photos, output_file))
 captions <- photos %>% transmute(caption=sprintf("<strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a>",mediaItems.description,mediaItems.productUrl)) %>% pull
 
 pixgallery(paths, caption=captions)
