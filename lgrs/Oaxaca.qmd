@@ -39,7 +39,7 @@ img_folder <- "img"
 
 photos <- ggl_photos %>% 
     filter(
-        album %in% "Lugareños",
+        album %in% "Lugares - México",
         grepl(seleccion,mediaItems.description))
 
 ```
@@ -51,7 +51,7 @@ htmlcode <- "<center>\n<img src='%s/%s-%s.jpg'>\n<br/>\n**%s** by <a href='%s' t
 
 show_photo <- ggl_photos %>% 
     filter(
-        album %in% "Lugareños",
+        album %in% "Lugares - México",
         grepl(seleccion,mediaItems.description)) %>% 
     slice_sample(n=1) %>%
     transmute(code = sprintf(htmlcode, img_folder, output_id, output_file, mediaItems.description,mediaItems.productUrl)) %>% pull()

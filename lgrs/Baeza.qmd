@@ -25,7 +25,7 @@ here::i_am("lgrs/Trieste.qmd")
 file_name <- here::here("data","google-photos.rds")
 ggl_photos <- readRDS(file=file_name)
 img_folder <- "img"
-photos <- ggl_photos %>% filter(album %in% "Lugareños",
+photos <- ggl_photos %>% filter(album %in% "Lugares - Europa",
                                 grepl("Baeza|Jaén", mediaItems.description))
 slc <- sample(seq(along=photos$output_id),size=1)
 

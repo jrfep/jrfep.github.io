@@ -7,12 +7,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-
-<blockquote class="imgur-embed-pub" lang="en" data-id="AJYSnM6"  ><a href="//imgur.com/AJYSnM6">Colourful rockpool</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
-
 ```{r}
-#| echo: false
 #| warning: false
 #| message: false
 
@@ -26,7 +21,6 @@ htmlcode <- "<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by 
 ```
 
 ```{r}
-#| echo: false
 #| output: asis
 seleccion <- c("Sydney")
 photos <- all_photos %>% filter(grepl(seleccion,title) )
@@ -36,15 +30,22 @@ show_photo <- photos %>%
 cat(show_photo)
 ```
 
+
+## Galería
+
 ```{r}
 #| echo: false
-paths <- photos %>% pull(url_m)
-captions <- photos %>% 
-  transmute(caption=sprintf("<strong>%s</strong> por <a href='https://www.flickr.com/photos/jferrer/%s' target='flickr'>JR Ferrer Paris @ flickr</a>",title,id)) %>% pull()
-
-pixgallery(paths, caption=captions)
-
+if (nrow(photos)>3) {
+  paths <- photos %>% pull(url_m)
+  captions <- photos %>% 
+    transmute(caption=sprintf("<strong>%s</strong> por <a href='https://www.flickr.com/photos/jferrer/%s' target='flickr'>JR Ferrer Paris @ flickr</a>",title,id)) %>% pull()
+  pixgallery(paths, caption=captions)
+}
 ```
+
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="AJYSnM6"  ><a href="//imgur.com/AJYSnM6">Colourful rockpool</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 
 ## Observaciones en iNaturalist
 

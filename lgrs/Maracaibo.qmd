@@ -25,7 +25,7 @@ file_name <- here::here("data","google-photos.rds")
 ggl_photos <- readRDS(file=file_name)
 img_folder <- "img"
 photos <- ggl_photos %>% filter(grepl("Maracaibo",mediaItems.description),
-album %in% "Lugareños")
+album %in% "Lugares - Sur América")
 slc <- sample(seq(along=photos$output_id),size=1)
 ```
 

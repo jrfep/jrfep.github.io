@@ -91,6 +91,13 @@
     "text": "Enlaces\n\nAnuncio del evento\nSociety for Tropical Ecology [gtö]\nLibro de resumenes\nDAAD Alumni seminar"
   },
   {
+    "objectID": "evnts/2016_EUTropEcol.html#galería",
+    "href": "evnts/2016_EUTropEcol.html#galería",
+    "title": "European Conference of Tropical Ecology",
+    "section": "Galería",
+    "text": "Galería\nAlgunas fotos del evento."
+  },
+  {
     "objectID": "evnts/2003_GART.html",
     "href": "evnts/2003_GART.html",
     "title": "GART/GloBIS Workshop",
@@ -501,7 +508,7 @@
     "href": "how2/how-to-site.html#prepare-data-for-some-pages",
     "title": "This is how we built this!",
     "section": "Prepare data for some pages",
-    "text": "Prepare data for some pages\n\nOSF data\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(osfr)) {\n  install.packages(\"osfr\")\n  library(osfr)\n}\nlst_osf &lt;- osf_retrieve_user(\"me\") %&gt;%\n  osf_ls_nodes()\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"OSF-data.rds\")\nsaveRDS(file=file_name, lst_osf)\n\n\n\nGitHub data\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(jsonlite)) {\n  install.packages(\"jsonlite\")\n  library(jsonlite)\n}\ngh_rle_org &lt;- read_json(\"https://api.github.com/orgs/red-list-ecosystem/repos\")\ngh_ces_org &lt;- read_json(\"https://api.github.com/orgs/ces-unsw-edu-au/repos\")\ngh_jrfep &lt;- read_json(\"https://api.github.com/users/jrfep/repos\")\n# https://api.github.com/search/repositories?q=user:jrfep&fork:false\n# for each repo query the languages_url and summarise the lines of code for each language\nfile_name &lt;- here::here(\"data\",\"GitHub-data.rda\")\nsave(file=file_name, gh_rle_org, gh_ces_org, gh_jrfep)\n\n\n\nFlexdashboard and iNaturalist\nI use to have a dashboard here, but it works better with Rmarkdown than with quarto. SO I moved it to another site/repo.\nThere might be some alternatives in quarto for this, but haven’t tested them yet.\nThat OLD dashboard was inspired by this example: https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG\nTo get the data I first install the rinat package:\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(rinat)) {\n  install.packages(\"rinat\")\n  library(rinat)\n}\n\nThen I can download the observations from iNaturalist and save them in a data folder:\n\n# Download observations and save to RDS file\nuser_obs &lt;- get_inat_obs_user(\"NeoMapas\",maxresults = 5000)\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"iNaturalist-obs-NeoMapas.rds\")\nsaveRDS(file=file_name, user_obs)\n\nTo get the logo\nWith wget and ImageMagick, it is easy to download and resize in the terminal (bash) with two lines of code:\n##mkdir \nwget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif\nmagick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif\n\n\nPhotos from Flickr\nSo, I think I need some photos in my website, and I have a Flickr account, and I use R, there should be a library that…\nOh yes! found it!\nhttps://koki25ando.github.io/FlickrAPI/\n\ninstall.packages(\"FlickrAPI\")\n\nNow I need a Flickr API key\n\nlibrary(FlickrAPI)\nsetFlickrAPIKey(api_key = \"YOUR_API_KEY_HERE\", install = TRUE)\n\nAnd finally, it works!\nLet’s now query our photos (up to 1000) and save the information in a RDS file:\n\nhere::i_am(\"how2/how-to-site.qmd\")\nlibrary(FlickrAPI)\nlibrary(foreach)\nlibrary(dplyr)\nreadRenviron(\"~/.Renviron\") # read the API key\nhere::i_am(\"how2/how-to-site.qmd\")\nphotos &lt;- foreach(u=c(\"jferrer\",\"jferrer\",\"199798864@N08\"), i=c(1,2,1),.combine = \"bind_rows\") %do% {\n  getPhotos(user_id = u, img_size=\"m\", extras = c(\"description\",\"owner_name\",\n  \"url_m\"), per_page=1000, page=i)\n}\n\ndim(photos)\n\nfile_name &lt;- here::here(\"data\",\"flickr-photos.rds\")\nsaveRDS(file=file_name, photos)\n\n\n\nPhotos from google\nThis is a trial-and-error test of reading my photos from a google account, based on some blogs, medium posts and stack overflow posts:\n\nI created a project in google cloud,\nenabled Photos Library API (not sure if this is relevant here),\nconfigured a simple consent page,\ncreated a OAuth 2.0 client ID and downloaded the json file.\nadded GC_PROJECT_EMAIL and GC_PROJECT_CRED_JSON to my .Renviron file\n\nThen I ran these lines of code\n\nlibrary(gargle)\nlibrary(dplyr)\nlibrary(jsonlite)\nlibrary(httr)\nlibrary(foreach)\nlibrary(stringr)\n\nreadRenviron(\"~/.Renviron\")\ncred_json &lt;- Sys.getenv(\"GC_PROJECT_CRED_JSON\")\nif (!file.exists(cred_json)) {\n  stop(\"credentials not found, please update Renviron file\")\n} else {\n  clnt &lt;- gargle_oauth_client_from_json(path=cred_json)\n}\n\ntkn &lt;- gargle2.0_token(\n  email = Sys.getenv(\"GC_PROJECT_EMAIL\"),\n  client = clnt,\n  scope = c(\"https://www.googleapis.com/auth/photoslibrary.readonly\",\n            \"https://www.googleapis.com/auth/photoslibrary.sharing\")\n)\nk &lt;- token_fetch(token=tkn)\nauthorization = paste('Bearer', k$credentials$access_token)\n\ngetalbum &lt;-\n  GET(\"https://photoslibrary.googleapis.com/v1/albums\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      query = list(\"pageSize\" = 50)) %&gt;% \n  content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n  fromJSON(.) \nif (!is.null(getalbum$nextPageToken)) {\n  getalbum2 &lt;-\n    GET(\"https://photoslibrary.googleapis.com/v1/albums\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      query = list(\"pageToken\" = getalbum$nextPageToken)) %&gt;% \n    content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n    fromJSON(.) \n}\n\nalbum_info &lt;- getalbum$albums %&gt;% select(id, title)\n#aIDs &lt;- getalbum %&gt;% filter(albums.shareInfo.isJoined) %&gt;% pull(albums.id)\naIDs &lt;- album_info %&gt;% filter(title %in% c(\"Lugareños\", \"Eventuales\")) %&gt;% pull(id)\n\nphotos &lt;- foreach(aID=aIDs, .combine = \"bind_rows\") %do% {\n  dts &lt;-  POST(\"https://photoslibrary.googleapis.com/v1/mediaItems:search\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      body = list(\"albumId\" = aID,\n                  \"pageSize\" = 50),\n      encode = \"json\"\n      ) %&gt;% \n    content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n    fromJSON(., flatten = TRUE) %&gt;% \n    data.frame()\n  dts$album &lt;- album_info %&gt;% filter(id %in% aID) %&gt;% pull(title)\n  dts &lt;- dts %&gt;% \n    mutate(\n      output_file = str_replace_all(mediaItems.description, \"[ ,/]+\", \"-\"),\n      output_id = abbreviate(mediaItems.id))\n  dts \n}\n\nhere::i_am(\"how2/how-to-site.qmd\")\nimg_folder &lt;- here::here(\"lgrs\",\"img\")\nif (!dir.exists(img_folder))\n  dir.create(img_folder)\nfor (i in seq(along=photos$mediaItems.id)[photos$album %in% \"Lugareños\"]) {\n  photo &lt;- photos %&gt;% slice(i)\n  durl &lt;- sprintf(\"%s=w400-h400-d\", photo$mediaItems.baseUrl)\n  dfile &lt;- sprintf(\"%s/%s-%s.jpg\",img_folder, photo$output_id, photo$output_file)\n  if (!file.exists(dfile))\n    download.file(url=durl, destfile=dfile)\n}\n\nimg_folder &lt;- here::here(\"evnts\",\"img\")\nif (!dir.exists(img_folder))\n  dir.create(img_folder)\nfor (i in seq(along=photos$mediaItems.id)[photos$album %in% \"Eventuales\"]) {\n  photo &lt;- photos %&gt;% slice(i)\n  durl &lt;- sprintf(\"%s=w400-h400-d\", photo$mediaItems.baseUrl)\n  dfile &lt;- sprintf(\"%s/%s-%s.jpg\",img_folder, photo$output_id, photo$output_file)\n  if (!file.exists(dfile))\n    download.file(url=durl, destfile=dfile)\n}\n\nfile_name &lt;- here::here(\"data\",\"google-photos.rds\")\nsaveRDS(file=file_name, photos)\n\nThis downloads the information, but it does not allow to share the links to the photos (they become defunct after the session is closed). It seems that the way forward would be to select existing files, create shareable albums with the API and download the shareableURL of the album and photos. Still needs some testing…\n\n\nGalleries with pixture\nI am experimenting with the pixture package to create image galleries.\n\ninstall.packages(c(\"htmlwidgets\",\"shiny\",\"remotes\"))\nremotes::install_github('royfrancis/pixture')"
+    "text": "Prepare data for some pages\n\nOSF data\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(osfr)) {\n  install.packages(\"osfr\")\n  library(osfr)\n}\nlst_osf &lt;- osf_retrieve_user(\"me\") %&gt;%\n  osf_ls_nodes()\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"OSF-data.rds\")\nsaveRDS(file=file_name, lst_osf)\n\n\n\nGitHub data\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(jsonlite)) {\n  install.packages(\"jsonlite\")\n  library(jsonlite)\n}\ngh_rle_org &lt;- read_json(\"https://api.github.com/orgs/red-list-ecosystem/repos\")\ngh_ces_org &lt;- read_json(\"https://api.github.com/orgs/ces-unsw-edu-au/repos\")\ngh_jrfep &lt;- read_json(\"https://api.github.com/users/jrfep/repos\")\n# https://api.github.com/search/repositories?q=user:jrfep&fork:false\n# for each repo query the languages_url and summarise the lines of code for each language\nfile_name &lt;- here::here(\"data\",\"GitHub-data.rda\")\nsave(file=file_name, gh_rle_org, gh_ces_org, gh_jrfep)\n\n\n\nFlexdashboard and iNaturalist\nI use to have a dashboard here, but it works better with Rmarkdown than with quarto. SO I moved it to another site/repo.\nThere might be some alternatives in quarto for this, but haven’t tested them yet.\nThat OLD dashboard was inspired by this example: https://github.com/gonzalobravoargentina/inat_flexdashboard_ARG\nTo get the data I first install the rinat package:\n\nhere::i_am(\"how2/how-to-site.qmd\")\nif (!require(rinat)) {\n  install.packages(\"rinat\")\n  library(rinat)\n}\n\nThen I can download the observations from iNaturalist and save them in a data folder:\n\n# Download observations and save to RDS file\nuser_obs &lt;- get_inat_obs_user(\"NeoMapas\",maxresults = 5000)\nif (!dir.exists(here::here(\"data\")))\n    dir.create(here::here(\"data\"))\nfile_name &lt;- here::here(\"data\",\"iNaturalist-obs-NeoMapas.rds\")\nsaveRDS(file=file_name, user_obs)\n\nTo get the logo\nWith wget and ImageMagick, it is easy to download and resize in the terminal (bash) with two lines of code:\n##mkdir \nwget https://neomapas.github.io/assets/images/logo_NeoMapas_p.gif\nmagick logo_NeoMapas_p.gif  -resize 100x148  resize_logo.gif\n\n\nPhotos from Flickr\nSo, I think I need some photos in my website, and I have a Flickr account, and I use R, there should be a library that…\nOh yes! found it!\nhttps://koki25ando.github.io/FlickrAPI/\n\ninstall.packages(\"FlickrAPI\")\n\nNow I need a Flickr API key\n\nlibrary(FlickrAPI)\nsetFlickrAPIKey(api_key = \"YOUR_API_KEY_HERE\", install = TRUE)\n\nAnd finally, it works!\nLet’s now query our photos (up to 1000) and save the information in a RDS file:\n\nhere::i_am(\"how2/how-to-site.qmd\")\nlibrary(FlickrAPI)\nlibrary(foreach)\nlibrary(dplyr)\nreadRenviron(\"~/.Renviron\") # read the API key\nhere::i_am(\"how2/how-to-site.qmd\")\nphotos &lt;- foreach(u=c(\"jferrer\",\"jferrer\",\"199798864@N08\"), i=c(1,2,1),.combine = \"bind_rows\") %do% {\n  getPhotos(user_id = u, img_size=\"m\", extras = c(\"description\",\"owner_name\",\n  \"url_m\"), per_page=1000, page=i)\n}\n\ndim(photos)\n\nfile_name &lt;- here::here(\"data\",\"flickr-photos.rds\")\nsaveRDS(file=file_name, photos)\n\n\n\nPhotos from google\nThis is a trial-and-error test of reading my photos from a google account, based on some blogs, medium posts and stack overflow posts:\n\nI created a project in google cloud,\nenabled Photos Library API (not sure if this is relevant here),\nconfigured a simple consent page,\ncreated a OAuth 2.0 client ID and downloaded the json file.\nadded GC_PROJECT_EMAIL and GC_PROJECT_CRED_JSON to my .Renviron file\n\nThen I ran these lines of code\n\nlibrary(gargle)\nlibrary(dplyr)\nlibrary(jsonlite)\nlibrary(httr)\nlibrary(foreach)\nlibrary(stringr)\n\nreadRenviron(\"~/.Renviron\")\ncred_json &lt;- Sys.getenv(\"GC_PROJECT_CRED_JSON\")\nif (!file.exists(cred_json)) {\n  stop(\"credentials not found, please update Renviron file\")\n} else {\n  clnt &lt;- gargle_oauth_client_from_json(path=cred_json)\n}\n\ntkn &lt;- gargle2.0_token(\n  email = Sys.getenv(\"GC_PROJECT_EMAIL\"),\n  client = clnt,\n  scope = c(\"https://www.googleapis.com/auth/photoslibrary.readonly\",\n            \"https://www.googleapis.com/auth/photoslibrary.sharing\")\n)\nk &lt;- token_fetch(token=tkn)\nauthorization = paste('Bearer', k$credentials$access_token)\n\ngetalbum &lt;-\n  GET(\"https://photoslibrary.googleapis.com/v1/albums\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      query = list(\"pageSize\" = 50)) %&gt;% \n  content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n  fromJSON(.) \nif (!is.null(getalbum$nextPageToken)) {\n  getalbum2 &lt;-\n    GET(\"https://photoslibrary.googleapis.com/v1/albums\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      query = list(\"pageToken\" = getalbum$nextPageToken)) %&gt;% \n    content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n    fromJSON(.) \n}\n\nalbum_info &lt;- getalbum$albums %&gt;% select(id, title)\n#aIDs &lt;- getalbum %&gt;% filter(albums.shareInfo.isJoined) %&gt;% pull(albums.id)\naIDs &lt;- album_info %&gt;% filter(title %in% c(\"Lugares - México\", \"Lugares - Europa\", \"Lugares - Sur América\", \"Eventuales\")) %&gt;% pull(id)\n\nphotos &lt;- foreach(aID=aIDs, .combine = \"bind_rows\") %do% {\n  dts &lt;-  POST(\"https://photoslibrary.googleapis.com/v1/mediaItems:search\",\n      add_headers(\n        'Authorization' = authorization,\n        'Accept'  = 'application/json'),\n      body = list(\"albumId\" = aID,\n                  \"pageSize\" = 50),\n      encode = \"json\"\n      ) %&gt;% \n    content(., as = \"text\", encoding = \"UTF-8\") %&gt;%\n    fromJSON(., flatten = TRUE) %&gt;% \n    data.frame()\n  dts$album &lt;- album_info %&gt;% filter(id %in% aID) %&gt;% pull(title)\n  dts &lt;- dts %&gt;% \n    mutate(\n      output_file = str_replace_all(mediaItems.description, \"[ ,/]+\", \"-\"),\n      output_id = abbreviate(mediaItems.id))\n  dts \n}\n\nhere::i_am(\"how2/how-to-site.qmd\")\nimg_folder &lt;- here::here(\"lgrs\",\"img\")\nif (!dir.exists(img_folder))\n  dir.create(img_folder)\nlugares &lt;- c(\"Lugares - Europa\", \"Lugares - Sur América\", \"Lugares - México\")\nfor (i in seq(along=photos$mediaItems.id)[photos$album %in% lugares]) {\n  photo &lt;- photos %&gt;% slice(i)\n  durl &lt;- sprintf(\"%s=w400-h400-d\", photo$mediaItems.baseUrl)\n  dfile &lt;- sprintf(\"%s/%s-%s.jpg\",img_folder, photo$output_id, photo$output_file)\n  if (!file.exists(dfile))\n    download.file(url=durl, destfile=dfile)\n}\n\nimg_folder &lt;- here::here(\"evnts\",\"img\")\nif (!dir.exists(img_folder))\n  dir.create(img_folder)\nfor (i in seq(along=photos$mediaItems.id)[photos$album %in% \"Eventuales\"]) {\n  photo &lt;- photos %&gt;% slice(i)\n  durl &lt;- sprintf(\"%s=w400-h400-d\", photo$mediaItems.baseUrl)\n  dfile &lt;- sprintf(\"%s/%s-%s.jpg\",img_folder, photo$output_id, photo$output_file)\n  if (!file.exists(dfile))\n    download.file(url=durl, destfile=dfile)\n}\n\nfile_name &lt;- here::here(\"data\",\"google-photos.rds\")\nsaveRDS(file=file_name, photos)\n\nThis downloads the information, but it does not allow to share the links to the photos (they become defunct after the session is closed). It seems that the way forward would be to select existing files, create shareable albums with the API and download the shareableURL of the album and photos. Still needs some testing…\n\n\nGalleries with pixture\nI am experimenting with the pixture package to create image galleries.\n\ninstall.packages(c(\"htmlwidgets\",\"shiny\",\"remotes\"))\nremotes::install_github('royfrancis/pixture')"
   },
   {
     "objectID": "how2/how-to-site.html#footnotes",
@@ -697,7 +704,7 @@
     "href": "lgrs/Villahermosa.html",
     "title": "Villahermosa",
     "section": "",
-    "text": "Después de la conferencia en Oaxaca pasamos por Villahermosa para visitar a mi papá que estaba trabajando en esa época en esta ciudad.\nVisitamos el Museo de La Venta y Kolem Jaa’.\nEn este viaje también fuimos a Campeche y visitamos Palenque."
+    "text": "Después de la conferencia en Oaxaca pasamos por Villahermosa para visitar a mi papá que estaba trabajando en esa época en esta ciudad.\nVisitamos el Parque Museo de la Venta y Kolem Jaa’.\nEn este viaje también fuimos a Campeche y visitamos Palenque."
   },
   {
     "objectID": "lgrs/Villahermosa.html#galería-de-fotos",
@@ -756,193 +763,60 @@
     "text": "Un hito.\n\n  Fauna de Castilletes by JR Ferrer Paris @ flickr"
   },
   {
-    "objectID": "lgrs/Asuncion.html",
-    "href": "lgrs/Asuncion.html",
-    "title": "Asunción",
+    "objectID": "lgrs/San-Antonio.html",
+    "href": "lgrs/San-Antonio.html",
+    "title": "San Antonio",
     "section": "",
-    "text": "Escultura en Asunción by JR Ferrer Paris @ flickr"
+    "text": "Simbiosis Perfecta (25/365+ñ) by JR Ferrer Paris @ flickr"
   },
   {
-    "objectID": "lgrs/Darwin.html",
-    "href": "lgrs/Darwin.html",
-    "title": "Darwin",
+    "objectID": "lgrs/Sydney.html",
+    "href": "lgrs/Sydney.html",
+    "title": "Sydney",
     "section": "",
-    "text": "Tortuga bebé by CEBA LEE @ flickr\n\n\nView post on imgur.com"
+    "text": "Sculture by the Sea, Sydney by JR Ferrer Paris @ flickr"
   },
   {
-    "objectID": "lgrs/Darwin.html#galería-de-fotos",
-    "href": "lgrs/Darwin.html#galería-de-fotos",
-    "title": "Darwin",
-    "section": "",
-    "text": "Tortuga bebé by CEBA LEE @ flickr\n\n\nView post on imgur.com"
+    "objectID": "lgrs/Sydney.html#galería",
+    "href": "lgrs/Sydney.html#galería",
+    "title": "Sydney",
+    "section": "Galería",
+    "text": "Galería\n\nColourful rockpool"
   },
   {
-    "objectID": "lgrs/Darwin.html#observaciones-en-inaturalist",
-    "href": "lgrs/Darwin.html#observaciones-en-inaturalist",
-    "title": "Darwin",
+    "objectID": "lgrs/Sydney.html#observaciones-en-inaturalist",
+    "href": "lgrs/Sydney.html#observaciones-en-inaturalist",
+    "title": "Sydney",
     "section": "Observaciones en iNaturalist",
     "text": "Observaciones en iNaturalist"
   },
   {
-    "objectID": "lgrs/lgrs-list.html",
-    "href": "lgrs/lgrs-list.html",
-    "title": "Galeria de recuerdos",
+    "objectID": "lgrs/Hobart.html",
+    "href": "lgrs/Hobart.html",
+    "title": "Hobart",
     "section": "",
-    "text": "Una muestra de mi mundo, pequeño pero en expansión.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbu Dhabi\n\n\n\nEmiratos Árabes Unidos\n\n\nVisita\n\n\nTaller\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAltos de Pipe\n\n\n\nVenezuela\n\n\nIVIC\n\n\nAmigos\n\n\nTrabajo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAsunción\n\n\n\nParaguay\n\n\nAmigos\n\n\nVisita\n\n\nCursos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBaeza\n\n\n\nEspaña\n\n\nTaller\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBayreuth\n\n\n\nAlemania\n\n\nBaviera\n\n\nFranken\n\n\nUniversidad\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBogotá\n\n\n\nColombia\n\n\nCongresos\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCampeche y Edzná\n\n\n\nMexico\n\n\nVisita\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaracas\n\n\n\nVenezuela\n\n\nFamilia\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCastilletes\n\n\n\nVenezuela\n\n\nIVIC\n\n\nKricogonia\n\n\nGuayacán\n\n\nTrabajo de campo\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiudad de Panamá\n\n\n\nPanamá\n\n\nEventos\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiudad del Cabo\n\n\n\nRepública de Suráfrica\n\n\nTrabajo\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDarwin\n\n\n\nAustralia\n\n\nConferencia\n\n\nVisita\n\n\nFuego\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGland e Yvoire\n\n\n\nSuiza\n\n\nFrancia\n\n\nIUCN RLE\n\n\nvisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGuarenas\n\n\n\nVenezuela\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHobart\n\n\n\nAustralia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKigali\n\n\n\nRwanda\n\n\nCongreso\n\n\nVisita\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLondres\n\n\n\nReino Unido\n\n\nMuseos y colecciones\n\n\nAmigos\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaracaibo\n\n\n\nVenezuela\n\n\nFamilia\n\n\nOrigenes\n\n\nIVIC\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMelbourne\n\n\n\nAustralia\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonterrey\n\n\n\nMexico\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMérida\n\n\n\nVenezuela\n\n\nCongresos\n\n\nTesis\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOaxaca y Monte Albán\n\n\n\nMexico\n\n\nConferencia\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPalenque\n\n\n\nMexico\n\n\nVisita\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParis\n\n\n\nFrancia\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSan Antonio\n\n\n\nVenezuela\n\n\nFamilia\n\n\nAmigos\n\n\nIVIC\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSan Diego\n\n\n\nVenezuela\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStuttgart\n\n\n\nAlemania\n\n\nMuseos y colecciones\n\n\nVisita\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSydney\n\n\n\nAustralia\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrieste, Padua y Venecia\n\n\n\nItalia\n\n\nTaller\n\n\nVisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTurku y Åland\n\n\n\nFinlandia\n\n\nMariposas\n\n\nConferencia\n\n\nVisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVillahermosa\n\n\n\nMexico\n\n\nFamilia\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Delfines alrededor de Bruny Island by CEBA LEE @ flickr"
   },
   {
-    "objectID": "lgrs/Stuttgart.html",
-    "href": "lgrs/Stuttgart.html",
-    "title": "Stuttgart",
+    "objectID": "lgrs/Hobart.html#galería-de-fotos",
+    "href": "lgrs/Hobart.html#galería-de-fotos",
+    "title": "Hobart",
     "section": "",
-    "text": "De visita para un taller, ingreso en el mundo de la digitalización de las colecciones biológicas."
+    "text": "Delfines alrededor de Bruny Island by CEBA LEE @ flickr"
   },
   {
-    "objectID": "lgrs/Abu-Dhabi.html",
-    "href": "lgrs/Abu-Dhabi.html",
-    "title": "Abu Dhabi",
+    "objectID": "lgrs/Caracas.html",
+    "href": "lgrs/Caracas.html",
+    "title": "Caracas",
     "section": "",
-    "text": "Mi experiencia en Abu Dhabi fue corta, rica en contrastes.\nUn taller de trabajo intenso y productivo, todo un reto.\nDe la parte cultural, lo mejor para mi fue la visita al Louvre de Abu Dhabi."
+    "text": "Attaching package: 'dplyr'\nThe following objects are masked from 'package:stats':\n\n    filter, lag\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\nhere() starts at /Users/jferrer/proyectos/jrfep.github.io\n\n  N/W by JR Ferrer Paris @ flickr"
   },
   {
-    "objectID": "lgrs/Abu-Dhabi.html#galería-de-fotos",
-    "href": "lgrs/Abu-Dhabi.html#galería-de-fotos",
-    "title": "Abu Dhabi",
-    "section": "Galería de fotos",
-    "text": "Galería de fotos"
-  },
-  {
-    "objectID": "lgrs/Cape-Town.html",
-    "href": "lgrs/Cape-Town.html",
-    "title": "Ciudad del Cabo",
+    "objectID": "lgrs/Merida.html",
+    "href": "lgrs/Merida.html",
+    "title": "Mérida",
     "section": "",
-    "text": "Amazing by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Monterrey.html",
-    "href": "lgrs/Monterrey.html",
-    "title": "Monterrey",
-    "section": "",
-    "text": "paths &lt;- all_photos %&gt;% \n    filter(grepl(\"Santiago\",place_guess)) %&gt;% \n    pull(image_url)\ncaptions &lt;- all_photos %&gt;% \n    filter(grepl(\"Santiago\",place_guess)) %&gt;% \n    transmute(caption=sprintf(\"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;\",species_guess,scientific_name,url)) %&gt;% pull()\n\npixgallery(paths, caption=captions)"
-  },
-  {
-    "objectID": "lgrs/Paris.html",
-    "href": "lgrs/Paris.html",
-    "title": "Paris",
-    "section": "",
-    "text": "Me encanta visitar Paris, y explorar lo moderno y lo antiguo sin presiones ni apuros.\n\n  Cheveux by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Trieste.html",
-    "href": "lgrs/Trieste.html",
-    "title": "Trieste, Padua y Venecia",
-    "section": "",
-    "text": "Un emocionante taller, muy instructivo. Una experiencia vibrante. La visita a Padua con el convento de San Antonio fue muy emotiva.\n\n  Bona sera by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Guarenas.html",
-    "href": "lgrs/Guarenas.html",
-    "title": "Guarenas",
-    "section": "",
-    "text": "Panorámica Ciudad Casarapa by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Altos-de-Pipe.html",
-    "href": "lgrs/Altos-de-Pipe.html",
-    "title": "Altos de Pipe",
-    "section": "",
-    "text": "Sembrando Nogales en el IVIC by ¡Fgz! @ flickr"
-  },
-  {
-    "objectID": "lgrs/Altos-de-Pipe.html#galería-de-fotos",
-    "href": "lgrs/Altos-de-Pipe.html#galería-de-fotos",
-    "title": "Altos de Pipe",
-    "section": "Galería de fotos",
-    "text": "Galería de fotos"
-  },
-  {
-    "objectID": "lgrs/Maracaibo.html",
-    "href": "lgrs/Maracaibo.html",
-    "title": "Maracaibo",
-    "section": "",
-    "text": "Mi ciudad natal, única e irrepetible."
-  },
-  {
-    "objectID": "lgrs/Maracaibo.html#imágenes-de-maracaibo",
-    "href": "lgrs/Maracaibo.html#imágenes-de-maracaibo",
-    "title": "Maracaibo",
-    "section": "Imágenes de Maracaibo",
-    "text": "Imágenes de Maracaibo"
-  },
-  {
-    "objectID": "lgrs/Gland.html",
-    "href": "lgrs/Gland.html",
-    "title": "Gland e Yvoire",
-    "section": "",
-    "text": "Una visita al Centro de Conservación de la Unión Internacional para la Conservación de la Naturaleza en Gland, Suiza y el pueblo de Yvoire en la costa francesa del Lago Ginebra."
-  },
-  {
-    "objectID": "lgrs/Gland.html#galería-de-fotos",
-    "href": "lgrs/Gland.html#galería-de-fotos",
-    "title": "Gland e Yvoire",
-    "section": "Galería de fotos",
-    "text": "Galería de fotos"
-  },
-  {
-    "objectID": "lgrs/Panama.html",
-    "href": "lgrs/Panama.html",
-    "title": "Ciudad de Panamá",
-    "section": "",
-    "text": "Aprovecho una reunión de trabajo para conocer un rincón muy colorido del continente, y visitar viejos amigos.\n\n  Las Mercedes by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Melbourne.html",
-    "href": "lgrs/Melbourne.html",
-    "title": "Melbourne",
-    "section": "",
-    "text": "St. Patrick’s Cathedral, Melbourne by JR Ferrer Paris @ flickr"
-  },
-  {
-    "objectID": "lgrs/Palenque.html",
-    "href": "lgrs/Palenque.html",
-    "title": "Palenque",
-    "section": "",
-    "text": "Inscripciones en Palenque by JR Ferrer-Paris @ Google Photos"
-  },
-  {
-    "objectID": "lgrs/Palenque.html#galería-de-fotos",
-    "href": "lgrs/Palenque.html#galería-de-fotos",
-    "title": "Palenque",
-    "section": "Galería de fotos",
-    "text": "Galería de fotos"
-  },
-  {
-    "objectID": "lgrs/Palenque.html#observaciones-en-inaturalist",
-    "href": "lgrs/Palenque.html#observaciones-en-inaturalist",
-    "title": "Palenque",
-    "section": "Observaciones en iNaturalist",
-    "text": "Observaciones en iNaturalist"
-  },
-  {
-    "objectID": "lgrs/Baeza.html",
-    "href": "lgrs/Baeza.html",
-    "title": "Baeza",
-    "section": "",
-    "text": "De visita por un taller en la Universidad Internacional de Andalucía. Aparte de la ciudad de Baeza también visitamos el Mirador del Puerto de las Palomas y entramos al Parque Natural de las Sierras de Cazorla, Segura y Las Villas. Visitamos el Centro de Recuperación de Especies Amenazadas (CREA) Quiebrajano de Jaén."
-  },
-  {
-    "objectID": "lgrs/Baeza.html#galería-de-fotos",
-    "href": "lgrs/Baeza.html#galería-de-fotos",
-    "title": "Baeza",
-    "section": "Galería de fotos",
-    "text": "Galería de fotos"
-  },
-  {
-    "objectID": "lgrs/London.html",
-    "href": "lgrs/London.html",
-    "title": "Londres",
-    "section": "",
-    "text": "Mariposas by JR Ferrer Paris @ flickr"
+    "text": "Muchas horas y kilómetros recorridos, noches de frío y mañanas neblinosas, coros encantadores, y mundos por explorar.\n\npaths &lt;- all_photos %&gt;% \n    filter(grepl(\"Mérida\",place_guess)) %&gt;% \n    pull(image_url)\ncaptions &lt;- all_photos %&gt;% \n    filter(grepl(\"Mérida\",place_guess)) %&gt;% \n    transmute(caption=sprintf(\"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;\",species_guess,scientific_name,url)) %&gt;% pull()\n\npixgallery(paths, caption=captions)"
   },
   {
     "objectID": "lgrs/Turku.html",
@@ -966,53 +840,214 @@
     "text": "Observaciones en iNaturalist"
   },
   {
-    "objectID": "lgrs/Merida.html",
-    "href": "lgrs/Merida.html",
-    "title": "Mérida",
+    "objectID": "lgrs/London.html",
+    "href": "lgrs/London.html",
+    "title": "Londres",
     "section": "",
-    "text": "Muchas horas y kilómetros recorridos, noches de frío y mañanas neblinosas, coros encantadores, y mundos por explorar.\n\npaths &lt;- all_photos %&gt;% \n    filter(grepl(\"Mérida\",place_guess)) %&gt;% \n    pull(image_url)\ncaptions &lt;- all_photos %&gt;% \n    filter(grepl(\"Mérida\",place_guess)) %&gt;% \n    transmute(caption=sprintf(\"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;\",species_guess,scientific_name,url)) %&gt;% pull()\n\npixgallery(paths, caption=captions)"
+    "text": "Mariposas by JR Ferrer Paris @ flickr"
   },
   {
-    "objectID": "lgrs/Caracas.html",
-    "href": "lgrs/Caracas.html",
-    "title": "Caracas",
+    "objectID": "lgrs/Baeza.html",
+    "href": "lgrs/Baeza.html",
+    "title": "Baeza",
     "section": "",
-    "text": "Attaching package: 'dplyr'\nThe following objects are masked from 'package:stats':\n\n    filter, lag\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\nhere() starts at /Users/jferrer/proyectos/jrfep.github.io\n\n  N/W by JR Ferrer Paris @ flickr"
+    "text": "De visita por un taller en la Universidad Internacional de Andalucía. Aparte de la ciudad de Baeza también visitamos el Mirador del Puerto de las Palomas y entramos al Parque Natural de las Sierras de Cazorla, Segura y Las Villas. Visitamos el Centro de Recuperación de Especies Amenazadas (CREA) Quiebrajano de Jaén."
   },
   {
-    "objectID": "lgrs/Hobart.html",
-    "href": "lgrs/Hobart.html",
-    "title": "Hobart",
-    "section": "",
-    "text": "Delfines alrededor de Bruny Island by CEBA LEE @ flickr"
+    "objectID": "lgrs/Baeza.html#galería-de-fotos",
+    "href": "lgrs/Baeza.html#galería-de-fotos",
+    "title": "Baeza",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
   },
   {
-    "objectID": "lgrs/Hobart.html#galería-de-fotos",
-    "href": "lgrs/Hobart.html#galería-de-fotos",
-    "title": "Hobart",
+    "objectID": "lgrs/Palenque.html",
+    "href": "lgrs/Palenque.html",
+    "title": "Palenque",
     "section": "",
-    "text": "Delfines alrededor de Bruny Island by CEBA LEE @ flickr"
+    "text": "Templo de Palenque by JR Ferrer-Paris @ Google Photos"
   },
   {
-    "objectID": "lgrs/Sydney.html",
-    "href": "lgrs/Sydney.html",
-    "title": "Sydney",
-    "section": "",
-    "text": "Colourful rockpool"
+    "objectID": "lgrs/Palenque.html#galería-de-fotos",
+    "href": "lgrs/Palenque.html#galería-de-fotos",
+    "title": "Palenque",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
   },
   {
-    "objectID": "lgrs/Sydney.html#observaciones-en-inaturalist",
-    "href": "lgrs/Sydney.html#observaciones-en-inaturalist",
-    "title": "Sydney",
+    "objectID": "lgrs/Palenque.html#observaciones-en-inaturalist",
+    "href": "lgrs/Palenque.html#observaciones-en-inaturalist",
+    "title": "Palenque",
     "section": "Observaciones en iNaturalist",
-    "text": "Observaciones en iNaturalist\n\nslc_photos &lt;- all_photos %&gt;% \n    filter(grepl(\"Sydney\",place_guess)) %&gt;% \n    slice_sample(n=27)\n\npaths &lt;- slc_photos %&gt;% \n    pull(image_url)\ncaptions &lt;- slc_photos %&gt;% \n    transmute(caption=sprintf(\"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;\",species_guess,scientific_name,url)) %&gt;% pull()\n\npixgallery(paths, caption=captions)"
+    "text": "Observaciones en iNaturalist"
   },
   {
-    "objectID": "lgrs/San-Antonio.html",
-    "href": "lgrs/San-Antonio.html",
-    "title": "San Antonio",
+    "objectID": "lgrs/Melbourne.html",
+    "href": "lgrs/Melbourne.html",
+    "title": "Melbourne",
     "section": "",
-    "text": "Simbiosis Perfecta (25/365+ñ) by JR Ferrer Paris @ flickr"
+    "text": "St. Patrick’s Cathedral, Melbourne by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Panama.html",
+    "href": "lgrs/Panama.html",
+    "title": "Ciudad de Panamá",
+    "section": "",
+    "text": "Aprovecho una reunión de trabajo para conocer un rincón muy colorido del continente, y visitar viejos amigos.\n\n  Las Mercedes by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Gland.html",
+    "href": "lgrs/Gland.html",
+    "title": "Gland e Yvoire",
+    "section": "",
+    "text": "Una visita al Centro de Conservación de la Unión Internacional para la Conservación de la Naturaleza en Gland, Suiza y el pueblo de Yvoire en la costa francesa del Lago Ginebra."
+  },
+  {
+    "objectID": "lgrs/Gland.html#galería-de-fotos",
+    "href": "lgrs/Gland.html#galería-de-fotos",
+    "title": "Gland e Yvoire",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
+  },
+  {
+    "objectID": "lgrs/Maracaibo.html",
+    "href": "lgrs/Maracaibo.html",
+    "title": "Maracaibo",
+    "section": "",
+    "text": "Mi ciudad natal, única e irrepetible."
+  },
+  {
+    "objectID": "lgrs/Maracaibo.html#imágenes-de-maracaibo",
+    "href": "lgrs/Maracaibo.html#imágenes-de-maracaibo",
+    "title": "Maracaibo",
+    "section": "Imágenes de Maracaibo",
+    "text": "Imágenes de Maracaibo"
+  },
+  {
+    "objectID": "lgrs/Altos-de-Pipe.html",
+    "href": "lgrs/Altos-de-Pipe.html",
+    "title": "Altos de Pipe",
+    "section": "",
+    "text": "Sembrando Nogales en el IVIC by ¡Fgz! @ flickr"
+  },
+  {
+    "objectID": "lgrs/Altos-de-Pipe.html#galería-de-fotos",
+    "href": "lgrs/Altos-de-Pipe.html#galería-de-fotos",
+    "title": "Altos de Pipe",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
+  },
+  {
+    "objectID": "lgrs/Guarenas.html",
+    "href": "lgrs/Guarenas.html",
+    "title": "Guarenas",
+    "section": "",
+    "text": "Panorámica Ciudad Casarapa by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Trieste.html",
+    "href": "lgrs/Trieste.html",
+    "title": "Trieste, Padua y Venecia",
+    "section": "",
+    "text": "Un emocionante taller, muy instructivo. Una experiencia vibrante. La visita a Padua con el convento de San Antonio fue muy emotiva.\n\n  Bona sera by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Paris.html",
+    "href": "lgrs/Paris.html",
+    "title": "Paris",
+    "section": "",
+    "text": "Me encanta visitar Paris, y explorar lo moderno y lo antiguo sin presiones ni apuros.\n\n  Cheveux by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Monterrey.html",
+    "href": "lgrs/Monterrey.html",
+    "title": "Monterrey",
+    "section": "",
+    "text": "paths &lt;- all_photos %&gt;% \n    filter(grepl(\"Santiago\",place_guess)) %&gt;% \n    pull(image_url)\ncaptions &lt;- all_photos %&gt;% \n    filter(grepl(\"Santiago\",place_guess)) %&gt;% \n    transmute(caption=sprintf(\"&lt;strong&gt;%s&lt;/strong&gt; (&lt;emph&gt;%s&lt;/emph&gt;) by &lt;a href='%s' target='iNat'&gt;NeoMapas @ iNaturalist&lt;/a&gt;\",species_guess,scientific_name,url)) %&gt;% pull()\n\npixgallery(paths, caption=captions)"
+  },
+  {
+    "objectID": "lgrs/Cape-Town.html",
+    "href": "lgrs/Cape-Town.html",
+    "title": "Ciudad del Cabo",
+    "section": "",
+    "text": "Amazing by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Abu-Dhabi.html",
+    "href": "lgrs/Abu-Dhabi.html",
+    "title": "Abu Dhabi",
+    "section": "",
+    "text": "Mi experiencia en Abu Dhabi fue corta, rica en contrastes.\nUn taller de trabajo intenso y productivo, todo un reto.\nDe la parte cultural, lo mejor para mi fue la visita al Louvre de Abu Dhabi."
+  },
+  {
+    "objectID": "lgrs/Abu-Dhabi.html#galería-de-fotos",
+    "href": "lgrs/Abu-Dhabi.html#galería-de-fotos",
+    "title": "Abu Dhabi",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
+  },
+  {
+    "objectID": "lgrs/Stuttgart.html",
+    "href": "lgrs/Stuttgart.html",
+    "title": "Stuttgart",
+    "section": "",
+    "text": "De visita para un taller, ingreso en el mundo de la digitalización de las colecciones biológicas.\nhttps://www.naturkundemuseum-bw.de/\n\n CC BY-SA 4.0, From Wikimewdia"
+  },
+  {
+    "objectID": "lgrs/lgrs-list.html",
+    "href": "lgrs/lgrs-list.html",
+    "title": "Galeria de recuerdos",
+    "section": "",
+    "text": "Una muestra de mi mundo, pequeño pero en expansión.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbu Dhabi\n\n\n\nEmiratos Árabes Unidos\n\n\nVisita\n\n\nTaller\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAltos de Pipe\n\n\n\nVenezuela\n\n\nIVIC\n\n\nAmigos\n\n\nTrabajo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAsunción\n\n\n\nParaguay\n\n\nAmigos\n\n\nVisita\n\n\nCursos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBaeza\n\n\n\nEspaña\n\n\nTaller\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBayreuth\n\n\n\nAlemania\n\n\nBaviera\n\n\nFranken\n\n\nUniversidad\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBogotá\n\n\n\nColombia\n\n\nCongresos\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCampeche y Edzná\n\n\n\nMexico\n\n\nVisita\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaracas\n\n\n\nVenezuela\n\n\nFamilia\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCastilletes\n\n\n\nVenezuela\n\n\nIVIC\n\n\nKricogonia\n\n\nGuayacán\n\n\nTrabajo de campo\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiudad de Panamá\n\n\n\nPanamá\n\n\nEventos\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiudad del Cabo\n\n\n\nRepública de Suráfrica\n\n\nTrabajo\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDarwin\n\n\n\nAustralia\n\n\nConferencia\n\n\nVisita\n\n\nFuego\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGland e Yvoire\n\n\n\nSuiza\n\n\nFrancia\n\n\nIUCN RLE\n\n\nvisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGuarenas\n\n\n\nVenezuela\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGöttingen\n\n\n\nAlemania\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHobart\n\n\n\nAustralia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKigali\n\n\n\nRwanda\n\n\nCongreso\n\n\nVisita\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLondres\n\n\n\nReino Unido\n\n\nMuseos y colecciones\n\n\nAmigos\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaracaibo\n\n\n\nVenezuela\n\n\nFamilia\n\n\nOrigenes\n\n\nIVIC\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMelbourne\n\n\n\nAustralia\n\n\nIUCN RLE\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonterrey\n\n\n\nMexico\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMérida\n\n\n\nVenezuela\n\n\nCongresos\n\n\nTesis\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOaxaca y Monte Albán\n\n\n\nMexico\n\n\nConferencia\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPalenque\n\n\n\nMexico\n\n\nVisita\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParis\n\n\n\nFrancia\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSan Antonio\n\n\n\nVenezuela\n\n\nFamilia\n\n\nAmigos\n\n\nIVIC\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSan Diego\n\n\n\nVenezuela\n\n\nAmigos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStuttgart\n\n\n\nAlemania\n\n\nMuseos y colecciones\n\n\nVisita\n\n\nMariposas\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSydney\n\n\n\nAustralia\n\n\nFamilia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrieste, Padua y Venecia\n\n\n\nItalia\n\n\nTaller\n\n\nVisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTurku y Åland\n\n\n\nFinlandia\n\n\nMariposas\n\n\nConferencia\n\n\nVisita\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVillahermosa\n\n\n\nMexico\n\n\nFamilia\n\n\nSitios arqueológicos\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "lgrs/Darwin.html",
+    "href": "lgrs/Darwin.html",
+    "title": "Darwin",
+    "section": "",
+    "text": "Tortuga bebé by CEBA LEE @ flickr\n\n\nView post on imgur.com"
+  },
+  {
+    "objectID": "lgrs/Darwin.html#galería-de-fotos",
+    "href": "lgrs/Darwin.html#galería-de-fotos",
+    "title": "Darwin",
+    "section": "",
+    "text": "Tortuga bebé by CEBA LEE @ flickr\n\n\nView post on imgur.com"
+  },
+  {
+    "objectID": "lgrs/Darwin.html#observaciones-en-inaturalist",
+    "href": "lgrs/Darwin.html#observaciones-en-inaturalist",
+    "title": "Darwin",
+    "section": "Observaciones en iNaturalist",
+    "text": "Observaciones en iNaturalist"
+  },
+  {
+    "objectID": "lgrs/Asuncion.html",
+    "href": "lgrs/Asuncion.html",
+    "title": "Asunción",
+    "section": "",
+    "text": "Escultura en Asunción by JR Ferrer Paris @ flickr"
+  },
+  {
+    "objectID": "lgrs/Göttingen.html",
+    "href": "lgrs/Göttingen.html",
+    "title": "Göttingen",
+    "section": "",
+    "text": "Visité Göttingen con un grupo de ex-becarios de la DAAD con quienes asistimos al European Conference of Tropical Ecology."
+  },
+  {
+    "objectID": "lgrs/Göttingen.html#galería-de-fotos",
+    "href": "lgrs/Göttingen.html#galería-de-fotos",
+    "title": "Göttingen",
+    "section": "Galería de fotos",
+    "text": "Galería de fotos"
+  },
+  {
+    "objectID": "lgrs/Göttingen.html#observaciones-en-inaturalist",
+    "href": "lgrs/Göttingen.html#observaciones-en-inaturalist",
+    "title": "Göttingen",
+    "section": "Observaciones en iNaturalist",
+    "text": "Observaciones en iNaturalist"
   },
   {
     "objectID": "lgrs/Bogota.html",
@@ -1250,14 +1285,14 @@
     "href": "evnts/2005_Diversitas_I.html",
     "title": "First Diversitas Open Science Conference",
     "section": "",
-    "text": "First Diversitas Open Science Conference. Oaxaca, México, 9-12 Noviembre 2005.\n\n\n\nInformación sobre el evento"
+    "text": "First Diversitas Open Science Conference. Oaxaca, México, 9-12 Noviembre 2005.\n\n\n\nInformación sobre el evento\nPublicación previa al evento"
   },
   {
     "objectID": "evnts/2005_Diversitas_I.html#enlaces",
     "href": "evnts/2005_Diversitas_I.html#enlaces",
     "title": "First Diversitas Open Science Conference",
     "section": "",
-    "text": "Información sobre el evento"
+    "text": "Información sobre el evento\nPublicación previa al evento"
   },
   {
     "objectID": "evnts/2009_TheoEco.html",
