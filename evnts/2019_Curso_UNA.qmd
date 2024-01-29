@@ -16,6 +16,8 @@ Curso en el postgrado de la [Universidad Nacional de la Asunción](https://www.u
 
 ## Galería de fotos
 
+Fotos con los participantes del curso.
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -36,7 +38,7 @@ eventos <- c("Eventos - CEBA LEE", "Eventos - RLE", "Eventos - Venezuela", "Even
 photos <- ggl_photos %>% 
     filter(
         album %in% eventos,
-        grepl("postgrado UNA",mediaItems.description))
+        grepl("postgrado-UNA",output_file))
 
 paths <- sprintf("%s/%s-%s.jpg",img_folder, pull(photos, output_id), pull(photos, output_file))
 captions <- photos %>% transmute(caption=sprintf("<strong>%s</strong>  por <a href='%s' target='googlephotos'>JR Ferrer-Paris @ Google Photos</a>",mediaItems.description,mediaItems.productUrl)) %>% pull

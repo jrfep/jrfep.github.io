@@ -8,7 +8,6 @@ categories:
 
 
 ```{r}
-#| echo: false
 #| warning: false
 #| message: false
 
