@@ -283,7 +283,9 @@ if (!is.null(getalbum$nextPageToken)) {
 
 album_info <- getalbum$albums %>% select(id, title)
 #aIDs <- getalbum %>% filter(albums.shareInfo.isJoined) %>% pull(albums.id)
-aIDs <- album_info %>% filter(title %in% c("Lugares - México", "Lugares - Europa", "Lugares - Sur América", "Eventuales")) %>% pull(id)
+lugares <- c("Lugares - México", "Lugares - Europa", "Lugares - Sur América", "Eventos - Venezuela")
+eventos <- c("Eventos - CEBA LEE", "Eventos - RLE", "Eventos - Venezuela", "Eventos - Mariposas", "Eventos - IVIC")
+aIDs <- album_info %>% filter(title %in% c(lugares, eventos)) %>% pull(id)
 
 photos <- foreach(aID=aIDs, .combine = "bind_rows") %do% {
   dts <-  POST("https://photoslibrary.googleapis.com/v1/mediaItems:search",
@@ -309,7 +311,7 @@ here::i_am("how2/how-to-site.qmd")
 img_folder <- here::here("lgrs","img")
 if (!dir.exists(img_folder))
   dir.create(img_folder)
-lugares <- c("Lugares - Europa", "Lugares - Sur América", "Lugares - México")
+
 for (i in seq(along=photos$mediaItems.id)[photos$album %in% lugares]) {
   photo <- photos %>% slice(i)
   durl <- sprintf("%s=w400-h400-d", photo$mediaItems.baseUrl)
@@ -321,7 +323,7 @@ for (i in seq(along=photos$mediaItems.id)[photos$album %in% lugares]) {
 img_folder <- here::here("evnts","img")
 if (!dir.exists(img_folder))
   dir.create(img_folder)
-for (i in seq(along=photos$mediaItems.id)[photos$album %in% "Eventuales"]) {
+for (i in seq(along=photos$mediaItems.id)[photos$album %in% eventos]) {
   photo <- photos %>% slice(i)
   durl <- sprintf("%s=w400-h400-d", photo$mediaItems.baseUrl)
   dfile <- sprintf("%s/%s-%s.jpg",img_folder, photo$output_id, photo$output_file)

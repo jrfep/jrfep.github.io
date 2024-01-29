@@ -33,10 +33,10 @@ here::i_am("lgrs/Trieste.qmd")
 file_name <- here::here("data","google-photos.rds")
 ggl_photos <- readRDS(file=file_name)
 img_folder <- "img"
-
+eventos <- c("Eventos - CEBA LEE", "Eventos - RLE", "Eventos - Venezuela", "Eventos - Mariposas", "Eventos - IVIC")
 photos <- ggl_photos %>% 
     filter(
-        album %in% "Eventuales",
+        album %in% eventos,
         grepl("Abu Dhabi",mediaItems.description))
 
 paths <- sprintf("%s/%s-%s.jpg",img_folder, pull(photos, output_id), pull(photos, output_file))
