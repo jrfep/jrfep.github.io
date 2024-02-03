@@ -1,6 +1,6 @@
 ---
 title: "Mi producción científica"
-date: "04/09/2022"
+date: "29 Jan 2024"
 ---
 
 ```{r setup, include = FALSE, cache = FALSE,message=FALSE}

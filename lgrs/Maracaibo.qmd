@@ -68,3 +68,23 @@ c("BO7Hzhx", "jFlMDBE"))
 captions <- sprintf("Imágen por <a href='https://i.imgur.com/%s.jpg' target='imgur'>NeoMapas @ imgur</a>",  c("BO7Hzhx", "jFlMDBE"))
 pixgallery(paths, caption=captions)
 ```
+
+## Observaciones en `iNaturalist`
+
+
+```{r}
+file_name <- here::here("data","iNaturalist-obs-NeoMapas.rds")
+inat_photos <- readRDS(file=file_name) 
+seleccion <- "Maracaibo"
+```
+
+```{r}
+paths <- inat_photos %>% 
+    filter(grepl(seleccion,place_guess)) %>% 
+    pull(image_url)
+captions <- inat_photos %>% 
+    filter(grepl(seleccion,place_guess)) %>% 
+    transmute(caption=sprintf("<strong>%s</strong> (<emph>%s</emph>) by <a href='%s' target='iNat'>NeoMapas @ iNaturalist</a>",species_guess,scientific_name,url)) %>% pull()
+
+pixgallery(paths, caption=captions)
+```

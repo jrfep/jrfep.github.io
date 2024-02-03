@@ -1,6 +1,6 @@
 ---
 title: "List of research outputs"
-date: "04/09/2022"
+date: "29 Jan 2024"
 bibliography: 
   - ../bibTeX/peer-review.bibtex
 nocite: |
