@@ -1,0 +1,18 @@
+{
+  "hash": "90ac469ecc07cf64663267ca595c0977",
+  "result": {
+    "markdown": "---\ntitle: Białowieża\ncategories:\n - Polonia\n - Amigos\n - Visita\neditor_options: \n  chunk_output_type: console\n---\n\n\nVisitando a mi Adita... ;)\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div id=\"htmlwidget-d4550c1db971fc621907\" style=\"width:100%;height:100%;\" class=\"pixgallery html-widget\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-d4550c1db971fc621907\">{\"x\":{\"path\":[\"https://inaturalist-open-data.s3.amazonaws.com/photos/350846139/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350846080/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350845759/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350845540/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350844938/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350844088/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350452308/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350452044/medium.jpeg\",\"https://inaturalist-open-data.s3.amazonaws.com/photos/350451754/medium.jpeg\"],\"caption\":[\"<strong>Hoof Fungus<\\/strong> (<emph>Fomes fomentarius<\\/emph>) by <a href='https://www.inaturalist.org/observations/198995064' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Phellinus<\\/strong> (<emph>Phellinus<\\/emph>) by <a href='https://www.inaturalist.org/observations/198995063' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Red Deer<\\/strong> (<emph>Cervus elaphus<\\/emph>) by <a href='https://www.inaturalist.org/observations/198994860' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Tree-skirt Moss<\\/strong> (<emph>Pseudanomodon attenuatus<\\/emph>) by <a href='https://www.inaturalist.org/observations/198994678' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Wild Boar<\\/strong> (<emph>Sus scrofa<\\/emph>) by <a href='https://www.inaturalist.org/observations/198994474' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Eurasian Beaver<\\/strong> (<emph>Castor fiber<\\/emph>) by <a href='https://www.inaturalist.org/observations/198993821' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Great Tit<\\/strong> (<emph>Parus major<\\/emph>) by <a href='https://www.inaturalist.org/observations/198793448' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Oakmoss<\\/strong> (<emph>Evernia prunastri<\\/emph>) by <a href='https://www.inaturalist.org/observations/198793328' target='iNat'>NeoMapas @ iNaturalist<\\/a>\",\"<strong>Eurasian Red Squirrel<\\/strong> (<emph>Sciurus vulgaris<\\/emph>) by <a href='https://www.inaturalist.org/observations/198793172' target='iNat'>NeoMapas @ iNaturalist<\\/a>\"],\"dim\":\"200px\",\"gap\":\"6px\",\"shuffle\":false,\"type\":\"grid\"},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../site_libs/simplelightbox-0/css/simplelightbox.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/simplelightbox-0/js/simplelightbox.js\"></script>\n<link href=\"../site_libs/pixgallery-0/css/pixgallery.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pixgallery-binding-0.0.2.3000/pixgallery.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
