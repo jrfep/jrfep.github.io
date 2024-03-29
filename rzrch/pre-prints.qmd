@@ -1,0 +1,53 @@
+---
+title: "Mis preprints"
+date: "02 Mar 2024"
+---
+
+```{r setup, include = FALSE, cache = FALSE,message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RefManageR)
+here::i_am("rzrch/research-outputs.qmd")
+
+BibOptions(check.entries = FALSE, style = "markdown", cite.style = "authoryear",
+           bib.style = "authoryear", hyperlink = FALSE)
+```
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+bib2 <- ReadBib(here::here("bibTeX","preprints.bibtex"), check = FALSE)
+NoCite(bib = bib2, 1:length(bib2), .opts = list(hyperlink = FALSE))
+```
+
+Hasta la fecha he registrado `r length(bib2)` documentos en servidores de "pre-prints". 
+
+## Material suplementario
+
+Uno de ellos es un reporte que forma parte del material suplementario de un artículo en prensa:
+
+```{r results = "asis", echo = FALSE}
+supps <- c("Ferrer-Paris_Llambi_Melfo_Keith_2023")
+PrintBibliography(bib2[supps], .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+## No publicados
+
+Otros son borradores de manuscritos que no han sido publicados todavía:
+```{r results = "asis", echo = FALSE}
+unpubs <- c("ferrer-paris_JBM_acustico_2015", "ferrer-paris_et_al_E_impressicolis_2023")
+PrintBibliography(bib2[unpubs], .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```
+
+## Pre-prints publicados
+
+Los demás han sido depositados como versiones previas de manuscritos que luego fueron publicados.
+
+::: {.column-margin}
+Usando el formato de Biblatex, esta información se coloca en el campo `eprint` según [este post](https://tex.stackexchange.com/questions/332537/biblatex-inserts-dead-link-when-citing-an-eprint?noredirect=1&lq=1).
+:::
+
+
+```{r results = "asis", echo = FALSE}
+otros <- unname(unlist(bib2$key))
+otros <- otros[!otros %in% c(unpubs, supps)]
+PrintBibliography(bib2[otros], .opts = list(check.entries = FALSE,  max.names=100, sorting = "ydnt"))
+```

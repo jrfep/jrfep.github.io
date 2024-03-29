@@ -16,7 +16,7 @@ ResBaz [Sydney](/lgrs/Sydney.qmd), 23 al 25 de Noviembre de 2021
 
 ## Logo 
 
-![ResBaz logo](https://ardc.edu.au/wp-content/uploads/2023/09/resbaz-sydney-2023-feature-image-583-x-345-580x345.png)
+![ResBaz logo](https://ardc.edu.au/wp-content/uploads/2023/09/resbaz-sydney-2023-feature-image-583-x-345-580x345.png){.preview-image}
 
 ## Enlaces
 

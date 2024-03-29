@@ -14,4 +14,4 @@ The conference of the Ecological Society of Australia and the Society for Conser
 
 ## Logo 
 
-![Conference header](https://www.esascbo2022.org.au/wp-content/uploads/2022/02/Conference-header.png)
+![Conference header](https://www.esascbo2022.org.au/wp-content/uploads/2022/02/Conference-header.png){.preview-image}

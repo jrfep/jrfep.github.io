@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -97,6 +104,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -104,9 +138,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">J.R. Ferrer-Paris</span>
     </a>
@@ -118,97 +152,99 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target=""><i class="bi bi-fa-home" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-fa-home" role="img">
 </i> 
- <span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
+<span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> Ciencia y academia</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-landmark--ciencia-y-academia">    
         <li>
-    <a class="dropdown-item" href="../rzrch/my-publications.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-publications.html">
  <span class="dropdown-text">Mis publicaciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/research-outputs.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/pre-prints.html">
+ <span class="dropdown-text">Mis pre-prints</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/research-outputs.html">
  <span class="dropdown-text">Productos científicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html">
  <span class="dropdown-text">Proyectos reproducibles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html">
  <span class="dropdown-text">Repositorios / código</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evnts/evnt-list.html" rel="" target="">
+    <a class="dropdown-item" href="../evnts/evnt-list.html">
  <span class="dropdown-text">Eventos</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-leaf--biodiversidad" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-leaf--biodiversidad" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text"><i class="fa-solid fa-leaf" aria-label="leaf"></i> Biodiversidad</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-leaf--biodiversidad">    
         <li>
-    <a class="dropdown-item" href="../ecos/my-favs.html" rel="" target="">
+    <a class="dropdown-item" href="../ecos/my-favs.html">
  <span class="dropdown-text">Mis ecosistemas favoritos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../taxa/my-favs.html" rel="" target="">
+    <a class="dropdown-item" href="../taxa/my-favs.html">
  <span class="dropdown-text">Mis especies favoritas</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-smile--homo-ludens" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-smile--homo-ludens" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text"><i class="fa-solid fa-smile" aria-label="smile"></i> Homo ludens</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-smile--homo-ludens">    
         <li>
-    <a class="dropdown-item" href="../lgrs/lgrs-list.html" rel="" target="">
+    <a class="dropdown-item" href="../lgrs/lgrs-list.html">
  <span class="dropdown-text"><i class="fa-solid fa-world" aria-label="world"></i> Mi mundo</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target=""><i class="bi bi-futbol" role="img">
-</i> 
- <span class="dropdown-text">Futbol</span></a>
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html">
+ <span class="dropdown-text"><i class="fa-solid fa-futbol" aria-label="futbol"></i> Futbol</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/ulysses.html" rel="" target=""><i class="bi bi-book" role="img">
+    <a class="dropdown-item" href="../j4fun/ulysses.html"><i class="bi bi-book" role="img">
 </i> 
  <span class="dropdown-text">Ulysses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html" rel="" target=""><i class="bi bi-family" role="img">
-</i> 
- <span class="dropdown-text">Todos los nombres</span></a>
+    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html">
+ <span class="dropdown-text"><i class="fa-solid fa-family" aria-label="family"></i> Todos los nombres</span></a>
   </li>  
     </ul>
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-question" role="img">
 </i> 
  <span class="menu-text">How to…</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
         <li>
-    <a class="dropdown-item" href="../how2/how-to-site.html" rel="" target="">
+    <a class="dropdown-item" href="../how2/how-to-site.html">
  <span class="dropdown-text">(re-)create this site</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -218,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(38)</span></div><div class="category" data-category="Alemania">Alemania <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Asistente">Asistente <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Australia">Australia <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Cartel">Cartel <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Coautor">Coautor <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Colombia">Colombia <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Conferencia">Conferencia <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Congreso">Congreso <span class="quarto-category-count">(16)</span></div><div class="category" data-category="Curso">Curso <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Czechia">Czechia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ecuador">Ecuador <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Emiratos Árabes Unidos">Emiratos Árabes Unidos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="España">España <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Finland">Finland <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Francia">Francia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Instructor">Instructor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Internacional">Internacional <span class="quarto-category-count">(18)</span></div><div class="category" data-category="Invitado">Invitado <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Italia">Italia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Jornadas">Jornadas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Mariposas">Mariposas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="México">México <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Nacional">Nacional <span class="quarto-category-count">(15)</span></div><div class="category" data-category="NeoMapas">NeoMapas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Oso frontino">Oso frontino <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Panamá">Panamá <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Paraguay">Paraguay <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Perú">Perú <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Polonia">Polonia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ponencia">Ponencia <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Ponente">Ponente <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Postgrado">Postgrado <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Presentación">Presentación <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Regional">Regional <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Reino Unido">Reino Unido <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reunión">Reunión <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Rwanda">Rwanda <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Seminario">Seminario <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Simposio">Simposio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TEAM">TEAM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Taller">Taller <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Tanzania">Tanzania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Trinidad &amp; Tobago">Trinidad &amp; Tobago <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UICN">UICN <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UICN LRE">UICN LRE <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Venezuela">Venezuela <span class="quarto-category-count">(10)</span></div><div class="category" data-category="Virtual">Virtual <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Áreas Protegidas">Áreas Protegidas <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(39)</span></div><div class="category" data-category="Alemania">Alemania <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Asistente">Asistente <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Australia">Australia <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Cartel">Cartel <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Coautor">Coautor <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Colombia">Colombia <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Conferencia">Conferencia <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Congreso">Congreso <span class="quarto-category-count">(16)</span></div><div class="category" data-category="Cumbre">Cumbre <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Curso">Curso <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Czechia">Czechia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ecuador">Ecuador <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Emiratos Árabes Unidos">Emiratos Árabes Unidos <span class="quarto-category-count">(1)</span></div><div class="category" data-category="España">España <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Finland">Finland <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Francia">Francia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Instructor">Instructor <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Internacional">Internacional <span class="quarto-category-count">(19)</span></div><div class="category" data-category="Invitado">Invitado <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Italia">Italia <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Jornadas">Jornadas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Mariposas">Mariposas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="México">México <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Nacional">Nacional <span class="quarto-category-count">(15)</span></div><div class="category" data-category="NeoMapas">NeoMapas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Oso frontino">Oso frontino <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Panamá">Panamá <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Panelista">Panelista <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Paraguay">Paraguay <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Perú">Perú <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Polonia">Polonia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ponencia">Ponencia <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Ponente">Ponente <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Postgrado">Postgrado <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Presentación">Presentación <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Regional">Regional <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Reino Unido">Reino Unido <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reunión">Reunión <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Rwanda">Rwanda <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Seminario">Seminario <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Simposio">Simposio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TEAM">TEAM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Taller">Taller <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Tanzania">Tanzania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Trinidad &amp; Tobago">Trinidad &amp; Tobago <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UICN">UICN <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UICN LRE">UICN LRE <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Venezuela">Venezuela <span class="quarto-category-count">(10)</span></div><div class="category" data-category="Virtual">Virtual <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Áreas Protegidas">Áreas Protegidas <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -237,7 +273,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 
 
@@ -263,19 +301,19 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Italia,Conferencia,Internacional,Coautor" data-listing-date-sort="1718568000000" data-listing-file-modified-sort="1705613250297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="Italia,Conferencia,Internacional,Coautor" data-listing-date-sort="1718546400000" data-listing-file-modified-sort="1709355906069" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
 <div class="thumbnail">
-<p><a href="../evnts/2024_eccb.html"> <p class="card-img-top"><img src="https://eccb2024.eu/wp-content/uploads/2023/04/Logo-ECCB_def_land_fullcol-per-sito-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2024_eccb.html" class="no-external"></a></p><a href="../evnts/2024_eccb.html" class="no-external">
+<p class="card-img-top"><img src="https://eccb2024.eu/wp-content/uploads/2023/04/Logo-ECCB_def_land_fullcol-per-sito-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2024_eccb.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2024_eccb.html">
 <h3 class="no-anchor listing-title">
-7th European Congress of Conservation Biology 2024
+<a href="../evnts/2024_eccb.html" class="no-external">7th European Congress of Conservation Biology 2024</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2024_eccb.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Italia'); return false;">
 Italia
@@ -290,33 +328,31 @@ Internacional
 Coautor
 </div>
 </div>
-<a href="../evnts/2024_eccb.html">
 <div class="listing-description">
-ECCB 2024 – 7th European Congress of Conservation Biology – “Biodiversity positive by 2030”. 17-21 June 2024 – Bologna, Italy
+<a href="../evnts/2024_eccb.html" class="no-external">ECCB 2024 – 7th European Congress of Conservation Biology – “Biodiversity positive by 2030”. 17-21 June 2024 – Bologna, Italy</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2024_eccb.html">
+<a href="../evnts/2024_eccb.html" class="no-external">
 <div class="listing-date">
 17 jun 2024
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Polonia,Seminario,Ponencia" data-listing-date-sort="1707163200000" data-listing-file-modified-sort="1706899605191" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="Polonia,Seminario,Ponencia" data-listing-date-sort="1707138000000" data-listing-file-modified-sort="1709356029819" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
 <div class="thumbnail">
-<p><a href="../evnts/2024_MRI_46_OpenSeminar.html"> <p class="card-img-top"><img src="https://ibs.bialowieza.pl/wp-content/uploads/2024/02/300-scaled.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external"></a></p><a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external">
+<p class="card-img-top"><img src="https://ibs.bialowieza.pl/wp-content/uploads/2024/02/300-scaled.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2024_MRI_46_OpenSeminar.html">
 <h3 class="no-anchor listing-title">
-MRI PAS Open Seminar #46
+<a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external">MRI PAS Open Seminar #46</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Polonia'); return false;">
 Polonia
@@ -328,33 +364,31 @@ Seminario
 Ponencia
 </div>
 </div>
-<a href="../evnts/2024_MRI_46_OpenSeminar.html">
 <div class="listing-description">
-Mammal Research Institute, Polish Academy of Science. Open Seminar # 46. Białowieża Poland.
+<a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external">Mammal Research Institute, Polish Academy of Science. Open Seminar # 46. Białowieża Poland.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2024_MRI_46_OpenSeminar.html">
+<a href="../evnts/2024_MRI_46_OpenSeminar.html" class="no-external">
 <div class="listing-date">
 6 feb 2024
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Czechia,Conferencia,Internacional,Coautor" data-listing-date-sort="1704571200000" data-listing-file-modified-sort="1705614305187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="2" data-categories="Czechia,Conferencia,Internacional,Coautor" data-listing-date-sort="1704546000000" data-listing-file-modified-sort="1709355928955" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <div class="thumbnail">
-<p><a href="../evnts/2024_Biogeography_Prague.html"> <p class="card-img-top"><img src="https://www.biogeography.org/wp-content/uploads/2017/06/IBS_logo_ret.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2024_Biogeography_Prague.html" class="no-external"></a></p><a href="../evnts/2024_Biogeography_Prague.html" class="no-external">
+<p class="card-img-top"><img src="https://www.biogeography.org/wp-content/uploads/2017/06/IBS_logo_ret.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2024_Biogeography_Prague.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2024_Biogeography_Prague.html">
 <h3 class="no-anchor listing-title">
-IBS 11th Biennial Conference – Prague 2024
+<a href="../evnts/2024_Biogeography_Prague.html" class="no-external">IBS 11th Biennial Conference – Prague 2024</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2024_Biogeography_Prague.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Czechia'); return false;">
 Czechia
@@ -369,33 +403,31 @@ Internacional
 Coautor
 </div>
 </div>
-<a href="../evnts/2024_Biogeography_Prague.html">
 <div class="listing-description">
-International Biogeography Society (IBS) 11th Biennial Conference – Prague 2024
+<a href="../evnts/2024_Biogeography_Prague.html" class="no-external">International Biogeography Society (IBS) 11th Biennial Conference – Prague 2024</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2024_Biogeography_Prague.html">
+<a href="../evnts/2024_Biogeography_Prague.html" class="no-external">
 <div class="listing-date">
 7 ene 2024
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Australia,Congreso,Nacional,Ponente" data-listing-date-sort="1688155200000" data-listing-file-modified-sort="1705597540305" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="Australia,Congreso,Nacional,Ponente" data-listing-date-sort="1688133600000" data-listing-file-modified-sort="1709355923694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="188">
 <div class="thumbnail">
-<p><a href="../evnts/2023_ESAus.html"> <p class="card-img-top"><img src="https://live.staticflickr.com/65535/53407767550_36ae60fa3f.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2023_ESAus.html" class="no-external"></a></p><a href="../evnts/2023_ESAus.html" class="no-external">
+<p class="card-img-top"><img src="https://esa2023.org.au/wp-content/uploads/2022/10/ESA2023-logos-01e-02.svg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2023_ESAus.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2023_ESAus.html">
 <h3 class="no-anchor listing-title">
-Ecological Society of Australia 2023
+<a href="../evnts/2023_ESAus.html" class="no-external">Ecological Society of Australia 2023</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2023_ESAus.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Australia'); return false;">
 Australia
@@ -410,33 +442,31 @@ Nacional
 Ponente
 </div>
 </div>
-<a href="../evnts/2023_ESAus.html">
 <div class="listing-description">
-Conference of the Ecological Society of Australia. 3–7 Julio 2023, Darwin, Northern Territory
+<a href="../evnts/2023_ESAus.html" class="no-external">Conference of the Ecological Society of Australia. 3–7 Julio 2023, Darwin, Northern Territory</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2023_ESAus.html">
+<a href="../evnts/2023_ESAus.html" class="no-external">
 <div class="listing-date">
 1 jul 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Ponencia,Virtual,Regional,Seminario,UICN" data-listing-date-sort="1681156800000" data-listing-file-modified-sort="1705596880297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-categories="Ponencia,Virtual,Regional,Seminario,UICN" data-listing-date-sort="1681135200000" data-listing-file-modified-sort="1707871995322" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <div class="thumbnail">
-<p><a href="../evnts/2023_CEM_seminario_virtual.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external"></a></p><a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2023_CEM_seminario_virtual.html">
 <h3 class="no-anchor listing-title">
-Seminario virtual UICN CGE
+<a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external">Seminario virtual UICN CGE</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Ponencia'); return false;">
 Ponencia
@@ -454,33 +484,31 @@ Seminario
 UICN
 </div>
 </div>
-<a href="../evnts/2023_CEM_seminario_virtual.html">
 <div class="listing-description">
-Seminario virtual UICN CGE
+<a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external">Seminario virtual UICN CGE</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2023_CEM_seminario_virtual.html">
+<a href="../evnts/2023_CEM_seminario_virtual.html" class="no-external">
 <div class="listing-date">
 11 abr 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Australia,Congreso,Nacional,Asistente" data-listing-date-sort="1669579200000" data-listing-file-modified-sort="1705597632778" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="5" data-categories="Australia,Congreso,Nacional,Asistente" data-listing-date-sort="1669554000000" data-listing-file-modified-sort="1709356076803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
 <div class="thumbnail">
-<p><a href="../evnts/2022_ESA-SCBO.html"> <p class="card-img-top"><img src="https://www.esascbo2022.org.au/wp-content/uploads/2022/02/Conference-header.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2022_ESA-SCBO.html" class="no-external"></a></p><a href="../evnts/2022_ESA-SCBO.html" class="no-external">
+<p class="card-img-top"><img src="https://www.esascbo2022.org.au/wp-content/uploads/2022/02/Conference-header.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2022_ESA-SCBO.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2022_ESA-SCBO.html">
 <h3 class="no-anchor listing-title">
-Ecological Society of Australia 2022
+<a href="../evnts/2022_ESA-SCBO.html" class="no-external">Ecological Society of Australia 2022</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2022_ESA-SCBO.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Australia'); return false;">
 Australia
@@ -495,33 +523,73 @@ Nacional
 Asistente
 </div>
 </div>
-<a href="../evnts/2022_ESA-SCBO.html">
 <div class="listing-description">
-The conference of the Ecological Society of Australia and the Society for Conservation Biology Oceania will be held in Wollongong, NSW from 28 November to 2 December 2022.
+<a href="../evnts/2022_ESA-SCBO.html" class="no-external">The conference of the Ecological Society of Australia and the Society for Conservation Biology Oceania will be held in Wollongong, NSW from 28 November to 2 December 2022.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2022_ESA-SCBO.html">
+<a href="../evnts/2022_ESA-SCBO.html" class="no-external">
 <div class="listing-date">
 28 nov 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Rwanda,Congreso,Internacional,UICN LRE,Áreas Protegidas,Taller" data-listing-date-sort="1656619200000" data-listing-file-modified-sort="1706504474644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="6" data-categories="Virtual,Cumbre,Internacional,UICN LRE,Panelista" data-listing-date-sort="1661954400000" data-listing-file-modified-sort="1711690211298" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87">
 <div class="thumbnail">
-<p><a href="../evnts/2022_APAC.html"> <p class="card-img-top"><img src="https://apacongress.africa/wp-content/uploads/2021/04/apac-web-logo-retina.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2022_Science_UNGA77.html" class="no-external"></a></p><a href="../evnts/2022_Science_UNGA77.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2022_Science_UNGA77.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2022_APAC.html">
 <h3 class="no-anchor listing-title">
-IUCN Africa Protected Area Congress, APAC
+<a href="../evnts/2022_Science_UNGA77.html" class="no-external">Science Summit at the 77 United Nation General Assembly</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2022_Science_UNGA77.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Virtual'); return false;">
+Virtual
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Cumbre'); return false;">
+Cumbre
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Internacional'); return false;">
+Internacional
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UICN LRE'); return false;">
+UICN LRE
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Panelista'); return false;">
+Panelista
+</div>
+</div>
+<div class="listing-description">
+<a href="../evnts/2022_Science_UNGA77.html" class="no-external">Science Summit at the 77 United Nation General Assembly. Septiembre 2022</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../evnts/2022_Science_UNGA77.html" class="no-external">
+<div class="listing-date">
+1 sept 2022
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="Rwanda,Congreso,Internacional,UICN LRE,Áreas Protegidas,Taller" data-listing-date-sort="1656597600000" data-listing-file-modified-sort="1709356076803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="200">
+<div class="thumbnail">
+<p><a href="../evnts/2022_APAC.html" class="no-external"></a></p><a href="../evnts/2022_APAC.html" class="no-external">
+<p class="card-img-top"><img src="https://apacongress.africa/wp-content/uploads/2021/04/apac-web-logo-retina.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2022_APAC.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../evnts/2022_APAC.html" class="no-external">IUCN Africa Protected Area Congress, APAC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../evnts/2022_APAC.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Rwanda'); return false;">
 Rwanda
@@ -542,33 +610,31 @@ UICN LRE
 Taller
 </div>
 </div>
-<a href="../evnts/2022_APAC.html">
 <div class="listing-description">
-IUCN Africa Protected Area Congress, APAC
+<a href="../evnts/2022_APAC.html" class="no-external">IUCN Africa Protected Area Congress, APAC</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2022_APAC.html">
+<a href="../evnts/2022_APAC.html" class="no-external">
 <div class="listing-date">
 1 jul 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Australia,Ponencia,Virtual,Regional" data-listing-date-sort="1637611200000" data-listing-file-modified-sort="1705191549831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="8" data-categories="Australia,Ponencia,Virtual,Regional" data-listing-date-sort="1637586000000" data-listing-file-modified-sort="1709356107416" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
 <div class="thumbnail">
-<p><a href="../evnts/2021_ResBaz.html"> <p class="card-img-top"><img src="https://ardc.edu.au/wp-content/uploads/2023/09/resbaz-sydney-2023-feature-image-583-x-345-580x345.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2021_ResBaz.html" class="no-external"></a></p><a href="../evnts/2021_ResBaz.html" class="no-external">
+<p class="card-img-top"><img src="https://ardc.edu.au/wp-content/uploads/2023/09/resbaz-sydney-2023-feature-image-583-x-345-580x345.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2021_ResBaz.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2021_ResBaz.html">
 <h3 class="no-anchor listing-title">
-ResBaz Sydney
+<a href="../evnts/2021_ResBaz.html" class="no-external">ResBaz Sydney</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2021_ResBaz.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Australia'); return false;">
 Australia
@@ -583,33 +649,31 @@ Virtual
 Regional
 </div>
 </div>
-<a href="../evnts/2021_ResBaz.html">
 <div class="listing-description">
-ResBaz Sydney, 23 al 25 de Noviembre de 2021
+<a href="../evnts/2021_ResBaz.html" class="no-external">ResBaz Sydney, 23 al 25 de Noviembre de 2021</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2021_ResBaz.html">
+<a href="../evnts/2021_ResBaz.html" class="no-external">
 <div class="listing-date">
 23 nov 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Australia,Congreso,Nacional,Virtual" data-listing-date-sort="1637524800000" data-listing-file-modified-sort="1705191549831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="9" data-categories="Australia,Congreso,Nacional,Virtual" data-listing-date-sort="1637499600000" data-listing-file-modified-sort="1707871995321" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
 <div class="thumbnail">
-<p><a href="../evnts/2021_ESAus.html"> <p class="card-img-top"><img src="https://scontent.fsyd10-1.fna.fbcdn.net/v/t39.30808-6/263489603_1597546880595728_7783816500831212008_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=105&ccb=1-7&_nc_sid=5b42c2&_nc_ohc=oqjiH4e_MRgAX_WwYj7&_nc_ht=scontent.fsyd10-1.fna&oh=00_AfCHzHnFrVywFcg-Uht3qrEN4uqUWiG7YXWCSMj8z-btDQ&oe=65823084https://scontent.fsyd10-1.fna.fbcdn.net/v/t39.30808-6/263489603_1597546880595728_7783816500831212008_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=105&ccb=1-7&_nc_sid=5b42c2&_nc_ohc=oqjiH4e_MRgAX_WwYj7&_nc_ht=scontent.fsyd10-1.fna&oh=00_AfCHzHnFrVywFcg-Uht3qrEN4uqUWiG7YXWCSMj8z-btDQ&oe=65823084" alt="Presentación virtual"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2021_ESAus.html" class="no-external"></a></p><a href="../evnts/2021_ESAus.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2021_ESAus.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2021_ESAus.html">
 <h3 class="no-anchor listing-title">
-Ecological Society of Australia 2021
+<a href="../evnts/2021_ESAus.html" class="no-external">Ecological Society of Australia 2021</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2021_ESAus.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Australia'); return false;">
 Australia
@@ -624,33 +688,31 @@ Nacional
 Virtual
 </div>
 </div>
-<a href="../evnts/2021_ESAus.html">
 <div class="listing-description">
-2021 Ecological Society of Australia Conference, 22 to 26 November.
+<a href="../evnts/2021_ESAus.html" class="no-external">2021 Ecological Society of Australia Conference, 22 to 26 November.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2021_ESAus.html">
+<a href="../evnts/2021_ESAus.html" class="no-external">
 <div class="listing-date">
 22 nov 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Francia,Conferencia,Internacional,Virtual" data-listing-date-sort="1630612800000" data-listing-file-modified-sort="1705191549831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="10" data-categories="Francia,Conferencia,Internacional,Virtual" data-listing-date-sort="1630591200000" data-listing-file-modified-sort="1709356073177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="40">
 <div class="thumbnail">
-<p><a href="../evnts/2020_IUCN_Marseille.html"> <p class="card-img-top"><img src="https://www.iucncongress2020.org/profiles/iucn_master/themes/custom/iucnuapp_theme/img/uicn_logo_en.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2020_IUCN_Marseille.html" class="no-external"></a></p><a href="../evnts/2020_IUCN_Marseille.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2020_IUCN_Marseille.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2020_IUCN_Marseille.html">
 <h3 class="no-anchor listing-title">
-IUCN World Conservation Congress Marseille 2021
+<a href="../evnts/2020_IUCN_Marseille.html" class="no-external">IUCN World Conservation Congress Marseille 2021</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2020_IUCN_Marseille.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Francia'); return false;">
 Francia
@@ -665,33 +727,31 @@ Internacional
 Virtual
 </div>
 </div>
-<a href="../evnts/2020_IUCN_Marseille.html">
 <div class="listing-description">
-IUCN World Conservation Congress Marseille 2021
+<a href="../evnts/2020_IUCN_Marseille.html" class="no-external">IUCN World Conservation Congress Marseille 2021</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2020_IUCN_Marseille.html">
+<a href="../evnts/2020_IUCN_Marseille.html" class="no-external">
 <div class="listing-date">
 3 sept 2021
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Venezuela,Congreso,Nacional,Virtual,Coautor" data-listing-date-sort="1574020800000" data-listing-file-modified-sort="1705597529606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
+<div class="quarto-post image-right" data-index="11" data-categories="Venezuela,Congreso,Nacional,Virtual,Coautor" data-listing-date-sort="1573995600000" data-listing-file-modified-sort="1709356123623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2031">
 <div class="thumbnail">
-<p><a href="../evnts/2019_CVE_XII.html"> <p class="card-img-top"><img src="https://svecologia.org/wp-content/uploads/2022/03/Mini-libro-resumenes-4.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2019_CVE_XII.html" class="no-external"></a></p><a href="../evnts/2019_CVE_XII.html" class="no-external">
+<p class="card-img-top"><img src="https://svecologia.org/wp-content/uploads/2022/03/Mini-libro-resumenes-4.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2019_CVE_XII.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2019_CVE_XII.html">
 <h3 class="no-anchor listing-title">
-XII Congreso Venezolano de Ecología
+<a href="../evnts/2019_CVE_XII.html" class="no-external">XII Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2019_CVE_XII.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -709,33 +769,31 @@ Virtual
 Coautor
 </div>
 </div>
-<a href="../evnts/2019_CVE_XII.html">
 <div class="listing-description">
-XII Congreso Venezolano de Ecología. Universidad Simón Bolívar, 18-21 de noviembre 2019
+<a href="../evnts/2019_CVE_XII.html" class="no-external">XII Congreso Venezolano de Ecología. Universidad Simón Bolívar, 18-21 de noviembre 2019</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2019_CVE_XII.html">
+<a href="../evnts/2019_CVE_XII.html" class="no-external">
 <div class="listing-date">
 18 nov 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Paraguay,Curso,Postgrado,Instructor,Invitado" data-listing-date-sort="1556654400000" data-listing-file-modified-sort="1706505622379" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="12" data-categories="Paraguay,Curso,Postgrado,Instructor,Invitado" data-listing-date-sort="1556632800000" data-listing-file-modified-sort="1707871995321" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="101">
 <div class="thumbnail">
-<p><a href="../evnts/2019_Curso_UNA.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2019_Curso_UNA.html" class="no-external"></a></p><a href="../evnts/2019_Curso_UNA.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2019_Curso_UNA.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2019_Curso_UNA.html">
 <h3 class="no-anchor listing-title">
-Curso en postgrado de la UNA
+<a href="../evnts/2019_Curso_UNA.html" class="no-external">Curso en postgrado de la UNA</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2019_Curso_UNA.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Paraguay'); return false;">
 Paraguay
@@ -753,33 +811,31 @@ Instructor
 Invitado
 </div>
 </div>
-<a href="../evnts/2019_Curso_UNA.html">
 <div class="listing-description">
-Curso en el postgrado de la Universidad Nacional de la Asunción, en Asunción, Paraguay.
+<a href="../evnts/2019_Curso_UNA.html" class="no-external">Curso en el postgrado de la Universidad Nacional de la Asunción, en Asunción, Paraguay.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2019_Curso_UNA.html">
+<a href="../evnts/2019_Curso_UNA.html" class="no-external">
 <div class="listing-date">
 1 may 2019
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Ecuador,Jornadas,Internacional,Ponente,Invitado" data-listing-date-sort="1532462400000" data-listing-file-modified-sort="1706501674859" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="Ecuador,Jornadas,Internacional,Ponente,Invitado" data-listing-date-sort="1532440800000" data-listing-file-modified-sort="1707871995320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="96">
 <div class="thumbnail">
-<p><a href="../evnts/2018_Jornada_Ambiental_UEES.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external"></a></p><a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2018_Jornada_Ambiental_UEES.html">
 <h3 class="no-anchor listing-title">
-VII Jornadas Ambientales, UEES
+<a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external">VII Jornadas Ambientales, UEES</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Ecuador'); return false;">
 Ecuador
@@ -797,33 +853,31 @@ Ponente
 Invitado
 </div>
 </div>
-<a href="../evnts/2018_Jornada_Ambiental_UEES.html">
 <div class="listing-description">
-VII Jornadas Ambientales, Universidad Espíritu Santo. Organizadas y coordinadas por la Dra. Ileana Herrera.
+<a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external">VII Jornadas Ambientales, Universidad Espíritu Santo. Organizadas y coordinadas por la Dra. Ileana Herrera.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2018_Jornada_Ambiental_UEES.html">
+<a href="../evnts/2018_Jornada_Ambiental_UEES.html" class="no-external">
 <div class="listing-date">
 25 jul 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Trinidad &amp; Tobago,Conferencia,Internacional,Ponente" data-listing-date-sort="1532462400000" data-listing-file-modified-sort="1706504045084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="14" data-categories="Trinidad &amp; Tobago,Conferencia,Internacional,Ponente" data-listing-date-sort="1532440800000" data-listing-file-modified-sort="1709356129558" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="178">
 <div class="thumbnail">
-<p><a href="../evnts/2018_LACA_I.html"> <p class="card-img-top"><img src="https://images.squarespace-cdn.com/content/v1/59ece4196f4ca3771ef086ff/1512337248275-QD9IXSRO9IF3MXDRO5VI/LACCCB2018%404xminim.png?format=1500w"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2018_LACA_I.html" class="no-external"></a></p><a href="../evnts/2018_LACA_I.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2018_LACA_I.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2018_LACA_I.html">
 <h3 class="no-anchor listing-title">
-First Latin American and Caribbean Congress for Conservation Biology
+<a href="../evnts/2018_LACA_I.html" class="no-external">First Latin American and Caribbean Congress for Conservation Biology</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2018_LACA_I.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Trinidad &amp; Tobago'); return false;">
 Trinidad &amp; Tobago
@@ -838,33 +892,31 @@ Internacional
 Ponente
 </div>
 </div>
-<a href="../evnts/2018_LACA_I.html">
 <div class="listing-description">
-First Latin American and Caribbean Congress for Conservation Biology. St.&nbsp;Augustine, Trinidad &amp; Tobago, 2018. Conference web page
+<a href="../evnts/2018_LACA_I.html" class="no-external">First Latin American and Caribbean Congress for Conservation Biology. St.&nbsp;Augustine, Trinidad &amp; Tobago, 2018. Conference web page</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2018_LACA_I.html">
+<a href="../evnts/2018_LACA_I.html" class="no-external">
 <div class="listing-date">
 25 jul 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Emiratos Árabes Unidos,Taller,Nacional,UICN LRE,Instructor" data-listing-date-sort="1517428800000" data-listing-file-modified-sort="1706501629353" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="15" data-categories="Emiratos Árabes Unidos,Taller,Nacional,UICN LRE,Instructor" data-listing-date-sort="1517403600000" data-listing-file-modified-sort="1707871995320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="102">
 <div class="thumbnail">
-<p><a href="../evnts/2018_AbuDhabi.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2018_AbuDhabi.html" class="no-external"></a></p><a href="../evnts/2018_AbuDhabi.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2018_AbuDhabi.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2018_AbuDhabi.html">
 <h3 class="no-anchor listing-title">
-IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate
+<a href="../evnts/2018_AbuDhabi.html" class="no-external">IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2018_AbuDhabi.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Emiratos Árabes Unidos'); return false;">
 Emiratos Árabes Unidos
@@ -882,33 +934,31 @@ UICN LRE
 Instructor
 </div>
 </div>
-<a href="../evnts/2018_AbuDhabi.html">
 <div class="listing-description">
-IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate. Abu Dhabi, United Arab Emirates, February 2018.
+<a href="../evnts/2018_AbuDhabi.html" class="no-external">IUCN Training Workshop on Species and Ecosystems Red Lists for Abu Dhabi Emirate. Abu Dhabi, United Arab Emirates, February 2018.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2018_AbuDhabi.html">
+<a href="../evnts/2018_AbuDhabi.html" class="no-external">
 <div class="listing-date">
 1 feb 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Colombia,Congreso,Nacional,Ponente,Coautor" data-listing-date-sort="1514750400000" data-listing-file-modified-sort="1706501635395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="16" data-categories="Colombia,Congreso,Nacional,Ponente,Coautor" data-listing-date-sort="1514725200000" data-listing-file-modified-sort="1709356145538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
 <div class="thumbnail">
-<p><a href="../evnts/2018_CCZ_V.html"> <p class="card-img-top"><img src="https://i0.wp.com/vccz.aczcolombia.org/wp-content/uploads/2018/02/NuevoLogo_vFinal_2018_vXL-e1517500100362.png?fit=501%2C321"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2018_CCZ_V.html" class="no-external"></a></p><a href="../evnts/2018_CCZ_V.html" class="no-external">
+<p class="card-img-top"><img src="https://i0.wp.com/vccz.aczcolombia.org/wp-content/uploads/2018/02/NuevoLogo_vFinal_2018_vXL-e1517500100362.png?fit=501%2C321"  class="thumbnail-image card-img"/></p>
+</a><p><a href="../evnts/2018_CCZ_V.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2018_CCZ_V.html">
 <h3 class="no-anchor listing-title">
-V Congreso Colombiano de Zoología
+<a href="../evnts/2018_CCZ_V.html" class="no-external">V Congreso Colombiano de Zoología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2018_CCZ_V.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Colombia'); return false;">
 Colombia
@@ -926,33 +976,31 @@ Ponente
 Coautor
 </div>
 </div>
-<a href="../evnts/2018_CCZ_V.html">
 <div class="listing-description">
-V Congreso Colombiano de Zoología. Bogotá, Colombia, Diciembre 2018.
+<a href="../evnts/2018_CCZ_V.html" class="no-external">V Congreso Colombiano de Zoología. Bogotá, Colombia, Diciembre 2018.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2018_CCZ_V.html">
+<a href="../evnts/2018_CCZ_V.html" class="no-external">
 <div class="listing-date">
 1 ene 2018
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Colombia,Congreso,Internacional,Ponencia,UICN LRE" data-listing-date-sort="1500753600000" data-listing-file-modified-sort="1705191549830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="17" data-categories="Colombia,Congreso,Internacional,Ponencia,UICN LRE" data-listing-date-sort="1500732000000" data-listing-file-modified-sort="1703810082144" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <div class="thumbnail">
-<p><a href="../evnts/2017_ICCB_XXVIII.html"> <p class="card-img-top"><img src="https://conbio.org/images/content_conferences/2017_logo_w_building.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2017_ICCB_XXVIII.html" class="no-external"></a></p><a href="../evnts/2017_ICCB_XXVIII.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2017_ICCB_XXVIII.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2017_ICCB_XXVIII.html">
 <h3 class="no-anchor listing-title">
-28th International Congress for Conservation Biology
+<a href="../evnts/2017_ICCB_XXVIII.html" class="no-external">28th International Congress for Conservation Biology</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2017_ICCB_XXVIII.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Colombia'); return false;">
 Colombia
@@ -970,33 +1018,31 @@ Ponencia
 UICN LRE
 </div>
 </div>
-<a href="../evnts/2017_ICCB_XXVIII.html">
 <div class="listing-description">
-28th International Congress for Conservation Biology. Cartagena, Colombia, 23-27 Julio 2017. 
+<a href="../evnts/2017_ICCB_XXVIII.html" class="no-external">28th International Congress for Conservation Biology. Cartagena, Colombia, 23-27 Julio 2017. </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2017_ICCB_XXVIII.html">
+<a href="../evnts/2017_ICCB_XXVIII.html" class="no-external">
 <div class="listing-date">
 23 jul 2017
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="Alemania,Conferencia,Internacional,Cartel" data-listing-date-sort="1456171200000" data-listing-file-modified-sort="1706501587712" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="18" data-categories="Alemania,Conferencia,Internacional,Cartel" data-listing-date-sort="1456146000000" data-listing-file-modified-sort="1707871995320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="119">
 <div class="thumbnail">
-<p><a href="../evnts/2016_EUTropEcol.html"> <p class="card-img-top"><img src="https://www.soctropecol.eu/sites/default/files/GTO-logo-2016_1.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2016_EUTropEcol.html" class="no-external"></a></p><a href="../evnts/2016_EUTropEcol.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2016_EUTropEcol.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2016_EUTropEcol.html">
 <h3 class="no-anchor listing-title">
-European Conference of Tropical Ecology
+<a href="../evnts/2016_EUTropEcol.html" class="no-external">European Conference of Tropical Ecology</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2016_EUTropEcol.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Alemania'); return false;">
 Alemania
@@ -1011,33 +1057,31 @@ Internacional
 Cartel
 </div>
 </div>
-<a href="../evnts/2016_EUTropEcol.html">
 <div class="listing-description">
-European Conference of Tropical Ecology. Tropical Diversity, Ecology and Land Use. Göttingen, Germany, 23-26 february 2016.
+<a href="../evnts/2016_EUTropEcol.html" class="no-external">European Conference of Tropical Ecology. Tropical Diversity, Ecology and Land Use. Göttingen, Germany, 23-26 february 2016.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2016_EUTropEcol.html">
+<a href="../evnts/2016_EUTropEcol.html" class="no-external">
 <div class="listing-date">
 23 feb 2016
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1447012800000" data-listing-file-modified-sort="1705598620288" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="19" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1446987600000" data-listing-file-modified-sort="1707871995319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="19">
 <div class="thumbnail">
-<p><a href="../evnts/2015_CVE_XI.html"> <p class="card-img-top"><img src="https://usbnoticias.usb.ve/wp-content/uploads/2015/11/logo_horizontal1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2015_CVE_XI.html" class="no-external"></a></p><a href="../evnts/2015_CVE_XI.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2015_CVE_XI.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2015_CVE_XI.html">
 <h3 class="no-anchor listing-title">
-XI Congreso Venezolano de Ecología
+<a href="../evnts/2015_CVE_XI.html" class="no-external">XI Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2015_CVE_XI.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1049,33 +1093,31 @@ Congreso
 Nacional
 </div>
 </div>
-<a href="../evnts/2015_CVE_XI.html">
 <div class="listing-description">
-XI Congreso Venezolano de Ecología. Margarita, 9-13 noviembre 2015
+<a href="../evnts/2015_CVE_XI.html" class="no-external">XI Congreso Venezolano de Ecología. Margarita, 9-13 noviembre 2015</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2015_CVE_XI.html">
+<a href="../evnts/2015_CVE_XI.html" class="no-external">
 <div class="listing-date">
 9 nov 2015
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1431374400000" data-listing-file-modified-sort="1705191549829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="20" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1431352800000" data-listing-file-modified-sort="1703850397107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
 <div class="thumbnail">
-<p><a href="../evnts/2015_CVB_XXI.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2015_CVB_XXI.html" class="no-external"></a></p><a href="../evnts/2015_CVB_XXI.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2015_CVB_XXI.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2015_CVB_XXI.html">
 <h3 class="no-anchor listing-title">
-XXI Congreso Venezolano de Botánica
+<a href="../evnts/2015_CVB_XXI.html" class="no-external">XXI Congreso Venezolano de Botánica</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2015_CVB_XXI.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1087,33 +1129,31 @@ Congreso
 Nacional
 </div>
 </div>
-<a href="../evnts/2015_CVB_XXI.html">
 <div class="listing-description">
-XXI Congreso Venezolano de Botánica. Caracas, Venezuela, 12-16 mayo 2015.
+<a href="../evnts/2015_CVB_XXI.html" class="no-external">XXI Congreso Venezolano de Botánica. Caracas, Venezuela, 12-16 mayo 2015.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2015_CVB_XXI.html">
+<a href="../evnts/2015_CVB_XXI.html" class="no-external">
 <div class="listing-date">
 12 may 2015
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="Finland,Conferencia,Internacional,Ponencia" data-listing-date-sort="1407700800000" data-listing-file-modified-sort="1706501696784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="21" data-categories="Finland,Conferencia,Internacional,Ponencia" data-listing-date-sort="1407679200000" data-listing-file-modified-sort="1707871995319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201">
 <div class="thumbnail">
-<p><a href="../evnts/2014_ICBB_VII.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2014_ICBB_VII.html" class="no-external"></a></p><a href="../evnts/2014_ICBB_VII.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2014_ICBB_VII.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2014_ICBB_VII.html">
 <h3 class="no-anchor listing-title">
-7th International Conference on the Biology of Butterflies
+<a href="../evnts/2014_ICBB_VII.html" class="no-external">7th International Conference on the Biology of Butterflies</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2014_ICBB_VII.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Finland'); return false;">
 Finland
@@ -1128,58 +1168,56 @@ Internacional
 Ponencia
 </div>
 </div>
-<a href="../evnts/2014_ICBB_VII.html">
 <div class="listing-description">
-7th International Conference on the Biology of Butterflies. Turku, Finland, 11-14 August 2014.
+<a href="../evnts/2014_ICBB_VII.html" class="no-external">7th International Conference on the Biology of Butterflies. Turku, Finland, 11-14 August 2014.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2014_ICBB_VII.html">
+<a href="../evnts/2014_ICBB_VII.html" class="no-external">
 <div class="listing-date">
 11 ago 2014
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-listing-date-sort="1405886400000" data-listing-file-modified-sort="1705191549829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1405864800000" data-listing-file-modified-sort="1703581140953" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
 <div class="thumbnail">
-<p><a href="../evnts/2014_CVDB_V.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2014_CVDB_V.html" class="no-external"></a></p><a href="../evnts/2014_CVDB_V.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2014_CVDB_V.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2014_CVDB_V.html">
 <h3 class="no-anchor listing-title">
-V Congreso Venezolano de Diversidad Biológica
+<a href="../evnts/2014_CVDB_V.html" class="no-external">V Congreso Venezolano de Diversidad Biológica</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2014_CVDB_V.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-V Congreso Venezolano de Diversidad Biológica. Maracaibo, 21-26 julio 2014
+<a href="../evnts/2014_CVDB_V.html" class="no-external">V Congreso Venezolano de Diversidad Biológica. Maracaibo, 21-26 julio 2014</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2014_CVDB_V.html">
+<a href="../evnts/2014_CVDB_V.html" class="no-external">
 <div class="listing-date">
 21 jul 2014
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-categories="Congreso,Nacional,Venezuela" data-listing-date-sort="1384718400000" data-listing-file-modified-sort="1705191549828" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="23" data-categories="Congreso,Nacional,Venezuela" data-listing-date-sort="1384693200000" data-listing-file-modified-sort="1703581140952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
 <div class="thumbnail">
-<p><a href="../evnts/2013_CVE_X.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2013_CVE_X.html" class="no-external"></a></p><a href="../evnts/2013_CVE_X.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2013_CVE_X.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2013_CVE_X.html">
 <h3 class="no-anchor listing-title">
-X Congreso Venezolano de Ecología
+<a href="../evnts/2013_CVE_X.html" class="no-external">X Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2013_CVE_X.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Congreso'); return false;">
 Congreso
@@ -1191,33 +1229,31 @@ Nacional
 Venezuela
 </div>
 </div>
-<a href="../evnts/2013_CVE_X.html">
 <div class="listing-description">
-X Congreso Venezolano de Ecología. Mérida, 18-22 noviembre 2013
+<a href="../evnts/2013_CVE_X.html" class="no-external">X Congreso Venezolano de Ecología. Mérida, 18-22 noviembre 2013</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2013_CVE_X.html">
+<a href="../evnts/2013_CVE_X.html" class="no-external">
 <div class="listing-date">
 18 nov 2013
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1373313600000" data-listing-file-modified-sort="1705515462364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="24" data-categories="Venezuela,Congreso,Nacional" data-listing-date-sort="1373292000000" data-listing-file-modified-sort="1707871995319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="600">
 <div class="thumbnail">
-<p><a href="../evnts/2013_CVEnt_XXIII.html"> <p class="card-img-top"><img src="https://4.bp.blogspot.com/-ckfDO8XEPgI/UXxQQUpqvwI/AAAAAAAAAW4/MANMHb5a0sQ/s1600/Congreso.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2013_CVEnt_XXIII.html" class="no-external"></a></p><a href="../evnts/2013_CVEnt_XXIII.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2013_CVEnt_XXIII.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2013_CVEnt_XXIII.html">
 <h3 class="no-anchor listing-title">
-XXIII Congreso Venezolano de Entomología
+<a href="../evnts/2013_CVEnt_XXIII.html" class="no-external">XXIII Congreso Venezolano de Entomología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2013_CVEnt_XXIII.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1229,33 +1265,31 @@ Congreso
 Nacional
 </div>
 </div>
-<a href="../evnts/2013_CVEnt_XXIII.html">
 <div class="listing-description">
-XXIII Congreso Venezolano de Entomología “Dr.&nbsp;José Ramón Labrador”, Maracaibo, 9-12 julio 2013.
+<a href="../evnts/2013_CVEnt_XXIII.html" class="no-external">XXIII Congreso Venezolano de Entomología “Dr.&nbsp;José Ramón Labrador”, Maracaibo, 9-12 julio 2013.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2013_CVEnt_XXIII.html">
+<a href="../evnts/2013_CVEnt_XXIII.html" class="no-external">
 <div class="listing-date">
 9 jul 2013
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="Venezuela,Congreso,Nacional,Coautor" data-listing-date-sort="1321819200000" data-listing-file-modified-sort="1705598665493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="25" data-categories="Venezuela,Congreso,Nacional,Coautor" data-listing-date-sort="1321794000000" data-listing-file-modified-sort="1707871995319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="424">
 <div class="thumbnail">
-<p><a href="../evnts/2011_CVE_IX.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2011_CVE_IX.html" class="no-external"></a></p><a href="../evnts/2011_CVE_IX.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2011_CVE_IX.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2011_CVE_IX.html">
 <h3 class="no-anchor listing-title">
-IX Congreso Venezolano de Ecología
+<a href="../evnts/2011_CVE_IX.html" class="no-external">IX Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2011_CVE_IX.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1270,33 +1304,31 @@ Nacional
 Coautor
 </div>
 </div>
-<a href="../evnts/2011_CVE_IX.html">
 <div class="listing-description">
-IX Congreso Venezolano de Ecología. Margarita, 21-25 noviembre 2011
+<a href="../evnts/2011_CVE_IX.html" class="no-external">IX Congreso Venezolano de Ecología. Margarita, 21-25 noviembre 2011</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2011_CVE_IX.html">
+<a href="../evnts/2011_CVE_IX.html" class="no-external">
 <div class="listing-date">
 21 nov 2011
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="Tanzania,Reunión,TEAM,NeoMapas,Internacional" data-listing-date-sort="1301688000000" data-listing-file-modified-sort="1705382173722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="26" data-categories="Tanzania,Reunión,TEAM,NeoMapas,Internacional" data-listing-date-sort="1301662800000" data-listing-file-modified-sort="1707871995319" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <div class="thumbnail">
-<p><a href="../evnts/2011_TEAM_IV.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2011_TEAM_IV.html" class="no-external"></a></p><a href="../evnts/2011_TEAM_IV.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2011_TEAM_IV.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2011_TEAM_IV.html">
 <h3 class="no-anchor listing-title">
-4th Tropical Ecology Assessment and Monitoring Network (TEAM) Meeting
+<a href="../evnts/2011_TEAM_IV.html" class="no-external">4th Tropical Ecology Assessment and Monitoring Network (TEAM) Meeting</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2011_TEAM_IV.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Tanzania'); return false;">
 Tanzania
@@ -1314,33 +1346,31 @@ NeoMapas
 Internacional
 </div>
 </div>
-<a href="../evnts/2011_TEAM_IV.html">
 <div class="listing-description">
-4th Tropical Ecology Assessment and Monitoring Network (TEAM) Meeting.
+<a href="../evnts/2011_TEAM_IV.html" class="no-external">4th Tropical Ecology Assessment and Monitoring Network (TEAM) Meeting.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2011_TEAM_IV.html">
+<a href="../evnts/2011_TEAM_IV.html" class="no-external">
 <div class="listing-date">
 2 abr 2011
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="Venezuela,Jornadas,Nacional" data-listing-date-sort="1291665600000" data-listing-file-modified-sort="1705191549828" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="27" data-categories="Venezuela,Jornadas,Nacional" data-listing-date-sort="1291640400000" data-listing-file-modified-sort="1703581140952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
 <div class="thumbnail">
-<p><a href="../evnts/2010_Eco_XL.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2010_Eco_XL.html" class="no-external"></a></p><a href="../evnts/2010_Eco_XL.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2010_Eco_XL.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2010_Eco_XL.html">
 <h3 class="no-anchor listing-title">
-XL Aniversario del Centro de Ecología
+<a href="../evnts/2010_Eco_XL.html" class="no-external">XL Aniversario del Centro de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2010_Eco_XL.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1352,33 +1382,31 @@ Jornadas
 Nacional
 </div>
 </div>
-<a href="../evnts/2010_Eco_XL.html">
 <div class="listing-description">
-XL Aniversario del Centro de Ecología: Investigación Científica, Diversidad Biológica y Sociedad, Instituto Venezolano de Investigaciones Científicas. San Antonio de los Altos, 7-10 diciembre…
+<a href="../evnts/2010_Eco_XL.html" class="no-external">XL Aniversario del Centro de Ecología: Investigación Científica, Diversidad Biológica y Sociedad, Instituto Venezolano de Investigaciones Científicas. San Antonio de los Altos…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2010_Eco_XL.html">
+<a href="../evnts/2010_Eco_XL.html" class="no-external">
 <div class="listing-date">
 7 dic 2010
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-categories="Italia,Taller,Internacional" data-listing-date-sort="1235937600000" data-listing-file-modified-sort="1705191549828" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="28" data-categories="Italia,Taller,Internacional" data-listing-date-sort="1235912400000" data-listing-file-modified-sort="1703581140951" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="18">
 <div class="thumbnail">
-<p><a href="../evnts/2009_TheoEco.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2009_TheoEco.html" class="no-external"></a></p><a href="../evnts/2009_TheoEco.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2009_TheoEco.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2009_TheoEco.html">
 <h3 class="no-anchor listing-title">
-Workshop on Theoretical Ecology and Global Change
+<a href="../evnts/2009_TheoEco.html" class="no-external">Workshop on Theoretical Ecology and Global Change</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2009_TheoEco.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Italia'); return false;">
 Italia
@@ -1390,33 +1418,31 @@ Taller
 Internacional
 </div>
 </div>
-<a href="../evnts/2009_TheoEco.html">
 <div class="listing-description">
-Workshop on Theoretical Ecology and Global Change.
+<a href="../evnts/2009_TheoEco.html" class="no-external">Workshop on Theoretical Ecology and Global Change.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2009_TheoEco.html">
+<a href="../evnts/2009_TheoEco.html" class="no-external">
 <div class="listing-date">
 2 mar 2009
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-categories="Perú,Simposio,Internacional,Oso frontino" data-listing-date-sort="1226260800000" data-listing-file-modified-sort="1705286270625" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="29" data-categories="Perú,Simposio,Internacional,Oso frontino" data-listing-date-sort="1226235600000" data-listing-file-modified-sort="1707871995318" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="120">
 <div class="thumbnail">
-<p><a href="../evnts/2008_SIoso_II.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2008_SIoso_II.html" class="no-external"></a></p><a href="../evnts/2008_SIoso_II.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2008_SIoso_II.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2008_SIoso_II.html">
 <h3 class="no-anchor listing-title">
-Segundo simposio internacional sobre el oso andino
+<a href="../evnts/2008_SIoso_II.html" class="no-external">Segundo simposio internacional sobre el oso andino</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2008_SIoso_II.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Perú'); return false;">
 Perú
@@ -1431,33 +1457,31 @@ Internacional
 Oso frontino
 </div>
 </div>
-<a href="../evnts/2008_SIoso_II.html">
 <div class="listing-description">
-Segundo simposio internacional sobre el oso andino. Lima, Perú, 10-12 Noviembre 2008.
+<a href="../evnts/2008_SIoso_II.html" class="no-external">Segundo simposio internacional sobre el oso andino. Lima, Perú, 10-12 Noviembre 2008.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2008_SIoso_II.html">
+<a href="../evnts/2008_SIoso_II.html" class="no-external">
 <div class="listing-date">
 10 nov 2008
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-categories="Venezuela,Ponencia,Congreso,Nacional" data-listing-date-sort="1194206400000" data-listing-file-modified-sort="1705191549827" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="30" data-categories="Venezuela,Ponencia,Congreso,Nacional" data-listing-date-sort="1194181200000" data-listing-file-modified-sort="1703811700354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="14">
 <div class="thumbnail">
-<p><a href="../evnts/2007_CVE_VII.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2007_CVE_VII.html" class="no-external"></a></p><a href="../evnts/2007_CVE_VII.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2007_CVE_VII.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2007_CVE_VII.html">
 <h3 class="no-anchor listing-title">
-VII Congreso Venezolano de Ecología
+<a href="../evnts/2007_CVE_VII.html" class="no-external">VII Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2007_CVE_VII.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1472,33 +1496,31 @@ Congreso
 Nacional
 </div>
 </div>
-<a href="../evnts/2007_CVE_VII.html">
 <div class="listing-description">
-VII Congreso Venezolano de Ecología
+<a href="../evnts/2007_CVE_VII.html" class="no-external">VII Congreso Venezolano de Ecología</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2007_CVE_VII.html">
+<a href="../evnts/2007_CVE_VII.html" class="no-external">
 <div class="listing-date">
 5 nov 2007
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-categories="Panamá,Reunión,Internacional" data-listing-date-sort="1177790400000" data-listing-file-modified-sort="1705191549827" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="31" data-categories="Panamá,Reunión,Internacional" data-listing-date-sort="1177768800000" data-listing-file-modified-sort="1703581140950" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="105">
 <div class="thumbnail">
-<p><a href="../evnts/2007_ELEN_II.html"> <p class="card-img-top"><img data-src="https://live.staticflickr.com/197/503191612_109b6886c6.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2007_ELEN_II.html" class="no-external"></a></p><a href="../evnts/2007_ELEN_II.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2007_ELEN_II.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2007_ELEN_II.html">
 <h3 class="no-anchor listing-title">
-II Encuentro Sobre Lepidoptera Neogropical
+<a href="../evnts/2007_ELEN_II.html" class="no-external">II Encuentro Sobre Lepidoptera Neogropical</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2007_ELEN_II.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Panamá'); return false;">
 Panamá
@@ -1510,33 +1532,31 @@ Reunión
 Internacional
 </div>
 </div>
-<a href="../evnts/2007_ELEN_II.html">
 <div class="listing-description">
-II Encuentro Sobre Lepidoptera Neogropical, ELEN II. Smithsonian Tropical Research Institute. Ciudad de Panamá, Panamá, 29 de abril al 3 de mayo de 2007.
+<a href="../evnts/2007_ELEN_II.html" class="no-external">II Encuentro Sobre Lepidoptera Neogropical, ELEN II. Smithsonian Tropical Research Institute. Ciudad de Panamá, Panamá, 29 de abril al 3 de mayo de 2007.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2007_ELEN_II.html">
+<a href="../evnts/2007_ELEN_II.html" class="no-external">
 <div class="listing-date">
 29 abr 2007
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="31" data-categories="México,Conferencia,Internacional,Cartel,Presentación" data-listing-date-sort="1131480000000" data-listing-file-modified-sort="1706501601550" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="32" data-categories="México,Conferencia,Internacional,Cartel,Presentación" data-listing-date-sort="1131454800000" data-listing-file-modified-sort="1707871995318" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99">
 <div class="thumbnail">
-<p><a href="../evnts/2005_Diversitas_I.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2005_Diversitas_I.html" class="no-external"></a></p><a href="../evnts/2005_Diversitas_I.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2005_Diversitas_I.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2005_Diversitas_I.html">
 <h3 class="no-anchor listing-title">
-First Diversitas Open Science Conference
+<a href="../evnts/2005_Diversitas_I.html" class="no-external">First Diversitas Open Science Conference</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2005_Diversitas_I.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('México'); return false;">
 México
@@ -1554,33 +1574,31 @@ Cartel
 Presentación
 </div>
 </div>
-<a href="../evnts/2005_Diversitas_I.html">
 <div class="listing-description">
-First Diversitas Open Science Conference. Oaxaca, México, 9-12 Noviembre 2005.
+<a href="../evnts/2005_Diversitas_I.html" class="no-external">First Diversitas Open Science Conference. Oaxaca, México, 9-12 Noviembre 2005.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2005_Diversitas_I.html">
+<a href="../evnts/2005_Diversitas_I.html" class="no-external">
 <div class="listing-date">
 9 nov 2005
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="32" data-categories="Taller,Internacional,España,Cartel,NeoMapas" data-listing-date-sort="1130875200000" data-listing-file-modified-sort="1705515413776" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="33" data-categories="Taller,Internacional,España,Cartel,NeoMapas" data-listing-date-sort="1130850000000" data-listing-file-modified-sort="1707871995318" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="53">
 <div class="thumbnail">
-<p><a href="../evnts/2005_Baeza.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2005_Baeza.html" class="no-external"></a></p><a href="../evnts/2005_Baeza.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2005_Baeza.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2005_Baeza.html">
 <h3 class="no-anchor listing-title">
-Workshop: Predictive modelling of Species distribution
+<a href="../evnts/2005_Baeza.html" class="no-external">Workshop: Predictive modelling of Species distribution</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2005_Baeza.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Taller'); return false;">
 Taller
@@ -1598,33 +1616,31 @@ Cartel
 NeoMapas
 </div>
 </div>
-<a href="../evnts/2005_Baeza.html">
 <div class="listing-description">
-Workshop: Predictive modelling of Species distribution. New Tools for the XXI Century. Universidad Internacional de Andalucía. Baeza, España, 2-4 Noviembre 2005.
+<a href="../evnts/2005_Baeza.html" class="no-external">Workshop: Predictive modelling of Species distribution. New Tools for the XXI Century. Universidad Internacional de Andalucía. Baeza, España, 2-4 Noviembre 2005.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2005_Baeza.html">
+<a href="../evnts/2005_Baeza.html" class="no-external">
 <div class="listing-date">
 2 nov 2005
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="33" data-categories="Reino Unido,Conferencia,Internacional" data-listing-date-sort="1130788800000" data-listing-file-modified-sort="1705191549827" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="34" data-categories="Reino Unido,Conferencia,Internacional" data-listing-date-sort="1130763600000" data-listing-file-modified-sort="1703581140949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="13">
 <div class="thumbnail">
-<p><a href="../evnts/2005_SCCS.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2005_SCCS.html" class="no-external"></a></p><a href="../evnts/2005_SCCS.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2005_SCCS.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2005_SCCS.html">
 <h3 class="no-anchor listing-title">
-Student Conference on Conservation Science
+<a href="../evnts/2005_SCCS.html" class="no-external">Student Conference on Conservation Science</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2005_SCCS.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Reino Unido'); return false;">
 Reino Unido
@@ -1636,33 +1652,31 @@ Conferencia
 Internacional
 </div>
 </div>
-<a href="../evnts/2005_SCCS.html">
 <div class="listing-description">
-Student Conference on Conservation Science. Cambridge, UK, 2005.
+<a href="../evnts/2005_SCCS.html" class="no-external">Student Conference on Conservation Science. Cambridge, UK, 2005.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2005_SCCS.html">
+<a href="../evnts/2005_SCCS.html" class="no-external">
 <div class="listing-date">
 1 nov 2005
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="34" data-categories="Venezuela,Congreso,Nacional,Cartel" data-listing-date-sort="1120420800000" data-listing-file-modified-sort="1705599303974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="35" data-categories="Venezuela,Congreso,Nacional,Cartel" data-listing-date-sort="1120399200000" data-listing-file-modified-sort="1707871995318" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="506">
 <div class="thumbnail">
-<p><a href="../evnts/2005_CVEnt_XIX.html"> <p class="card-img-top"><img data-src="https://sventomologia.org/wp-content/uploads/2020/08/cropped-Logo-SVE-200x100-01.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2005_CVEnt_XIX.html" class="no-external"></a></p><a href="../evnts/2005_CVEnt_XIX.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2005_CVEnt_XIX.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2005_CVEnt_XIX.html">
 <h3 class="no-anchor listing-title">
-XIX Congreso Venezolano de Entomología
+<a href="../evnts/2005_CVEnt_XIX.html" class="no-external">XIX Congreso Venezolano de Entomología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2005_CVEnt_XIX.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1677,33 +1691,31 @@ Nacional
 Cartel
 </div>
 </div>
-<a href="../evnts/2005_CVEnt_XIX.html">
 <div class="listing-description">
-XIX Congreso Venezolano de Entomología, San Felipe, 4-7 julio 2005
+<a href="../evnts/2005_CVEnt_XIX.html" class="no-external">XIX Congreso Venezolano de Entomología, San Felipe, 4-7 julio 2005</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2005_CVEnt_XIX.html">
+<a href="../evnts/2005_CVEnt_XIX.html" class="no-external">
 <div class="listing-date">
 4 jul 2005
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="35" data-categories="Venezuela,Ponencia,Congreso,Nacional" data-listing-date-sort="1067630400000" data-listing-file-modified-sort="1705191549826" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="36" data-categories="Venezuela,Ponencia,Congreso,Nacional" data-listing-date-sort="1067605200000" data-listing-file-modified-sort="1703581140947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
 <div class="thumbnail">
-<p><a href="../evnts/2003_CVE_V.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../evnts/2003_CVE_V.html" class="no-external"></a></p><a href="../evnts/2003_CVE_V.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2003_CVE_V.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2003_CVE_V.html">
 <h3 class="no-anchor listing-title">
-V Congreso Venezolano de Ecología
+<a href="../evnts/2003_CVE_V.html" class="no-external">V Congreso Venezolano de Ecología</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2003_CVE_V.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Venezuela'); return false;">
 Venezuela
@@ -1718,33 +1730,31 @@ Congreso
 Nacional
 </div>
 </div>
-<a href="../evnts/2003_CVE_V.html">
 <div class="listing-description">
-V Congreso Venezolano de Ecologia. Margarita, Noviembre 2003 Resumenes
+<a href="../evnts/2003_CVE_V.html" class="no-external">V Congreso Venezolano de Ecologia. Margarita, Noviembre 2003 Resumenes</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2003_CVE_V.html">
+<a href="../evnts/2003_CVE_V.html" class="no-external">
 <div class="listing-date">
 1 nov 2003
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="36" data-categories="Alemania,Ponencia,Taller,Internacional,Mariposas" data-listing-date-sort="1053460800000" data-listing-file-modified-sort="1706501558047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="37" data-categories="Alemania,Ponencia,Taller,Internacional,Mariposas" data-listing-date-sort="1053439200000" data-listing-file-modified-sort="1707871995318" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
 <div class="thumbnail">
-<p><a href="../evnts/2003_GART.html"> <p class="card-img-top"><img data-src="https://api.gbif.org/v1/image/unsafe/https%3A%2F%2Fgithub.com%2FSp2000%2Fcolplus-repo%2Fraw%2Fmaster%2Flogos%2FGloBIS_(GART).png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2003_GART.html" class="no-external"></a></p><a href="../evnts/2003_GART.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2003_GART.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2003_GART.html">
 <h3 class="no-anchor listing-title">
-GART/GloBIS Workshop
+<a href="../evnts/2003_GART.html" class="no-external">GART/GloBIS Workshop</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2003_GART.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Alemania'); return false;">
 Alemania
@@ -1762,33 +1772,31 @@ Internacional
 Mariposas
 </div>
 </div>
-<a href="../evnts/2003_GART.html">
 <div class="listing-description">
-GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. Stuttgart, Germany, 21-23 May 2003.
+<a href="../evnts/2003_GART.html" class="no-external">GART/GloBIS Workshop. Butterfly taxonomy on the internet, issues and challenges of a global, web-based, taxonomic information system. Stuttgart, Germany, 21-23 May 2003.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2003_GART.html">
+<a href="../evnts/2003_GART.html" class="no-external">
 <div class="listing-date">
 21 may 2003
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="37" data-categories="Colombia,Cartel,Internacional,Congreso" data-listing-date-sort="1021233600000" data-listing-file-modified-sort="1705642085511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="38" data-categories="Colombia,Cartel,Internacional,Congreso" data-listing-date-sort="1021212000000" data-listing-file-modified-sort="1709356166855" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="350">
 <div class="thumbnail">
-<p><a href="../evnts/2002_CMP_I.html"> <p class="card-img-top"><img data-src="https://image.isu.pub/180612171155-b1c176a7be3e9036f3eab6d39fc92651/jpg/page_1.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="../evnts/2002_CMP_I.html" class="no-external"></a></p><a href="../evnts/2002_CMP_I.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../evnts/2002_CMP_I.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../evnts/2002_CMP_I.html">
 <h3 class="no-anchor listing-title">
-Primer Congreso Mundial de Páramos
+<a href="../evnts/2002_CMP_I.html" class="no-external">Primer Congreso Mundial de Páramos</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="../evnts/2002_CMP_I.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Colombia'); return false;">
 Colombia
@@ -1803,14 +1811,12 @@ Internacional
 Congreso
 </div>
 </div>
-<a href="../evnts/2002_CMP_I.html">
 <div class="listing-description">
-Primer Congreso Mundial de Páramos. Paipa, Colombia, 13 al 18 de Mayo 2002.
+<a href="../evnts/2002_CMP_I.html" class="no-external">Primer Congreso Mundial de Páramos. Paipa, Colombia, 13 al 18 de Mayo 2002.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../evnts/2002_CMP_I.html">
+<a href="../evnts/2002_CMP_I.html" class="no-external">
 <div class="listing-date">
 13 may 2002
 </div>
@@ -1904,10 +1910,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1917,8 +1922,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1931,6 +1945,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1974,6 +2107,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1999,6 +2133,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2062,4 +2222,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/evnts/evnt-list.qmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></div></div></footer></body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/evnts/evnt-list.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>

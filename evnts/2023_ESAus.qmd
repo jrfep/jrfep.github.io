@@ -37,7 +37,7 @@ cat(sprintf("<center>\n<img src='%s' width='%s'  height='%s'>\n<br/>\n**%s** by 
 
 ## Logo
 
-<img src="https://esa2023.org.au/wp-content/uploads/2022/10/ESA2023-logos-01e-02.svg" style="background-color: #13032333;" width=303/>
+<img src="https://esa2023.org.au/wp-content/uploads/2022/10/ESA2023-logos-01e-02.svg" style="background-color: #13032333;" width=303 class="preview-image"/>
 
 ## Enlaces
 

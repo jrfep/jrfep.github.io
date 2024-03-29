@@ -18,7 +18,7 @@ https://www.biogeography.org/prague2024_home/
 
 ## Logo
 
-![Logo del IBS](https://www.biogeography.org/wp-content/uploads/2017/06/IBS_logo_ret.png)
+![Logo del IBS](https://www.biogeography.org/wp-content/uploads/2017/06/IBS_logo_ret.png){.preview-image}
 
 ## Participación
 

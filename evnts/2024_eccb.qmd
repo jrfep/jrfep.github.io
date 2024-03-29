@@ -18,7 +18,7 @@ ECCB 2024 – 7th European Congress of Conservation Biology – “Biodiversity 
 
 ## Logo
 
-![Logo del Evento](https://eccb2024.eu/wp-content/uploads/2023/04/Logo-ECCB_def_land_fullcol-per-sito-1.png)
+![Logo del Evento](https://eccb2024.eu/wp-content/uploads/2023/04/Logo-ECCB_def_land_fullcol-per-sito-1.png){.preview-image}
 
 ## Participación
 

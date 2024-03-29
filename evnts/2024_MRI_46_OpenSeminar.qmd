@@ -11,7 +11,7 @@ categories:
 
 Mammal Research Institute, Polish Academy of Science. Open Seminar # 46. [Białowieża](/lgrs/Bialowieza.qmd) Poland.
 
-![Anuncio de la presentación](https://ibs.bialowieza.pl/wp-content/uploads/2024/02/300-scaled.jpg)
+![Anuncio de la presentación](https://ibs.bialowieza.pl/wp-content/uploads/2024/02/300-scaled.jpg){.preview-image}
 
 
 ## Enlaces

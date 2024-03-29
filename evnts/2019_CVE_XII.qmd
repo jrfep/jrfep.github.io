@@ -22,7 +22,7 @@ XII Congreso Venezolano de Ecología. Universidad Simón Bolívar, 18-21 de novi
 ## Imágenes
 
 
-![Participantes del congreso. Foto por Eduardo Peña. Dronevenezuela](https://svecologia.org/wp-content/uploads/2022/03/Mini-libro-resumenes-4.png)
+![Participantes del congreso. Foto por Eduardo Peña. Dronevenezuela](https://svecologia.org/wp-content/uploads/2022/03/Mini-libro-resumenes-4.png){.preview-image}
 
 ![Logo SVE](https://svecologia.org/wp-content/uploads/2020/07/svecologia.png){width=100}
 

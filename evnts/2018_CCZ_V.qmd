@@ -17,7 +17,7 @@ params:
 
 V Congreso Colombiano de Zoología. [Bogotá](/lgrs/Bogota.qmd), Colombia, Diciembre 2018.
 
-![Logo del evento](https://i0.wp.com/vccz.aczcolombia.org/wp-content/uploads/2018/02/NuevoLogo_vFinal_2018_vXL-e1517500100362.png?fit=501%2C321){width=300}
+![Logo del evento](https://i0.wp.com/vccz.aczcolombia.org/wp-content/uploads/2018/02/NuevoLogo_vFinal_2018_vXL-e1517500100362.png?fit=501%2C321){.preview-image width=300}
 
 ## Enlaces 
 

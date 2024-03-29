@@ -24,6 +24,8 @@ website:
         menu:
           - text: "Mis publicaciones"
             href: rzrch/my-publications.qmd
+          - text: "Mis pre-prints"
+            href: rzrch/pre-prints.qmd
           - text: "Productos científicos"
             href: rzrch/research-outputs.qmd
           - text: "Proyectos reproducibles"
@@ -42,14 +44,12 @@ website:
         menu:
           - text: "{{< fa world >}} Mi mundo"
             href: lgrs/lgrs-list.qmd
-          - text: "Futbol"
-            icon: futbol
+          - text: "{{< fa futbol >}} Futbol"
             href: j4fun/blog_LaLiga_FinalTemp2019.qmd
           - text: "Ulysses"
             icon: book
             href: j4fun/ulysses.qmd
-          - text: "Todos los nombres"
-            icon: family
+          - text: "{{< fa family >}} Todos los nombres"
             href: j4fun/blog_CNE_nombres_Venezuela.Rmd
     right:
       - text: "How to..."

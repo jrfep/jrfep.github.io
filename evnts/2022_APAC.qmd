@@ -19,7 +19,7 @@ IUCN Africa Protected Area Congress, APAC
 
 ## Logo
 
-![](https://apacongress.africa/wp-content/uploads/2021/04/apac-web-logo-retina.png)
+![](https://apacongress.africa/wp-content/uploads/2021/04/apac-web-logo-retina.png){.preview-image}
 
 ## Enlaces
 

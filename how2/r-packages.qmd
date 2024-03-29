@@ -1,8 +1,71 @@
 Algunos paquetes de R necesitan pasos adicionales de configuración:
 
+## WDPAr
+
 ```{r}
 #| eval: false
 install.packages("wdpar")
 webdriver::install_phantomjs()
 ```
 
+## rAltmetrics
+
+Paquete archivado, pero disponible en GitHub. Las funciones del paquete no funcionan porque la clave API está obsoleta.
+
+```{r}
+#| eval: false
+devtools::install_github("ropensci/rAltmetric")
+
+library(rAltmetric)
+library(magrittr)
+library(purrr)
+typology <- altmetrics(doi = "10.1038/s41586-022-05318-4", 
+    apikey=)
+
+```
+
+Las funciones libres del API se pueden leer directamente con jsonlite:
+
+```{r}
+#| eval: false
+library(jsonlite)
+altmetric <- read_json("https://api.altmetric.com/v1/doi/10.1038/s41586-022-05318-4")
+altmetric$cited_by_policies_count
+altmetric$score
+# ultima actualizacion
+as.POSIXct(altmetric$last_updated, origin="1970-01-01")
+# or
+library(anytime)
+anydate(altmetric$last_updated)
+# metrics in context
+altmetric$context$all$higher_than / altmetric$context$all$count
+
+```
+
+
+Create list of dois
+
+```{r}
+#| eval: false
+library(RefManageR)
+bib1 <- ReadBib(here::here("bibTeX","peer-review.bibtex"), check = FALSE)
+
+conn <- file("altmetrics/doi-list", "w")
+writeLines(unique(unlist(lapply(bib1, function(x) x$doi))),conn)
+close(conn)
+```
+
+```{sh}
+#| eval: false
+mkdir -p altmetrics/
+for doi in $(cat altmetrics/doi-list)
+do
+    sdoi=query-$(echo $doi | sed -e s/\\//_/g).json
+    if [ -e altmetrics/$sdoi ]
+    then
+        echo "skipping $doi"
+    else
+        wget --output-document=altmetrics/${sdoi} https://api.altmetric.com/v1/doi/${doi}
+    fi
+done
+```

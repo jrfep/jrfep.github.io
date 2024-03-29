@@ -1,8 +1,11 @@
 {
-  "hash": "888f3df49851839afa6f83822146ad9c",
+  "hash": "5f24a697b8f1aa2bda13519b14c3bbe7",
   "result": {
-    "markdown": "Algunos paquetes de R necesitan pasos adicionales de configuración:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"wdpar\")\nwebdriver::install_phantomjs()\n```\n:::\n",
-    "supporting": [],
+    "engine": "knitr",
+    "markdown": "Algunos paquetes de R necesitan pasos adicionales de configuración:\n\n## WDPAr\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"wdpar\")\nwebdriver::install_phantomjs()\n```\n:::\n\n\n## rAltmetrics\n\nPaquete archivado, pero disponible en GitHub. Las funciones del paquete no funcionan porque la clave API está obsoleta.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndevtools::install_github(\"ropensci/rAltmetric\")\n\nlibrary(rAltmetric)\nlibrary(magrittr)\nlibrary(purrr)\ntypology <- altmetrics(doi = \"10.1038/s41586-022-05318-4\", \n    apikey=)\n```\n:::\n\n\nLas funciones libres del API se pueden leer directamente con jsonlite:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(jsonlite)\naltmetric <- read_json(\"https://api.altmetric.com/v1/doi/10.1038/s41586-022-05318-4\")\naltmetric$cited_by_policies_count\naltmetric$score\n# ultima actualizacion\nas.POSIXct(altmetric$last_updated, origin=\"1970-01-01\")\n# or\nlibrary(anytime)\nanydate(altmetric$last_updated)\n# metrics in context\naltmetric$context$all$higher_than / altmetric$context$all$count\n```\n:::\n\n\n\nCreate list of dois\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(RefManageR)\nbib1 <- ReadBib(here::here(\"bibTeX\",\"peer-review.bibtex\"), check = FALSE)\n\nconn <- file(\"altmetrics/doi-list\", \"w\")\nwriteLines(unique(unlist(lapply(bib1, function(x) x$doi))),conn)\nclose(conn)\n```\n:::\n\n::: {.cell}\n\n```{.sh .cell-code}\nmkdir -p altmetrics/\nfor doi in $(cat altmetrics/doi-list)\ndo\n    sdoi=query-$(echo $doi | sed -e s/\\\\//_/g).json\n    if [ -e altmetrics/$sdoi ]\n    then\n        echo \"skipping $doi\"\n    else\n        wget --output-document=altmetrics/${sdoi} https://api.altmetric.com/v1/doi/${doi}\n    fi\ndone\n```\n:::",
+    "supporting": [
+      "r-packages_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
