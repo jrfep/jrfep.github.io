@@ -19,5 +19,8 @@ Mammal Research Institute, Polish Academy of Science. Open Seminar # 46. [Biało
 - [Mammal Research Institute](https://ibs.bialowieza.pl/)
 - [Anuncio](https://ibs.bialowieza.pl/mri-pas-open-seminar-46-6-02-2024/)
 
+## Presentación
+
 Presentación relacionada con nuestra reciente publicación liderada por @Nicholson_2024.
 
+La presentación está disponible en [jrfep.quarto.pub/iucn-rle-in-research-and-conservation](https://jrfep.quarto.pub/iucn-rle-in-research-and-conservation), y el código para adaptarla y reproducirla está disponible en [bitbucket.org/iucn-presentations/rle-intro-presentation](https://bitbucket.org/iucn-presentations/rle-intro-presentation).
