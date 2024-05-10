@@ -6,6 +6,8 @@ categories:
   - Congreso
   - Nacional
   - Ponente
+  - Ecología del fuego
+  - Rpubs
 ---
 
 # ESA 2023

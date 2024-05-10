@@ -5,6 +5,9 @@ categories:
   - Polonia
   - Seminario
   - Ponencia
+  - UICN LRE
+  - quarto.pub
+  - bitbucket
 ---
 
 # Evento 
