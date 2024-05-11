@@ -68,7 +68,7 @@ En los siguientes enlaces pueden encontrar algunos insumos y productos de mi tra
 Algunas presentaciones recientes las he compartido a traves de:
 
 - Mi perfil en Rpubs <https://rpubs.com/jrfep>
-- Mi perfil en Quarto.pub <https://jrfep.quarto.pub/
+- Mi perfil en Quarto.pub <https://jrfep.quarto.pub/>
 
 ## Tutoriales
 

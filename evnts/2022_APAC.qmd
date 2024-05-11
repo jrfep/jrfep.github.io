@@ -8,6 +8,7 @@ categories:
   - UICN LRE
   - Áreas Protegidas
   - Taller
+  - OSF
 bibliography: 
   - ../bibTeX/peer-review.bibtex
   - ../bibTeX/preprints.bibtex
