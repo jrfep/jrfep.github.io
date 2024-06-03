@@ -2,11 +2,15 @@
 title: "Homo faber"
 ---
 
-[Investigador](https://research.unsw.edu.au/people/dr-jose-rafael-ferrer) en la Universidad de New South Wales, Australia.
+Trabajo en el estudio de ecosistemas y la conservación de la diversidad biológica. Mi investigación está influyendo en la normativa global y nacional sobre conservación de recursos naturales. 
 
-Trabajo en el Centro de Estudio de Ecosistemas de la Escuela de Ciencias Biológica, Geológicas y Ambientales.
+Mis proyectos de investigación aplican métodos informáticos y geomáticos para organizar, acceder, visualizar y analizar una amplia gama de datos ecológicos como registros de distribución de especies, historiales de detección de fototrampeo, interacciones de especies, rasgos de especies o indicadores espaciotemporales de la función del ecosistema. Dichos datos alimentan bases de conocimiento digital que son fundamentales para la toma de decisiones y el desarrollo de políticas públicas y gestión ambiental. 
 
-También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Internacional para la Conservación de la Naturaleza (UICN) y contribuyo activamente con el [Grupo Temático de Lista Roja de Ecosistemas](https://iucnrle.org/team).
+Los resultados de mi trabajo informan la investigación ecológica, la toma de decisiones en la gestión de riesgos para ecosistemas y especies amenazadas, la restauración y conservación de ecosistemas, y la contabilidad del capital natural. 
+
+La reproducibilidad y transparencia de mi investigación es crítica para construir confianza entre diferentes grupos de usuarios que apoyan decisiones basadas en evidencia, lo que me impulsa a proporcionar acceso abierto a datos y flujos de trabajo y fomentar la reutilización y validación externa de métodos y resultados.
+
+Actualmente soy [investigador](https://research.unsw.edu.au/people/dr-jose-rafael-ferrer) en la Universidad de New South Wales, Australia. Trabajo en el Centro de Estudio de Ecosistemas de la Escuela de Ciencias Biológica, Geológicas y Ambientales. También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Internacional para la Conservación de la Naturaleza (UICN) y contribuyo activamente con el [Grupo Temático de Lista Roja de Ecosistemas](https://iucnrle.org/team).
 
 ## Mis proyectos 
 
@@ -18,7 +22,7 @@ También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Inter
     - [Glaciares tropicales](https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/)
     - [Lista de publicaciones](https://red-list-ecosystem.github.io/RLE-publication-list/)
 * [Contribuciones al Centre of Ecosystem Science, UNSW](https://ces-unsw-edu-au.github.io/cesdata/)
-* [Fire Ecology Traits for Plants](http://13.54.3.205<b>)
+* [Fire Ecology Traits for Plants](http://fireecologyplants.net)
 * [NeoMapas](https://neomapas.github.io)
 
 
