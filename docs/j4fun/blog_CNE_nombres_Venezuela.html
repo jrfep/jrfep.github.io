@@ -2,11 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="José R. Ferrer-Paris">
 
 <title>./jrfep - Todos los nombres (I)</title>
 <style>
@@ -23,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -97,12 +90,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
   }
 }</script>
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="../site_libs/datatables-binding-0.31/datatables.js"></script>
@@ -121,9 +114,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">J.R. Ferrer-Paris</span>
     </a>
@@ -135,76 +128,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-fa-home" role="img">
+    <a class="nav-link" href="../index.html" rel="" target=""><i class="bi bi-fa-home" role="img">
 </i> 
-<span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
+ <span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> Ciencia y academia</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-landmark--ciencia-y-academia">    
         <li>
-    <a class="dropdown-item" href="../rzrch/my-publications.html">
+    <a class="dropdown-item" href="../rzrch/my-publications.html" rel="" target="">
  <span class="dropdown-text">Mis publicaciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/pre-prints.html">
+    <a class="dropdown-item" href="../rzrch/pre-prints.html" rel="" target="">
  <span class="dropdown-text">Mis pre-prints</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/research-outputs.html">
+    <a class="dropdown-item" href="../rzrch/research-outputs.html" rel="" target="">
  <span class="dropdown-text">Productos científicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html">
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html" rel="" target="">
  <span class="dropdown-text">Proyectos reproducibles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/my-github-repos.html">
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html" rel="" target="">
  <span class="dropdown-text">Repositorios / código</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../evnts/evnt-list.html">
+    <a class="dropdown-item" href="../evnts/evnt-list.html" rel="" target="">
  <span class="dropdown-text">Eventos</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-leaf--biodiversidad" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-leaf--biodiversidad" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-leaf" aria-label="leaf"></i> Biodiversidad</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-leaf--biodiversidad">    
         <li>
-    <a class="dropdown-item" href="../ecos/my-favs.html">
+    <a class="dropdown-item" href="../ecos/my-favs.html" rel="" target="">
  <span class="dropdown-text">Mis ecosistemas favoritos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../taxa/my-favs.html">
+    <a class="dropdown-item" href="../taxa/my-favs.html" rel="" target="">
  <span class="dropdown-text">Mis especies favoritas</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-smile--homo-ludens" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-smile--homo-ludens" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-smile" aria-label="smile"></i> Homo ludens</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-smile--homo-ludens">    
         <li>
-    <a class="dropdown-item" href="../lgrs/lgrs-list.html">
+    <a class="dropdown-item" href="../lgrs/lgrs-list.html" rel="" target="">
  <span class="dropdown-text"><i class="fa-solid fa-world" aria-label="world"></i> Mi mundo</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html">
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html" rel="" target="">
  <span class="dropdown-text"><i class="fa-solid fa-futbol" aria-label="futbol"></i> Futbol</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/ulysses.html"><i class="bi bi-book" role="img">
+    <a class="dropdown-item" href="../j4fun/ulysses.html" rel="" target=""><i class="bi bi-book" role="img">
 </i> 
  <span class="dropdown-text">Ulysses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html">
+    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html" rel="" target="">
  <span class="dropdown-text"><i class="fa-solid fa-family" aria-label="family"></i> Todos los nombres</span></a>
   </li>  
     </ul>
@@ -212,22 +205,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-how-to..." role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
       <i class="bi bi-question" role="img">
 </i> 
  <span class="menu-text">How to…</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
         <li>
-    <a class="dropdown-item" href="../how2/how-to-site.html">
+    <a class="dropdown-item" href="../how2/how-to-site.html" rel="" target="">
  <span class="dropdown-text">(re-)create this site</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -246,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#nombres-zulianos" id="toc-nombres-zulianos" class="nav-link" data-scroll-target="#nombres-zulianos">Nombres zulianos</a></li>
   <li><a href="#listo-por-hoy" id="toc-listo-por-hoy" class="nav-link" data-scroll-target="#listo-por-hoy">Listo por hoy</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/j4fun/blog_CNE_nombres_Venezuela.Rmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/j4fun/blog_CNE_nombres_Venezuela.Rmd" class="toc-action">Editar esta página</a></p><p><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action">Informar de un problema</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -278,9 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <p>Los nombres personales y apellidos son un fascinante tema, <a href="https://es.wikipedia.org/wiki/Todos_los_nombres">no sólo para obras literarias</a>, sino también para análisis estadísticos muy variados, en las áreas de ciencias sociales, ciencias históricas, medicina y ecología humana.</p>
 <p>Los apellidos se heredan según sistemas tradicionales y/o legales, y vienen a ser una medida indirecta de la genealogía, siguiendo (en la mayor parte de los casos) la línea paternal. Por otro lado los nombres son escogidos siguiendo muchas pautas sociales distintas y pueden reflejar tradiciones, idiosincracias o modas temporales.</p>
@@ -358,11 +349,7 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">4</span>)</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">box</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotDiversity-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
+<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotDiversity-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>La línea naranja representa la diversidad esperada según el logaritmo de la riqueza, es decir la relación promedio entre riqueza y diversidad.</p>
@@ -399,11 +386,7 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(h0, <span class="at">k=</span><span class="dv">4</span>, <span class="at">border =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.085</span>,<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">"orangered"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotComposicion-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
+<p><img src="blog_CNE_nombres_Venezuela_files/figure-html/PlotComposicion-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>El primer grupo, incluye la mitad de los estados de Venezuela, representantes de los Llanos, la Cordillera de la Costa, y que incluye también un estado de Occidente (Lara) y otro del sur (Amazonas). Luego están los estados Zulia y Falcón formando un grupo aparte. En el tercer grupo están estados andinos (incluyendo Barinas). Finalmente los estados de Oriente y Guayana forman un último bloque.</p>
@@ -433,6 +416,7 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="do">##Tabla.Zulia &lt;- subset(Tabla.Zulia,n.Vzla&gt;20000 &amp; p.Zulia&gt;.2)</span></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(Tabla.Zulia[<span class="fu">order</span>(Tabla.Zulia<span class="sc">$</span>p.Zulia),])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+
 <div class="datatables html-widget html-fill-item" id="htmlwidget-6bebec7deecb05165374" style="width:100%;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-6bebec7deecb05165374">{"x":{"filter":"none","vertical":false,"data":[["ROMERO","QUINTERO","PARRA","MORALES","GONZALEZ","CHIRINOS","SOTO","FERNANDEZ","BRACHO","FERRER","RINCON","NAVA","PAZ","PIRELA","FUENMAYOR","VILLALOBOS","URDANETA","MONTIEL","PALMAR"],[49167,29432,31166,37798,241608,23912,22969,66759,29599,26560,33731,29406,28036,23530,33619,45340,59078,39430,23864],[238567,134943,140205,148957,914348,82803,79393,225231,58052,47990,59560,46544,38895,32629,43636,57160,74457,46130,25666],[0.012545588018781,0.007509950710207302,0.007952402957132398,0.009644642462096209,0.06164936705598552,0.006101452207885193,0.0058608337137385,0.01703441150661624,0.007552562893157989,0.006777123228564349,0.008606895467722291,0.007503316478131147,0.007153743480272218,0.006003980028920148,0.008578317237240394,0.01156908008972544,0.0150745062536568,0.01006106810626101,0.006089204394821523],[0.2060930472362062,0.2181069043966712,0.2222887914125744,0.2537510825271723,0.2642407485990017,0.2887818074224364,0.2893076215787286,0.2964023602434834,0.5098704609660305,0.5534486351323192,0.5663364674278039,0.6317892746648333,0.7208124437588379,0.7211376382972202,0.7704418370153084,0.7932120363890833,0.7934512537437716,0.8547582917840885,0.9297903841658225]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>n.Zulia<\/th>\n      <th>n.Vzla<\/th>\n      <th>freq.Zulia<\/th>\n      <th>p.Zulia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"n.Zulia","targets":1},{"name":"n.Vzla","targets":2},{"name":"freq.Zulia","targets":3},{"name":"p.Zulia","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -449,7 +433,7 @@ HERNANDEZ     PEREZ RODRIGUEZ  GONZALEZ
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ferrer-paris2019,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ferrer-paris2019,
   author = {Ferrer-Paris, José R.},
   title = {Todos los nombres (I)},
   date = {2019-02-16},
@@ -539,9 +523,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -551,17 +536,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -574,125 +550,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -736,7 +593,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -762,32 +618,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -851,5 +681,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/j4fun/blog_CNE_nombres_Venezuela.Rmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
+</body></html>

@@ -30,9 +30,9 @@ IUCN Africa Protected Area Congress, APAC
 
 En 2022 organizamos una [sesión](https://osf.io/fgzac) sobre Lista Roja de Ecosistemas en el Congreso Africano sobre Áreas Protegidas en [Kigali](/lgrs/Kigali.qmd), Rwanda. 
 
-El título del taller fue _Red List of Ecosystems in Africa, supporting policy, practice and planning_ y los participantes refleccionaron sobre cómo y dónde se ha utilizado la Lista Roja de Ecosistemas en África y cuáles han sido los beneficios para el manejo de áreas protegidas y otras acciones de conservación en le continente.
+El título del taller fue _Red List of Ecosystems in Africa, supporting policy, practice and planning_ y los participantes reflexionaron sobre cómo y dónde se ha utilizado la Lista Roja de Ecosistemas en África y cuáles han sido los beneficios para el manejo de áreas protegidas y otras acciones de conservación en le continente.
 
-Posterior al taller preparamos un manuscrito que compartimos en forma de pre-print [@keith_ghoraba_Africa_RLE_2022], y después de un par de rondas de revisión publicamos en la revista Conservation Biology [@RLE_Africa].
+Posterior al taller preparamos un manuscrito que compartimos en forma de [pre-print](https://osf.io/preprints/africarxiv/62s5e){target='links'}, y después de un par de rondas de revisión publicamos en la revista Conservation Biology [@RLE_Africa].
 
 
 ## Galería de fotos
@@ -44,7 +44,6 @@ Algunas fotos del evento:
 #| warning: false
 #| message: false
 
-library(FlickrAPI)
 library(pixture)
 library(dplyr)
 here::i_am("lgrs/Trieste.qmd")
