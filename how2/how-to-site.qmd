@@ -346,3 +346,24 @@ I am experimenting with the [pixture package](https://www.royfrancis.com/pixture
 install.packages(c("htmlwidgets","shiny","remotes"))
 remotes::install_github('royfrancis/pixture')
 ```
+
+### Bibliography
+
+Download one `csl` as a base style
+
+```{.bash}
+cd bibteX
+wget 'https://www.zotero.org/styles/journal-and-proceedings-of-the-royal-society-of-new-south-wales?source=1' --output-document=my.csl
+```
+
+Modify sort order of the bibliography (not the citation...):
+
+```{.xml}
+<bibliography hanging-indent="true" entry-spacing="0">
+    <sort>
+      <key variable="issued" sort="descending"/>
+      <key macro="author"/>
+    </sort>
+  ...
+```
+
