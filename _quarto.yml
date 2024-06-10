@@ -24,6 +24,7 @@ website:
         menu:
           - text: "Mis publicaciones"
             href: rzrch/my-publications.qmd
+          - rzrch/credit.qmd
           - text: "Mis pre-prints"
             href: rzrch/pre-prints.qmd
           - text: "Productos científicos"

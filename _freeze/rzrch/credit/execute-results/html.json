@@ -1,0 +1,17 @@
+{
+  "hash": "da769fa73e90d284ed0dbfc5a4ea3ea5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Mis contribuciones académicas\"\ndate: 10 Jun 2024\neditor_options: \n  chunk_output_type: console\nexecute: \n  echo: false\nformat:\n  html:\n    code-tools: \n      source: true\n      caption: \"Código para cálculos y figuras\"\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\nHasta la fecha tengo un total de 42 publicaciones tradicionales revisadas por pares, incluyendo 39 artículos en revistas científicas, 1 capítulos de libros y 1 libros. Mi producción en este indicador se ha duplicado desde mi llegada a la Universidad de New South Wales: tuve 20 publicaciones entre 2003 y 2018, y llevo 22 desde 2019. \n\nMis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por *Contributor Role Taxonomy* (CRediT <https://credit.niso.org>). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser `lead` (el contribuyente principal en un rol), `equal` (cuando varios coautores contribuyen en igual medida) o `supporting` (contribuciones de menor magnitud).\n\nDe un total de 39 publicaciones con información sobre CRediT^[Excluyo las publicaciones que me incluyen como parte de un consorcio y en las cuales mi contribución es indirecta.] mis contribuciones más importantes (como `lead` or `equal`) han sido en los siguientes roles (número de publicaciones en paréntesis): *[Conceptualization](https://credit.niso.org/contributor-roles/conceptualization){target='credit'}* (18), *[Data curation](https://credit.niso.org/contributor-roles/data-curation){target='credit'}* (23), *[Formal Analysis](https://credit.niso.org/contributor-roles/formal-analysis){target='credit'}* (28), *[Methodology](https://credit.niso.org/contributor-roles/methodology){target='credit'}* (24), *[Software](https://credit.niso.org/contributor-roles/software){target='credit'}* (22), *[Visualization](https://credit.niso.org/contributor-roles/visualization){target='credit'}* (25), *[Writing - original draft](https://credit.niso.org/contributor-roles/writing---original-draft){target='credit'}* (16) and *[Writing - review & editing](https://credit.niso.org/contributor-roles/writing---review-&-editing){target='credit'}* (16).\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![](credit_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "credit_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
