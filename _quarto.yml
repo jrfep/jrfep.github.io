@@ -17,9 +17,6 @@ website:
     title: "J.R. Ferrer-Paris"
     type: inverse
     left:
-      - text: "{{< fa gear >}} Homo faber"
-        icon: fa-home
-        href: index.qmd
       - text: "{{< fa landmark >}} Ciencia y academia"
         menu:
           - text: "Mis publicaciones"
@@ -29,10 +26,6 @@ website:
             href: rzrch/pre-prints.qmd
           - text: "Productos científicos"
             href: rzrch/research-outputs.qmd
-          - text: "Proyectos reproducibles"
-            href: rzrch/my-osfr-projects.qmd
-          - text: "Repositorios / código"
-            href: rzrch/my-github-repos.qmd
           - text: "Eventos"
             href: evnts/evnt-list.qmd
       - text: "{{< fa leaf >}} Biodiversidad"
@@ -41,6 +34,12 @@ website:
             href: ecos/my-favs.qmd
           - text: "Mis especies favoritas"
             href: taxa/my-favs.qmd
+      - text: "{{< fa gear >}} Homo faber"
+        menu: 
+          - text: "Proyectos reproducibles"
+            href: rzrch/my-osfr-projects.qmd
+          - text: "Repositorios / código"
+            href: rzrch/my-github-repos.qmd
       - text: "{{< fa smile >}} Homo ludens"
         menu:
           - text: "{{< fa world >}} Mi mundo"
@@ -63,4 +62,6 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    link-external-icon: false
+    link-external-newwindow: true
 lang: es 

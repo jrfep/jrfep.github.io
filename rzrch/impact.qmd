@@ -1,0 +1,13 @@
+---
+title: "Impacto global"
+date: 10 Jun 2024
+editor_options: 
+  chunk_output_type: console
+execute: 
+  echo: false
+format:
+  html:
+    code-tools: 
+      source: true
+      caption: "Código para cálculos y figuras"
+---

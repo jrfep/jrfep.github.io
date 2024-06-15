@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>./jrfep - Ecce Homo</title>
+<title>./jrfep - Download and prepare data from PlumX API</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -80,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">J.R. Ferrer-Paris</span>
     </a>
   </div>
@@ -96,23 +130,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-landmark--ciencia-y-academia">    
         <li>
-    <a class="dropdown-item" href="./rzrch/my-publications.html">
+    <a class="dropdown-item" href="../rzrch/my-publications.html">
  <span class="dropdown-text">Mis publicaciones</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/credit.html">
+    <a class="dropdown-item" href="../rzrch/credit.html">
  <span class="dropdown-text">Mis contribuciones académicas</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/pre-prints.html">
+    <a class="dropdown-item" href="../rzrch/pre-prints.html">
  <span class="dropdown-text">Mis pre-prints</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/research-outputs.html">
+    <a class="dropdown-item" href="../rzrch/research-outputs.html">
  <span class="dropdown-text">Productos científicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./evnts/evnt-list.html">
+    <a class="dropdown-item" href="../evnts/evnt-list.html">
  <span class="dropdown-text">Eventos</span></a>
   </li>  
     </ul>
@@ -123,11 +157,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-leaf--biodiversidad">    
         <li>
-    <a class="dropdown-item" href="./ecos/my-favs.html">
+    <a class="dropdown-item" href="../ecos/my-favs.html">
  <span class="dropdown-text">Mis ecosistemas favoritos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./taxa/my-favs.html">
+    <a class="dropdown-item" href="../taxa/my-favs.html">
  <span class="dropdown-text">Mis especies favoritas</span></a>
   </li>  
     </ul>
@@ -138,11 +172,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-gear--homo-faber">    
         <li>
-    <a class="dropdown-item" href="./rzrch/my-osfr-projects.html">
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html">
  <span class="dropdown-text">Proyectos reproducibles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./rzrch/my-github-repos.html">
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html">
  <span class="dropdown-text">Repositorios / código</span></a>
   </li>  
     </ul>
@@ -153,20 +187,20 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-smile--homo-ludens">    
         <li>
-    <a class="dropdown-item" href="./lgrs/lgrs-list.html">
+    <a class="dropdown-item" href="../lgrs/lgrs-list.html">
  <span class="dropdown-text"><i class="fa-solid fa-world" aria-label="world"></i> Mi mundo</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./j4fun/blog_LaLiga_FinalTemp2019.html">
+    <a class="dropdown-item" href="../j4fun/blog_LaLiga_FinalTemp2019.html">
  <span class="dropdown-text"><i class="fa-solid fa-futbol" aria-label="futbol"></i> Futbol</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./j4fun/ulysses.html"><i class="bi bi-book" role="img">
+    <a class="dropdown-item" href="../j4fun/ulysses.html"><i class="bi bi-book" role="img">
 </i> 
  <span class="dropdown-text">Ulysses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./j4fun/blog_CNE_nombres_Venezuela.html">
+    <a class="dropdown-item" href="../j4fun/blog_CNE_nombres_Venezuela.html">
  <span class="dropdown-text"><i class="fa-solid fa-family" aria-label="family"></i> Todos los nombres</span></a>
   </li>  
     </ul>
@@ -181,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-how-to...">    
         <li>
-    <a class="dropdown-item" href="./how2/how-to-site.html">
+    <a class="dropdown-item" href="../how2/how-to-site.html">
  <span class="dropdown-text">(re-)create this site</span></a>
   </li>  
     </ul>
@@ -205,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ecce Homo</h1>
+<h1 class="title">Download and prepare data from PlumX API</h1>
 </div>
 
 
@@ -222,11 +256,59 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Trabajo en el estudio de ecosistemas y la conservación de la diversidad biológica. Mi investigación <a href="./rzrch/impact.html">influye en la normativa global</a> y nacional sobre conservación de recursos naturales.</p>
-<p>Mis proyectos de investigación aplican métodos informáticos y geomáticos para organizar, acceder, visualizar y analizar una amplia gama de datos ecológicos: registros de distribución de especies, historiales de detección de fototrampeo, interacciones de especies, rasgos de especies o indicadores espaciotemporales de la función del ecosistema. Dichos datos alimentan bases de conocimiento digital que son fundamentales para la toma de decisiones y el desarrollo de políticas públicas y gestión ambiental.</p>
-<p>Los resultados de mi trabajo informan la investigación ecológica, la toma de decisiones en la gestión de riesgos para ecosistemas y especies amenazadas, la restauración y conservación de ecosistemas, y la contabilidad del capital natural.</p>
-<p>La reproducibilidad y transparencia de mi investigación es crítica para construir confianza entre diferentes grupos de usuarios que apoyan decisiones basadas en evidencia, lo que me impulsa a proporcionar acceso abierto a datos y flujos de trabajo y fomentar la reutilización y validación externa de métodos y resultados.</p>
-<p>Actualmente soy <a href="https://research.unsw.edu.au/people/dr-jose-rafael-ferrer">investigador</a> en la Universidad de New South Wales, Australia. Trabajo en el <a href="https://www.unsw.edu.au/research/ecosystem">Centro de Estudio de Ecosistemas</a> de la Escuela de Ciencias Biológica, Geológicas y Ambientales. También soy miembro de la Comisión de Manejo de Ecosistemas de la Unión Internacional para la Conservación de la Naturaleza (UICN) y contribuyo activamente con el <a href="https://iucnrle.org/team">Grupo Temático de Lista Roja de Ecosistemas</a>.</p>
+<p>First we select the list of DOIs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RefManageR)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">i_am</span>(<span class="st">"how2/plumx-download-and-preparation.qmd"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/z3529065/proyectos/personal/jrfep.github.io</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bib1 <span class="ot">&lt;-</span> <span class="fu">ReadBib</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"bibTeX"</span>,<span class="st">"peer-review.bibtex"</span>), <span class="at">check =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>CRediT_folder <span class="ot">&lt;-</span> <span class="st">"data"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>credit <span class="ot">&lt;-</span><span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(CRediT_folder, <span class="st">"CRediT-my-publications.xlsx"</span>), </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Contributions per pub"</span>) </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> credit <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(doi)) <span class="sc">|&gt;</span> <span class="fu">pull</span>(doi)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>conn <span class="ot">&lt;-</span> <span class="fu">file</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"altmetrics"</span>,<span class="st">"doi-list"</span>), <span class="st">"w"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(dois,conn)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">close</span>(conn)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we run this to query plumx API:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> plumx</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.Renviron</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> doi <span class="kw">in</span> <span class="va">$(</span><span class="fu">cat</span> list-of-dois<span class="va">)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="va">sdoi</span><span class="op">=</span>query-<span class="va">$(</span><span class="bu">echo</span> <span class="va">$doi</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-e</span> s/\\//_/g<span class="va">)</span>.json</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="ot">-e</span> plumx/<span class="va">$sdoi</span> <span class="bu">]</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">then</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="bu">echo</span> <span class="st">"skipping </span><span class="va">$doi</span><span class="st">"</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">wget</span> <span class="at">--output-document</span><span class="op">=</span>plumx/<span class="va">${sdoi}</span> https://api.elsevier.com/analytics/plumx/doi/<span class="va">${doi}</span><span class="pp">?</span>apiKey=<span class="va">${Elsevier_API}</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cat: list-of-dois: No such file or directory</code></pre>
+</div>
+</div>
 
 
 
@@ -641,4 +723,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/index.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/jrfep/jrfep.github.io/edit/mostly-harmless/how2/plumx-download-and-preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Editar esta página</a></li><li><a href="https://github.com/jrfep/jrfep.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>

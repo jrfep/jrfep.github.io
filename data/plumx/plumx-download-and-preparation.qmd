@@ -1,0 +1,39 @@
+---
+title: "Download and prepare data from PlumX API"
+engine: knitr
+---
+First we select the list of DOIs:
+
+```{r}
+library(readxl)
+library(dplyr)
+library(RefManageR)
+here::i_am("data/plumx/plumx-download-and-preparation.qmd")
+bib1 <- ReadBib(here::here("bibTeX","peer-review.bibtex"), check = FALSE)
+
+CRediT_folder <- "data"
+credit <-read_excel(here::here(CRediT_folder, "CRediT-my-publications.xlsx"), 
+                    "Contributions per pub") 
+dois <- credit |> filter(!is.na(doi)) |> pull(doi)
+
+conn <- file(here::here("data/plumx/","doi-list"), "w")
+writeLines(dois,conn)
+close(conn)
+```
+
+Now we run this to query plumx API:
+
+```{bash}
+source ~/.Renviron
+
+for doi in $(cat doi-list)
+do
+  sdoi=query-$(echo $doi | sed -e s/\\//_/g).json
+  if [ -e plumx/$sdoi ]
+  then
+      echo "skipping $doi"
+  else
+      wget --output-document=${sdoi} https://api.elsevier.com/analytics/plumx/doi/${doi}?apiKey=${Elsevier_API}
+  fi
+done
+```

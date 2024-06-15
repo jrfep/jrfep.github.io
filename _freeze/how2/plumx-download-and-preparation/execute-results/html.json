@@ -1,0 +1,15 @@
+{
+  "hash": "2cfe84ba32bf8aa0b293f95b95c1ede1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Download and prepare data from PlumX API\"\nengine: knitr\n---\n\nFirst we select the list of DOIs:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readxl)\nlibrary(dplyr)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n\nAttaching package: 'dplyr'\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n```\n\n\n:::\n\n```{.r .cell-code}\nlibrary(RefManageR)\nhere::i_am(\"how2/plumx-download-and-preparation.qmd\")\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nhere() starts at /Users/z3529065/proyectos/personal/jrfep.github.io\n```\n\n\n:::\n\n```{.r .cell-code}\nbib1 <- ReadBib(here::here(\"bibTeX\",\"peer-review.bibtex\"), check = FALSE)\n\nCRediT_folder <- \"data\"\ncredit <-read_excel(here::here(CRediT_folder, \"CRediT-my-publications.xlsx\"), \n                    \"Contributions per pub\") \ndois <- credit |> filter(!is.na(doi)) |> pull(doi)\n\nconn <- file(here::here(\"altmetrics\",\"doi-list\"), \"w\")\nwriteLines(dois,conn)\nclose(conn)\n```\n:::\n\n\nNow we run this to query plumx API:\n\n\n::: {.cell}\n\n```{.bash .cell-code}\nmkdir -p plumx\nsource ~/.Renviron\n\nfor doi in $(cat list-of-dois)\ndo\n  sdoi=query-$(echo $doi | sed -e s/\\\\//_/g).json\n  if [ -e plumx/$sdoi ]\n  then\n      echo \"skipping $doi\"\n  else\n      wget --output-document=plumx/${sdoi} https://api.elsevier.com/analytics/plumx/doi/${doi}?apiKey=${Elsevier_API}\n  fi\ndone\n```\n\n\n::: {.cell-output .cell-output-stdout}\n\n```\ncat: list-of-dois: No such file or directory\n```\n\n\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

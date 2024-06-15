@@ -124,11 +124,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-fa-home" role="img">
-</i> 
-<span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-landmark--ciencia-y-academia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text"><i class="fa-solid fa-landmark" aria-label="landmark"></i> Ciencia y academia</span>
@@ -151,14 +146,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Productos científicos</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html">
- <span class="dropdown-text">Proyectos reproducibles</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../rzrch/my-github-repos.html">
- <span class="dropdown-text">Repositorios / código</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../evnts/evnt-list.html">
  <span class="dropdown-text">Eventos</span></a>
   </li>  
@@ -176,6 +163,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../taxa/my-favs.html">
  <span class="dropdown-text">Mis especies favoritas</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-gear--homo-faber" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-gear" aria-label="gear"></i> Homo faber</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fa-gear--homo-faber">    
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-osfr-projects.html">
+ <span class="dropdown-text">Proyectos reproducibles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../rzrch/my-github-repos.html">
+ <span class="dropdown-text">Repositorios / código</span></a>
   </li>  
     </ul>
   </li>
@@ -260,8 +262,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Hasta la fecha tengo un total de 42 publicaciones tradicionales revisadas por pares, incluyendo 39 artículos en revistas científicas, 1 capítulos de libros y 1 libros. Mi producción en este indicador se ha duplicado desde mi llegada a la Universidad de New South Wales: tuve 20 publicaciones entre 2003 y 2018, y llevo 22 desde 2019.</p>
-<p>Mis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por <em>Contributor Role Taxonomy</em> (CRediT <a href="https://credit.niso.org" class="uri">https://credit.niso.org</a>). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser <code>lead</code> (el contribuyente principal en un rol), <code>equal</code> (cuando varios coautores contribuyen en igual medida) o <code>supporting</code> (contribuciones de menor magnitud).</p>
+<p>Hasta la fecha tengo un total de <a href="../rzrch/my-publications.html">42 publicaciones</a> tradicionales revisadas por pares, incluyendo 39 artículos en revistas científicas, 1 capítulos de libros y 1 libros. Mi producción en este indicador se ha duplicado desde mi llegada a la <a href="https://research.unsw.edu.au/people/dr-jose-rafael-ferrer-paris">Universidad de New South Wales</a>: tuve 20 publicaciones entre 2003 y 2018, y llevo 22 desde 2019.</p>
+<p>Mis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por <em>Contributor Role Taxonomy</em> (CRediT <a href="https://credit.niso.org" target="credit">https://credit.niso.org</a>). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser <code>lead</code> (el contribuyente principal en un rol), <code>equal</code> (cuando varios coautores contribuyen en igual medida) o <code>supporting</code> (contribuciones de menor magnitud).</p>
 <p>De un total de 39 publicaciones con información sobre CRediT<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> mis contribuciones más importantes (como <code>lead</code> or <code>equal</code>) han sido en los siguientes roles (número de publicaciones en paréntesis): <em><a href="https://credit.niso.org/contributor-roles/conceptualization" target="credit">Conceptualization</a></em> (18), <em><a href="https://credit.niso.org/contributor-roles/data-curation" target="credit">Data curation</a></em> (23), <em><a href="https://credit.niso.org/contributor-roles/formal-analysis" target="credit">Formal Analysis</a></em> (28), <em><a href="https://credit.niso.org/contributor-roles/methodology" target="credit">Methodology</a></em> (24), <em><a href="https://credit.niso.org/contributor-roles/software" target="credit">Software</a></em> (22), <em><a href="https://credit.niso.org/contributor-roles/visualization" target="credit">Visualization</a></em> (25), <em><a href="https://credit.niso.org/contributor-roles/writing---original-draft" target="credit">Writing - original draft</a></em> (16) and <em><a href="https://credit.niso.org/contributor-roles/writing---review-&amp;-editing" target="credit">Writing - review &amp; editing</a></em> (16).</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -414,6 +416,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -749,8 +769,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">i_am</span>(<span class="st">"rzrch/credit.qmd"</span>)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>CRediT_folder <span class="ot">&lt;-</span> <span class="st">"data"</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>credit <span class="ot">&lt;-</span><span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(CRediT_folder, <span class="st">"CRediT-my-publications.xlsx"</span>), <span class="st">"Contributions per pub"</span>) </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>credit <span class="ot">&lt;-</span><span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(CRediT_folder, <span class="st">"CRediT-my-publications.xlsx"</span>), </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Contributions per pub"</span>) </span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -785,9 +805,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Hasta la fecha tengo un total de <span class="in">`r total_pubs`</span> publicaciones tradicionales revisadas por pares, incluyendo <span class="in">`r total_articles`</span> artículos en revistas científicas, <span class="in">`r total_chapters`</span> capítulos de libros y <span class="in">`r total_books`</span> libros. Mi producción en este indicador se ha duplicado desde mi llegada a la Universidad de New South Wales: tuve <span class="in">`r sum(credit$year &lt; 2019)`</span> publicaciones entre 2003 y 2018, y llevo <span class="in">`r sum(credit$year &gt;= 2019)`</span> desde 2019. </span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Hasta la fecha tengo un total de <span class="co">[</span><span class="ot">`r total_pubs` publicaciones</span><span class="co">](my-publications.qmd)</span> tradicionales revisadas por pares, incluyendo <span class="in">`r total_articles`</span> artículos en revistas científicas, <span class="in">`r total_chapters`</span> capítulos de libros y <span class="in">`r total_books`</span> libros. Mi producción en este indicador se ha duplicado desde mi llegada a la <span class="co">[</span><span class="ot">Universidad de New South Wales</span><span class="co">](https://research.unsw.edu.au/people/dr-jose-rafael-ferrer-paris)</span>: tuve <span class="in">`r sum(credit$year &lt; 2019)`</span> publicaciones entre 2003 y 2018, y llevo <span class="in">`r sum(credit$year &gt;= 2019)`</span> desde 2019. </span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Mis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por *Contributor Role Taxonomy* (CRediT <span class="ot">&lt;https://credit.niso.org&gt;</span>). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser <span class="in">`lead`</span> (el contribuyente principal en un rol), <span class="in">`equal`</span> (cuando varios coautores contribuyen en igual medida) o <span class="in">`supporting`</span> (contribuciones de menor magnitud).</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Mis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por *Contributor Role Taxonomy* (CRediT <span class="ot">&lt;https://credit.niso.org&gt;</span>{target="credit"}). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser <span class="in">`lead`</span> (el contribuyente principal en un rol), <span class="in">`equal`</span> (cuando varios coautores contribuyen en igual medida) o <span class="in">`supporting`</span> (contribuciones de menor magnitud).</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>De un total de <span class="in">`r n_pubs_with_credit`</span> publicaciones con información sobre CRediT^<span class="co">[</span><span class="ot">Excluyo las publicaciones que me incluyen como parte de un consorcio y en las cuales mi contribución es indirecta.</span><span class="co">]</span> mis contribuciones más importantes (como <span class="in">`lead`</span> or <span class="in">`equal`</span>) han sido en los siguientes roles (número de publicaciones en paréntesis): <span class="in">`r credit_summary`</span>.</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
@@ -808,11 +828,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>stitle <span class="ot">&lt;-</span> <span class="st">"Usando Contributor Roles Taxonomy (CRediT)"</span></span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>clrs <span class="ot">&lt;-</span> <span class="fu">c4a</span>(<span class="st">"hcl.yellow_blue"</span>, <span class="dv">3</span>)</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>txt_clr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">c4a_na</span>(<span class="st">"hcl.yellow_blue"</span>), <span class="st">"whitesmoke"</span>)</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(credit_summary) <span class="sc">+</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y=</span>Publications, <span class="at">x =</span> Role, <span class="at">fill =</span> Contribution)) <span class="sc">+</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> Role, <span class="at">label =</span> Role), <span class="at">y =</span> <span class="dv">1</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust=</span>.<span class="dv">02</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> txt_clr[<span class="dv">1</span>]) <span class="sc">+</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> Role, <span class="at">label =</span> Role), <span class="at">y =</span> <span class="dv">1</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust=</span>.<span class="dv">025</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> txt_clr[<span class="dv">2</span>]) <span class="sc">+</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_discrete_c4a_seq( ) +</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(credit_summary) <span class="sc">+</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y=</span>Publications, <span class="at">x =</span> Role, <span class="at">fill =</span> Contribution)) <span class="sc">+</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> Role, <span class="at">label =</span> Role), <span class="at">y =</span> <span class="dv">1</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust=</span>.<span class="dv">02</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> txt_clr[<span class="dv">1</span>]) <span class="sc">+</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> Role, <span class="at">label =</span> Role), <span class="at">y =</span> <span class="dv">1</span>, <span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust=</span>.<span class="dv">025</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> txt_clr[<span class="dv">2</span>]) <span class="sc">+</span></span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>clrs) <span class="sc">+</span></span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">element_blank</span>() ) <span class="sc">+</span></span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_linedraw</span>() <span class="sc">+</span></span>

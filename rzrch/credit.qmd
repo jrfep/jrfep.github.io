@@ -62,7 +62,7 @@ n_pubs_with_credit <- credit |>
 
 ```
 
-Hasta la fecha tengo un total de `r total_pubs` publicaciones tradicionales revisadas por pares, incluyendo `r total_articles` artículos en revistas científicas, `r total_chapters` capítulos de libros y `r total_books` libros. Mi producción en este indicador se ha duplicado desde mi llegada a la Universidad de New South Wales: tuve `r sum(credit$year < 2019)` publicaciones entre 2003 y 2018, y llevo `r sum(credit$year >= 2019)` desde 2019. 
+Hasta la fecha tengo un total de [`r total_pubs` publicaciones](my-publications.qmd) tradicionales revisadas por pares, incluyendo `r total_articles` artículos en revistas científicas, `r total_chapters` capítulos de libros y `r total_books` libros. Mi producción en este indicador se ha duplicado desde mi llegada a la [Universidad de New South Wales](https://research.unsw.edu.au/people/dr-jose-rafael-ferrer-paris): tuve `r sum(credit$year < 2019)` publicaciones entre 2003 y 2018, y llevo `r sum(credit$year >= 2019)` desde 2019. 
 
 Mis publicaciones son producto de colaboraciones con colegas y estudiantes. Para medir mis contribuciones personales en los trabajos que publico uso el sistema propuesto por *Contributor Role Taxonomy* (CRediT <https://credit.niso.org>{target="credit"}). Para ello he anotado mi contribución a catorce roles posibles, desde la conceptualización a la redacción del manuscrito. Las contribuciones pueden ser `lead` (el contribuyente principal en un rol), `equal` (cuando varios coautores contribuyen en igual medida) o `supporting` (contribuciones de menor magnitud).
 
