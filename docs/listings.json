@@ -44,19 +44,15 @@
     ]
   },
   {
-    "listing": "/taxa/my-favs.html",
+    "listing": "/ecos/my-favs.html",
     "items": [
-      "/taxa/Redonda-chiquinquirana.html",
-      "/taxa/Crysomia.html",
-      "/taxa/Kalanchoe.html",
-      "/taxa/Oso-frontino.html",
-      "/taxa/Aulacorhynchus-sulcatus.html",
-      "/taxa/Oressinoma-typhla.html",
-      "/taxa/Jaguar.html",
-      "/taxa/Oxysternon-festivum.html",
-      "/taxa/Rhinella-humboldti.html",
-      "/taxa/Amazona-barbadensis.html",
-      "/taxa/Kricogonia-lyside.html"
+      "/ecos/Myanmar-example.html",
+      "/ecos/Gran-Sabana.html",
+      "/ecos/T1.2-tropical-dry-forest.html",
+      "/ecos/Aguaro-Guariquito.html",
+      "/ecos/Llanos-anzoategui.html",
+      "/ecos/T6.1-glaciares-tropicales.html",
+      "/ecos/T6.5-paramos.html"
     ]
   },
   {
@@ -98,15 +94,19 @@
     ]
   },
   {
-    "listing": "/ecos/my-favs.html",
+    "listing": "/taxa/my-favs.html",
     "items": [
-      "/ecos/Myanmar-example.html",
-      "/ecos/Gran-Sabana.html",
-      "/ecos/T1.2-tropical-dry-forest.html",
-      "/ecos/Aguaro-Guariquito.html",
-      "/ecos/Llanos-anzoategui.html",
-      "/ecos/T6.1-glaciares-tropicales.html",
-      "/ecos/T6.5-paramos.html"
+      "/taxa/Redonda-chiquinquirana.html",
+      "/taxa/Crysomia.html",
+      "/taxa/Kalanchoe.html",
+      "/taxa/Oso-frontino.html",
+      "/taxa/Aulacorhynchus-sulcatus.html",
+      "/taxa/Oressinoma-typhla.html",
+      "/taxa/Jaguar.html",
+      "/taxa/Oxysternon-festivum.html",
+      "/taxa/Rhinella-humboldti.html",
+      "/taxa/Amazona-barbadensis.html",
+      "/taxa/Kricogonia-lyside.html"
     ]
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "My projects"
+title: "Perfiles y enlaces"
 date: 10 Jun 2024
 editor_options: 
   chunk_output_type: console
@@ -29,6 +29,7 @@ format:
 ## Perfiles académicos y profesionales
 
 * ORCID: [0000-0002-9554-3395](http://orcid.org/0000-0002-9554-3395)
+* DataCite Commons: [0000-0002-9554-3395](https://commons.datacite.org/orcid.org/0000-0002-9554-3395)
 * Dimensions: [ur.0755224440.38](https://app.dimensions.ai/details/entities/publication/author/ur.0755224440.38)
 * Kudos: [Jose Ferrer](https://www.growkudos.com/profile/jose_ferrer)
 * Impactstory: [0000-0002-9554-3395](https://profiles.impactstory.org/u/0000-0002-9554-3395)
