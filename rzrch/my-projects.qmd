@@ -51,6 +51,8 @@ format:
 * Flickr: [jferrer](https://flickr.com/photos/jferrer/)
 
 
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="95c96bcc-77c5-41db-8258-cce0e9ff0b30" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
 ### Taxonomía
 
 * Zoobank: [José R. Ferrer-Paris](http://zoobank.org/Authors/7D3C0AEE-DE5A-4C21-94A1-C16F357890E6)

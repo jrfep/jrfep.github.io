@@ -192,7 +192,7 @@ PMX_ALL |>
   filter(!is.na(POLICY_CITED_BY_COUNT)) |> 
   transmute(
     DOI = sprintf("<a href='https://doi.org/%1$s'>%1$s</a>", doi), 
-    Plumx = sprintf("<a href='https://plu.mx/plum/a/?doi=%1$s'>PlumX metrics</a>", doi), 
+    Plumx = sprintf("<a href='https://plu.mx/plum/a/policy_citation?doi=%1$s'>PlumX metrics</a>", doi), 
             `Academic citations` = CITED_BY_COUNT, 
             `Policy citations` = POLICY_CITED_BY_COUNT) |>
   DT::datatable(rownames = FALSE, escape = FALSE,
