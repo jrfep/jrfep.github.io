@@ -28,7 +28,7 @@ website:
           - text: "Productos científicos"
             href: rzrch/research-outputs.qmd
           - text: "Eventos"
-            href: evnts/evnt-list.qmd
+            href: /mimundo/evnts
       - text: "{{< fa leaf >}} Biodiversidad"
         menu:
           - text: "Mis ecosistemas favoritos"
@@ -44,7 +44,7 @@ website:
       - text: "{{< fa smile >}} Homo ludens"
         menu:
           - text: "{{< fa world >}} Mi mundo"
-            href: lgrs/lgrs-list.qmd
+            href: /mimundo/
           - text: "{{< fa futbol >}} Futbol"
             href: j4fun/blog_LaLiga_FinalTemp2019.qmd
           - text: "Ulysses"
