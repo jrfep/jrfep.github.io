@@ -1,5 +1,0 @@
----
-title: Darmstadt
-categories:
- - Alemania
----

@@ -1,8 +1,0 @@
----
-title: "Mis ecosistemas favoritos"
-listing: 
- type: default
- sort: "date desc"
- categories: true
- sort-ui: [title, date]
----

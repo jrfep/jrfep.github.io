@@ -1,6 +1,0 @@
----
-title: San José
-categories:
- - Costa Rica
- - Evento
----

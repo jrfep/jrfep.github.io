@@ -1,8 +1,0 @@
----
-title: "Mis animales y plantas favoritos"
-listing: 
- type: default
- sort: "date desc"
- categories: true
- sort-ui: [title, date]
----
