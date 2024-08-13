@@ -17,6 +17,10 @@ I then moved the `assets`, `css`, `dist`, `js` and `plugin` folder to my repo (I
 
 Does this work?
 
+```bash
+npm audit fix --force
+```
+
 # Fonts/icons from many providers
 
 ## Fontsawesome
